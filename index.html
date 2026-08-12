@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>نزيكة دزينز | Nazeeka Designs</title>
+<title>كنِ نزيكة | Nazeeka Designs</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
@@ -24,14 +30,17 @@ button{
   cursor:pointer;
 }
 
+
 /* ================= HEADER ================= */
 
 .header{
   width:100%;
+  overflow:hidden;
 }
 
 .header img{
   width:100%;
+  height:auto;
   display:block;
 }
 
@@ -39,20 +48,34 @@ button{
 /* ================= NAV ================= */
 
 .nav{
+  width:100%;
   background:#14233d;
   color:#fff;
+
   display:flex;
   justify-content:center;
   align-items:center;
-  gap:35px;
-  padding:17px 15px;
+
+  gap:30px;
+  padding:16px 12px;
+
+  position:relative;
+  z-index:10;
 }
 
 .nav button{
   background:none;
   border:0;
   color:#fff;
+
   font-size:16px;
+  white-space:nowrap;
+
+  padding:4px 6px;
+}
+
+.nav button:hover{
+  opacity:.75;
 }
 
 
@@ -60,26 +83,29 @@ button{
 
 .home{
   text-align:center;
-  padding:45px 15px 70px;
+  padding:40px 15px 70px;
 }
 
 .brand{
-  font-size:36px;
+  font-size:34px;
   font-weight:bold;
 }
 
 .brand-en{
   color:#777;
   font-size:18px;
-  margin-top:5px;
+  margin-top:6px;
 }
 
 .shop-now{
-  margin-top:25px;
+  margin-top:24px;
+
   background:#14233d;
   color:#fff;
+
   border:0;
-  padding:14px 40px;
+  padding:13px 38px;
+
   border-radius:5px;
   font-size:16px;
 }
@@ -88,47 +114,69 @@ button{
 /* ================= PRODUCTS ================= */
 
 .products{
-  max-width:820px;
-  margin:50px auto 0;
+  width:100%;
+  max-width:680px;
+
+  margin:45px auto 0;
+
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:22px;
+
+  gap:18px;
+
+  padding:0 10px;
 }
 
 .product-card{
   border:1px solid #eee;
   border-radius:12px;
+
   overflow:hidden;
+
   background:#fff;
-  box-shadow:0 5px 20px rgba(0,0,0,.06);
+
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+
   cursor:pointer;
+
+  transition:.2s;
+}
+
+.product-card:active{
+  transform:scale(.98);
 }
 
 .product-card img{
   width:100%;
+
   aspect-ratio:4/5;
-  max-height:430px;
+
+  max-height:340px;
+
   object-fit:cover;
+
   display:block;
 }
 
 .product-info{
-  padding:18px 10px 22px;
+  padding:13px 8px 17px;
 }
 
 .product-info h2{
-  font-size:23px;
+  font-size:19px;
+  font-weight:bold;
 }
 
 .product-info p{
   color:#777;
+  font-size:13px;
   margin-top:4px;
 }
 
 .product-price{
-  font-size:19px;
+  font-size:16px;
   font-weight:bold;
-  margin-top:8px;
+  margin-top:7px;
 }
 
 
@@ -136,9 +184,13 @@ button{
 
 .product-page{
   display:none;
-  max-width:1050px;
+
+  width:100%;
+  max-width:1000px;
+
   margin:auto;
-  padding:35px 15px 70px;
+
+  padding:25px 15px 70px;
 }
 
 .product-page.active{
@@ -148,24 +200,31 @@ button{
 .back{
   background:#14233d;
   color:#fff;
+
   border:0;
-  padding:11px 22px;
+
+  padding:10px 20px;
+
   border-radius:5px;
-  margin-bottom:30px;
+
+  margin-bottom:25px;
+
+  font-size:15px;
 }
 
 .product-heading{
   text-align:center;
-  margin-bottom:30px;
+  margin-bottom:25px;
 }
 
 .product-heading h1{
-  font-size:34px;
+  font-size:32px;
 }
 
 .product-heading p{
   color:#777;
   margin-top:5px;
+  font-size:17px;
 }
 
 
@@ -173,15 +232,22 @@ button{
 
 .gallery{
   display:grid;
+
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+
+  gap:14px;
 }
 
 .gallery img{
   width:100%;
+
   aspect-ratio:4/5;
+
   object-fit:cover;
+
   border-radius:10px;
+
+  display:block;
 }
 
 
@@ -189,7 +255,8 @@ button{
 
 .details{
   text-align:center;
-  padding:30px 10px;
+
+  padding:25px 10px;
 }
 
 .details-price{
@@ -199,16 +266,22 @@ button{
 
 .sizes{
   color:#555;
+
   font-size:18px;
-  margin:8px 0 22px;
+
+  margin:8px 0 20px;
 }
 
 .order-btn{
   background:#14233d;
   color:#fff;
+
   border:0;
-  padding:14px 45px;
+
+  padding:13px 42px;
+
   border-radius:5px;
+
   font-size:16px;
 }
 
@@ -217,10 +290,16 @@ button{
 
 .order-form{
   display:none;
+
+  width:100%;
   max-width:600px;
+
   margin:20px auto;
-  padding:25px;
+
+  padding:22px;
+
   background:#f7f7f7;
+
   border-radius:10px;
 }
 
@@ -230,32 +309,49 @@ button{
 
 .order-form h2{
   text-align:center;
-  margin-bottom:20px;
+  margin-bottom:18px;
 }
 
 .order-form label{
   display:block;
+
   font-weight:bold;
+
   margin:12px 0 6px;
 }
 
 .order-form input,
 .order-form select{
+
   width:100%;
+
   padding:12px;
+
   border:1px solid #ddd;
+
   border-radius:6px;
+
   background:#fff;
+
+  font-family:inherit;
 }
 
 .send-order{
+
   width:100%;
+
   margin-top:20px;
+
   padding:14px;
+
   background:#14233d;
+
   color:#fff;
+
   border:0;
+
   border-radius:6px;
+
   font-size:16px;
 }
 
@@ -264,8 +360,11 @@ button{
 
 footer{
   background:#14233d;
+
   color:#fff;
+
   text-align:center;
+
   padding:25px;
 }
 
@@ -285,45 +384,67 @@ footer{
 @media(max-width:700px){
 
   .nav{
-    gap:18px;
+    gap:10px;
+    padding:14px 5px;
   }
 
   .nav button{
-    font-size:14px;
+    font-size:13px;
+    padding:3px 2px;
+  }
+
+  .home{
+    padding:35px 12px 60px;
   }
 
   .brand{
-    font-size:30px;
+    font-size:29px;
+  }
+
+  .brand-en{
+    font-size:16px;
+  }
+
+  .shop-now{
+    padding:12px 32px;
+    font-size:15px;
   }
 
   .products{
+    max-width:500px;
+
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    padding:0 10px;
+
+    gap:10px;
+
+    padding:0 8px;
+
+    margin-top:38px;
   }
 
   .product-card img{
-    max-height:330px;
+    max-height:280px;
   }
 
   .product-info{
-    padding:12px 5px 15px;
+    padding:10px 5px 13px;
   }
 
   .product-info h2{
-    font-size:17px;
+    font-size:16px;
   }
 
   .product-info p{
-    font-size:12px;
+    font-size:11px;
   }
 
   .product-price{
-    font-size:15px;
+    font-size:14px;
   }
 
   .gallery{
     grid-template-columns:1fr;
+    gap:12px;
   }
 
   .gallery img{
@@ -331,9 +452,38 @@ footer{
   }
 
   .product-heading h1{
-    font-size:29px;
+    font-size:28px;
   }
+
+  .product-heading p{
+    font-size:15px;
+  }
+
 }
+
+
+/* ================= VERY SMALL PHONES ================= */
+
+@media(max-width:380px){
+
+  .nav{
+    gap:5px;
+  }
+
+  .nav button{
+    font-size:12px;
+  }
+
+  .products{
+    gap:8px;
+  }
+
+  .product-card img{
+    max-height:245px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -372,7 +522,6 @@ footer{
 </nav>
 
 
-
 <!-- ================= HOME ================= -->
 
 <section id="home" class="home">
@@ -392,6 +541,8 @@ footer{
     SHOP NOW
   </button>
 
+
+  <!-- ================= PRODUCTS ================= -->
 
   <div id="products" class="products">
 
@@ -425,7 +576,6 @@ footer{
       </div>
 
     </div>
-
 
 
     <!-- ================= KEN NAZEEKA ================= -->
@@ -463,8 +613,9 @@ footer{
 </section>
 
 
-
-<!-- ================= ZAHRA ================= -->
+<!-- ================================================= -->
+<!-- ================= ZAHRA PAGE ==================== -->
+<!-- ================================================= -->
 
 <section
   id="zahra"
@@ -619,8 +770,9 @@ footer{
 </section>
 
 
-
-<!-- ================= KEN NAZEEKA ================= -->
+<!-- ================================================= -->
+<!-- ================= KEN NAZEEKA =================== -->
+<!-- ================================================= -->
 
 <section
   id="ken"
@@ -775,7 +927,6 @@ footer{
 </section>
 
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer id="contact">
@@ -791,25 +942,27 @@ footer{
 </footer>
 
 
-
 <script>
 
-/* رقم الواتساب */
+
+/* ================= WHATSAPP ================= */
 
 const whatsappNumber = "201029153023";
 
 
-/* الرئيسية */
+/* ================= HOME ================= */
 
 function goHome(){
 
   document.getElementById("home").style.display = "block";
 
-  document.querySelectorAll(".product-page").forEach(function(page){
+  document
+    .querySelectorAll(".product-page")
+    .forEach(function(page){
 
-    page.classList.remove("active");
+      page.classList.remove("active");
 
-  });
+    });
 
   window.scrollTo({
     top:0,
@@ -819,7 +972,7 @@ function goHome(){
 }
 
 
-/* تسوقي الآن */
+/* ================= SHOP ================= */
 
 function goShop(){
 
@@ -839,31 +992,39 @@ function goShop(){
 }
 
 
-/* تواصل معنا */
+/* ================= CONTACT ================= */
 
 function goContact(){
 
-  document
-    .getElementById("contact")
-    .scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
+  goHome();
+
+  setTimeout(function(){
+
+    document
+      .getElementById("contact")
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
+
+  },100);
 
 }
 
 
-/* فتح المنتج */
+/* ================= OPEN PRODUCT ================= */
 
 function openProduct(product){
 
   document.getElementById("home").style.display = "none";
 
-  document.querySelectorAll(".product-page").forEach(function(page){
+  document
+    .querySelectorAll(".product-page")
+    .forEach(function(page){
 
-    page.classList.remove("active");
+      page.classList.remove("active");
 
-  });
+    });
 
   document
     .getElementById(product)
@@ -877,7 +1038,7 @@ function openProduct(product){
 }
 
 
-/* فتح نموذج الطلب */
+/* ================= OPEN ORDER ================= */
 
 function openOrder(id){
 
@@ -899,7 +1060,7 @@ function openOrder(id){
 }
 
 
-/* إرسال الطلب */
+/* ================= SEND ORDER ================= */
 
 function sendOrder(
   product,
@@ -911,16 +1072,30 @@ function sendOrder(
 ){
 
   const name =
-    document.getElementById(nameId).value.trim();
+    document
+      .getElementById(nameId)
+      .value
+      .trim();
+
 
   const phone =
-    document.getElementById(phoneId).value.trim();
+    document
+      .getElementById(phoneId)
+      .value
+      .trim();
+
 
   const size =
-    document.getElementById(sizeId).value;
+    document
+      .getElementById(sizeId)
+      .value;
+
 
   const address =
-    document.getElementById(addressId).value.trim();
+    document
+      .getElementById(addressId)
+      .value
+      .trim();
 
 
   if(
