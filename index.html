@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nazeeka Designs</title>
+<title>كنِ نزيكة</title>
 
 <style>
+
 *{
   box-sizing:border-box;
   margin:0;
@@ -21,6 +22,7 @@ body{
 }
 
 /* الهيدر */
+
 .hero{
   width:100%;
   overflow:hidden;
@@ -33,9 +35,10 @@ body{
 }
 
 /* القائمة */
+
 nav{
   background:#12233f;
-  padding:16px;
+  padding:18px 10px;
   text-align:center;
 }
 
@@ -46,97 +49,109 @@ nav a{
   font-size:16px;
 }
 
-/* عنوان الموقع */
+/* العنوان */
+
 .title{
   text-align:center;
-  padding:45px 20px 30px;
+  padding:55px 20px 35px;
 }
 
-.title h2{
-  font-size:30px;
-  margin-bottom:10px;
+.title h1{
+  font-size:32px;
+  margin-bottom:15px;
 }
 
 .title p{
   color:#777;
-  font-size:20px;
+  font-size:18px;
 }
 
 /* المنتجات */
-.products{
+
+.products-section{
   max-width:1100px;
   margin:auto;
-  padding:10px 20px 50px;
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:30px;
+  padding:0 20px 60px;
 }
 
-.card{
-  border:1px solid #eee;
-  border-radius:15px;
-  overflow:hidden;
-  background:white;
-  box-shadow:0 4px 15px rgba(0,0,0,.06);
+/* كل ايتم */
+
+.item{
+  margin-bottom:65px;
 }
 
-/* صور المنتج */
-.product-images{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:2px;
-  background:#f5f5f5;
-}
-
-.product-images img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  display:block;
-}
-
-/* معلومات المنتج */
-.info{
-  padding:22px;
+.item-title{
   text-align:center;
+  margin-bottom:25px;
+}
+
+.item-title h2{
+  font-size:28px;
+  margin-bottom:8px;
+}
+
+.item-title p{
+  color:#777;
+}
+
+/* الصور */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.gallery img{
+  width:100%;
+  display:block;
+  border-radius:15px;
+  object-fit:cover;
+}
+
+/* معلومات القطعة */
+
+.info{
+  text-align:center;
+  padding:25px 10px;
 }
 
 .info h3{
-  font-size:23px;
+  font-size:22px;
   margin-bottom:12px;
 }
 
-.sizes{
-  color:#666;
-  font-size:16px;
+.price{
+  font-size:20px;
+  font-weight:bold;
   margin-bottom:10px;
 }
 
-.price{
-  font-size:21px;
-  font-weight:bold;
+.sizes{
+  color:#777;
   margin-bottom:18px;
 }
 
 .button{
-  display:block;
+  display:inline-block;
   background:#12233f;
   color:white;
   text-decoration:none;
-  padding:13px;
+  padding:13px 35px;
   border-radius:10px;
 }
 
 /* الفوتر */
+
 footer{
   background:#12233f;
   color:white;
   text-align:center;
   padding:25px;
-  margin-top:20px;
 }
 
 /* الموبايل */
+
 @media(max-width:700px){
 
   nav a{
@@ -144,131 +159,174 @@ footer{
     font-size:14px;
   }
 
-  .products{
+  .title h1{
+    font-size:27px;
+  }
+
+  .gallery{
     grid-template-columns:1fr;
-    padding:10px 15px 40px;
+    gap:18px;
   }
 
-  .product-images img{
-    height:300px;
+  .item-title h2{
+    font-size:25px;
   }
 
-  .title h2{
-    font-size:26px;
-  }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <!-- الهيدر -->
+
 <header class="hero">
   <img src="IMG_7119.jpeg" alt="Nazeeka Designs">
 </header>
 
+
 <!-- القائمة -->
+
 <nav>
   <a href="#home">الرئيسية</a>
-  <a href="#items">الـItems</a>
+  <a href="#zahra">زهرة</a>
+  <a href="#kini">كِنِ نزيكة</a>
   <a href="#contact">تواصل معنا</a>
 </nav>
 
+
 <!-- العنوان -->
+
 <section class="title" id="home">
-  <h2>Nazeeka Designs</h2>
-  <p>كِنِ نزيكة</p>
+
+  <h1>كِنِ نزيكة</h1>
+
+  <p>قطع مختارة بعناية من Nazeeka Designs ✨</p>
+
 </section>
 
-<!-- الـItems -->
-<section class="products" id="items">
 
-  <!-- زهرة -->
-  <div class="card">
+<section class="products-section">
 
-    <div class="product-images">
 
-      <img
-        src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
-        alt="زهرة">
+<!-- ================= زهرة ================= -->
 
-      <img
-        src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
-        alt="زهرة">
+<div class="item" id="zahra">
 
-      <img
-        src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
-        alt="زهرة">
+  <div class="item-title">
+    <h2>زهرة</h2>
+    <p>شاهدي القطعة من كل التفاصيل</p>
+  </div>
 
-    </div>
 
-    <div class="info">
+  <div class="gallery">
 
-      <h3>زهرة</h3>
+    <img
+      src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
+      alt="زهرة - صورة 1"
+    >
 
-      <div class="sizes">
-        L / XL / XXL
-      </div>
+    <img
+      src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
+      alt="زهرة - صورة 2"
+    >
 
-      <div class="price">
-        550 جنيه
-      </div>
-
-      <a class="button" href="#contact">
-        اطلبي الآن
-      </a>
-
-    </div>
+    <img
+      src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+      alt="زهرة - صورة 3"
+    >
 
   </div>
 
 
-  <!-- كِنِ نزيكة -->
-  <div class="card">
+  <div class="info">
 
-    <div class="product-images">
+    <h3>زهرة</h3>
 
-      <img
-        src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
-        alt="كِنِ نزيكة">
-
-      <img
-        src="E3292A35-1F0E-4B59-BB55-D0A3E9739CDD.png"
-        alt="كِنِ نزيكة">
-
-      <img
-        src="930D65BE-D0BB-4CBC-BF43-EF67AF8062E6.png"
-        alt="كِنِ نزيكة">
-
+    <div class="price">
+      599 جنيه
     </div>
 
-    <div class="info">
-
-      <h3>كِنِ نزيكة</h3>
-
-      <div class="sizes">
-        L / XL / XXL
-      </div>
-
-      <div class="price">
-        599 جنيه
-      </div>
-
-      <a class="button" href="#contact">
-        اطلبي الآن
-      </a>
-
+    <div class="sizes">
+      L &nbsp; | &nbsp; XL &nbsp; | &nbsp; XXL
     </div>
+
+    <a class="button" href="#contact">
+      اطلبي الآن
+    </a>
 
   </div>
 
+</div>
+
+
+
+<!-- ================= كِنِ نزيكة ================= -->
+
+<div class="item" id="kini">
+
+  <div class="item-title">
+    <h2>كِنِ نزيكة</h2>
+    <p>قطعتك المميزة من Nazeeka Designs ✨</p>
+  </div>
+
+
+  <div class="gallery">
+
+    <img
+      src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
+      alt="كِنِ نزيكة - صورة 1"
+    >
+
+    <img
+      src="E3292A35-1F0E-4B59-BB55-D0A3E9739CDD.png"
+      alt="كِنِ نزيكة - صورة 2"
+    >
+
+    <img
+      src="930D65BE-D0BB-4CBC-BF43-EF67AF8062E6.png"
+      alt="كِنِ نزيكة - صورة 3"
+    >
+
+  </div>
+
+
+  <div class="info">
+
+    <h3>كِنِ نزيكة</h3>
+
+    <div class="price">
+      599 جنيه
+    </div>
+
+    <div class="sizes">
+      L &nbsp; | &nbsp; XL &nbsp; | &nbsp; XXL
+    </div>
+
+    <a class="button" href="#contact">
+      اطلبي الآن
+    </a>
+
+  </div>
+
+</div>
+
+
 </section>
+
 
 <!-- التواصل -->
+
 <footer id="contact">
+
   <p>Nazeeka Designs © 2026</p>
-  <p>للطلب والتواصل معنا</p>
+
+  <p>للطلب والتواصل معنا 💌</p>
+
 </footer>
+
 
 </body>
 </html>
