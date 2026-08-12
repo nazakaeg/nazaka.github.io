@@ -15,7 +15,7 @@
 }
 
 body{
-  font-family:Arial, sans-serif;
+  font-family:Arial,sans-serif;
   background:#fff;
   color:#12233f;
 }
@@ -46,16 +46,10 @@ nav a{
   font-size:16px;
 }
 
-/* المنتجات */
-.products-section{
-  max-width:1100px;
-  margin:auto;
-  padding:50px 20px;
-}
-
+/* عنوان الموقع */
 .title{
   text-align:center;
-  margin-bottom:35px;
+  padding:45px 20px 30px;
 }
 
 .title h2{
@@ -65,14 +59,17 @@ nav a{
 
 .title p{
   color:#777;
-  font-size:18px;
+  font-size:20px;
 }
 
-/* كروت المنتجات */
+/* المنتجات */
 .products{
+  max-width:1100px;
+  margin:auto;
+  padding:10px 20px 50px;
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:25px;
+  gap:30px;
 }
 
 .card{
@@ -83,24 +80,29 @@ nav a{
   box-shadow:0 4px 15px rgba(0,0,0,.06);
 }
 
-.product-image{
-  width:100%;
+/* صور المنتج */
+.product-images{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:2px;
   background:#f5f5f5;
 }
 
-.product-image img{
+.product-images img{
   width:100%;
-  height:auto;
+  height:360px;
+  object-fit:cover;
   display:block;
 }
 
+/* معلومات المنتج */
 .info{
-  padding:20px;
+  padding:22px;
   text-align:center;
 }
 
 .info h3{
-  font-size:22px;
+  font-size:23px;
   margin-bottom:12px;
 }
 
@@ -111,9 +113,9 @@ nav a{
 }
 
 .price{
-  font-size:20px;
+  font-size:21px;
   font-weight:bold;
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
 .button{
@@ -121,7 +123,7 @@ nav a{
   background:#12233f;
   color:white;
   text-decoration:none;
-  padding:12px;
+  padding:13px;
   border-radius:10px;
 }
 
@@ -131,7 +133,7 @@ footer{
   color:white;
   text-align:center;
   padding:25px;
-  margin-top:30px;
+  margin-top:20px;
 }
 
 /* الموبايل */
@@ -144,6 +146,11 @@ footer{
 
   .products{
     grid-template-columns:1fr;
+    padding:10px 15px 40px;
+  }
+
+  .product-images img{
+    height:300px;
   }
 
   .title h2{
@@ -163,67 +170,93 @@ footer{
 <!-- القائمة -->
 <nav>
   <a href="#home">الرئيسية</a>
-  <a href="#products">المنتجات</a>
+  <a href="#items">الـItems</a>
   <a href="#contact">تواصل معنا</a>
 </nav>
 
-<!-- المنتجات -->
-<section class="products-section" id="products">
+<!-- العنوان -->
+<section class="title" id="home">
+  <h2>Nazeeka Designs</h2>
+  <p>كِنِ نزيكة</p>
+</section>
 
-  <div class="title">
-    <h2>منتجات Nazeeka Designs</h2>
-    <p>اختاري القطعة المناسبة ليكي</p>
-  </div>
+<!-- الـItems -->
+<section class="products" id="items">
 
-  <div class="products">
+  <!-- زهرة -->
+  <div class="card">
 
-    <!-- المنتج الأول -->
-    <div class="card">
+    <div class="product-images">
 
-      <div class="product-image">
-        <img src="zahra.jpeg" alt="زهرة">
-      </div>
+      <img
+        src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
+        alt="زهرة">
 
-      <div class="info">
-        <h3>زهرة</h3>
+      <img
+        src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
+        alt="زهرة">
 
-        <div class="sizes">
-          L / XL / XXL
-        </div>
-
-        <div class="price">
-          550 جنيه
-        </div>
-
-        <a class="button" href="#contact">
-          اطلبي الآن
-        </a>
-      </div>
+      <img
+        src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+        alt="زهرة">
 
     </div>
 
-    <!-- المنتج الثاني -->
-    <div class="card">
+    <div class="info">
 
-      <div class="product-image">
-        <img src="kini-nazeeka.jpeg" alt="كِنِ نزيكة">
+      <h3>زهرة</h3>
+
+      <div class="sizes">
+        L / XL / XXL
       </div>
 
-      <div class="info">
-        <h3>كِنِ نزيكة</h3>
-
-        <div class="sizes">
-          L / XL / XXL
-        </div>
-
-        <div class="price">
-          599 جنيه
-        </div>
-
-        <a class="button" href="#contact">
-          اطلبي الآن
-        </a>
+      <div class="price">
+        550 جنيه
       </div>
+
+      <a class="button" href="#contact">
+        اطلبي الآن
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- كِنِ نزيكة -->
+  <div class="card">
+
+    <div class="product-images">
+
+      <img
+        src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
+        alt="كِنِ نزيكة">
+
+      <img
+        src="E3292A35-1F0E-4B59-BB55-D0A3E9739CDD.png"
+        alt="كِنِ نزيكة">
+
+      <img
+        src="930D65BE-D0BB-4CBC-BF43-EF67AF8062E6.png"
+        alt="كِنِ نزيكة">
+
+    </div>
+
+    <div class="info">
+
+      <h3>كِنِ نزيكة</h3>
+
+      <div class="sizes">
+        L / XL / XXL
+      </div>
+
+      <div class="price">
+        599 جنيه
+      </div>
+
+      <a class="button" href="#contact">
+        اطلبي الآن
+      </a>
 
     </div>
 
