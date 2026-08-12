@@ -3,27 +3,749 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nazeeka Designs</title>
+
+<title>Nazeeka Designs | نزيكة دزينز</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#111}
-header{border-bottom:1px solid #eee}.nav{max-width:1100px;margin:auto;padding:18px 22px;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:27px;font-weight:800}.logo span{color:#12233f}nav a{margin:0 9px;color:#222;text-decoration:none;font-weight:600}
-.hero{background:#12233f;color:#fff;text-align:center;padding:65px 20px}.hero h1{font-size:44px;margin:0 0 12px}.hero p{font-size:19px}
-.wrap{max-width:1100px;margin:auto;padding:45px 20px}.title{text-align:center;margin-bottom:30px}.title h2{font-size:32px}
-.products{display:grid;grid-template-columns:repeat(2,1fr);gap:25px}.card{border:1px solid #e7e7e7;border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #0000000d}
-.photo{height:430px;background:#f4f4f4;display:flex;align-items:center;justify-content:center;color:#888;font-size:18px}.photo img{width:100%;height:100%;object-fit:cover}
-.info{padding:20px}.info h3{margin:0 0 10px;font-size:23px}.price{font-size:24px;font-weight:800;margin:12px 0}.details{color:#666;line-height:1.8}
-button{width:100%;border:0;border-radius:12px;padding:14px;background:#12233f;color:white;font-size:17px;font-weight:700;margin-top:14px}
-.note{background:#f7f7f7;border-radius:15px;padding:18px;text-align:center;margin-top:30px;color:#555}footer{background:#12233f;color:#fff;text-align:center;padding:28px;margin-top:30px}
-@media(max-width:700px){.products{grid-template-columns:1fr}.hero h1{font-size:34px}nav{display:none}}
-</style></head>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #12233f;
+}
+
+/* ================= HEADER ================= */
+
+header {
+    width: 100%;
+    background: #12233f;
+    color: white;
+}
+
+.hero {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.navbar {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navbar a:hover {
+    opacity: 0.7;
+}
+
+/* ================= HOME ================= */
+
+.home {
+    text-align: center;
+    padding: 60px 20px 80px;
+}
+
+.logo-title {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.logo-subtitle {
+    font-size: 20px;
+    color: #777;
+    margin-bottom: 45px;
+}
+
+.shop-now {
+    display: inline-block;
+    background: #12233f;
+    color: white;
+    text-decoration: none;
+    padding: 16px 42px;
+    border-radius: 3px;
+    font-size: 18px;
+    margin-bottom: 55px;
+    cursor: pointer;
+}
+
+.shop-now:hover {
+    background: #1d355d;
+}
+
+/* ================= PRODUCTS ================= */
+
+.products {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.products-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+.product-card {
+    background: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+
+.product-info {
+    padding: 18px 5px 25px;
+    text-align: center;
+}
+
+.product-name-ar {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.product-name-en {
+    font-size: 17px;
+    color: #777;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ================= DETAILS ================= */
+
+.details {
+    display: none;
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px 80px;
+}
+
+.back-button {
+    border: none;
+    background: #12233f;
+    color: white;
+    padding: 12px 22px;
+    cursor: pointer;
+    margin-bottom: 30px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.details-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.details-en {
+    text-align: center;
+    color: #777;
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.details-price {
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* ================= ORDER ================= */
+
+.order-box {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ddd;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.order-box h3 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.order-box label {
+    display: block;
+    margin-bottom: 7px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.order-box input,
+.order-box select,
+.order-box textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.order-box textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.order-button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    background: #12233f;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-button:hover {
+    background: #1d355d;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #12233f;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+}
+
+footer .footer-ar {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+footer .footer-en {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        height: 280px;
+    }
+
+    .navbar {
+        gap: 18px;
+        font-size: 15px;
+        height: 60px;
+    }
+
+    .home {
+        padding-top: 40px;
+    }
+
+    .logo-title {
+        font-size: 34px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .product-card img {
+        height: 430px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: auto;
+        max-height: 650px;
+    }
+
+    .details-title {
+        font-size: 30px;
+    }
+}
+</style>
+</head>
+
 <body>
-<header><div class="nav"><div class="logo">NAZEEKA <span>DESIGNS</span></div><nav><a href="#home">الرئيسية</a><a href="#products">المنتجات</a><a href="#contact">تواصل معنا</a></nav></div></header>
-<section class="hero" id="home"><h1>Nazeeka Designs</h1><p>أناقة بسيطة بتفاصيل مميزة ✨</p></section>
-<section class="wrap" id="products"><div class="title"><h2>المجموعة</h2><p>اختاري اللون المناسب ليكي</p></div>
-<div class="products">
-<div class="card"><div class="photo"><img src="images/red-model.jpg" alt="الموديل الأحمر"></div><div class="info"><h3>الأوتفيت — أحمر</h3><div class="price">999 جنيه</div><div class="details">المقاس: Free Size<br>مناسب لحد 80 كجم<br>متاح الأوتفيت كامل أو الشميز لوحده</div><button>اطلبي الآن</button></div></div>
-<div class="card"><div class="photo"><img src="images/navy-model.jpg" alt="الموديل الكحلي"></div><div class="info"><h3>الأوتفيت — كحلي</h3><div class="price">999 جنيه</div><div class="details">المقاس: Free Size<br>مناسب لحد 80 كجم<br>متاح الأوتفيت كامل أو الشميز لوحده</div><button>اطلبي الآن</button></div></div>
-</div><div class="note">💙 الألوان المتاحة: أحمر وكحلي — Free Size حتى 80 كجم — السعر 999 جنيه</div></section>
-<footer id="contact">Nazeeka Designs © 2026</footer>
-</body></html>
+
+<header>
+
+    <div class="hero">
+        <img src="IMG_7119.jpeg" alt="Nazeeka Designs">
+    </div>
+
+    <nav class="navbar">
+        <a onclick="showHome()">الرئيسية | Home</a>
+        <a onclick="showProducts()">زَهرة | Zahra</a>
+        <a onclick="showProducts()">كِن نزيكة | Ken Nazeeka</a>
+        <a onclick="scrollToFooter()">تواصل معنا | Contact</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= HOME ================= -->
+
+<section class="home" id="home">
+
+    <h1 class="logo-title">
+        كِن نزيكة | Nazeeka Designs
+    </h1>
+
+    <p class="logo-subtitle">
+        اكتشفي قطع Nazeeka Designs
+    </p>
+
+    <a class="shop-now" onclick="showProducts()">
+        SHOP NOW
+    </a>
+
+    <div class="products" id="products">
+
+        <h2 class="products-title">
+            Collections
+        </h2>
+
+        <div class="product-grid">
+
+            <!-- ZAHRA -->
+
+            <div class="product-card" onclick="openProduct('zahra')">
+
+                <img
+                    src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+                    alt="Zahra"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-name-ar">
+                        زهرة
+                    </div>
+
+                    <div class="product-name-en">
+                        Zahra
+                    </div>
+
+                    <div class="price">
+                        550 EGP
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- KEN NAZEEKA -->
+
+            <div class="product-card" onclick="openProduct('ken')">
+
+                <img
+                    src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
+                    alt="Ken Nazeeka"
+                >
+
+                <div class="product-info">
+
+                    <div class="product-name-ar">
+                        كِن نزيكة
+                    </div>
+
+                    <div class="product-name-en">
+                        Ken Nazeeka
+                    </div>
+
+                    <div class="price">
+                        599 EGP
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<section class="details" id="details">
+
+    <button class="back-button" onclick="showProducts()">
+        العودة للمنتجات | Back
+    </button>
+
+    <h2 class="details-title" id="detailsTitle"></h2>
+
+    <p class="details-en" id="detailsEnglish"></p>
+
+    <div class="details-price" id="detailsPrice"></div>
+
+    <div class="gallery" id="gallery"></div>
+
+
+    <!-- ORDER FORM -->
+
+    <div class="order-box">
+
+        <h3>
+            اطلب الآن | Order Now
+        </h3>
+
+        <form onsubmit="sendOrder(event)">
+
+            <label>
+                الاسم | Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                required
+                placeholder="اكتب اسمك"
+            >
+
+
+            <label>
+                رقم الهاتف | Phone Number
+            </label>
+
+            <input
+                type="tel"
+                id="customerPhone"
+                required
+                placeholder="01xxxxxxxxx"
+            >
+
+
+            <label>
+                المقاس | Size
+            </label>
+
+            <select id="customerSize" required>
+
+                <option value="">
+                    اختاري المقاس
+                </option>
+
+                <option value="L">
+                    L
+                </option>
+
+                <option value="XL">
+                    XL
+                </option>
+
+                <option value="XXL">
+                    XXL
+                </option>
+
+            </select>
+
+
+            <label>
+                العنوان | Address
+            </label>
+
+            <textarea
+                id="customerAddress"
+                required
+                placeholder="اكتب العنوان بالتفصيل"
+            ></textarea>
+
+
+            <button
+                class="order-button"
+                type="submit"
+            >
+                اطلب الآن | Order Now
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer id="footer">
+
+    <div class="footer-ar">
+        نزيكة دزينز
+    </div>
+
+    <div class="footer-en">
+        Nazeeka Designs © 2026
+    </div>
+
+</footer>
+
+
+<script>
+
+/* ================= PRODUCT DATA ================= */
+
+const products = {
+
+    zahra: {
+
+        nameAr: "زهرة",
+
+        nameEn: "Zahra",
+
+        price: "550 EGP",
+
+        images: [
+
+            "D98746B7-79A5-48BF-90E9-8058295BDC23.png",
+
+            "3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png",
+
+            "22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
+
+        ]
+
+    },
+
+
+    ken: {
+
+        nameAr: "كِن نزيكة",
+
+        nameEn: "Ken Nazeeka",
+
+        price: "599 EGP",
+
+        images: [
+
+            "621F3C2C-6D32-44AE-AA84-E94368B943E7.png",
+
+            "3384CB47-29AD-431C-96EB-95AF6F0416AB.png",
+
+            "70F43FE0-0B09-42AF-A461-CF039DC95B7D.png"
+
+        ]
+
+    }
+
+};
+
+
+/* ================= SHOW PRODUCTS ================= */
+
+function showProducts() {
+
+    document.getElementById("home").style.display = "block";
+
+    document.getElementById("details").style.display = "none";
+
+    window.scrollTo({
+        top: document.getElementById("products").offsetTop - 20,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================= HOME ================= */
+
+function showHome() {
+
+    document.getElementById("home").style.display = "block";
+
+    document.getElementById("details").style.display = "none";
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================= OPEN PRODUCT ================= */
+
+let selectedProduct = "";
+
+
+function openProduct(productId) {
+
+    const product = products[productId];
+
+    selectedProduct = productId;
+
+    document.getElementById("home").style.display = "none";
+
+    document.getElementById("details").style.display = "block";
+
+    document.getElementById("detailsTitle").textContent =
+        product.nameAr;
+
+    document.getElementById("detailsEnglish").textContent =
+        product.nameEn;
+
+    document.getElementById("detailsPrice").textContent =
+        product.price;
+
+    const gallery = document.getElementById("gallery");
+
+    gallery.innerHTML = "";
+
+    product.images.forEach(function(image) {
+
+        const img = document.createElement("img");
+
+        img.src = image;
+
+        img.alt = product.nameEn;
+
+        gallery.appendChild(img);
+
+    });
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+}
+
+
+/* ================= SEND ORDER TO WHATSAPP ================= */
+
+function sendOrder(event) {
+
+    event.preventDefault();
+
+    const product = products[selectedProduct];
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const phone =
+        document.getElementById("customerPhone").value;
+
+    const size =
+        document.getElementById("customerSize").value;
+
+    const address =
+        document.getElementById("customerAddress").value;
+
+
+    const message =
+
+        "طلب جديد - Nazeeka Designs\n\n" +
+
+        "القطعة: " + product.nameAr +
+        " | " + product.nameEn + "\n" +
+
+        "السعر: " + product.price + "\n" +
+
+        "المقاس: " + size + "\n" +
+
+        "الاسم: " + name + "\n" +
+
+        "رقم الهاتف: " + phone + "\n" +
+
+        "العنوان: " + address;
+
+
+    const whatsappNumber = "201029153023";
+
+    const whatsappURL =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+}
+
+
+/* ================= CONTACT ================= */
+
+function scrollToFooter() {
+
+    document.getElementById("footer").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+</script>
+
+</body>
+</html>
