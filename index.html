@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>كنِ نزيكة</title>
+<title>Nazeeka Designs</title>
 
 <style>
-
 *{
   box-sizing:border-box;
   margin:0;
@@ -21,8 +19,6 @@ body{
   color:#12233f;
 }
 
-/* الهيدر */
-
 .hero{
   width:100%;
   overflow:hidden;
@@ -33,8 +29,6 @@ body{
   height:auto;
   display:block;
 }
-
-/* القائمة */
 
 nav{
   background:#12233f;
@@ -49,284 +43,443 @@ nav a{
   font-size:16px;
 }
 
-/* العنوان */
+.section{
+  max-width:1100px;
+  margin:auto;
+  padding:55px 20px;
+}
 
-.title{
+.section-title{
   text-align:center;
-  padding:55px 20px 35px;
+  margin-bottom:35px;
 }
 
-.title h1{
-  font-size:32px;
-  margin-bottom:15px;
+.section-title h2{
+  font-size:30px;
+  margin-bottom:12px;
 }
 
-.title p{
+.section-title p{
   color:#777;
   font-size:18px;
 }
 
-/* المنتجات */
-
-.products-section{
-  max-width:1100px;
-  margin:auto;
-  padding:0 20px 60px;
-}
-
-/* كل ايتم */
-
-.item{
-  margin-bottom:65px;
-}
-
-.item-title{
-  text-align:center;
-  margin-bottom:25px;
-}
-
-.item-title h2{
-  font-size:28px;
-  margin-bottom:8px;
-}
-
-.item-title p{
-  color:#777;
-}
-
-/* الصور */
-
-.gallery{
+.products{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:25px;
 }
 
-.gallery img{
-  width:100%;
-  display:block;
+.card{
+  border:1px solid #eee;
   border-radius:15px;
-  object-fit:cover;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 4px 15px rgba(0,0,0,.06);
 }
 
-/* معلومات القطعة */
+.card img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+}
 
 .info{
+  padding:18px;
   text-align:center;
-  padding:25px 10px;
 }
 
 .info h3{
-  font-size:22px;
+  font-size:20px;
   margin-bottom:12px;
 }
 
-.price{
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:10px;
-}
-
-.sizes{
-  color:#777;
-  margin-bottom:18px;
-}
-
 .button{
-  display:inline-block;
+  display:block;
   background:#12233f;
   color:white;
   text-decoration:none;
-  padding:13px 35px;
+  padding:12px;
   border-radius:10px;
+  margin-top:15px;
+  border:none;
+  width:100%;
+  font-size:16px;
+  cursor:pointer;
 }
 
-/* الفوتر */
+.divider{
+  height:1px;
+  background:#eee;
+  margin:10px 20px;
+}
+
+/* فورم الطلب */
+.order-box{
+  display:none;
+  max-width:600px;
+  margin:30px auto;
+  padding:25px;
+  background:#f8f8f8;
+  border-radius:18px;
+  border:1px solid #eee;
+}
+
+.order-box h2{
+  text-align:center;
+  margin-bottom:20px;
+}
+
+.order-box label{
+  display:block;
+  margin:12px 0 6px;
+  font-weight:bold;
+}
+
+.order-box input,
+.order-box select{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  font-size:16px;
+  background:white;
+}
+
+.whatsapp-button{
+  background:#12233f;
+  color:white;
+  border:none;
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  font-size:17px;
+  margin-top:20px;
+  cursor:pointer;
+}
+
+.cancel-button{
+  background:#ddd;
+  color:#12233f;
+  border:none;
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  font-size:16px;
+  margin-top:10px;
+  cursor:pointer;
+}
 
 footer{
   background:#12233f;
   color:white;
   text-align:center;
-  padding:25px;
+  padding:30px 20px;
+  margin-top:30px;
 }
 
-/* الموبايل */
+footer p{
+  margin:7px;
+}
 
 @media(max-width:700px){
 
   nav a{
-    margin:0 6px;
+    margin:0 7px;
     font-size:14px;
   }
 
-  .title h1{
-    font-size:27px;
+  .section{
+    padding:45px 15px;
   }
 
-  .gallery{
+  .section-title h2{
+    font-size:26px;
+  }
+
+  .products{
     grid-template-columns:1fr;
-    gap:18px;
+    gap:20px;
   }
 
-  .item-title h2{
-    font-size:25px;
+  .card img{
+    height:auto;
+    max-height:600px;
+    object-fit:contain;
+    background:#f7f7f7;
   }
 
+  .order-box{
+    margin:25px 15px;
+  }
 }
-
 </style>
 </head>
-
 
 <body>
 
 <!-- الهيدر -->
-
-<header class="hero">
+<header class="hero" id="home">
   <img src="IMG_7119.jpeg" alt="Nazeeka Designs">
 </header>
 
-
 <!-- القائمة -->
-
 <nav>
   <a href="#home">الرئيسية</a>
+  <a href="#kan">كن نزيكة</a>
   <a href="#zahra">زهرة</a>
-  <a href="#kini">كِنِ نزيكة</a>
   <a href="#contact">تواصل معنا</a>
 </nav>
 
 
-<!-- العنوان -->
+<!-- كن نزيكة -->
+<section class="section" id="kan">
 
-<section class="title" id="home">
+  <div class="section-title">
+    <h2>كن نزيكة</h2>
+    <p>Nazeeka Designs</p>
+  </div>
 
-  <h1>كِنِ نزيكة</h1>
+  <div class="products">
 
-  <p>قطع مختارة بعناية من Nazeeka Designs ✨</p>
+    <div class="card">
+      <img src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
+           alt="كن نزيكة">
 
+      <div class="info">
+        <h3>كن نزيكة</h3>
+
+        <button class="button"
+          onclick="openOrder('كن نزيكة')">
+          اطلبي الآن
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="E3292A35-1F0E-4B59-BB55-D0A3E9739CDD.png"
+           alt="كن نزيكة">
+
+      <div class="info">
+        <h3>كن نزيكة</h3>
+
+        <button class="button"
+          onclick="openOrder('كن نزيكة')">
+          اطلبي الآن
+        </button>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="930D65BE-D0BB-4CBC-BF43-EF67AF8062E6.png"
+           alt="كن نزيكة">
+
+      <div class="info">
+        <h3>كن نزيكة</h3>
+
+        <button class="button"
+          onclick="openOrder('كن نزيكة')">
+          اطلبي الآن
+        </button>
+      </div>
+    </div>
+
+  </div>
 </section>
 
 
-<section class="products-section">
+<div class="divider"></div>
 
 
-<!-- ================= زهرة ================= -->
+<!-- زهرة -->
+<section class="section" id="zahra">
 
-<div class="item" id="zahra">
-
-  <div class="item-title">
+  <div class="section-title">
     <h2>زهرة</h2>
     <p>شاهدي القطعة من كل التفاصيل</p>
   </div>
 
+  <div class="products">
 
-  <div class="gallery">
+    <div class="card">
+      <img src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
+           alt="زهرة">
 
-    <img
-      src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
-      alt="زهرة - صورة 1"
-    >
+      <div class="info">
+        <h3>زهرة</h3>
 
-    <img
-      src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
-      alt="زهرة - صورة 2"
-    >
-
-    <img
-      src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
-      alt="زهرة - صورة 3"
-    >
-
-  </div>
-
-
-  <div class="info">
-
-    <h3>زهرة</h3>
-
-    <div class="price">
-      599 جنيه
+        <button class="button"
+          onclick="openOrder('زهرة')">
+          اطلبي الآن
+        </button>
+      </div>
     </div>
 
-    <div class="sizes">
-      L &nbsp; | &nbsp; XL &nbsp; | &nbsp; XXL
+    <div class="card">
+      <img src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
+           alt="زهرة">
+
+      <div class="info">
+        <h3>زهرة</h3>
+
+        <button class="button"
+          onclick="openOrder('زهرة')">
+          اطلبي الآن
+        </button>
+      </div>
     </div>
 
-    <a class="button" href="#contact">
-      اطلبي الآن
-    </a>
+    <div class="card">
+      <img src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+           alt="زهرة">
 
-  </div>
+      <div class="info">
+        <h3>زهرة</h3>
 
-</div>
-
-
-
-<!-- ================= كِنِ نزيكة ================= -->
-
-<div class="item" id="kini">
-
-  <div class="item-title">
-    <h2>كِنِ نزيكة</h2>
-    <p>قطعتك المميزة من Nazeeka Designs ✨</p>
-  </div>
-
-
-  <div class="gallery">
-
-    <img
-      src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
-      alt="كِنِ نزيكة - صورة 1"
-    >
-
-    <img
-      src="E3292A35-1F0E-4B59-BB55-D0A3E9739CDD.png"
-      alt="كِنِ نزيكة - صورة 2"
-    >
-
-    <img
-      src="930D65BE-D0BB-4CBC-BF43-EF67AF8062E6.png"
-      alt="كِنِ نزيكة - صورة 3"
-    >
-
-  </div>
-
-
-  <div class="info">
-
-    <h3>كِنِ نزيكة</h3>
-
-    <div class="price">
-      599 جنيه
+        <button class="button"
+          onclick="openOrder('زهرة')">
+          اطلبي الآن
+        </button>
+      </div>
     </div>
 
-    <div class="sizes">
-      L &nbsp; | &nbsp; XL &nbsp; | &nbsp; XXL
-    </div>
-
-    <a class="button" href="#contact">
-      اطلبي الآن
-    </a>
-
   </div>
-
-</div>
-
-
 </section>
 
 
+<!-- فورم الطلب -->
+<div class="order-box" id="orderBox">
+
+  <h2>بيانات الطلب 💌</h2>
+
+  <label>الاسم</label>
+  <input type="text" id="customerName"
+         placeholder="اكتبي اسمك">
+
+  <label>رقم الموبايل</label>
+  <input type="tel" id="customerPhone"
+         placeholder="اكتبي رقم الموبايل">
+
+  <label>العنوان</label>
+  <input type="text" id="customerAddress"
+         placeholder="اكتبي العنوان بالتفصيل">
+
+  <label>القطعة</label>
+  <input type="text" id="productName" readonly>
+
+  <label>المقاس</label>
+  <select id="size">
+    <option value="">اختاري المقاس</option>
+    <option value="XS">XS</option>
+    <option value="S">S</option>
+    <option value="M">M</option>
+    <option value="L">L</option>
+    <option value="XL">XL</option>
+    <option value="XXL">XXL</option>
+  </select>
+
+  <label>الكمية</label>
+  <input type="number" id="quantity"
+         min="1" value="1">
+
+  <button class="whatsapp-button"
+          onclick="sendOrder()">
+    تأكيد الطلب عبر واتساب
+  </button>
+
+  <button class="cancel-button"
+          onclick="closeOrder()">
+    إلغاء
+  </button>
+
+</div>
+
+
 <!-- التواصل -->
-
 <footer id="contact">
-
   <p>Nazeeka Designs © 2026</p>
-
   <p>للطلب والتواصل معنا 💌</p>
-
 </footer>
 
+
+<script>
+
+/* رقم واتساب */
+const whatsappNumber = "201029153023";
+
+/* فتح فورم الطلب */
+function openOrder(product){
+
+  document.getElementById("orderBox").style.display = "block";
+
+  document.getElementById("productName").value = product;
+
+  document.getElementById("orderBox").scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+}
+
+/* إغلاق الفورم */
+function closeOrder(){
+
+  document.getElementById("orderBox").style.display = "none";
+}
+
+/* إرسال الطلب إلى واتساب */
+function sendOrder(){
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const phone =
+    document.getElementById("customerPhone").value.trim();
+
+  const address =
+    document.getElementById("customerAddress").value.trim();
+
+  const product =
+    document.getElementById("productName").value;
+
+  const size =
+    document.getElementById("size").value;
+
+  const quantity =
+    document.getElementById("quantity").value;
+
+  if(!name || !phone || !address || !product || !size){
+
+    alert("من فضلك اكملي كل بيانات الطلب ❤️");
+
+    return;
+  }
+
+  const message =
+`طلب جديد من Nazeeka Designs 💌
+
+الاسم: ${name}
+
+رقم الموبايل: ${phone}
+
+العنوان: ${address}
+
+القطعة: ${product}
+
+المقاس: ${size}
+
+الكمية: ${quantity}`;
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+}
+
+</script>
 
 </body>
 </html>
