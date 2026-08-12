@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,7 @@ body{
   display:block;
 }
 
-/* شريط التنقل */
+/* القائمة */
 nav{
   background:#12233f;
   padding:16px;
@@ -45,7 +46,7 @@ nav a{
   font-size:16px;
 }
 
-/* عنوان المنتجات */
+/* المنتجات */
 .products-section{
   max-width:1100px;
   margin:auto;
@@ -64,12 +65,13 @@ nav a{
 
 .title p{
   color:#777;
+  font-size:18px;
 }
 
-/* المنتجات */
+/* كروت المنتجات */
 .products{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(2,1fr);
   gap:25px;
 }
 
@@ -82,12 +84,14 @@ nav a{
 }
 
 .product-image{
-  height:300px;
+  width:100%;
   background:#f5f5f5;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#aaa;
+}
+
+.product-image img{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 .info{
@@ -96,12 +100,18 @@ nav a{
 }
 
 .info h3{
-  font-size:20px;
+  font-size:22px;
+  margin-bottom:12px;
+}
+
+.sizes{
+  color:#666;
+  font-size:16px;
   margin-bottom:10px;
 }
 
 .price{
-  font-size:18px;
+  font-size:20px;
   font-weight:bold;
   margin-bottom:15px;
 }
@@ -136,10 +146,6 @@ footer{
     grid-template-columns:1fr;
   }
 
-  .product-image{
-    height:330px;
-  }
-
   .title h2{
     font-size:26px;
   }
@@ -166,54 +172,69 @@ footer{
 
   <div class="title">
     <h2>منتجات Nazeeka Designs</h2>
-    <p>كِنِ نزيكة</p>
+    <p>اختاري القطعة المناسبة ليكي</p>
   </div>
 
   <div class="products">
 
+    <!-- المنتج الأول -->
     <div class="card">
+
       <div class="product-image">
-        صورة المنتج
+        <img src="zahra.jpeg" alt="زهرة">
       </div>
 
       <div class="info">
-        <h3>اسم المنتج</h3>
-        <div class="price">999 جنيه</div>
-        <a class="button" href="#contact">اطلبي الآن</a>
+        <h3>زهرة</h3>
+
+        <div class="sizes">
+          L / XL / XXL
+        </div>
+
+        <div class="price">
+          550 جنيه
+        </div>
+
+        <a class="button" href="#contact">
+          اطلبي الآن
+        </a>
       </div>
+
     </div>
 
+    <!-- المنتج الثاني -->
     <div class="card">
+
       <div class="product-image">
-        صورة المنتج
+        <img src="kini-nazeeka.jpeg" alt="كِنِ نزيكة">
       </div>
 
       <div class="info">
-        <h3>اسم المنتج</h3>
-        <div class="price">999 جنيه</div>
-        <a class="button" href="#contact">اطلبي الآن</a>
-      </div>
-    </div>
+        <h3>كِنِ نزيكة</h3>
 
-    <div class="card">
-      <div class="product-image">
-        صورة المنتج
+        <div class="sizes">
+          L / XL / XXL
+        </div>
+
+        <div class="price">
+          599 جنيه
+        </div>
+
+        <a class="button" href="#contact">
+          اطلبي الآن
+        </a>
       </div>
 
-      <div class="info">
-        <h3>اسم المنتج</h3>
-        <div class="price">999 جنيه</div>
-        <a class="button" href="#contact">اطلبي الآن</a>
-      </div>
     </div>
 
   </div>
+
 </section>
 
 <!-- التواصل -->
 <footer id="contact">
   <p>Nazeeka Designs © 2026</p>
-  <p>للطلب والتواصل معنا 💌</p>
+  <p>للطلب والتواصل معنا</p>
 </footer>
 
 </body>
