@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>كنِ نزيكة | Nazeeka Designs</title>
+<title>Nazeeka Designs</title>
 
 <style>
 
@@ -111,6 +111,46 @@ button{
 }
 
 
+/* ================= SECTION PAGES ================= */
+
+.category-page{
+  display:none;
+
+  width:100%;
+  max-width:1000px;
+
+  margin:auto;
+
+  padding:40px 15px 70px;
+}
+
+.category-page.active{
+  display:block;
+}
+
+.category-heading{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.category-heading h1{
+  font-size:32px;
+}
+
+.category-heading p{
+  color:#777;
+  margin-top:5px;
+  font-size:17px;
+}
+
+.empty-category{
+  text-align:center;
+  color:#777;
+  padding:50px 15px;
+  font-size:18px;
+}
+
+
 /* ================= PRODUCTS ================= */
 
 .products{
@@ -125,6 +165,10 @@ button{
   gap:18px;
 
   padding:0 10px;
+}
+
+.category-page .products{
+  margin-top:0;
 }
 
 .product-card{
@@ -422,6 +466,10 @@ footer{
     margin-top:38px;
   }
 
+  .category-page .products{
+    margin-top:0;
+  }
+
   .product-card img{
     max-height:280px;
   }
@@ -511,12 +559,12 @@ footer{
     الرئيسية | Home
   </button>
 
-  <button onclick="goShop()">
-    تسوقي الآن | SHOP NOW
+  <button onclick="goClothing()">
+    الملابس | Clothing
   </button>
 
-  <button onclick="goContact()">
-    تواصل معنا | Contact
+  <button onclick="goHijabs()">
+    الطرح | Hijabs
   </button>
 
 </nav>
@@ -527,7 +575,7 @@ footer{
 <section id="home" class="home">
 
   <div class="brand">
-    كنِ نزيكة
+    نزيكة دزينز
   </div>
 
   <div class="brand-en">
@@ -536,16 +584,37 @@ footer{
 
   <button
     class="shop-now"
-    onclick="goShop()"
+    onclick="goClothing()"
   >
     SHOP NOW
   </button>
 
+</section>
 
-  <!-- ================= PRODUCTS ================= -->
 
-  <div id="products" class="products">
+<!-- ================================================= -->
+<!-- ================= CLOTHING PAGE ================= -->
+<!-- ================================================= -->
 
+<section
+  id="clothing"
+  class="category-page"
+>
+
+  <div class="category-heading">
+
+    <h1>
+      الملابس | Clothing
+    </h1>
+
+    <p>
+      Nazeeka Designs
+    </p>
+
+  </div>
+
+
+  <div class="products">
 
     <!-- ================= ZAHRA ================= -->
 
@@ -577,36 +646,36 @@ footer{
 
     </div>
 
+  </div>
 
-    <!-- ================= KEN NAZEEKA ================= -->
+</section>
 
-    <div
-      class="product-card"
-      onclick="openProduct('ken')"
-    >
 
-      <img
-        src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
-        alt="كنِ نزيكة"
-      >
+<!-- ================================================= -->
+<!-- ================= HIJABS PAGE =================== -->
+<!-- ================================================= -->
 
-      <div class="product-info">
+<section
+  id="hijabs"
+  class="category-page"
+>
 
-        <h2>
-          كنِ نزيكة
-        </h2>
+  <div class="category-heading">
 
-        <p>
-          Ken Nazeeka
-        </p>
+    <h1>
+      الطرح | Hijabs
+    </h1>
 
-        <div class="product-price">
-          599 EGP
-        </div>
+    <p>
+      Nazeeka Designs
+    </p>
 
-      </div>
+  </div>
 
-    </div>
+
+  <div class="empty-category">
+
+    الطرح قريبًا
 
   </div>
 
@@ -624,9 +693,9 @@ footer{
 
   <button
     class="back"
-    onclick="goHome()"
+    onclick="goClothing()"
   >
-    العودة للرئيسية
+    العودة للملابس
   </button>
 
 
@@ -770,166 +839,9 @@ footer{
 </section>
 
 
-<!-- ================================================= -->
-<!-- ================= KEN NAZEEKA =================== -->
-<!-- ================================================= -->
-
-<section
-  id="ken"
-  class="product-page"
->
-
-  <button
-    class="back"
-    onclick="goHome()"
-  >
-    العودة للرئيسية
-  </button>
-
-
-  <div class="product-heading">
-
-    <h1>
-      كنِ نزيكة
-    </h1>
-
-    <p>
-      Ken Nazeeka
-    </p>
-
-  </div>
-
-
-  <div class="gallery">
-
-    <img
-      src="621F3C2C-6D32-44AE-AA84-E94368B943E7.png"
-      alt="كنِ نزيكة"
-    >
-
-    <img
-      src="3384CB47-29AD-431C-96EB-95AF6F0416AB.png"
-      alt="كنِ نزيكة"
-    >
-
-    <img
-      src="70F43FE0-0B09-42AF-A461-CF039DC95B7D.png"
-      alt="كنِ نزيكة"
-    >
-
-  </div>
-
-
-  <div class="details">
-
-    <div class="details-price">
-      599 EGP
-    </div>
-
-    <div class="sizes">
-      L / XL / XXL
-    </div>
-
-    <button
-      class="order-btn"
-      onclick="openOrder('ken-order')"
-    >
-      اطلبي الآن
-    </button>
-
-  </div>
-
-
-  <div
-    id="ken-order"
-    class="order-form"
-  >
-
-    <h2>
-      بيانات الطلب
-    </h2>
-
-
-    <label>
-      الاسم
-    </label>
-
-    <input
-      id="ken-name"
-      type="text"
-      placeholder="اكتبي اسمك"
-    >
-
-
-    <label>
-      رقم الموبايل
-    </label>
-
-    <input
-      id="ken-phone"
-      type="tel"
-      placeholder="اكتبي رقم الموبايل"
-    >
-
-
-    <label>
-      المقاس
-    </label>
-
-    <select id="ken-size">
-
-      <option value="">
-        اختاري المقاس
-      </option>
-
-      <option value="L">
-        L
-      </option>
-
-      <option value="XL">
-        XL
-      </option>
-
-      <option value="XXL">
-        XXL
-      </option>
-
-    </select>
-
-
-    <label>
-      العنوان
-    </label>
-
-    <input
-      id="ken-address"
-      type="text"
-      placeholder="اكتبي العنوان بالتفصيل"
-    >
-
-
-    <button
-      class="send-order"
-      onclick="sendOrder(
-        'كنِ نزيكة',
-        '599',
-        'ken-name',
-        'ken-phone',
-        'ken-size',
-        'ken-address'
-      )"
-    >
-      إرسال الطلب على واتساب
-    </button>
-
-  </div>
-
-</section>
-
-
 <!-- ================= FOOTER ================= -->
 
-<footer id="contact">
+<footer>
 
   <div class="footer-title">
     نزيكة دزينز | Nazeeka Designs
@@ -950,19 +862,29 @@ footer{
 const whatsappNumber = "201029153023";
 
 
+/* ================= HIDE ALL PAGES ================= */
+
+function hideAllPages(){
+
+  document
+    .querySelectorAll(".category-page, .product-page")
+    .forEach(function(page){
+
+      page.classList.remove("active");
+      page.style.display = "none";
+
+    });
+
+}
+
+
 /* ================= HOME ================= */
 
 function goHome(){
 
+  hideAllPages();
+
   document.getElementById("home").style.display = "block";
-
-  document
-    .querySelectorAll(".product-page")
-    .forEach(function(page){
-
-      page.classList.remove("active");
-
-    });
 
   window.scrollTo({
     top:0,
@@ -972,42 +894,40 @@ function goHome(){
 }
 
 
-/* ================= SHOP ================= */
+/* ================= CLOTHING ================= */
 
-function goShop(){
+function goClothing(){
 
-  goHome();
+  hideAllPages();
 
-  setTimeout(function(){
+  document.getElementById("home").style.display = "none";
 
-    document
-      .getElementById("products")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"start"
-      });
+  document.getElementById("clothing").style.display = "block";
+  document.getElementById("clothing").classList.add("active");
 
-  },100);
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-/* ================= CONTACT ================= */
+/* ================= HIJABS ================= */
 
-function goContact(){
+function goHijabs(){
 
-  goHome();
+  hideAllPages();
 
-  setTimeout(function(){
+  document.getElementById("home").style.display = "none";
 
-    document
-      .getElementById("contact")
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-      });
+  document.getElementById("hijabs").style.display = "block";
+  document.getElementById("hijabs").classList.add("active");
 
-  },100);
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
@@ -1016,15 +936,13 @@ function goContact(){
 
 function openProduct(product){
 
+  hideAllPages();
+
   document.getElementById("home").style.display = "none";
 
   document
-    .querySelectorAll(".product-page")
-    .forEach(function(page){
-
-      page.classList.remove("active");
-
-    });
+    .getElementById(product)
+    .style.display = "block";
 
   document
     .getElementById(product)
