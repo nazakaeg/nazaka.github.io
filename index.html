@@ -56,8 +56,7 @@ button{
   justify-content:center;
   align-items:center;
 
-  gap:30px;
-  padding:16px 12px;
+  padding:15px 10px;
 
   position:relative;
   z-index:10;
@@ -69,9 +68,7 @@ button{
   color:#fff;
 
   font-size:16px;
-  white-space:nowrap;
-
-  padding:4px 6px;
+  padding:5px 15px;
 }
 
 .nav button:hover{
@@ -83,7 +80,7 @@ button{
 
 .home{
   text-align:center;
-  padding:40px 15px 70px;
+  padding:35px 15px 65px;
 }
 
 .brand{
@@ -97,17 +94,64 @@ button{
   margin-top:6px;
 }
 
-.shop-now{
-  margin-top:24px;
 
-  background:#14233d;
-  color:#fff;
+/* ================= CATEGORIES ================= */
 
-  border:0;
-  padding:13px 38px;
+.categories{
+  width:100%;
+  max-width:850px;
 
-  border-radius:5px;
-  font-size:16px;
+  margin:40px auto 0;
+
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:18px;
+
+  padding:0 10px;
+}
+
+.category-card{
+  background:#fff;
+
+  border:1px solid #eee;
+  border-radius:12px;
+
+  overflow:hidden;
+
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.category-card:active{
+  transform:scale(.98);
+}
+
+.category-card img{
+  width:100%;
+
+  aspect-ratio:4/5;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.category-info{
+  padding:14px 8px 17px;
+}
+
+.category-info h2{
+  font-size:20px;
+  margin-bottom:4px;
+}
+
+.category-info p{
+  color:#777;
+  font-size:15px;
 }
 
 
@@ -117,7 +161,7 @@ button{
   width:100%;
   max-width:680px;
 
-  margin:45px auto 0;
+  margin:35px auto 0;
 
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -190,7 +234,7 @@ button{
 
   margin:auto;
 
-  padding:25px 15px 70px;
+  padding:30px 15px 70px;
 }
 
 .category-page.active{
@@ -424,17 +468,15 @@ footer{
 @media(max-width:700px){
 
   .nav{
-    gap:10px;
     padding:14px 5px;
   }
 
   .nav button{
-    font-size:13px;
-    padding:3px 2px;
+    font-size:14px;
   }
 
   .home{
-    padding:35px 12px 60px;
+    padding:30px 10px 55px;
   }
 
   .brand{
@@ -445,21 +487,30 @@ footer{
     font-size:16px;
   }
 
-  .shop-now{
-    padding:12px 32px;
+  .categories{
+    gap:10px;
+    padding:0 6px;
+    margin-top:32px;
+  }
+
+  .category-info{
+    padding:11px 5px 14px;
+  }
+
+  .category-info h2{
     font-size:15px;
+  }
+
+  .category-info p{
+    font-size:11px;
   }
 
   .products{
     max-width:500px;
 
-    grid-template-columns:repeat(2,1fr);
-
     gap:10px;
 
     padding:0 8px;
-
-    margin-top:38px;
   }
 
   .product-card img{
@@ -506,12 +557,12 @@ footer{
 
 @media(max-width:380px){
 
-  .nav{
-    gap:5px;
+  .categories{
+    gap:7px;
   }
 
-  .nav button{
-    font-size:12px;
+  .category-info h2{
+    font-size:14px;
   }
 
   .products{
@@ -551,14 +602,6 @@ footer{
     Home
   </button>
 
-  <button onclick="goClothing()">
-    Clothing
-  </button>
-
-  <button onclick="goHijabs()">
-    Hijabs
-  </button>
-
 </nav>
 
 
@@ -574,17 +617,94 @@ footer{
     Nazeeka Designs
   </div>
 
-  <button
-    class="shop-now"
-    onclick="goClothing()"
-  >
-    SHOP NOW
-  </button>
+
+  <!-- ================= CATEGORIES ================= -->
+
+  <div class="categories">
 
 
-  <!-- ================= PRODUCTS ================= -->
+    <!-- ================= CLOTHING ================= -->
 
-  <div id="products" class="products">
+    <div
+      class="category-card"
+      onclick="goClothing()"
+    >
+
+      <img
+        src="1C352BF8-7C62-4F77-AA95-57DEF51969A8.png"
+        alt="Clothing"
+      >
+
+      <div class="category-info">
+
+        <h2>
+          CLOTHING
+        </h2>
+
+        <p>
+          ملابس
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= HIJAB ================= -->
+
+    <div
+      class="category-card"
+      onclick="goHijabs()"
+    >
+
+      <img
+        src="IMG_7317.jpeg"
+        alt="Hijab"
+      >
+
+      <div class="category-info">
+
+        <h2>
+          HIJAB
+        </h2>
+
+        <p>
+          حجاب
+        </p>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- ================================================= -->
+<!-- ================= CLOTHING PAGE ================= -->
+<!-- ================================================= -->
+
+<section
+  id="clothing"
+  class="category-page"
+>
+
+  <div class="category-heading">
+
+    <h1>
+      Clothing
+    </h1>
+
+    <p>
+      Nazeeka Designs
+    </p>
+
+  </div>
+
+
+  <div class="products">
 
 
     <!-- ================= ZAHRA ================= -->
@@ -617,62 +737,6 @@ footer{
 
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- ================================================= -->
-<!-- ================= CLOTHING PAGE ================= -->
-<!-- ================================================= -->
-
-<section
-  id="clothing"
-  class="category-page"
->
-
-  <div class="category-heading">
-
-    <h1>
-      Clothing
-    </h1>
-
-    <p>
-      Nazeeka Designs
-    </p>
-
-  </div>
-
-
-  <div class="products">
-
-    <div
-      class="product-card"
-      onclick="openProduct('zahra')"
-    >
-
-      <img
-        src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
-        alt="زهرة"
-      >
-
-      <div class="product-info">
-
-        <h2>
-          زهرة
-        </h2>
-
-        <p>
-          Zahra
-        </p>
-
-        <div class="product-price">
-          550 EGP
-        </div>
-
-      </div>
-
-    </div>
 
   </div>
 
@@ -680,7 +744,7 @@ footer{
 
 
 <!-- ================================================= -->
-<!-- ================= HIJABS PAGE =================== -->
+<!-- ================= HIJAB PAGE =================== -->
 <!-- ================================================= -->
 
 <section
@@ -691,7 +755,7 @@ footer{
   <div class="category-heading">
 
     <h1>
-      Hijabs
+      Hijab
     </h1>
 
     <p>
@@ -939,7 +1003,7 @@ function goClothing(){
 }
 
 
-/* ================= HIJABS ================= */
+/* ================= HIJAB ================= */
 
 function goHijabs(){
 
