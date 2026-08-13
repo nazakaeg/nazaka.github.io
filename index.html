@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Nazeeka Designs</title>
+<title>كنِ نزيكة | Nazeeka Designs</title>
 
 <style>
 
@@ -111,46 +111,6 @@ button{
 }
 
 
-/* ================= SECTION PAGES ================= */
-
-.category-page{
-  display:none;
-
-  width:100%;
-  max-width:1000px;
-
-  margin:auto;
-
-  padding:40px 15px 70px;
-}
-
-.category-page.active{
-  display:block;
-}
-
-.category-heading{
-  text-align:center;
-  margin-bottom:30px;
-}
-
-.category-heading h1{
-  font-size:32px;
-}
-
-.category-heading p{
-  color:#777;
-  margin-top:5px;
-  font-size:17px;
-}
-
-.empty-category{
-  text-align:center;
-  color:#777;
-  padding:50px 15px;
-  font-size:18px;
-}
-
-
 /* ================= PRODUCTS ================= */
 
 .products{
@@ -165,10 +125,6 @@ button{
   gap:18px;
 
   padding:0 10px;
-}
-
-.category-page .products{
-  margin-top:0;
 }
 
 .product-card{
@@ -221,6 +177,46 @@ button{
   font-size:16px;
   font-weight:bold;
   margin-top:7px;
+}
+
+
+/* ================= CATEGORY PAGE ================= */
+
+.category-page{
+  display:none;
+
+  width:100%;
+  max-width:1000px;
+
+  margin:auto;
+
+  padding:25px 15px 70px;
+}
+
+.category-page.active{
+  display:block;
+}
+
+.category-heading{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.category-heading h1{
+  font-size:32px;
+}
+
+.category-heading p{
+  color:#777;
+  margin-top:5px;
+  font-size:17px;
+}
+
+.empty-category{
+  text-align:center;
+  color:#777;
+  padding:40px 15px;
+  font-size:18px;
 }
 
 
@@ -466,10 +462,6 @@ footer{
     margin-top:38px;
   }
 
-  .category-page .products{
-    margin-top:0;
-  }
-
   .product-card img{
     max-height:280px;
   }
@@ -556,15 +548,15 @@ footer{
 <nav class="nav">
 
   <button onclick="goHome()">
-    الرئيسية | Home
+    Home
   </button>
 
   <button onclick="goClothing()">
-    الملابس | Clothing
+    Clothing
   </button>
 
   <button onclick="goHijabs()">
-    الطرح | Hijabs
+    Hijabs
   </button>
 
 </nav>
@@ -575,7 +567,7 @@ footer{
 <section id="home" class="home">
 
   <div class="brand">
-    نزيكة دزينز
+    كنِ نزيكة
   </div>
 
   <div class="brand-en">
@@ -588,6 +580,44 @@ footer{
   >
     SHOP NOW
   </button>
+
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <div id="products" class="products">
+
+
+    <!-- ================= ZAHRA ================= -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('zahra')"
+    >
+
+      <img
+        src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+        alt="زهرة"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          زهرة
+        </h2>
+
+        <p>
+          Zahra
+        </p>
+
+        <div class="product-price">
+          550 EGP
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 </section>
 
@@ -604,7 +634,7 @@ footer{
   <div class="category-heading">
 
     <h1>
-      الملابس | Clothing
+      Clothing
     </h1>
 
     <p>
@@ -615,8 +645,6 @@ footer{
 
 
   <div class="products">
-
-    <!-- ================= ZAHRA ================= -->
 
     <div
       class="product-card"
@@ -663,7 +691,7 @@ footer{
   <div class="category-heading">
 
     <h1>
-      الطرح | Hijabs
+      Hijabs
     </h1>
 
     <p>
@@ -672,11 +700,8 @@ footer{
 
   </div>
 
-
   <div class="empty-category">
-
-    الطرح قريبًا
-
+    Hijabs coming soon
   </div>
 
 </section>
@@ -841,7 +866,7 @@ footer{
 
 <!-- ================= FOOTER ================= -->
 
-<footer>
+<footer id="contact">
 
   <div class="footer-title">
     نزيكة دزينز | Nazeeka Designs
@@ -862,9 +887,11 @@ footer{
 const whatsappNumber = "201029153023";
 
 
-/* ================= HIDE ALL PAGES ================= */
+/* ================= HIDE ALL ================= */
 
-function hideAllPages(){
+function hideAll(){
+
+  document.getElementById("home").style.display = "none";
 
   document
     .querySelectorAll(".category-page, .product-page")
@@ -882,7 +909,7 @@ function hideAllPages(){
 
 function goHome(){
 
-  hideAllPages();
+  hideAll();
 
   document.getElementById("home").style.display = "block";
 
@@ -898,12 +925,11 @@ function goHome(){
 
 function goClothing(){
 
-  hideAllPages();
+  hideAll();
 
-  document.getElementById("home").style.display = "none";
-
-  document.getElementById("clothing").style.display = "block";
-  document.getElementById("clothing").classList.add("active");
+  document
+    .getElementById("clothing")
+    .classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -917,12 +943,11 @@ function goClothing(){
 
 function goHijabs(){
 
-  hideAllPages();
+  hideAll();
 
-  document.getElementById("home").style.display = "none";
-
-  document.getElementById("hijabs").style.display = "block";
-  document.getElementById("hijabs").classList.add("active");
+  document
+    .getElementById("hijabs")
+    .classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -936,13 +961,7 @@ function goHijabs(){
 
 function openProduct(product){
 
-  hideAllPages();
-
-  document.getElementById("home").style.display = "none";
-
-  document
-    .getElementById(product)
-    .style.display = "block";
+  hideAll();
 
   document
     .getElementById(product)
