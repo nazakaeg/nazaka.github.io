@@ -30,7 +30,7 @@ button{
   cursor:pointer;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
   width:100%;
@@ -43,16 +43,19 @@ button{
   display:block;
 }
 
-/* NAV */
+/* ================= NAV ================= */
 
 .nav{
   width:100%;
   background:#14233d;
   color:#fff;
+
   display:flex;
   justify-content:center;
   align-items:center;
+
   padding:15px 10px;
+
   position:relative;
   z-index:10;
 }
@@ -65,33 +68,72 @@ button{
   padding:5px 15px;
 }
 
-/* HOME */
+/* ================= HOME ================= */
 
 .home{
   text-align:center;
-  padding:35px 15px 65px;
+  padding:25px 10px 65px;
 }
+
+/* ================= FEATURED ================= */
+
+.featured{
+  width:100%;
+  max-width:420px;
+  margin:0 auto 25px;
+}
+
+.featured-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 4px 16px rgba(0,0,0,.06);
+  cursor:pointer;
+}
+
+.featured-card img{
+  width:100%;
+  aspect-ratio:4/5;
+  object-fit:cover;
+  display:block;
+}
+
+.featured-info{
+  padding:14px 10px 17px;
+}
+
+.featured-info h2{
+  font-size:23px;
+  margin-bottom:5px;
+}
+
+.featured-info p{
+  color:#777;
+  font-size:14px;
+}
+
+/* ================= BRAND ================= */
 
 .brand{
   font-size:34px;
   font-weight:bold;
+  margin-top:8px;
 }
 
-.brand-en{
-  color:#777;
-  font-size:18px;
-  margin-top:6px;
-}
-
-/* CATEGORIES */
+/* ================= CATEGORIES ================= */
 
 .categories{
   width:100%;
   max-width:850px;
-  margin:40px auto 0;
+
+  margin:35px auto 0;
+
   display:grid;
   grid-template-columns:repeat(2,1fr);
+
   gap:18px;
+
   padding:0 10px;
 }
 
@@ -130,15 +172,19 @@ button{
   font-size:15px;
 }
 
-/* PRODUCTS */
+/* ================= PRODUCTS ================= */
 
 .products{
   width:100%;
   max-width:680px;
+
   margin:35px auto 0;
+
   display:grid;
   grid-template-columns:repeat(2,1fr);
+
   gap:18px;
+
   padding:0 10px;
 }
 
@@ -149,17 +195,11 @@ button{
   background:#fff;
   box-shadow:0 4px 16px rgba(0,0,0,.06);
   cursor:pointer;
-  transition:.2s;
-}
-
-.product-card:active{
-  transform:scale(.98);
 }
 
 .product-card img{
   width:100%;
   aspect-ratio:4/5;
-  max-height:340px;
   object-fit:cover;
   display:block;
 }
@@ -185,13 +225,16 @@ button{
   margin-top:7px;
 }
 
-/* CATEGORY PAGE */
+/* ================= CATEGORY PAGE ================= */
 
 .category-page{
   display:none;
+
   width:100%;
   max-width:1000px;
+
   margin:auto;
+
   padding:30px 15px 70px;
 }
 
@@ -214,13 +257,16 @@ button{
   font-size:17px;
 }
 
-/* PRODUCT PAGE */
+/* ================= PRODUCT PAGE ================= */
 
 .product-page{
   display:none;
+
   width:100%;
   max-width:1000px;
+
   margin:auto;
+
   padding:25px 15px 70px;
 }
 
@@ -253,7 +299,7 @@ button{
   font-size:17px;
 }
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 
 .gallery{
   display:grid;
@@ -269,7 +315,7 @@ button{
   display:block;
 }
 
-/* DETAILS */
+/* ================= DETAILS ================= */
 
 .details{
   text-align:center;
@@ -296,15 +342,20 @@ button{
   font-size:16px;
 }
 
-/* ORDER FORM */
+/* ================= ORDER FORM ================= */
 
 .order-form{
   display:none;
+
   width:100%;
   max-width:600px;
+
   margin:20px auto;
+
   padding:22px;
+
   background:#f7f7f7;
+
   border-radius:10px;
 }
 
@@ -344,7 +395,7 @@ button{
   font-size:16px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
   background:#14233d;
@@ -363,7 +414,7 @@ footer{
   opacity:.9;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:700px){
 
@@ -376,21 +427,25 @@ footer{
   }
 
   .home{
-    padding:30px 10px 55px;
+    padding:22px 6px 55px;
+  }
+
+  .featured{
+    max-width:330px;
+  }
+
+  .featured-info h2{
+    font-size:20px;
   }
 
   .brand{
     font-size:29px;
   }
 
-  .brand-en{
-    font-size:16px;
-  }
-
   .categories{
     gap:10px;
     padding:0 6px;
-    margin-top:32px;
+    margin-top:30px;
   }
 
   .category-info{
@@ -409,10 +464,6 @@ footer{
     max-width:500px;
     gap:10px;
     padding:0 8px;
-  }
-
-  .product-card img{
-    max-height:280px;
   }
 
   .product-info{
@@ -444,10 +495,6 @@ footer{
     font-size:28px;
   }
 
-  .product-heading p{
-    font-size:15px;
-  }
-
 }
 
 @media(max-width:380px){
@@ -456,16 +503,8 @@ footer{
     gap:7px;
   }
 
-  .category-info h2{
-    font-size:14px;
-  }
-
   .products{
     gap:8px;
-  }
-
-  .product-card img{
-    max-height:245px;
   }
 
 }
@@ -473,9 +512,10 @@ footer{
 </style>
 </head>
 
+
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
@@ -487,7 +527,7 @@ footer{
 </header>
 
 
-<!-- NAV -->
+<!-- ================= NAV ================= -->
 
 <nav class="nav">
 
@@ -498,15 +538,53 @@ footer{
 </nav>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section id="home" class="home">
+
+
+  <!-- ================= FEATURED ITEM ================= -->
+
+  <div class="featured">
+
+    <div
+      class="featured-card"
+      onclick="openProduct('ken-nazeeka')"
+    >
+
+      <img
+        src="IMG_7330.jpeg"
+        alt="Ken Nazeeka"
+      >
+
+      <div class="featured-info">
+
+        <h2>
+          كنِ نزيكة
+        </h2>
+
+        <p>
+          Nazeeka Designs
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================= BRAND ================= -->
 
   <div class="brand">
     Nazeeka Designs
   </div>
 
+
+  <!-- ================= CATEGORIES ================= -->
+
   <div class="categories">
+
 
     <!-- CLOTHING -->
 
@@ -566,12 +644,9 @@ footer{
 </section>
 
 
-<!-- CLOTHING -->
+<!-- ================= CLOTHING ================= -->
 
-<section
-  id="clothing"
-  class="category-page"
->
+<section id="clothing" class="category-page">
 
   <div class="category-heading">
 
@@ -585,7 +660,11 @@ footer{
 
   </div>
 
+
   <div class="products">
+
+
+    <!-- ZAHRA -->
 
     <div
       class="product-card"
@@ -620,12 +699,9 @@ footer{
 </section>
 
 
-<!-- HIJAB -->
+<!-- ================= HIJAB ================= -->
 
-<section
-  id="hijabs"
-  class="category-page"
->
+<section id="hijabs" class="category-page">
 
   <div class="category-heading">
 
@@ -639,9 +715,11 @@ footer{
 
   </div>
 
+
   <div class="products">
 
-    <!-- THAI ITEM -->
+
+    <!-- THAI -->
 
     <div
       class="product-card"
@@ -671,17 +749,204 @@ footer{
 
     </div>
 
+
+    <!-- LINEN -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('modal-linen')"
+    >
+
+      <img
+        src="IMG_7352.jpeg"
+        alt="Modal Linen Cotton Soft"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          Modal Linen Cotton Soft
+        </h2>
+
+        <p>
+          Soft
+        </p>
+
+        <div class="product-price">
+          170 EGP
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- COLORED -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('modal-colored')"
+    >
+
+      <img
+        src="IMG_7341.jpeg"
+        alt="Modal Cotton Colored"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          Modal Cotton Colored
+        </h2>
+
+        <p>
+          Colored
+        </p>
+
+        <div class="product-price">
+          180 EGP
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 
 </section>
 
 
-<!-- ZAHRA -->
+<!-- ================= KEN NAZEEKA ================= -->
 
-<section
-  id="zahra"
-  class="product-page"
->
+<section id="ken-nazeeka" class="product-page">
+
+  <button
+    class="back"
+    onclick="goHome()"
+  >
+    Back to Home
+  </button>
+
+
+  <div class="product-heading">
+
+    <h1>
+      كنِ نزيكة
+    </h1>
+
+    <p>
+      Nazeeka Designs
+    </p>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <img src="IMG_7330.jpeg" alt="Ken Nazeeka">
+    <img src="IMG_7329.jpeg" alt="Ken Nazeeka">
+    <img src="IMG_7324.jpeg" alt="Ken Nazeeka">
+    <img src="IMG_7333.jpeg" alt="Ken Nazeeka">
+    <img src="IMG_7327.jpeg" alt="Ken Nazeeka">
+    <img src="IMG_7320.jpeg" alt="Ken Nazeeka">
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="details-price">
+      599 EGP
+    </div>
+
+    <div class="sizes">
+      L / XL / XXL
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('ken-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+
+  <div id="ken-order" class="order-form">
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>Name</label>
+
+    <input
+      id="ken-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>Phone</label>
+
+    <input
+      id="ken-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>Size</label>
+
+    <select id="ken-size">
+
+      <option value="">
+        Choose size
+      </option>
+
+      <option value="L">
+        L
+      </option>
+
+      <option value="XL">
+        XL
+      </option>
+
+      <option value="XXL">
+        XXL
+      </option>
+
+    </select>
+
+    <label>Address</label>
+
+    <input
+      id="ken-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendOrder(
+        'كنِ نزيكة',
+        '599',
+        'ken-name',
+        'ken-phone',
+        'ken-size',
+        'ken-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= ZAHRA ================= -->
+
+<section id="zahra" class="product-page">
 
   <button
     class="back"
@@ -689,6 +954,7 @@ footer{
   >
     Back to Clothing
   </button>
+
 
   <div class="product-heading">
 
@@ -701,6 +967,7 @@ footer{
     </p>
 
   </div>
+
 
   <div class="gallery">
 
@@ -721,6 +988,7 @@ footer{
 
   </div>
 
+
   <div class="details">
 
     <div class="details-price">
@@ -740,10 +1008,8 @@ footer{
 
   </div>
 
-  <div
-    id="zahra-order"
-    class="order-form"
-  >
+
+  <div id="zahra-order" class="order-form">
 
     <h2>
       Order Details
@@ -814,12 +1080,9 @@ footer{
 </section>
 
 
-<!-- THAI RUFFLED -->
+<!-- ================= THAI RUFFLED ================= -->
 
-<section
-  id="thai-ruffled"
-  class="product-page"
->
+<section id="thai-ruffled" class="product-page">
 
   <button
     class="back"
@@ -827,6 +1090,7 @@ footer{
   >
     Back to Hijab
   </button>
+
 
   <div class="product-heading">
 
@@ -840,41 +1104,18 @@ footer{
 
   </div>
 
-  <!-- الصور اللي بعتيها -->
 
   <div class="gallery">
 
-    <img
-      src="IMG_7330.jpeg"
-      alt="Original Thai Ruffled"
-    >
-
-    <img
-      src="IMG_7329.jpeg"
-      alt="Original Thai Ruffled"
-    >
-
-    <img
-      src="IMG_7324.jpeg"
-      alt="Original Thai Ruffled"
-    >
-
-    <img
-      src="IMG_7333.jpeg"
-      alt="Original Thai Ruffled"
-    >
-
-    <img
-      src="IMG_7327.jpeg"
-      alt="Original Thai Ruffled"
-    >
-
-    <img
-      src="IMG_7320.jpeg"
-      alt="Original Thai Ruffled"
-    >
+    <img src="IMG_7330.jpeg" alt="Original Thai Ruffled">
+    <img src="IMG_7329.jpeg" alt="Original Thai Ruffled">
+    <img src="IMG_7324.jpeg" alt="Original Thai Ruffled">
+    <img src="IMG_7333.jpeg" alt="Original Thai Ruffled">
+    <img src="IMG_7327.jpeg" alt="Original Thai Ruffled">
+    <img src="IMG_7320.jpeg" alt="Original Thai Ruffled">
 
   </div>
+
 
   <div class="details">
 
@@ -895,10 +1136,8 @@ footer{
 
   </div>
 
-  <div
-    id="thai-order"
-    class="order-form"
-  >
+
+  <div id="thai-order" class="order-form">
 
     <h2>
       Order Details
@@ -941,7 +1180,7 @@ footer{
     <button
       class="send-order"
       onclick="sendOrder(
-        'Original Thai Ruffled (The Best Seller)',
+        'Original Thai Ruffled',
         '290',
         'thai-name',
         'thai-phone',
@@ -957,7 +1196,242 @@ footer{
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= MODAL LINEN ================= -->
+
+<section id="modal-linen" class="product-page">
+
+  <button
+    class="back"
+    onclick="goHijabs()"
+  >
+    Back to Hijab
+  </button>
+
+
+  <div class="product-heading">
+
+    <h1>
+      Modal Linen Cotton Soft
+    </h1>
+
+    <p>
+      Soft
+    </p>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <img src="IMG_7352.jpeg" alt="Modal Linen Cotton Soft">
+    <img src="IMG_7353.jpeg" alt="Modal Linen Cotton Soft">
+    <img src="IMG_7350.jpeg" alt="Modal Linen Cotton Soft">
+    <img src="IMG_7354.jpeg" alt="Modal Linen Cotton Soft">
+    <img src="IMG_7351.jpeg" alt="Modal Linen Cotton Soft">
+    <img src="IMG_7348.jpeg" alt="Modal Linen Cotton Soft">
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="details-price">
+      170 EGP
+    </div>
+
+    <div class="sizes">
+      60 × 2 m
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('linen-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+
+  <div id="linen-order" class="order-form">
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>Name</label>
+
+    <input
+      id="linen-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>Phone</label>
+
+    <input
+      id="linen-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>Size</label>
+
+    <select id="linen-size">
+
+      <option value="60 × 2 m">
+        60 × 2 m
+      </option>
+
+    </select>
+
+    <label>Address</label>
+
+    <input
+      id="linen-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendOrder(
+        'Modal Linen Cotton Soft',
+        '170',
+        'linen-name',
+        'linen-phone',
+        'linen-size',
+        'linen-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= MODAL COLORED ================= -->
+
+<section id="modal-colored" class="product-page">
+
+  <button
+    class="back"
+    onclick="goHijabs()"
+  >
+    Back to Hijab
+  </button>
+
+
+  <div class="product-heading">
+
+    <h1>
+      Modal Cotton Colored
+    </h1>
+
+    <p>
+      Colored
+    </p>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <img src="IMG_7341.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7356.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7336.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7337.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7338.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7339.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7340.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7342.jpeg" alt="Modal Cotton Colored">
+    <img src="IMG_7343.jpeg" alt="Modal Cotton Colored">
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="details-price">
+      180 EGP
+    </div>
+
+    <div class="sizes">
+      60 × 2 m
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('colored-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+
+  <div id="colored-order" class="order-form">
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>Name</label>
+
+    <input
+      id="colored-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>Phone</label>
+
+    <input
+      id="colored-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>Size</label>
+
+    <select id="colored-size">
+
+      <option value="60 × 2 m">
+        60 × 2 m
+      </option>
+
+    </select>
+
+    <label>Address</label>
+
+    <input
+      id="colored-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendOrder(
+        'Modal Cotton Colored',
+        '180',
+        'colored-name',
+        'colored-phone',
+        'colored-size',
+        'colored-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1011,9 +1485,11 @@ function goClothing(){
 
   hideAll();
 
-  document
-    .getElementById("clothing")
-    .classList.add("active");
+  const page =
+    document.getElementById("clothing");
+
+  page.classList.add("active");
+  page.style.display = "block";
 
   window.scrollTo({
     top:0,
@@ -1027,9 +1503,11 @@ function goHijabs(){
 
   hideAll();
 
-  document
-    .getElementById("hijabs")
-    .classList.add("active");
+  const page =
+    document.getElementById("hijabs");
+
+  page.classList.add("active");
+  page.style.display = "block";
 
   window.scrollTo({
     top:0,
@@ -1043,9 +1521,15 @@ function openProduct(product){
 
   hideAll();
 
-  document
-    .getElementById(product)
-    .classList.add("active");
+  const page =
+    document.getElementById(product);
+
+  if(!page){
+    return;
+  }
+
+  page.classList.add("active");
+  page.style.display = "block";
 
   window.scrollTo({
     top:0,
@@ -1057,18 +1541,21 @@ function openProduct(product){
 
 function openOrder(id){
 
-  document
-    .getElementById(id)
-    .classList.add("active");
+  const form =
+    document.getElementById(id);
+
+  if(!form){
+    return;
+  }
+
+  form.classList.add("active");
 
   setTimeout(function(){
 
-    document
-      .getElementById(id)
-      .scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-      });
+    form.scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
 
   },100);
 
@@ -1085,27 +1572,24 @@ function sendOrder(
 ){
 
   const name =
-    document
-      .getElementById(nameId)
-      .value
-      .trim();
+    document.getElementById(nameId)
+    .value
+    .trim();
 
   const phone =
-    document
-      .getElementById(phoneId)
-      .value
-      .trim();
+    document.getElementById(phoneId)
+    .value
+    .trim();
 
   const size =
-    document
-      .getElementById(sizeId)
-      .value;
+    document.getElementById(sizeId)
+    .value;
 
   const address =
-    document
-      .getElementById(addressId)
-      .value
-      .trim();
+    document.getElementById(addressId)
+    .value
+    .trim();
+
 
   if(
     name === "" ||
@@ -1121,6 +1605,7 @@ function sendOrder(
     return;
 
   }
+
 
   const message =
 
@@ -1149,6 +1634,7 @@ function sendOrder(
     "Address: " +
     address;
 
+
   const whatsappLink =
 
     "https://wa.me/" +
@@ -1156,7 +1642,9 @@ function sendOrder(
     "?text=" +
     encodeURIComponent(message);
 
-  window.location.href = whatsappLink;
+
+  window.location.href =
+    whatsappLink;
 
 }
 
