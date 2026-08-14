@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 
 <head>
 <meta charset="UTF-8">
@@ -69,10 +69,6 @@ button{
   padding:5px 15px;
 }
 
-.nav button:hover{
-  opacity:.75;
-}
-
 /* ================= HOME ================= */
 
 .home{
@@ -128,11 +124,8 @@ button{
 
 .category-card img{
   width:100%;
-
   aspect-ratio:4/5;
-
   object-fit:cover;
-
   display:block;
 }
 
@@ -552,6 +545,7 @@ footer{
 </style>
 </head>
 
+
 <body>
 
 <!-- ================= HEADER ================= -->
@@ -565,6 +559,7 @@ footer{
 
 </header>
 
+
 <!-- ================= NAV ================= -->
 
 <nav class="nav">
@@ -575,17 +570,17 @@ footer{
 
 </nav>
 
+
 <!-- ================= HOME ================= -->
 
 <section id="home" class="home">
 
   <div class="brand">
-    كنِ نزيكة
-  </div>
-
-  <div class="brand-en">
     Nazeeka Designs
   </div>
+
+
+  <!-- ================= CATEGORIES ================= -->
 
   <div class="categories">
 
@@ -614,6 +609,7 @@ footer{
       </div>
 
     </div>
+
 
     <!-- HIJAB -->
 
@@ -645,6 +641,7 @@ footer{
 
 </section>
 
+
 <!-- ================= CLOTHING ================= -->
 
 <section
@@ -664,7 +661,9 @@ footer{
 
   </div>
 
+
   <div class="products">
+
 
     <!-- ZAHRA -->
 
@@ -700,6 +699,7 @@ footer{
 
 </section>
 
+
 <!-- ================= HIJAB ================= -->
 
 <section
@@ -719,9 +719,11 @@ footer{
 
   </div>
 
+
   <div class="products">
 
-    <!-- ================= ITEM 1 ================= -->
+
+    <!-- ITEM 1 -->
 
     <div
       class="product-card"
@@ -740,7 +742,7 @@ footer{
         </h2>
 
         <p>
-          Our Best Seller
+          The Best Seller
         </p>
 
         <div class="product-price">
@@ -751,7 +753,8 @@ footer{
 
     </div>
 
-    <!-- ================= ITEM 2 ================= -->
+
+    <!-- ITEM 2 -->
 
     <div
       class="product-card"
@@ -781,7 +784,8 @@ footer{
 
     </div>
 
-    <!-- ================= ITEM 3 ================= -->
+
+    <!-- ITEM 3 -->
 
     <div
       class="product-card"
@@ -815,6 +819,7 @@ footer{
 
 </section>
 
+
 <!-- ================= ZAHRA ================= -->
 
 <section
@@ -826,8 +831,9 @@ footer{
     class="back"
     onclick="goClothing()"
   >
-    العودة للملابس
+    Back to Clothing
   </button>
+
 
   <div class="product-heading">
 
@@ -840,6 +846,7 @@ footer{
     </p>
 
   </div>
+
 
   <div class="gallery">
 
@@ -860,6 +867,7 @@ footer{
 
   </div>
 
+
   <div class="details">
 
     <div class="details-price">
@@ -874,10 +882,11 @@ footer{
       class="order-btn"
       onclick="openOrder('zahra-order')"
     >
-      اطلبي الآن
+      Order Now
     </button>
 
   </div>
+
 
   <div
     id="zahra-order"
@@ -885,51 +894,63 @@ footer{
   >
 
     <h2>
-      بيانات الطلب
+      Order Details
     </h2>
 
-    <label>الاسم</label>
+    <label>Name</label>
 
     <input
       id="zahra-name"
       type="text"
-      placeholder="اكتبي اسمك"
+      placeholder="Enter your name"
     >
 
-    <label>رقم الموبايل</label>
+
+    <label>Phone</label>
 
     <input
       id="zahra-phone"
       type="tel"
-      placeholder="اكتبي رقم الموبايل"
+      placeholder="Enter your phone number"
     >
 
-    <label>المقاس</label>
+
+    <label>Size</label>
 
     <select id="zahra-size">
 
       <option value="">
-        اختاري المقاس
+        Choose size
       </option>
 
-      <option value="L">L</option>
-      <option value="XL">XL</option>
-      <option value="XXL">XXL</option>
+      <option value="L">
+        L
+      </option>
+
+      <option value="XL">
+        XL
+      </option>
+
+      <option value="XXL">
+        XXL
+      </option>
 
     </select>
 
-    <label>العنوان</label>
+
+    <label>Address</label>
 
     <input
       id="zahra-address"
       type="text"
-      placeholder="اكتبي العنوان بالتفصيل"
+      placeholder="Enter your address"
     >
+
 
     <button
       class="send-order"
       onclick="sendOrder(
-        'زهرة',
+        'Zahra',
         '550',
         'zahra-name',
         'zahra-phone',
@@ -937,14 +958,15 @@ footer{
         'zahra-address'
       )"
     >
-      إرسال الطلب على واتساب
+      Send Order on WhatsApp
     </button>
 
   </div>
 
 </section>
 
-<!-- ================= ITEM 1 PAGE ================= -->
+
+<!-- ================= THAI RUFFLED ================= -->
 
 <section
   id="thai-ruffled"
@@ -955,8 +977,9 @@ footer{
     class="back"
     onclick="goHijabs()"
   >
-    العودة للحجاب
+    Back to Hijab
   </button>
+
 
   <div class="product-heading">
 
@@ -965,10 +988,11 @@ footer{
     </h1>
 
     <p>
-      Our Best Seller
+      The Best Seller
     </p>
 
   </div>
+
 
   <div class="gallery">
 
@@ -981,6 +1005,7 @@ footer{
     <img src="IMG_7333.jpeg" alt="Original Thai Ruffled">
 
   </div>
+
 
   <div class="details">
 
@@ -996,10 +1021,11 @@ footer{
       class="order-btn"
       onclick="openOrder('thai-order')"
     >
-      اطلبي الآن
+      Order Now
     </button>
 
   </div>
+
 
   <div
     id="thai-order"
@@ -1007,26 +1033,28 @@ footer{
   >
 
     <h2>
-      بيانات الطلب
+      Order Details
     </h2>
 
-    <label>الاسم</label>
+    <label>Name</label>
 
     <input
       id="thai-name"
       type="text"
-      placeholder="اكتبي اسمك"
+      placeholder="Enter your name"
     >
 
-    <label>رقم الموبايل</label>
+
+    <label>Phone</label>
 
     <input
       id="thai-phone"
       type="tel"
-      placeholder="اكتبي رقم الموبايل"
+      placeholder="Enter your phone number"
     >
 
-    <label>المقاس</label>
+
+    <label>Size</label>
 
     <select id="thai-size">
 
@@ -1036,18 +1064,20 @@ footer{
 
     </select>
 
-    <label>العنوان</label>
+
+    <label>Address</label>
 
     <input
       id="thai-address"
       type="text"
-      placeholder="اكتبي العنوان بالتفصيل"
+      placeholder="Enter your address"
     >
+
 
     <button
       class="send-order"
       onclick="sendOrder(
-        'Original Thai Ruffled (Our Best Seller)',
+        'Original Thai Ruffled (The Best Seller)',
         '290',
         'thai-name',
         'thai-phone',
@@ -1055,14 +1085,15 @@ footer{
         'thai-address'
       )"
     >
-      إرسال الطلب على واتساب
+      Send Order on WhatsApp
     </button>
 
   </div>
 
 </section>
 
-<!-- ================= ITEM 2 PAGE ================= -->
+
+<!-- ================= MODAL LINEN ================= -->
 
 <section
   id="modal-linen"
@@ -1073,8 +1104,9 @@ footer{
     class="back"
     onclick="goHijabs()"
   >
-    العودة للحجاب
+    Back to Hijab
   </button>
+
 
   <div class="product-heading">
 
@@ -1088,6 +1120,7 @@ footer{
 
   </div>
 
+
   <div class="gallery">
 
     <img src="IMG_7352.jpeg" alt="Modal Linen Cotton Soft">
@@ -1098,6 +1131,7 @@ footer{
     <img src="IMG_7348.jpeg" alt="Modal Linen Cotton Soft">
 
   </div>
+
 
   <div class="details">
 
@@ -1113,10 +1147,11 @@ footer{
       class="order-btn"
       onclick="openOrder('linen-order')"
     >
-      اطلبي الآن
+      Order Now
     </button>
 
   </div>
+
 
   <div
     id="linen-order"
@@ -1124,26 +1159,28 @@ footer{
   >
 
     <h2>
-      بيانات الطلب
+      Order Details
     </h2>
 
-    <label>الاسم</label>
+    <label>Name</label>
 
     <input
       id="linen-name"
       type="text"
-      placeholder="اكتبي اسمك"
+      placeholder="Enter your name"
     >
 
-    <label>رقم الموبايل</label>
+
+    <label>Phone</label>
 
     <input
       id="linen-phone"
       type="tel"
-      placeholder="اكتبي رقم الموبايل"
+      placeholder="Enter your phone number"
     >
 
-    <label>المقاس</label>
+
+    <label>Size</label>
 
     <select id="linen-size">
 
@@ -1153,13 +1190,15 @@ footer{
 
     </select>
 
-    <label>العنوان</label>
+
+    <label>Address</label>
 
     <input
       id="linen-address"
       type="text"
-      placeholder="اكتبي العنوان بالتفصيل"
+      placeholder="Enter your address"
     >
+
 
     <button
       class="send-order"
@@ -1172,14 +1211,15 @@ footer{
         'linen-address'
       )"
     >
-      إرسال الطلب على واتساب
+      Send Order on WhatsApp
     </button>
 
   </div>
 
 </section>
 
-<!-- ================= ITEM 3 PAGE ================= -->
+
+<!-- ================= MODAL COLORED ================= -->
 
 <section
   id="modal-colored"
@@ -1190,8 +1230,9 @@ footer{
     class="back"
     onclick="goHijabs()"
   >
-    العودة للحجاب
+    Back to Hijab
   </button>
+
 
   <div class="product-heading">
 
@@ -1204,6 +1245,7 @@ footer{
     </p>
 
   </div>
+
 
   <div class="gallery">
 
@@ -1219,6 +1261,7 @@ footer{
 
   </div>
 
+
   <div class="details">
 
     <div class="details-price">
@@ -1233,10 +1276,11 @@ footer{
       class="order-btn"
       onclick="openOrder('colored-order')"
     >
-      اطلبي الآن
+      Order Now
     </button>
 
   </div>
+
 
   <div
     id="colored-order"
@@ -1244,26 +1288,28 @@ footer{
   >
 
     <h2>
-      بيانات الطلب
+      Order Details
     </h2>
 
-    <label>الاسم</label>
+    <label>Name</label>
 
     <input
       id="colored-name"
       type="text"
-      placeholder="اكتبي اسمك"
+      placeholder="Enter your name"
     >
 
-    <label>رقم الموبايل</label>
+
+    <label>Phone</label>
 
     <input
       id="colored-phone"
       type="tel"
-      placeholder="اكتبي رقم الموبايل"
+      placeholder="Enter your phone number"
     >
 
-    <label>المقاس</label>
+
+    <label>Size</label>
 
     <select id="colored-size">
 
@@ -1273,13 +1319,15 @@ footer{
 
     </select>
 
-    <label>العنوان</label>
+
+    <label>Address</label>
 
     <input
       id="colored-address"
       type="text"
-      placeholder="اكتبي العنوان بالتفصيل"
+      placeholder="Enter your address"
     >
+
 
     <button
       class="send-order"
@@ -1292,12 +1340,13 @@ footer{
         'colored-address'
       )"
     >
-      إرسال الطلب على واتساب
+      Send Order on WhatsApp
     </button>
 
   </div>
 
 </section>
+
 
 <!-- ================= FOOTER ================= -->
 
@@ -1308,16 +1357,18 @@ footer{
   </div>
 
   <div class="footer-contact">
-    للتواصل والطلبات
+    For orders and contact
   </div>
 
 </footer>
+
 
 <script>
 
 /* ================= WHATSAPP ================= */
 
 const whatsappNumber = "201029153023";
+
 
 /* ================= HIDE ALL ================= */
 
@@ -1336,6 +1387,7 @@ function hideAll(){
 
 }
 
+
 /* ================= HOME ================= */
 
 function goHome(){
@@ -1351,17 +1403,16 @@ function goHome(){
 
 }
 
+
 /* ================= CLOTHING ================= */
 
 function goClothing(){
 
   hideAll();
 
-  const page =
-    document.getElementById("clothing");
-
-  page.classList.add("active");
-  page.style.display = "block";
+  document
+    .getElementById("clothing")
+    .classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -1369,6 +1420,7 @@ function goClothing(){
   });
 
 }
+
 
 /* ================= HIJAB ================= */
 
@@ -1376,11 +1428,9 @@ function goHijabs(){
 
   hideAll();
 
-  const page =
-    document.getElementById("hijabs");
-
-  page.classList.add("active");
-  page.style.display = "block";
+  document
+    .getElementById("hijabs")
+    .classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -1388,6 +1438,7 @@ function goHijabs(){
   });
 
 }
+
 
 /* ================= OPEN PRODUCT ================= */
 
@@ -1395,11 +1446,9 @@ function openProduct(product){
 
   hideAll();
 
-  const page =
-    document.getElementById(product);
-
-  page.classList.add("active");
-  page.style.display = "block";
+  document
+    .getElementById(product)
+    .classList.add("active");
 
   window.scrollTo({
     top:0,
@@ -1408,25 +1457,28 @@ function openProduct(product){
 
 }
 
+
 /* ================= OPEN ORDER ================= */
 
 function openOrder(id){
 
-  const form =
-    document.getElementById(id);
-
-  form.classList.add("active");
+  document
+    .getElementById(id)
+    .classList.add("active");
 
   setTimeout(function(){
 
-    form.scrollIntoView({
-      behavior:"smooth",
-      block:"center"
-    });
+    document
+      .getElementById(id)
+      .scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+      });
 
   },100);
 
 }
+
 
 /* ================= SEND ORDER ================= */
 
@@ -1445,22 +1497,26 @@ function sendOrder(
       .value
       .trim();
 
+
   const phone =
     document
       .getElementById(phoneId)
       .value
       .trim();
 
+
   const size =
     document
       .getElementById(sizeId)
       .value;
+
 
   const address =
     document
       .getElementById(addressId)
       .value
       .trim();
+
 
   if(
     name === "" ||
@@ -1470,46 +1526,52 @@ function sendOrder(
   ){
 
     alert(
-      "من فضلك اكملي كل بيانات الطلب"
+      "Please complete all order details"
     );
 
     return;
 
   }
 
+
   const message =
 
-    "طلب جديد من Nazeeka Designs\n\n" +
+    "New Order from Nazeeka Designs\n\n" +
 
-    "القطعة: " +
+    "Product: " +
     product +
     "\n" +
 
-    "السعر: " +
+    "Price: " +
     price +
     " EGP\n" +
 
-    "المقاس: " +
+    "Size: " +
     size +
     "\n" +
 
-    "الاسم: " +
+    "Name: " +
     name +
     "\n" +
 
-    "رقم الموبايل: " +
+    "Phone: " +
     phone +
     "\n" +
 
-    "العنوان: " +
+    "Address: " +
     address;
+
 
   const whatsappLink =
 
     "https://wa.me/" +
+
     whatsappNumber +
+
     "?text=" +
+
     encodeURIComponent(message);
+
 
   window.location.href =
     whatsappLink;
