@@ -287,15 +287,25 @@ button{
 /* ================= GALLERY ================= */
 
 .gallery{
-  display:grid;
+  display:flex;
 
-  grid-template-columns:repeat(3,1fr);
+  justify-content:center;
+
+  align-items:center;
+
+  flex-wrap:wrap;
 
   gap:14px;
+
+  max-width:800px;
+
+  margin:0 auto;
 }
 
 .gallery img{
   width:100%;
+
+  max-width:250px;
 
   aspect-ratio:4/5;
 
@@ -304,6 +314,8 @@ button{
   border-radius:10px;
 
   display:block;
+
+  margin:auto;
 }
 
 /* ================= ZAHRA COLORS ================= */
@@ -548,11 +560,22 @@ footer{
 
   .gallery{
     grid-template-columns:1fr;
+
+    flex-direction:column;
+
     gap:12px;
+
+    max-width:100%;
   }
 
   .gallery img{
+    width:82%;
+
+    max-width:280px;
+
     aspect-ratio:auto;
+
+    margin:auto;
   }
 
   .product-heading h1{
@@ -620,7 +643,6 @@ footer{
 
 
   <div class="categories">
-
 
     <!-- CLOTHING -->
 
@@ -702,7 +724,6 @@ footer{
 
   <div class="products">
 
-
     <!-- ZAHRA -->
 
     <div
@@ -759,7 +780,6 @@ footer{
 
 
   <div class="products">
-
 
     <!-- THAI RUFFLED -->
 
@@ -886,22 +906,28 @@ footer{
   </div>
 
 
-  <div class="gallery">
+  <!-- ================= ZAHRA GALLERY ================= -->
+
+  <div
+    class="gallery"
+    id="zahra-gallery"
+  >
+
+    <!-- RED PHOTOS -->
 
     <img
-      id="zahra-main-image"
       src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
-      alt="Zahra"
+      alt="Zahra Red"
     >
 
     <img
       src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
-      alt="Zahra"
+      alt="Zahra Red"
     >
 
     <img
       src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
-      alt="Zahra"
+      alt="Zahra Red"
     >
 
   </div>
@@ -917,32 +943,29 @@ footer{
 
     <div class="zahra-color-options">
 
+      <!-- RED -->
+
       <button
         class="zahra-color zahra-red active"
-        onclick="changeZahraColor(
-          'D98746B7-79A5-48BF-90E9-8058295BDC23.png',
-          this
-        )"
+        onclick="changeZahraColor('red', this)"
         aria-label="Red"
       ></button>
 
 
+      <!-- LIGHT YELLOW -->
+
       <button
         class="zahra-color zahra-yellow"
-        onclick="changeZahraColor(
-          '9DACC447-BBE3-442B-A207-798EDC8CCA84.png',
-          this
-        )"
+        onclick="changeZahraColor('yellow', this)"
         aria-label="Light Yellow"
       ></button>
 
 
+      <!-- NAVY -->
+
       <button
         class="zahra-color zahra-navy"
-        onclick="changeZahraColor(
-          'E1E19592-7C79-4347-8BEF-260A193A2654.png',
-          this
-        )"
+        onclick="changeZahraColor('navy', this)"
         aria-label="Navy"
       ></button>
 
@@ -1552,26 +1575,99 @@ function openProduct(product){
 
 /* ================= ZAHRA COLORS ================= */
 
-function changeZahraColor(image, button){
+function changeZahraColor(color, button){
 
-  const mainImage =
-    document.getElementById("zahra-main-image");
+  const gallery =
+    document.getElementById("zahra-gallery");
 
-  if(!mainImage){
+  if(!gallery){
     return;
   }
 
-  mainImage.src = image;
+
+  /* REMOVE OLD IMAGES */
+
+  gallery.innerHTML = "";
+
+
+  /* RED */
+
+  if(color === "red"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
+        alt="Zahra Red"
+      >
+
+      <img
+        src="22B19411-75CA-479F-A1C1-EE8DC7493C20.png"
+        alt="Zahra Red"
+      >
+
+      <img
+        src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
+        alt="Zahra Red"
+      >
+
+    `;
+
+  }
+
+
+  /* LIGHT YELLOW */
+
+  if(color === "yellow"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="9DACC447-BBE3-442B-A207-798EDC8CCA84.png"
+        alt="Zahra Light Yellow"
+      >
+
+    `;
+
+  }
+
+
+  /* NAVY */
+
+  if(color === "navy"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="E1E19592-7C79-4347-8BEF-260A193A2654.png"
+        alt="Zahra Navy"
+      >
+
+    `;
+
+  }
+
+
+  /* ACTIVE COLOR */
 
   document
     .querySelectorAll(".zahra-color")
-    .forEach(function(color){
+    .forEach(function(colorButton){
 
-      color.classList.remove("active");
+      colorButton.classList.remove("active");
 
     });
 
+
   button.classList.add("active");
+
+
+  /* GO TO TOP OF ZAHRA GALLERY */
+
+  gallery.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
 
 }
 
