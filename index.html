@@ -306,6 +306,63 @@ button{
   display:block;
 }
 
+/* ================= ZAHRA COLORS ================= */
+
+.zahra-colors{
+  text-align:center;
+
+  padding:18px 10px 5px;
+}
+
+.zahra-colors-title{
+  font-size:17px;
+
+  font-weight:bold;
+
+  margin-bottom:12px;
+}
+
+.zahra-color-options{
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  gap:12px;
+}
+
+.zahra-color{
+  width:30px;
+  height:30px;
+
+  border-radius:50%;
+
+  border:2px solid #ddd;
+
+  padding:0;
+
+  transition:.2s;
+}
+
+.zahra-color.active{
+  border:3px solid #14233d;
+
+  transform:scale(1.12);
+}
+
+.zahra-red{
+  background:#b5121b;
+}
+
+.zahra-yellow{
+  background:#f4e7a1;
+}
+
+.zahra-navy{
+  background:#14233d;
+}
+
 /* ================= DETAILS ================= */
 
 .details{
@@ -557,14 +614,10 @@ footer{
 
 <section id="home" class="home">
 
-  <!-- ================= BRAND ================= -->
-
   <div class="brand">
     Nazeeka Designs
   </div>
 
-
-  <!-- ================= CATEGORIES ================= -->
 
   <div class="categories">
 
@@ -836,6 +889,7 @@ footer{
   <div class="gallery">
 
     <img
+      id="zahra-main-image"
       src="D98746B7-79A5-48BF-90E9-8058295BDC23.png"
       alt="Zahra"
     >
@@ -849,6 +903,50 @@ footer{
       src="3C04AD25-007D-4866-AEF3-1C9986EDEEA7.png"
       alt="Zahra"
     >
+
+  </div>
+
+
+  <!-- ================= ZAHRA COLORS ================= -->
+
+  <div class="zahra-colors">
+
+    <div class="zahra-colors-title">
+      Colors
+    </div>
+
+    <div class="zahra-color-options">
+
+      <button
+        class="zahra-color zahra-red active"
+        onclick="changeZahraColor(
+          'D98746B7-79A5-48BF-90E9-8058295BDC23.png',
+          this
+        )"
+        aria-label="Red"
+      ></button>
+
+
+      <button
+        class="zahra-color zahra-yellow"
+        onclick="changeZahraColor(
+          '9DACC447-BBE3-442B-A207-798EDC8CCA84.png',
+          this
+        )"
+        aria-label="Light Yellow"
+      ></button>
+
+
+      <button
+        class="zahra-color zahra-navy"
+        onclick="changeZahraColor(
+          'E1E19592-7C79-4347-8BEF-260A193A2654.png',
+          this
+        )"
+        aria-label="Navy"
+      ></button>
+
+    </div>
 
   </div>
 
@@ -1448,6 +1546,32 @@ function openProduct(product){
     top:0,
     behavior:"smooth"
   });
+
+}
+
+
+/* ================= ZAHRA COLORS ================= */
+
+function changeZahraColor(image, button){
+
+  const mainImage =
+    document.getElementById("zahra-main-image");
+
+  if(!mainImage){
+    return;
+  }
+
+  mainImage.src = image;
+
+  document
+    .querySelectorAll(".zahra-color")
+    .forEach(function(color){
+
+      color.classList.remove("active");
+
+    });
+
+  button.classList.add("active");
 
 }
 
