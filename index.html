@@ -176,11 +176,8 @@ button{
 
 .product-card img{
   width:100%;
-
   aspect-ratio:4/5;
-
   object-fit:cover;
-
   display:block;
 }
 
@@ -322,15 +319,12 @@ button{
 
 .zahra-colors{
   text-align:center;
-
   padding:18px 10px 5px;
 }
 
 .zahra-colors-title{
   font-size:17px;
-
   font-weight:bold;
-
   margin-bottom:12px;
 }
 
@@ -338,7 +332,6 @@ button{
   display:flex;
 
   justify-content:center;
-
   align-items:center;
 
   gap:12px;
@@ -359,7 +352,6 @@ button{
 
 .zahra-color.active{
   border:3px solid #14233d;
-
   transform:scale(1.12);
 }
 
@@ -379,7 +371,6 @@ button{
 
 .details{
   text-align:center;
-
   padding:25px 10px;
 }
 
@@ -559,22 +550,15 @@ footer{
   }
 
   .gallery{
-    grid-template-columns:1fr;
-
     flex-direction:column;
-
     gap:12px;
-
     max-width:100%;
   }
 
   .gallery img{
     width:82%;
-
     max-width:280px;
-
     aspect-ratio:auto;
-
     margin:auto;
   }
 
@@ -641,10 +625,7 @@ footer{
     Nazeeka Designs
   </div>
 
-
   <div class="categories">
-
-    <!-- CLOTHING -->
 
     <div
       class="category-card"
@@ -670,8 +651,6 @@ footer{
 
     </div>
 
-
-    <!-- HIJAB -->
 
     <div
       class="category-card"
@@ -723,8 +702,6 @@ footer{
 
 
   <div class="products">
-
-    <!-- ZAHRA -->
 
     <div
       class="product-card"
@@ -781,8 +758,6 @@ footer{
 
   <div class="products">
 
-    <!-- THAI RUFFLED -->
-
     <div
       class="product-card"
       onclick="openProduct('thai-ruffled')"
@@ -811,8 +786,6 @@ footer{
 
     </div>
 
-
-    <!-- MODAL LINEN -->
 
     <div
       class="product-card"
@@ -843,8 +816,6 @@ footer{
     </div>
 
 
-    <!-- MODAL COLORED -->
-
     <div
       class="product-card"
       onclick="openProduct('modal-colored')"
@@ -873,8 +844,6 @@ footer{
 
     </div>
 
-
-    <!-- BALACLAVA SUMMER -->
 
     <div
       class="product-card"
@@ -1549,7 +1518,6 @@ footer{
       placeholder="Enter your name"
     >
 
-
     <label>Phone</label>
 
     <input
@@ -1557,7 +1525,6 @@ footer{
       type="tel"
       placeholder="Enter your phone number"
     >
-
 
     <label>Size</label>
 
@@ -1573,7 +1540,6 @@ footer{
 
     </select>
 
-
     <label>Address</label>
 
     <input
@@ -1581,7 +1547,6 @@ footer{
       type="text"
       placeholder="Enter your address"
     >
-
 
     <button
       class="send-order"
@@ -1650,6 +1615,12 @@ function goHome(){
 
   document.getElementById("home").style.display = "block";
 
+  history.pushState(
+    null,
+    "",
+    window.location.pathname
+  );
+
   window.scrollTo({
     top:0,
     behavior:"smooth"
@@ -1700,7 +1671,7 @@ function goHijabs(){
 
 /* ================= OPEN PRODUCT ================= */
 
-function openProduct(product){
+function openProduct(product, updateUrl = true){
 
   hideAll();
 
@@ -1714,12 +1685,63 @@ function openProduct(product){
   page.classList.add("active");
   page.style.display = "block";
 
+  if(updateUrl){
+
+    history.pushState(
+      null,
+      "",
+      "#" + product
+    );
+
+  }
+
   window.scrollTo({
     top:0,
     behavior:"smooth"
   });
 
 }
+
+
+/* ================= OPEN PRODUCT FROM LINK ================= */
+
+function openProductFromLink(){
+
+  const product =
+    window.location.hash.replace("#","");
+
+  if(!product){
+
+    goHome();
+    return;
+
+  }
+
+  const page =
+    document.getElementById(product);
+
+  if(
+    page &&
+    page.classList.contains("product-page")
+  ){
+
+    openProduct(product, false);
+
+  }else{
+
+    goHome();
+
+  }
+
+}
+
+
+/* ================= BROWSER BACK / FORWARD ================= */
+
+window.addEventListener(
+  "popstate",
+  openProductFromLink
+);
 
 
 /* ================= ZAHRA COLORS ================= */
@@ -1732,7 +1754,6 @@ function changeZahraColor(color, button){
   if(!gallery){
     return;
   }
-
 
   gallery.innerHTML = "";
 
@@ -1924,6 +1945,18 @@ function sendOrder(
     whatsappLink;
 
 }
+
+
+/* ================= START WEBSITE ================= */
+
+window.addEventListener(
+  "DOMContentLoaded",
+  function(){
+
+    openProductFromLink();
+
+  }
+);
 
 </script>
 
