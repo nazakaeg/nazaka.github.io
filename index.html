@@ -317,18 +317,21 @@ button{
 
 /* ================= ZAHRA COLORS ================= */
 
-.zahra-colors{
+.zahra-colors,
+.shirt-colors{
   text-align:center;
   padding:18px 10px 5px;
 }
 
-.zahra-colors-title{
+.zahra-colors-title,
+.shirt-colors-title{
   font-size:17px;
   font-weight:bold;
   margin-bottom:12px;
 }
 
-.zahra-color-options{
+.zahra-color-options,
+.shirt-color-options{
   display:flex;
 
   justify-content:center;
@@ -337,7 +340,8 @@ button{
   gap:12px;
 }
 
-.zahra-color{
+.zahra-color,
+.shirt-color{
   width:30px;
   height:30px;
 
@@ -350,7 +354,8 @@ button{
   transition:.2s;
 }
 
-.zahra-color.active{
+.zahra-color.active,
+.shirt-color.active{
   border:3px solid #14233d;
   transform:scale(1.12);
 }
@@ -365,6 +370,20 @@ button{
 
 .zahra-navy{
   background:#14233d;
+}
+
+/* ================= SHIRT COLORS ================= */
+
+.shirt-navy{
+  background:#14233d;
+}
+
+.shirt-pink{
+  background:#e9a4b8;
+}
+
+.shirt-yellow{
+  background:#f4d84a;
 }
 
 /* ================= DETAILS ================= */
@@ -703,6 +722,8 @@ footer{
 
   <div class="products">
 
+    <!-- ZAHRA -->
+
     <div
       class="product-card"
       onclick="openProduct('zahra')"
@@ -725,6 +746,37 @@ footer{
 
         <div class="product-price">
           550 EGP
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- STRIPED T-SHIRT -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('striped-shirt')"
+    >
+
+      <img
+        src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+        alt="Striped T-Shirt"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          Striped T-Shirt
+        </h2>
+
+        <p>
+          Free Size
+        </p>
+
+        <div class="product-price">
+          570 EGP
         </div>
 
       </div>
@@ -758,13 +810,15 @@ footer{
 
   <div class="products">
 
+    <!-- THAI RUFFLED -->
+
     <div
       class="product-card"
       onclick="openProduct('thai-ruffled')"
     >
 
       <img
-        src="IMG_7330.jpeg"
+        src="IMG_7465.jpeg"
         alt="Original Thai Ruffled"
       >
 
@@ -786,6 +840,8 @@ footer{
 
     </div>
 
+
+    <!-- MODAL LINEN -->
 
     <div
       class="product-card"
@@ -816,6 +872,8 @@ footer{
     </div>
 
 
+    <!-- MODAL COLORED -->
+
     <div
       class="product-card"
       onclick="openProduct('modal-colored')"
@@ -844,6 +902,8 @@ footer{
 
     </div>
 
+
+    <!-- BALACLAVA -->
 
     <div
       class="product-card"
@@ -1054,6 +1114,167 @@ footer{
 </section>
 
 
+<!-- ================= STRIPED T-SHIRT ================= -->
+
+<section
+  id="striped-shirt"
+  class="product-page"
+>
+
+  <button
+    class="back"
+    onclick="goClothing()"
+  >
+    Back to Clothing
+  </button>
+
+
+  <div class="product-heading">
+
+    <h1>
+      Striped T-Shirt
+    </h1>
+
+    <p>
+      Free Size
+    </p>
+
+  </div>
+
+
+  <div
+    class="gallery"
+    id="striped-shirt-gallery"
+  >
+
+    <!-- NAVY - FIRST TWO -->
+
+    <img
+      src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+      alt="Striped T-Shirt Navy"
+    >
+
+    <img
+      src="ACF784DC-469F-4D8A-930A-4935ED8265AB.png"
+      alt="Striped T-Shirt Navy"
+    >
+
+  </div>
+
+
+  <div class="shirt-colors">
+
+    <div class="shirt-colors-title">
+      Colors
+    </div>
+
+    <div class="shirt-color-options">
+
+      <button
+        class="shirt-color shirt-navy active"
+        onclick="changeShirtColor('navy', this)"
+        aria-label="Navy"
+      ></button>
+
+      <button
+        class="shirt-color shirt-pink"
+        onclick="changeShirtColor('pink', this)"
+        aria-label="Pink"
+      ></button>
+
+      <button
+        class="shirt-color shirt-yellow"
+        onclick="changeShirtColor('yellow', this)"
+        aria-label="Yellow"
+      ></button>
+
+    </div>
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="details-price">
+      570 EGP
+    </div>
+
+    <div class="sizes">
+      Free Size
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('striped-shirt-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+
+  <div
+    id="striped-shirt-order"
+    class="order-form"
+  >
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>Name</label>
+
+    <input
+      id="striped-shirt-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>Phone</label>
+
+    <input
+      id="striped-shirt-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>Size</label>
+
+    <select id="striped-shirt-size">
+
+      <option value="Free Size">
+        Free Size
+      </option>
+
+    </select>
+
+    <label>Address</label>
+
+    <input
+      id="striped-shirt-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendOrder(
+        'Striped T-Shirt',
+        '570',
+        'striped-shirt-name',
+        'striped-shirt-phone',
+        'striped-shirt-size',
+        'striped-shirt-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+
 <!-- ================= THAI RUFFLED ================= -->
 
 <section
@@ -1084,12 +1305,42 @@ footer{
 
   <div class="gallery">
 
-    <img src="IMG_7330.jpeg" alt="Original Thai Ruffled">
-    <img src="IMG_7329.jpeg" alt="Original Thai Ruffled">
-    <img src="IMG_7324.jpeg" alt="Original Thai Ruffled">
-    <img src="IMG_7333.jpeg" alt="Original Thai Ruffled">
-    <img src="IMG_7327.jpeg" alt="Original Thai Ruffled">
-    <img src="IMG_7320.jpeg" alt="Original Thai Ruffled">
+    <!-- NEW FIRST IMAGE -->
+
+    <img
+      src="IMG_7465.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7330.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7329.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7324.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7333.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7327.jpeg"
+      alt="Original Thai Ruffled"
+    >
+
+    <img
+      src="IMG_7320.jpeg"
+      alt="Original Thai Ruffled"
+    >
 
   </div>
 
@@ -1708,30 +1959,28 @@ function openProduct(product, updateUrl = true){
 function openProductFromLink(){
 
   const product =
-    window.location.hash.replace("#","");
+    window.location.hash.substring(1);
 
   if(!product){
-
-    goHome();
     return;
-
   }
 
   const page =
     document.getElementById(product);
 
-  if(
-    page &&
-    page.classList.contains("product-page")
-  ){
-
-    openProduct(product, false);
-
-  }else{
-
-    goHome();
-
+  if(!page){
+    return;
   }
+
+  hideAll();
+
+  page.classList.add("active");
+  page.style.display = "block";
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
@@ -1739,7 +1988,7 @@ function openProductFromLink(){
 /* ================= BROWSER BACK / FORWARD ================= */
 
 window.addEventListener(
-  "popstate",
+  "hashchange",
   openProductFromLink
 );
 
@@ -1812,6 +2061,98 @@ function changeZahraColor(color, button){
 
   document
     .querySelectorAll(".zahra-color")
+    .forEach(function(colorButton){
+
+      colorButton.classList.remove("active");
+
+    });
+
+
+  button.classList.add("active");
+
+
+  gallery.scrollIntoView({
+    behavior:"smooth",
+    block:"center"
+  });
+
+}
+
+
+/* ================= STRIPED T-SHIRT COLORS ================= */
+
+function changeShirtColor(color, button){
+
+  const gallery =
+    document.getElementById("striped-shirt-gallery");
+
+  if(!gallery){
+    return;
+  }
+
+  gallery.innerHTML = "";
+
+
+  /* NAVY - FIRST TWO */
+
+  if(color === "navy"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+        alt="Striped T-Shirt Navy"
+      >
+
+      <img
+        src="ACF784DC-469F-4D8A-930A-4935ED8265AB.png"
+        alt="Striped T-Shirt Navy"
+      >
+
+    `;
+
+  }
+
+
+  /* PINK - SECOND TWO */
+
+  if(color === "pink"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="D33A284C-F8E9-4A27-BC83-F4F7C289AC26.png"
+        alt="Striped T-Shirt Pink"
+      >
+
+      <img
+        src="IMG_7466.jpeg"
+        alt="Striped T-Shirt Pink"
+      >
+
+    `;
+
+  }
+
+
+  /* YELLOW - LAST ONE */
+
+  if(color === "yellow"){
+
+    gallery.innerHTML = `
+
+      <img
+        src="IMG_7464.jpeg"
+        alt="Striped T-Shirt Yellow"
+      >
+
+    `;
+
+  }
+
+
+  document
+    .querySelectorAll(".shirt-color")
     .forEach(function(colorButton){
 
       colorButton.classList.remove("active");
@@ -1950,12 +2291,8 @@ function sendOrder(
 /* ================= START WEBSITE ================= */
 
 window.addEventListener(
-  "DOMContentLoaded",
-  function(){
-
-    openProductFromLink();
-
-  }
+  "load",
+  openProductFromLink
 );
 
 </script>
