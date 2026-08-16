@@ -49,13 +49,10 @@ button{
   width:100%;
   background:#14233d;
   color:#fff;
-
   display:flex;
   justify-content:center;
   align-items:center;
-
   padding:15px 10px;
-
   position:relative;
   z-index:10;
 }
@@ -88,29 +85,20 @@ button{
 .categories{
   width:100%;
   max-width:850px;
-
   margin:35px auto 0;
-
   display:grid;
   grid-template-columns:repeat(2,1fr);
-
   gap:18px;
-
   padding:0 10px;
 }
 
 .category-card{
   border:1px solid #eee;
   border-radius:12px;
-
   overflow:hidden;
-
   background:#fff;
-
   box-shadow:0 4px 16px rgba(0,0,0,.06);
-
   cursor:pointer;
-
   transition:.2s;
 }
 
@@ -144,29 +132,20 @@ button{
 .products{
   width:100%;
   max-width:680px;
-
   margin:35px auto 0;
-
   display:grid;
   grid-template-columns:repeat(2,1fr);
-
   gap:18px;
-
   padding:0 10px;
 }
 
 .product-card{
   border:1px solid #eee;
   border-radius:12px;
-
   overflow:hidden;
-
   background:#fff;
-
   box-shadow:0 4px 16px rgba(0,0,0,.06);
-
   cursor:pointer;
-
   transition:.2s;
 }
 
@@ -206,12 +185,9 @@ button{
 
 .category-page{
   display:none;
-
   width:100%;
   max-width:1000px;
-
   margin:auto;
-
   padding:30px 15px 70px;
 }
 
@@ -238,12 +214,9 @@ button{
 
 .product-page{
   display:none;
-
   width:100%;
   max-width:1000px;
-
   margin:auto;
-
   padding:25px 15px 70px;
 }
 
@@ -254,15 +227,10 @@ button{
 .back{
   background:#14233d;
   color:#fff;
-
   border:0;
-
   padding:10px 20px;
-
   border-radius:5px;
-
   margin-bottom:25px;
-
   font-size:15px;
 }
 
@@ -285,33 +253,21 @@ button{
 
 .gallery{
   display:flex;
-
   justify-content:center;
-
   align-items:center;
-
   flex-wrap:wrap;
-
   gap:14px;
-
   max-width:800px;
-
   margin:0 auto;
 }
 
 .gallery img{
   width:100%;
-
   max-width:250px;
-
   aspect-ratio:4/5;
-
   object-fit:cover;
-
   border-radius:10px;
-
   display:block;
-
   margin:auto;
 }
 
@@ -333,10 +289,8 @@ button{
 .zahra-color-options,
 .shirt-color-options{
   display:flex;
-
   justify-content:center;
   align-items:center;
-
   gap:12px;
 }
 
@@ -344,13 +298,9 @@ button{
 .shirt-color{
   width:30px;
   height:30px;
-
   border-radius:50%;
-
   border:2px solid #ddd;
-
   padding:0;
-
   transition:.2s;
 }
 
@@ -400,22 +350,16 @@ button{
 
 .sizes{
   color:#555;
-
   font-size:18px;
-
   margin:8px 0 20px;
 }
 
 .order-btn{
   background:#14233d;
   color:#fff;
-
   border:0;
-
   padding:13px 42px;
-
   border-radius:5px;
-
   font-size:16px;
 }
 
@@ -423,16 +367,11 @@ button{
 
 .order-form{
   display:none;
-
   width:100%;
   max-width:600px;
-
   margin:20px auto;
-
   padding:22px;
-
   background:#f7f7f7;
-
   border-radius:10px;
 }
 
@@ -447,42 +386,28 @@ button{
 
 .order-form label{
   display:block;
-
   font-weight:bold;
-
   margin:12px 0 6px;
 }
 
 .order-form input,
 .order-form select{
   width:100%;
-
   padding:12px;
-
   border:1px solid #ddd;
-
   border-radius:6px;
-
   background:#fff;
-
   font-family:inherit;
 }
 
 .send-order{
   width:100%;
-
   margin-top:20px;
-
   padding:14px;
-
   background:#14233d;
-
   color:#fff;
-
   border:0;
-
   border-radius:6px;
-
   font-size:16px;
 }
 
@@ -490,11 +415,8 @@ button{
 
 footer{
   background:#14233d;
-
   color:#fff;
-
   text-align:center;
-
   padding:25px;
 }
 
@@ -777,6 +699,37 @@ footer{
 
         <div class="product-price">
           570 EGP
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- 🌹 -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('rose-blouse')"
+    >
+
+      <img
+        src="C43C4A76-9689-43C2-AD32-1052EA614390.png"
+        alt="🌹"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          🌹
+        </h2>
+
+        <p>
+          بلوز بحزام لف كتان
+        </p>
+
+        <div class="product-price">
+          520 EGP
         </div>
 
       </div>
@@ -1147,8 +1100,6 @@ footer{
     id="striped-shirt-gallery"
   >
 
-    <!-- NAVY - FIRST TWO -->
-
     <img
       src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
       alt="Striped T-Shirt Navy"
@@ -1275,6 +1226,145 @@ footer{
 </section>
 
 
+<!-- ================= 🌹 ================= -->
+
+<section
+  id="rose-blouse"
+  class="product-page"
+>
+
+  <button
+    class="back"
+    onclick="goClothing()"
+  >
+    Back to Clothing
+  </button>
+
+
+  <div class="product-heading">
+
+    <h1>
+      🌹
+    </h1>
+
+    <p>
+      بلوز بحزام لف كتان
+    </p>
+
+  </div>
+
+
+  <div class="gallery">
+
+    <img
+      src="C43C4A76-9689-43C2-AD32-1052EA614390.png"
+      alt="🌹"
+    >
+
+    <img
+      src="39FE8399-2574-437A-9E10-93870AA15106.png"
+      alt="🌹"
+    >
+
+    <img
+      src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg"
+      alt="🌹"
+    >
+
+    <img
+      src="IMG_7725.jpeg"
+      alt="🌹"
+    >
+
+  </div>
+
+
+  <div class="details">
+
+    <div class="details-price">
+      520 EGP
+    </div>
+
+    <div class="sizes">
+      Free Size
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('rose-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+
+  <div
+    id="rose-order"
+    class="order-form"
+  >
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>Name</label>
+
+    <input
+      id="rose-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>Phone</label>
+
+    <input
+      id="rose-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>Size</label>
+
+    <select id="rose-size">
+
+      <option value="">
+        Choose size
+      </option>
+
+      <option value="Free Size">
+        Free Size
+      </option>
+
+    </select>
+
+    <label>Address</label>
+
+    <input
+      id="rose-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendOrder(
+        '🌹',
+        '520',
+        'rose-name',
+        'rose-phone',
+        'rose-size',
+        'rose-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+
 <!-- ================= THAI RUFFLED ================= -->
 
 <section
@@ -1304,8 +1394,6 @@ footer{
 
 
   <div class="gallery">
-
-    <!-- NEW FIRST IMAGE -->
 
     <img
       src="IMG_7465.jpeg"
@@ -2093,8 +2181,6 @@ function changeShirtColor(color, button){
   gallery.innerHTML = "";
 
 
-  /* NAVY - FIRST TWO */
-
   if(color === "navy"){
 
     gallery.innerHTML = `
@@ -2114,8 +2200,6 @@ function changeShirtColor(color, button){
   }
 
 
-  /* PINK - SECOND TWO */
-
   if(color === "pink"){
 
     gallery.innerHTML = `
@@ -2134,8 +2218,6 @@ function changeShirtColor(color, button){
 
   }
 
-
-  /* YELLOW - LAST ONE */
 
   if(color === "yellow"){
 
