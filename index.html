@@ -68,8 +68,13 @@ button{
 /* ================= HOME ================= */
 
 .home{
+  display:none;
   text-align:center;
   padding:35px 10px 65px;
+}
+
+.home.active{
+  display:block;
 }
 
 /* ================= BRAND ================= */
@@ -582,7 +587,7 @@ footer{
 
 <!-- ================= HOME ================= -->
 
-<section id="home" class="home">
+<section id="home" class="home active">
 
   <div class="brand">
     Nazeeka Designs
@@ -2269,6 +2274,8 @@ function openProductFromLink(){
 
   if(!hash){
 
+    hideAll();
+
     document
       .getElementById("home")
       .classList.add("active");
@@ -2287,6 +2294,8 @@ function openProductFromLink(){
 
   }else{
 
+    hideAll();
+
     document
       .getElementById("home")
       .classList.add("active");
@@ -2294,6 +2303,13 @@ function openProductFromLink(){
   }
 
 }
+
+/* ================= BROWSER BACK / FORWARD ================= */
+
+window.addEventListener(
+  "popstate",
+  openProductFromLink
+);
 
 window.addEventListener(
   "hashchange",
