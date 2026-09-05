@@ -151,7 +151,7 @@ a{
 .hero{
   min-height:calc(100vh - 113px);
   position:relative;
-  background-image:url("IMG_9917.jpeg");
+  background-image:url("IMG_9929.jpeg");
   background-size:cover;
   background-position:center center;
   display:flex;
@@ -413,6 +413,36 @@ a{
   text-transform:uppercase;
 }
 
+/* SMALL PRODUCT LINK */
+
+.item-link{
+  display:inline-flex;
+  align-items:center;
+  margin-top:15px;
+  padding-bottom:4px;
+  border-bottom:1px solid var(--line);
+  font-size:7px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  transition:.25s ease;
+}
+
+.item-link:hover{
+  color:var(--ink);
+  border-color:var(--ink);
+}
+
+.jeans-section .item-link{
+  color:#aaa69e;
+  border-color:#4a4944;
+}
+
+.jeans-section .item-link:hover{
+  color:white;
+  border-color:white;
+}
+
 /* EDITORIAL */
 
 .editorial{
@@ -520,11 +550,6 @@ a{
 }
 
 /* PRODUCT PAGE */
-
-/*
-  PRODUCT PAGES ARE OUTSIDE THE MAIN CONTENT.
-  When active, each product becomes a full-screen independent page.
-*/
 
 .product-page{
   display:none;
@@ -741,11 +766,6 @@ a{
 }
 
 /* ROUTING */
-
-/*
-  MAIN CONTENT DISAPPEARS COMPLETELY
-  WHEN A PRODUCT PAGE IS OPEN.
-*/
 
 #mainContent{
   display:block;
@@ -1065,6 +1085,13 @@ body.product-open .navbar{
     font-size:6px;
   }
 
+  .item-link{
+    margin-top:11px;
+    font-size:6px;
+    letter-spacing:1.7px;
+    padding-bottom:3px;
+  }
+
   .editorial{
     padding:0 5% 65px;
   }
@@ -1225,15 +1252,8 @@ body.product-open .navbar{
              alt="Clothing">
 
         <div class="category-info">
-
-          <div class="category-number">
-            01
-          </div>
-
-          <div class="category-name">
-            Clothing
-          </div>
-
+          <div class="category-number">01</div>
+          <div class="category-name">Clothing</div>
         </div>
 
       </div>
@@ -1247,15 +1267,8 @@ body.product-open .navbar{
              alt="Jeans">
 
         <div class="category-info">
-
-          <div class="category-number">
-            02
-          </div>
-
-          <div class="category-name">
-            Denim
-          </div>
-
+          <div class="category-number">02</div>
+          <div class="category-name">Denim</div>
         </div>
 
       </div>
@@ -1269,15 +1282,8 @@ body.product-open .navbar{
              alt="Hijabs">
 
         <div class="category-info">
-
-          <div class="category-number">
-            03
-          </div>
-
-          <div class="category-name">
-            Hijabs
-          </div>
-
+          <div class="category-number">03</div>
+          <div class="category-name">Hijabs</div>
         </div>
 
       </div>
@@ -1311,9 +1317,7 @@ body.product-open .navbar{
       <div class="product-card"
            onclick="openProduct('set')">
 
-        <div class="product-tag">
-          Set
-        </div>
+        <div class="product-tag">Set</div>
 
         <div class="product-image-wrap">
           <img src="IMG_9818.jpeg"
@@ -1331,16 +1335,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              1,200 EGP
-            </span>
-
-            <span class="sale-price">
-              960 EGP
-            </span>
-
+            <span class="old-price">1,200 EGP</span>
+            <span class="sale-price">960 EGP</span>
           </div>
+
+          <a href="#set"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1350,9 +1353,7 @@ body.product-open .navbar{
       <div class="product-card"
            onclick="openProduct('oversized')">
 
-        <div class="product-tag">
-          New
-        </div>
+        <div class="product-tag">New</div>
 
         <div class="product-image-wrap">
           <img src="IMG_9832.jpeg"
@@ -1370,16 +1371,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              550 EGP
-            </span>
-
-            <span class="sale-price">
-              470 EGP
-            </span>
-
+            <span class="old-price">550 EGP</span>
+            <span class="sale-price">470 EGP</span>
           </div>
+
+          <a href="#oversized"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1389,9 +1389,7 @@ body.product-open .navbar{
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
 
-        <div class="product-tag">
-          Denim
-        </div>
+        <div class="product-tag">Denim</div>
 
         <div class="product-image-wrap">
           <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
@@ -1409,16 +1407,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              750 EGP
-            </span>
-
-            <span class="sale-price">
-              580 EGP
-            </span>
-
+            <span class="old-price">750 EGP</span>
+            <span class="sale-price">580 EGP</span>
           </div>
+
+          <a href="#nesr"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1428,9 +1425,7 @@ body.product-open .navbar{
       <div class="product-card"
            onclick="openProduct('thai')">
 
-        <div class="product-tag">
-          Best Seller
-        </div>
+        <div class="product-tag">Best Seller</div>
 
         <div class="product-image-wrap">
           <img src="IMG_7465.jpeg"
@@ -1448,12 +1443,14 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              290 EGP
-            </span>
-
+            <span class="sale-price">290 EGP</span>
           </div>
+
+          <a href="#thai"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1536,25 +1533,22 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">
-            Set
-          </div>
+          <div class="product-category">Set</div>
 
           <div class="product-name">
             T-Shirt &amp; Pants Set
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              1,200 EGP
-            </span>
-
-            <span class="sale-price">
-              960 EGP
-            </span>
-
+            <span class="old-price">1,200 EGP</span>
+            <span class="sale-price">960 EGP</span>
           </div>
+
+          <a href="#set"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1571,25 +1565,22 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">
-            T-Shirt
-          </div>
+          <div class="product-category">T-Shirt</div>
 
           <div class="product-name">
             Striped Oversized T-Shirt
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              550 EGP
-            </span>
-
-            <span class="sale-price">
-              470 EGP
-            </span>
-
+            <span class="old-price">550 EGP</span>
+            <span class="sale-price">470 EGP</span>
           </div>
+
+          <a href="#oversized"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1606,25 +1597,22 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">
-            T-Shirt
-          </div>
+          <div class="product-category">T-Shirt</div>
 
           <div class="product-name">
             Striped T-Shirt
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              570 EGP
-            </span>
-
-            <span class="sale-price">
-              500 EGP
-            </span>
-
+            <span class="old-price">570 EGP</span>
+            <span class="sale-price">500 EGP</span>
           </div>
+
+          <a href="#striped"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1641,21 +1629,21 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">
-            Blouse
-          </div>
+          <div class="product-category">Blouse</div>
 
           <div class="product-name">
             Rose Blouse
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              520 EGP
-            </span>
-
+            <span class="sale-price">520 EGP</span>
           </div>
+
+          <a href="#rose"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1711,16 +1699,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              750 EGP
-            </span>
-
-            <span class="sale-price">
-              580 EGP
-            </span>
-
+            <span class="old-price">750 EGP</span>
+            <span class="sale-price">580 EGP</span>
           </div>
+
+          <a href="#nesr"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1746,16 +1733,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="old-price">
-              800 EGP
-            </span>
-
-            <span class="sale-price">
-              600 EGP
-            </span>
-
+            <span class="old-price">800 EGP</span>
+            <span class="sale-price">600 EGP</span>
           </div>
+
+          <a href="#wide"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1816,12 +1802,14 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              290 EGP
-            </span>
-
+            <span class="sale-price">290 EGP</span>
           </div>
+
+          <a href="#thai"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1847,12 +1835,14 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              170 EGP
-            </span>
-
+            <span class="sale-price">170 EGP</span>
           </div>
+
+          <a href="#linen"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1878,12 +1868,14 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              180 EGP
-            </span>
-
+            <span class="sale-price">180 EGP</span>
           </div>
+
+          <a href="#colored"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1909,12 +1901,14 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-
-            <span class="sale-price">
-              250 EGP
-            </span>
-
+            <span class="sale-price">250 EGP</span>
           </div>
+
+          <a href="#balaclava"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
 
         </div>
 
@@ -1951,25 +1945,10 @@ body.product-open .navbar{
         Navigate
       </div>
 
-      <a href="#home"
-         onclick="goHome()">
-        Home
-      </a>
-
-      <a href="#clothing"
-         onclick="goClothing()">
-        Clothing
-      </a>
-
-      <a href="#jeans"
-         onclick="goJeans()">
-        Jeans
-      </a>
-
-      <a href="#hijabs"
-         onclick="goHijabs()">
-        Hijabs
-      </a>
+      <a href="#home" onclick="goHome()">Home</a>
+      <a href="#clothing" onclick="goClothing()">Clothing</a>
+      <a href="#jeans" onclick="goJeans()">Jeans</a>
+      <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
 
     </div>
 
@@ -2049,9 +2028,7 @@ body.product-open .navbar{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">
-            1,200 EGP
-          </span>
+          <span class="old-price">1,200 EGP</span>
           &nbsp; 960 EGP
         </div>
 
@@ -2063,33 +2040,18 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              Free Size
-            </span>
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              T-Shirt
-            </span>
-
-            <span class="meta-value">
-              390 EGP
-            </span>
+            <span class="meta-label">T-Shirt</span>
+            <span class="meta-value">390 EGP</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Pants
-            </span>
-
-            <span class="meta-value">
-              590 EGP
-            </span>
+            <span class="meta-label">Pants</span>
+            <span class="meta-value">590 EGP</span>
           </div>
 
         </div>
@@ -2103,9 +2065,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendSetOrder();return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="set-name"
                  type="text"
@@ -2179,9 +2139,7 @@ body.product-open .navbar{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">
-            550 EGP
-          </span>
+          <span class="old-price">550 EGP</span>
           &nbsp; 470 EGP
         </div>
 
@@ -2193,13 +2151,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Fit
-            </span>
-
-            <span class="meta-value">
-              Oversized Fit
-            </span>
+            <span class="meta-label">Fit</span>
+            <span class="meta-value">Oversized Fit</span>
           </div>
 
         </div>
@@ -2213,9 +2166,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Striped Oversized T-Shirt','470','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="oversized-name"
                  type="text"
@@ -2295,9 +2246,7 @@ body.product-open .navbar{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">
-            570 EGP
-          </span>
+          <span class="old-price">570 EGP</span>
           &nbsp; 500 EGP
         </div>
 
@@ -2309,20 +2258,12 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              Free Size
-            </span>
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Color
-            </span>
-
+            <span class="meta-label">Color</span>
             <span class="meta-value"
                   id="selected-shirt-color">
               Navy
@@ -2359,9 +2300,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Striped T-Shirt','500','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="striped-shirt-name"
                  type="text"
@@ -2443,13 +2382,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              Free Size
-            </span>
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
           </div>
 
         </div>
@@ -2463,9 +2397,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Rose Blouse','520','rose-name','rose-phone','rose-size','rose-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="rose-name"
                  type="text"
@@ -2537,9 +2469,7 @@ body.product-open .navbar{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">
-            750 EGP
-          </span>
+          <span class="old-price">750 EGP</span>
           &nbsp; 580 EGP
         </div>
 
@@ -2551,30 +2481,17 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Sizes
-            </span>
-
-            <span class="meta-value">
-              36 / 38 / 40
-            </span>
+            <span class="meta-label">Sizes</span>
+            <span class="meta-value">36 / 38 / 40</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Fits
-            </span>
-
-            <span class="meta-value">
-              50–95 KG
-            </span>
+            <span class="meta-label">Fits</span>
+            <span class="meta-value">50–95 KG</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Color
-            </span>
-
+            <span class="meta-label">Color</span>
             <span class="meta-value">
               Light / Medium / Dirty
             </span>
@@ -2591,9 +2508,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendJeansOrder('Nesr Long Jeans','580','nesr-name','nesr-phone','nesr-size','nesr-color','nesr-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="nesr-name"
                  type="text"
@@ -2605,45 +2520,27 @@ body.product-open .navbar{
                  placeholder="Phone Number"
                  required>
 
-          <select id="nesr-size"
-                  required>
+          <select id="nesr-size" required>
 
             <option value="">
               Select Size
             </option>
 
-            <option>
-              36
-            </option>
-
-            <option>
-              38
-            </option>
-
-            <option>
-              40
-            </option>
+            <option>36</option>
+            <option>38</option>
+            <option>40</option>
 
           </select>
 
-          <select id="nesr-color"
-                  required>
+          <select id="nesr-color" required>
 
             <option value="">
               Select Color
             </option>
 
-            <option>
-              Light
-            </option>
-
-            <option>
-              Medium
-            </option>
-
-            <option>
-              Dirty
-            </option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dirty</option>
 
           </select>
 
@@ -2702,9 +2599,7 @@ body.product-open .navbar{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">
-            800 EGP
-          </span>
+          <span class="old-price">800 EGP</span>
           &nbsp; 600 EGP
         </div>
 
@@ -2715,30 +2610,17 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">
-              Sizes
-            </span>
-
-            <span class="meta-value">
-              36 / 38 / 40
-            </span>
+            <span class="meta-label">Sizes</span>
+            <span class="meta-value">36 / 38 / 40</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Fits
-            </span>
-
-            <span class="meta-value">
-              50–95 KG
-            </span>
+            <span class="meta-label">Fits</span>
+            <span class="meta-value">50–95 KG</span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">
-              Color
-            </span>
-
+            <span class="meta-label">Color</span>
             <span class="meta-value">
               Light / Medium / Dirty
             </span>
@@ -2755,9 +2637,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendJeansOrder('Wide Leg Fold Jeans','600','wide-name','wide-phone','wide-size','wide-color','wide-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="wide-name"
                  type="text"
@@ -2769,45 +2649,27 @@ body.product-open .navbar{
                  placeholder="Phone Number"
                  required>
 
-          <select id="wide-size"
-                  required>
+          <select id="wide-size" required>
 
             <option value="">
               Select Size
             </option>
 
-            <option>
-              36
-            </option>
-
-            <option>
-              38
-            </option>
-
-            <option>
-              40
-            </option>
+            <option>36</option>
+            <option>38</option>
+            <option>40</option>
 
           </select>
 
-          <select id="wide-color"
-                  required>
+          <select id="wide-color" required>
 
             <option value="">
               Select Color
             </option>
 
-            <option>
-              Light
-            </option>
-
-            <option>
-              Medium
-            </option>
-
-            <option>
-              Dirty
-            </option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dirty</option>
 
           </select>
 
@@ -2875,15 +2737,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              60 × 2 m
-            </span>
-
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
           </div>
 
         </div>
@@ -2897,9 +2752,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Original Thai Ruffled','290','thai-name','thai-phone','thai-size','thai-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="thai-name"
                  type="text"
@@ -2979,15 +2832,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              60 × 2 m
-            </span>
-
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
           </div>
 
         </div>
@@ -3001,9 +2847,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Modal Linen Cotton Soft','170','linen-name','linen-phone','linen-size','linen-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="linen-name"
                  type="text"
@@ -3086,15 +2930,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              60 × 2 m
-            </span>
-
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
           </div>
 
         </div>
@@ -3108,9 +2945,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Modal Cotton Colored','180','colored-name','colored-phone','colored-size','colored-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="colored-name"
                  type="text"
@@ -3189,15 +3024,8 @@ body.product-open .navbar{
         <div class="detail-meta">
 
           <div class="meta-row">
-
-            <span class="meta-label">
-              Size
-            </span>
-
-            <span class="meta-value">
-              Free Size
-            </span>
-
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
           </div>
 
         </div>
@@ -3211,9 +3039,7 @@ body.product-open .navbar{
               class="order-form"
               onsubmit="sendOrder('Balaclava Summer','250','balaclava-name','balaclava-phone','balaclava-size','balaclava-address');return false;">
 
-          <h3>
-            Order Details
-          </h3>
+          <h3>Order Details</h3>
 
           <input id="balaclava-name"
                  type="text"
@@ -3341,44 +3167,32 @@ function navigate(hash){
 
 
 function goHome(){
-
   navigate("home");
-
 }
 
 
 function goClothing(){
-
   navigate("clothing");
-
 }
 
 
 function goJeans(){
-
   navigate("jeans");
-
 }
 
 
 function goHijabs(){
-
   navigate("hijabs");
-
 }
 
 
 function openProduct(product){
-
   navigate(product);
-
 }
 
 
 function goBack(){
-
   navigate("home");
-
 }
 
 
@@ -3430,29 +3244,17 @@ function showProduct(product){
   }
 
 
-  /* Hide homepage completely */
-
   if(main){
     main.style.display = "none";
   }
 
 
-  /* Open product as independent full-screen page */
-
   document.body.classList.add("product-open");
-
 
   page.classList.add("active");
   page.classList.add("fade-in");
 
-
   closeMobileMenu();
-
-
-  /*
-    Force the WINDOW itself to the top.
-    The product page has its own scroll.
-  */
 
   document.documentElement.scrollTop = 0;
   document.body.scrollTop = 0;
@@ -3707,6 +3509,22 @@ function handleHash(){
       .trim();
 
 
+  const productAliases = {
+
+    set:"set",
+    oversized:"oversized",
+    striped:"striped-shirt",
+    rose:"rose",
+    nesr:"nesr-long-jeans",
+    wide:"wide-leg-jeans",
+    thai:"thai",
+    linen:"linen",
+    colored:"colored",
+    balaclava:"balaclava"
+
+  };
+
+
   const productNames = [
 
     "set",
@@ -3740,7 +3558,18 @@ function handleHash(){
   }
 
 
-  /* PRODUCTS */
+  /* SHORT PRODUCT LINKS */
+
+  if(productAliases[hash]){
+
+    showProduct(productAliases[hash]);
+
+    return;
+
+  }
+
+
+  /* FULL PRODUCT LINKS */
 
   if(productNames.includes(hash)){
 
@@ -3782,7 +3611,7 @@ function handleHash(){
 
   /* UNKNOWN HASH */
 
-  navigate("home");
+  window.location.hash = "home";
 
 }
 
