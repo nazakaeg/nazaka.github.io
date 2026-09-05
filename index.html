@@ -727,21 +727,23 @@ a{
 
 /* ROUTING */
 
-#home,
-#clothing,
-#jeans,
-#hijabs{
+/*
+  IMPORTANT FIX:
+  The entire homepage container is hidden when a product is open.
+  This prevents product pages from appearing underneath the homepage.
+*/
+
+#mainContent{
   display:block;
 }
 
-body.product-open #home,
-body.product-open #clothing,
-body.product-open #jeans,
-body.product-open #hijabs,
+body.product-open #mainContent{
+  display:none !important;
+}
+
 body.product-open .top-bar,
-body.product-open .navbar,
-body.product-open .footer{
-  display:none;
+body.product-open .navbar{
+  display:none !important;
 }
 
 /* FOOTER */
@@ -813,6 +815,7 @@ body.product-open .footer{
     opacity:0;
     transform:translateY(10px);
   }
+
   to{
     opacity:1;
     transform:translateY(0);
@@ -927,6 +930,7 @@ body.product-open .footer{
     grid-template-columns:1fr;
     gap:40px;
   }
+
 }
 
 @media(max-width:520px){
@@ -1085,6 +1089,7 @@ body.product-open .footer{
     flex-direction:column;
     gap:12px;
   }
+
 }
 
 </style>
@@ -1098,28 +1103,46 @@ body.product-open .footer{
 
 <nav class="navbar">
 
-  <a href="#home" class="logo" onclick="goHome()">
+  <a href="#home"
+     class="logo"
+     onclick="goHome()">
     Nazaka
     <span>Designs</span>
   </a>
 
   <div class="nav-links" id="navLinks">
 
-    <a href="#home" onclick="goHome()">Home</a>
+    <a href="#home"
+       onclick="goHome()">
+      Home
+    </a>
 
-    <a href="#clothing" onclick="goClothing()">Clothing</a>
+    <a href="#clothing"
+       onclick="goClothing()">
+      Clothing
+    </a>
 
-    <a href="#jeans" onclick="goJeans()">Jeans</a>
+    <a href="#jeans"
+       onclick="goJeans()">
+      Jeans
+    </a>
 
-    <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
+    <a href="#hijabs"
+       onclick="goHijabs()">
+      Hijabs
+    </a>
 
   </div>
 
-  <button class="menu-btn" onclick="toggleMobileMenu()">
+  <button class="menu-btn"
+          onclick="toggleMobileMenu()">
     ☰
   </button>
 
 </nav>
+
+
+<!-- MAIN HOME CONTENT -->
 
 <main id="mainContent">
 
@@ -1154,6 +1177,7 @@ body.product-open .footer{
 
   </div>
 
+
   <section class="section categories">
 
     <div class="section-head">
@@ -1179,7 +1203,8 @@ body.product-open .footer{
 
     <div class="category-grid">
 
-      <div class="category-card" onclick="goClothing()">
+      <div class="category-card"
+           onclick="goClothing()">
 
         <img class="category-image"
              src="IMG_9832.jpeg"
@@ -1199,7 +1224,9 @@ body.product-open .footer{
 
       </div>
 
-      <div class="category-card" onclick="goJeans()">
+
+      <div class="category-card"
+           onclick="goJeans()">
 
         <img class="category-image"
              src="IMG_9905.jpeg"
@@ -1219,7 +1246,9 @@ body.product-open .footer{
 
       </div>
 
-      <div class="category-card" onclick="goHijabs()">
+
+      <div class="category-card"
+           onclick="goHijabs()">
 
         <img class="category-image"
              src="IMG_7465.jpeg"
@@ -1243,6 +1272,7 @@ body.product-open .footer{
 
   </section>
 
+
   <section class="section featured">
 
     <div class="section-head">
@@ -1260,6 +1290,7 @@ body.product-open .footer{
       </div>
 
     </div>
+
 
     <div class="product-grid">
 
@@ -1286,13 +1317,19 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">1,200 EGP</span>
-            <span class="sale-price">960 EGP</span>
+            <span class="old-price">
+              1,200 EGP
+            </span>
+
+            <span class="sale-price">
+              960 EGP
+            </span>
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('oversized')">
@@ -1317,13 +1354,19 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
+            <span class="old-price">
+              550 EGP
+            </span>
+
+            <span class="sale-price">
+              470 EGP
+            </span>
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
@@ -1348,13 +1391,19 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">750 EGP</span>
-            <span class="sale-price">580 EGP</span>
+            <span class="old-price">
+              750 EGP
+            </span>
+
+            <span class="sale-price">
+              580 EGP
+            </span>
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('thai')">
@@ -1379,9 +1428,11 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
+
             <span class="sale-price">
               290 EGP
             </span>
+
           </div>
 
         </div>
@@ -1391,6 +1442,7 @@ body.product-open .footer{
     </div>
 
   </section>
+
 
   <section class="editorial">
 
@@ -1426,6 +1478,7 @@ body.product-open .footer{
 
   </section>
 
+
   <section id="clothing"
            class="section products-section">
 
@@ -1450,6 +1503,7 @@ body.product-open .footer{
 
     </div>
 
+
     <div class="product-grid">
 
       <div class="product-card"
@@ -1471,13 +1525,21 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">1,200 EGP</span>
-            <span class="sale-price">960 EGP</span>
+
+            <span class="old-price">
+              1,200 EGP
+            </span>
+
+            <span class="sale-price">
+              960 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('oversized')">
@@ -1498,13 +1560,21 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
+
+            <span class="old-price">
+              550 EGP
+            </span>
+
+            <span class="sale-price">
+              470 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('striped-shirt')">
@@ -1525,13 +1595,21 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">570 EGP</span>
-            <span class="sale-price">500 EGP</span>
+
+            <span class="old-price">
+              570 EGP
+            </span>
+
+            <span class="sale-price">
+              500 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('rose')">
@@ -1552,7 +1630,11 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">520 EGP</span>
+
+            <span class="sale-price">
+              520 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1562,6 +1644,7 @@ body.product-open .footer{
     </div>
 
   </section>
+
 
   <section id="jeans"
            class="section jeans-section">
@@ -1586,6 +1669,7 @@ body.product-open .footer{
 
     </div>
 
+
     <div class="product-grid">
 
       <div class="product-card"
@@ -1607,13 +1691,21 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">750 EGP</span>
-            <span class="sale-price">580 EGP</span>
+
+            <span class="old-price">
+              750 EGP
+            </span>
+
+            <span class="sale-price">
+              580 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('wide-leg-jeans')">
@@ -1634,8 +1726,15 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="old-price">800 EGP</span>
-            <span class="sale-price">600 EGP</span>
+
+            <span class="old-price">
+              800 EGP
+            </span>
+
+            <span class="sale-price">
+              600 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1645,6 +1744,7 @@ body.product-open .footer{
     </div>
 
   </section>
+
 
   <section id="hijabs"
            class="section hijab-section">
@@ -1669,6 +1769,7 @@ body.product-open .footer{
       </p>
 
     </div>
+
 
     <div class="product-grid">
 
@@ -1695,12 +1796,17 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">290 EGP</span>
+
+            <span class="sale-price">
+              290 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('linen')">
@@ -1721,12 +1827,17 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">170 EGP</span>
+
+            <span class="sale-price">
+              170 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('colored')">
@@ -1747,12 +1858,17 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">180 EGP</span>
+
+            <span class="sale-price">
+              180 EGP
+            </span>
+
           </div>
 
         </div>
 
       </div>
+
 
       <div class="product-card"
            onclick="openProduct('balaclava')">
@@ -1773,7 +1889,11 @@ body.product-open .footer{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">250 EGP</span>
+
+            <span class="sale-price">
+              250 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1785,6 +1905,7 @@ body.product-open .footer{
   </section>
 
 </section>
+
 
 <footer class="footer">
 
@@ -1803,18 +1924,35 @@ body.product-open .footer{
 
     </div>
 
+
     <div>
 
       <div class="footer-title">
         Navigate
       </div>
 
-      <a href="#home" onclick="goHome()">Home</a>
-      <a href="#clothing" onclick="goClothing()">Clothing</a>
-      <a href="#jeans" onclick="goJeans()">Jeans</a>
-      <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
+      <a href="#home"
+         onclick="goHome()">
+        Home
+      </a>
+
+      <a href="#clothing"
+         onclick="goClothing()">
+        Clothing
+      </a>
+
+      <a href="#jeans"
+         onclick="goJeans()">
+        Jeans
+      </a>
+
+      <a href="#hijabs"
+         onclick="goHijabs()">
+        Hijabs
+      </a>
 
     </div>
+
 
     <div>
 
@@ -1822,17 +1960,20 @@ body.product-open .footer{
         Connect
       </div>
 
-      <a href="https://instagram.com/" target="_blank">
+      <a href="https://instagram.com/"
+         target="_blank">
         Instagram
       </a>
 
-      <a href="https://wa.me/201029153023" target="_blank">
+      <a href="https://wa.me/201029153023"
+         target="_blank">
         WhatsApp
       </a>
 
     </div>
 
   </div>
+
 
   <div class="footer-bottom">
 
@@ -1853,11 +1994,13 @@ body.product-open .footer{
 
 <!-- PRODUCT SET -->
 
-<section id="product-set" class="product-page">
+<section id="product-set"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -1874,6 +2017,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -1886,7 +2030,9 @@ body.product-open .footer{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">1,200 EGP</span>
+          <span class="old-price">
+            1,200 EGP
+          </span>
           &nbsp; 960 EGP
         </div>
 
@@ -1898,32 +2044,51 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
+            <span class="meta-label">
+              Size
+            </span>
+
+            <span class="meta-value">
+              Free Size
+            </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">T-Shirt</span>
-            <span class="meta-value">390 EGP</span>
+            <span class="meta-label">
+              T-Shirt
+            </span>
+
+            <span class="meta-value">
+              390 EGP
+            </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Pants</span>
-            <span class="meta-value">590 EGP</span>
+            <span class="meta-label">
+              Pants
+            </span>
+
+            <span class="meta-value">
+              590 EGP
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('set-order')">
           Order Now
         </button>
 
+
         <form id="set-order"
               class="order-form"
               onsubmit="sendSetOrder();return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="set-name"
                  type="text"
@@ -1962,11 +2127,13 @@ body.product-open .footer{
 
 <!-- PRODUCT OVERSIZED -->
 
-<section id="product-oversized" class="product-page">
+<section id="product-oversized"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -1983,6 +2150,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -1995,7 +2163,9 @@ body.product-open .footer{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">550 EGP</span>
+          <span class="old-price">
+            550 EGP
+          </span>
           &nbsp; 470 EGP
         </div>
 
@@ -2007,22 +2177,31 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Fit</span>
-            <span class="meta-value">Oversized Fit</span>
+            <span class="meta-label">
+              Fit
+            </span>
+
+            <span class="meta-value">
+              Oversized Fit
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('oversized-order')">
           Order Now
         </button>
 
+
         <form id="oversized-order"
               class="order-form"
               onsubmit="sendOrder('Striped Oversized T-Shirt','470','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="oversized-name"
                  type="text"
@@ -2043,7 +2222,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2060,11 +2240,13 @@ body.product-open .footer{
 
 <!-- PRODUCT STRIPED -->
 
-<section id="product-striped-shirt" class="product-page">
+<section id="product-striped-shirt"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2087,6 +2269,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2099,7 +2282,9 @@ body.product-open .footer{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">570 EGP</span>
+          <span class="old-price">
+            570 EGP
+          </span>
           &nbsp; 500 EGP
         </div>
 
@@ -2111,12 +2296,20 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
+            <span class="meta-label">
+              Size
+            </span>
+
+            <span class="meta-value">
+              Free Size
+            </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Color</span>
+            <span class="meta-label">
+              Color
+            </span>
+
             <span class="meta-value"
                   id="selected-shirt-color">
               Navy
@@ -2124,6 +2317,7 @@ body.product-open .footer{
           </div>
 
         </div>
+
 
         <div class="color-buttons">
 
@@ -2144,16 +2338,20 @@ body.product-open .footer{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('striped-shirt-order')">
           Order Now
         </button>
 
+
         <form id="striped-shirt-order"
               class="order-form"
               onsubmit="sendOrder('Striped T-Shirt','500','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="striped-shirt-name"
                  type="text"
@@ -2174,7 +2372,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2191,11 +2390,13 @@ body.product-open .footer{
 
 <!-- PRODUCT ROSE -->
 
-<section id="product-rose" class="product-page">
+<section id="product-rose"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2209,6 +2410,7 @@ body.product-open .footer{
         <img src="IMG_7725.jpeg" alt="">
 
       </div>
+
 
       <div class="detail-info">
 
@@ -2232,22 +2434,31 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
+            <span class="meta-label">
+              Size
+            </span>
+
+            <span class="meta-value">
+              Free Size
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('rose-order')">
           Order Now
         </button>
 
+
         <form id="rose-order"
               class="order-form"
               onsubmit="sendOrder('Rose Blouse','520','rose-name','rose-phone','rose-size','rose-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="rose-name"
                  type="text"
@@ -2268,7 +2479,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2285,11 +2497,13 @@ body.product-open .footer{
 
 <!-- PRODUCT NESR -->
 
-<section id="product-nesr-long-jeans" class="product-page">
+<section id="product-nesr-long-jeans"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2304,6 +2518,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2316,7 +2531,9 @@ body.product-open .footer{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">750 EGP</span>
+          <span class="old-price">
+            750 EGP
+          </span>
           &nbsp; 580 EGP
         </div>
 
@@ -2328,17 +2545,30 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Sizes</span>
-            <span class="meta-value">36 / 38 / 40</span>
+            <span class="meta-label">
+              Sizes
+            </span>
+
+            <span class="meta-value">
+              36 / 38 / 40
+            </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Fits</span>
-            <span class="meta-value">50–95 KG</span>
+            <span class="meta-label">
+              Fits
+            </span>
+
+            <span class="meta-value">
+              50–95 KG
+            </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Color</span>
+            <span class="meta-label">
+              Color
+            </span>
+
             <span class="meta-value">
               Light / Medium / Dirty
             </span>
@@ -2346,16 +2576,20 @@ body.product-open .footer{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('nesr-jeans-order')">
           Order Now
         </button>
 
+
         <form id="nesr-jeans-order"
               class="order-form"
               onsubmit="sendJeansOrder('Nesr Long Jeans','580','nesr-name','nesr-phone','nesr-size','nesr-color','nesr-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="nesr-name"
                  type="text"
@@ -2367,25 +2601,57 @@ body.product-open .footer{
                  placeholder="Phone Number"
                  required>
 
-          <select id="nesr-size" required>
-            <option value="">Select Size</option>
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
+          <select id="nesr-size"
+                  required>
+
+            <option value="">
+              Select Size
+            </option>
+
+            <option>
+              36
+            </option>
+
+            <option>
+              38
+            </option>
+
+            <option>
+              40
+            </option>
+
           </select>
 
-          <select id="nesr-color" required>
-            <option value="">Select Color</option>
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
+
+          <select id="nesr-color"
+                  required>
+
+            <option value="">
+              Select Color
+            </option>
+
+            <option>
+              Light
+            </option>
+
+            <option>
+              Medium
+            </option>
+
+            <option>
+              Dirty
+            </option>
+
           </select>
+
 
           <textarea id="nesr-address"
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2402,11 +2668,13 @@ body.product-open .footer{
 
 <!-- PRODUCT WIDE LEG -->
 
-<section id="product-wide-leg-jeans" class="product-page">
+<section id="product-wide-leg-jeans"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2421,6 +2689,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2433,7 +2702,9 @@ body.product-open .footer{
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">800 EGP</span>
+          <span class="old-price">
+            800 EGP
+          </span>
           &nbsp; 600 EGP
         </div>
 
@@ -2444,21 +2715,30 @@ body.product-open .footer{
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Sizes</span>
+            <span class="meta-label">
+              Sizes
+            </span>
+
             <span class="meta-value">
               36 / 38 / 40
             </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Fits</span>
+            <span class="meta-label">
+              Fits
+            </span>
+
             <span class="meta-value">
               50–95 KG
             </span>
           </div>
 
           <div class="meta-row">
-            <span class="meta-label">Color</span>
+            <span class="meta-label">
+              Color
+            </span>
+
             <span class="meta-value">
               Light / Medium / Dirty
             </span>
@@ -2466,16 +2746,20 @@ body.product-open .footer{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('wide-leg-jeans-order')">
           Order Now
         </button>
 
+
         <form id="wide-leg-jeans-order"
               class="order-form"
               onsubmit="sendJeansOrder('Wide Leg Fold Jeans','600','wide-name','wide-phone','wide-size','wide-color','wide-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="wide-name"
                  type="text"
@@ -2487,25 +2771,57 @@ body.product-open .footer{
                  placeholder="Phone Number"
                  required>
 
-          <select id="wide-size" required>
-            <option value="">Select Size</option>
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
+          <select id="wide-size"
+                  required>
+
+            <option value="">
+              Select Size
+            </option>
+
+            <option>
+              36
+            </option>
+
+            <option>
+              38
+            </option>
+
+            <option>
+              40
+            </option>
+
           </select>
 
-          <select id="wide-color" required>
-            <option value="">Select Color</option>
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
+
+          <select id="wide-color"
+                  required>
+
+            <option value="">
+              Select Color
+            </option>
+
+            <option>
+              Light
+            </option>
+
+            <option>
+              Medium
+            </option>
+
+            <option>
+              Dirty
+            </option>
+
           </select>
+
 
           <textarea id="wide-address"
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2522,11 +2838,13 @@ body.product-open .footer{
 
 <!-- PRODUCT THAI -->
 
-<section id="product-thai" class="product-page">
+<section id="product-thai"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2544,6 +2862,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2559,27 +2878,37 @@ body.product-open .footer{
           290 EGP
         </div>
 
+
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
+
+            <span class="meta-label">
+              Size
+            </span>
+
             <span class="meta-value">
               60 × 2 m
             </span>
+
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('thai-order')">
           Order Now
         </button>
 
+
         <form id="thai-order"
               class="order-form"
               onsubmit="sendOrder('Original Thai Ruffled','290','thai-name','thai-phone','thai-size','thai-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="thai-name"
                  type="text"
@@ -2600,7 +2929,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2617,11 +2947,13 @@ body.product-open .footer{
 
 <!-- PRODUCT LINEN -->
 
-<section id="product-linen" class="product-page">
+<section id="product-linen"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2638,6 +2970,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2653,27 +2986,37 @@ body.product-open .footer{
           170 EGP
         </div>
 
+
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
+
+            <span class="meta-label">
+              Size
+            </span>
+
             <span class="meta-value">
               60 × 2 m
             </span>
+
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('linen-order')">
           Order Now
         </button>
 
+
         <form id="linen-order"
               class="order-form"
               onsubmit="sendOrder('Modal Linen Cotton Soft','170','linen-name','linen-phone','linen-size','linen-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="linen-name"
                  type="text"
@@ -2694,7 +3037,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2711,11 +3055,13 @@ body.product-open .footer{
 
 <!-- PRODUCT COLORED -->
 
-<section id="product-colored" class="product-page">
+<section id="product-colored"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2735,6 +3081,7 @@ body.product-open .footer{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2750,27 +3097,37 @@ body.product-open .footer{
           180 EGP
         </div>
 
+
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
+
+            <span class="meta-label">
+              Size
+            </span>
+
             <span class="meta-value">
               60 × 2 m
             </span>
+
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('colored-order')">
           Order Now
         </button>
 
+
         <form id="colored-order"
               class="order-form"
               onsubmit="sendOrder('Modal Cotton Colored','180','colored-name','colored-phone','colored-size','colored-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="colored-name"
                  type="text"
@@ -2791,7 +3148,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2808,11 +3166,13 @@ body.product-open .footer{
 
 <!-- PRODUCT BALACLAVA -->
 
-<section id="product-balaclava" class="product-page">
+<section id="product-balaclava"
+         class="product-page">
 
   <div class="product-detail">
 
-    <button class="back-btn" onclick="goBack()">
+    <button class="back-btn"
+            onclick="goBack()">
       ← Back to collection
     </button>
 
@@ -2827,6 +3187,7 @@ body.product-open .footer{
         <img src="IMG_7438.jpeg" alt="">
 
       </div>
+
 
       <div class="detail-info">
 
@@ -2843,27 +3204,37 @@ body.product-open .footer{
           250 EGP
         </div>
 
+
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
+
+            <span class="meta-label">
+              Size
+            </span>
+
             <span class="meta-value">
               Free Size
             </span>
+
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('balaclava-order')">
           Order Now
         </button>
 
+
         <form id="balaclava-order"
               class="order-form"
               onsubmit="sendOrder('Balaclava Summer','250','balaclava-name','balaclava-phone','balaclava-size','balaclava-address');return false;">
 
-          <h3>Order Details</h3>
+          <h3>
+            Order Details
+          </h3>
 
           <input id="balaclava-name"
                  type="text"
@@ -2884,7 +3255,8 @@ body.product-open .footer{
                     placeholder="Address"
                     required></textarea>
 
-          <button class="submit-order" type="submit">
+          <button class="submit-order"
+                  type="submit">
             Send Order via WhatsApp
           </button>
 
@@ -2908,7 +3280,8 @@ const whatsappNumber = "201029153023";
 
 function toggleMobileMenu(){
 
-  const menu = document.getElementById("navLinks");
+  const menu =
+    document.getElementById("navLinks");
 
   if(menu){
     menu.classList.toggle("open");
@@ -2919,7 +3292,8 @@ function toggleMobileMenu(){
 
 function closeMobileMenu(){
 
-  const menu = document.getElementById("navLinks");
+  const menu =
+    document.getElementById("navLinks");
 
   if(menu){
     menu.classList.remove("open");
@@ -2935,8 +3309,10 @@ function hideProducts(){
   document
     .querySelectorAll(".product-page")
     .forEach(page => {
+
       page.classList.remove("active");
       page.classList.remove("fade-in");
+
     });
 
   document.body.classList.remove("product-open");
@@ -2950,26 +3326,24 @@ function showMain(){
 
   hideProducts();
 
-  document
-    .querySelectorAll("#home,#clothing,#jeans,#hijabs")
-    .forEach(section => {
-      section.style.display = "block";
-    });
+  const main =
+    document.getElementById("mainContent");
+
+  if(main){
+    main.style.display = "block";
+  }
 
   closeMobileMenu();
 
 }
 
 
-/* IMPORTANT:
-   NAVIGATION FUNCTIONS ONLY CHANGE THE HASH.
-   THEY DO NOT CALL showMain() OR pushState().
-   This prevents the product page from jumping back to Home.
-*/
+/* NAVIGATION */
 
 function navigate(hash){
 
-  const newHash = "#" + hash;
+  const newHash =
+    "#" + hash;
 
   if(window.location.hash === newHash){
 
@@ -3034,7 +3408,8 @@ function showCategory(id){
 
   setTimeout(() => {
 
-    const section = document.getElementById(id);
+    const section =
+      document.getElementById(id);
 
     if(section){
 
@@ -3050,16 +3425,20 @@ function showCategory(id){
 }
 
 
-/* SHOW PRODUCT
-   DOES NOT CHANGE THE URL.
-*/
+/* SHOW PRODUCT */
 
 function showProduct(product){
 
   hideProducts();
 
+  const main =
+    document.getElementById("mainContent");
+
   const page =
-    document.getElementById("product-" + product);
+    document.getElementById(
+      "product-" + product
+    );
+
 
   if(!page){
 
@@ -3068,12 +3447,26 @@ function showProduct(product){
 
   }
 
+
+  /*
+    Hide the complete homepage first.
+    This is the main fix for the previous problem.
+  */
+
+  if(main){
+    main.style.display = "none";
+  }
+
+
   document.body.classList.add("product-open");
+
 
   page.classList.add("active");
   page.classList.add("fade-in");
 
+
   closeMobileMenu();
+
 
   window.scrollTo({
     top:0,
@@ -3121,6 +3514,7 @@ function sendOrder(
   const address =
     document.getElementById(addressId).value;
 
+
   const message =
 `Hello Nazaka,
 
@@ -3133,11 +3527,13 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
+
 
   window.open(url,"_blank");
 
@@ -3171,6 +3567,7 @@ function sendJeansOrder(
   const address =
     document.getElementById(addressId).value;
 
+
   const message =
 `Hello Nazaka,
 
@@ -3184,11 +3581,13 @@ Size: ${size}
 Color: ${color}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
+
 
   window.open(url,"_blank");
 
@@ -3211,6 +3610,7 @@ function sendSetOrder(){
   const address =
     document.getElementById("set-address").value;
 
+
   const message =
 `Hello Nazaka,
 
@@ -3223,11 +3623,13 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
+
 
   window.open(url,"_blank");
 
@@ -3247,15 +3649,18 @@ function changeShirtColor(color,button){
   const selected =
     document.getElementById("selected-shirt-color");
 
+
   document
     .querySelectorAll(".color-btn")
     .forEach(btn => {
       btn.classList.remove("active");
     });
 
+
   if(button){
     button.classList.add("active");
   }
+
 
   if(color === "navy"){
 
@@ -3270,6 +3675,7 @@ function changeShirtColor(color,button){
 
   }
 
+
   if(color === "pink"){
 
     image1.src =
@@ -3282,6 +3688,7 @@ function changeShirtColor(color,button){
       "Pink";
 
   }
+
 
   if(color === "yellow"){
 
@@ -3307,6 +3714,7 @@ function handleHash(){
     window.location.hash
       .replace("#","")
       .trim();
+
 
   const productNames = [
 
@@ -3388,9 +3796,7 @@ function handleHash(){
 }
 
 
-/* ONLY HASHCHANGE + LOAD
-   NO POPSTATE.
-*/
+/* HASH EVENTS */
 
 window.addEventListener(
   "hashchange",
