@@ -10,20 +10,19 @@
 <style>
 
 /* =========================================================
-   NAZAKA — BEIGE LUXURY / EDITORIAL
+   NAZAKA — GLOBAL LUXURY EDITORIAL
    ========================================================= */
 
 :root{
-  --ink:#191815;
-  --brown:#40372f;
-  --cream:#f4efe7;
-  --ivory:#fbf9f4;
-  --sand:#e5dbce;
-  --taupe:#b8aa99;
-  --muted:#756e65;
-  --line:#d9d0c4;
-  --white:#ffffff;
-  --sale:#8f302d;
+  --off:#FAF9F6;
+  --cream:#F3EFE7;
+  --soft:#E8E1D6;
+  --white:#FFFFFF;
+  --ink:#171714;
+  --muted:#77736C;
+  --line:#DDD8CF;
+  --olive:#3F4738;
+  --dark:#171714;
 }
 
 *{
@@ -37,10 +36,11 @@ html{
 }
 
 body{
-  font-family:Arial, Tahoma, sans-serif;
-  background:var(--ivory);
+  font-family:Arial, Helvetica, sans-serif;
+  background:var(--off);
   color:var(--ink);
   line-height:1.5;
+  overflow-x:hidden;
 }
 
 button,
@@ -66,66 +66,68 @@ a{
 
 
 /* =========================================================
-   TOP BAR
+   ANNOUNCEMENT
    ========================================================= */
 
 .top-bar{
+  height:31px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   background:var(--ink);
-  color:#f4eee5;
-  text-align:center;
-  padding:9px 15px;
-  font-size:10px;
+  color:var(--white);
+  font-size:8px;
   letter-spacing:3px;
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   NAVBAR
+   NAVIGATION
    ========================================================= */
 
 .navbar{
-  height:78px;
-  background:rgba(251,249,244,.97);
+  height:82px;
+  background:rgba(250,249,246,.96);
   border-bottom:1px solid var(--line);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 5%;
+  padding:0 5.5%;
   position:sticky;
   top:0;
   z-index:1000;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(18px);
 }
 
 .logo{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:25px;
-  letter-spacing:1px;
-  color:var(--ink);
+  font-size:28px;
+  line-height:1;
+  letter-spacing:-1px;
 }
 
 .logo span{
   display:block;
-  font-family:Arial,Tahoma,sans-serif;
-  font-size:8px;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:7px;
   letter-spacing:4px;
+  text-align:center;
   text-transform:uppercase;
-  margin-top:-2px;
+  margin-top:6px;
   color:var(--muted);
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:35px;
+  gap:40px;
 }
 
 .nav-links a{
-  font-size:11px;
-  letter-spacing:2px;
+  font-size:9px;
+  letter-spacing:2.5px;
   text-transform:uppercase;
-  color:var(--ink);
   position:relative;
 }
 
@@ -133,11 +135,11 @@ a{
   content:"";
   position:absolute;
   left:0;
-  bottom:-7px;
+  bottom:-8px;
   width:0;
   height:1px;
   background:var(--ink);
-  transition:.3s;
+  transition:.35s ease;
 }
 
 .nav-links a:hover:after{
@@ -146,9 +148,12 @@ a{
 
 .menu-btn{
   display:none;
-  background:none;
   border:0;
-  font-size:24px;
+  background:none;
+  width:30px;
+  height:30px;
+  font-size:22px;
+  line-height:1;
 }
 
 
@@ -157,11 +162,11 @@ a{
    ========================================================= */
 
 .hero{
-  min-height:calc(100vh - 78px);
+  min-height:calc(100vh - 113px);
   position:relative;
   background-image:url("IMG_9917.jpeg");
   background-size:cover;
-  background-position:center;
+  background-position:center center;
   display:flex;
   align-items:flex-end;
   overflow:hidden;
@@ -171,55 +176,62 @@ a{
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(20,17,14,.62),
-    rgba(20,17,14,.04) 65%
-  );
+  background:
+    linear-gradient(
+      to top,
+      rgba(15,14,12,.68) 0%,
+      rgba(15,14,12,.22) 42%,
+      rgba(15,14,12,0) 72%
+    );
 }
 
 .hero-content{
   position:relative;
   z-index:2;
   color:white;
-  padding:7vw 7%;
-  max-width:800px;
+  width:100%;
+  padding:8vw 7%;
 }
 
 .hero-kicker{
-  font-size:10px;
+  font-size:9px;
   letter-spacing:5px;
   text-transform:uppercase;
-  margin-bottom:20px;
+  margin-bottom:22px;
 }
 
 .hero-title{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(55px,9vw,125px);
-  line-height:.88;
+  font-size:clamp(58px,9.5vw,140px);
+  line-height:.82;
   font-weight:400;
-  letter-spacing:-5px;
+  letter-spacing:-7px;
+  max-width:850px;
 }
 
 .hero-subtitle{
-  font-size:13px;
-  letter-spacing:2px;
-  margin-top:27px;
-  max-width:430px;
-  color:#f0ebe4;
+  max-width:410px;
+  margin-top:30px;
+  font-size:12px;
+  line-height:1.8;
+  letter-spacing:1px;
+  color:#eeeae4;
 }
 
 .hero-btn{
   display:inline-flex;
+  align-items:center;
+  justify-content:center;
   margin-top:32px;
-  padding:15px 30px;
-  background:#f7f1e8;
+  min-width:180px;
+  padding:16px 25px;
+  background:var(--white);
   color:var(--ink);
-  font-size:10px;
-  letter-spacing:2px;
+  border:1px solid var(--white);
+  font-size:9px;
+  letter-spacing:2.5px;
   text-transform:uppercase;
-  border:1px solid #f7f1e8;
-  transition:.3s;
+  transition:.35s ease;
 }
 
 .hero-btn:hover{
@@ -229,47 +241,47 @@ a{
 
 
 /* =========================================================
-   GLOBAL
+   GLOBAL SECTIONS
    ========================================================= */
 
 .section{
-  padding:100px 6%;
+  padding:120px 6%;
 }
 
 .section-head{
   display:flex;
-  justify-content:space-between;
   align-items:flex-end;
-  gap:30px;
-  margin-bottom:42px;
+  justify-content:space-between;
+  gap:50px;
+  margin-bottom:55px;
 }
 
 .eyebrow{
-  font-size:9px;
+  font-size:8px;
   letter-spacing:4px;
   text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:13px;
+  margin-bottom:15px;
 }
 
 .section-title{
   font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
-  font-size:clamp(38px,5vw,68px);
-  line-height:.95;
-  letter-spacing:-2px;
+  font-size:clamp(44px,6vw,82px);
+  line-height:.9;
+  letter-spacing:-4px;
 }
 
 .section-description{
-  max-width:370px;
+  max-width:390px;
   color:var(--muted);
-  font-size:13px;
-  line-height:1.8;
+  font-size:12px;
+  line-height:1.9;
 }
 
 
 /* =========================================================
-   CATEGORY GRID
+   CATEGORY EDITORIAL
    ========================================================= */
 
 .categories{
@@ -279,14 +291,14 @@ a{
 .category-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:12px;
+  gap:8px;
 }
 
 .category-card{
+  height:650px;
   position:relative;
-  min-height:540px;
   overflow:hidden;
-  background:var(--sand);
+  background:var(--soft);
   cursor:pointer;
 }
 
@@ -296,236 +308,251 @@ a{
   inset:0;
   background:linear-gradient(
     to top,
-    rgba(20,17,14,.52),
-    transparent 55%
+    rgba(15,14,12,.58),
+    transparent 58%
   );
 }
 
-.category-card .category-image{
+.category-image{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .8s cubic-bezier(.2,.7,.2,1);
+  transition:transform 1s cubic-bezier(.2,.7,.2,1);
 }
 
 .category-card:hover .category-image{
-  transform:scale(1.045);
+  transform:scale(1.055);
 }
 
 .category-info{
   position:absolute;
   z-index:2;
-  left:30px;
-  bottom:28px;
+  left:32px;
+  right:32px;
+  bottom:32px;
   color:white;
 }
 
 .category-number{
-  font-size:9px;
+  font-size:8px;
   letter-spacing:3px;
-  opacity:.8;
+  margin-bottom:8px;
+  opacity:.75;
 }
 
 .category-name{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:34px;
-  margin-top:5px;
+  font-size:42px;
+  line-height:1;
 }
 
 
 /* =========================================================
-   FEATURED
+   PRODUCT GRID
    ========================================================= */
 
 .featured{
-  background:var(--ivory);
+  background:var(--off);
 }
 
 .product-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:18px;
+  gap:20px;
 }
 
 .product-card{
-  background:#f1ece4;
   position:relative;
-  overflow:hidden;
+  background:var(--white);
   cursor:pointer;
+  overflow:hidden;
 }
 
 .product-image-wrap{
+  position:relative;
   aspect-ratio:4/5;
   overflow:hidden;
-  background:#e9e2d8;
+  background:var(--soft);
 }
 
 .product-card img{
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:transform .6s ease;
+  transition:transform .7s cubic-bezier(.2,.7,.2,1);
 }
 
 .product-card:hover img{
-  transform:scale(1.035);
+  transform:scale(1.045);
 }
 
 .product-info{
-  padding:19px 3px 22px;
+  padding:18px 3px 25px;
 }
 
 .product-category{
-  font-size:8px;
+  font-size:7px;
   letter-spacing:3px;
   text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:8px;
+  margin-bottom:9px;
 }
 
 .product-name{
   font-family:Georgia,"Times New Roman",serif;
   font-size:20px;
+  line-height:1.15;
   font-weight:400;
 }
 
 .product-price{
-  margin-top:9px;
   display:flex;
-  gap:10px;
   align-items:center;
+  gap:9px;
+  margin-top:10px;
 }
 
 .old-price{
-  color:#9b958c;
+  color:#aaa59d;
   text-decoration:line-through;
-  font-size:11px;
+  font-size:10px;
 }
 
 .sale-price{
-  color:var(--ink);
-  font-size:13px;
+  font-size:12px;
 }
 
 .product-tag{
   position:absolute;
-  top:15px;
-  left:15px;
-  z-index:3;
+  z-index:5;
+  top:13px;
+  left:13px;
   padding:7px 10px;
-  background:rgba(251,249,244,.9);
-  font-size:8px;
+  background:rgba(250,249,246,.94);
+  font-size:7px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   EDITORIAL
+   EDITORIAL DENIM
    ========================================================= */
 
 .editorial{
-  padding:0 6% 100px;
+  padding:0 6% 120px;
 }
 
 .editorial-wrap{
-  min-height:580px;
+  min-height:650px;
   display:grid;
-  grid-template-columns:1.15fr .85fr;
-  background:var(--sand);
+  grid-template-columns:1.2fr .8fr;
 }
 
 .editorial-image{
-  min-height:580px;
+  min-height:650px;
   background-image:url("IMG_9862.jpeg");
   background-size:cover;
   background-position:center;
 }
 
 .editorial-copy{
+  background:var(--olive);
+  color:var(--white);
+  padding:80px;
   display:flex;
   justify-content:center;
   flex-direction:column;
-  padding:70px;
-  background:var(--brown);
-  color:#f5eee5;
 }
 
 .editorial-copy .eyebrow{
-  color:#c8bbab;
+  color:#c5c8bd;
 }
 
 .editorial-copy h2{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:clamp(42px,5vw,70px);
-  line-height:.95;
+  font-size:clamp(48px,5vw,76px);
   font-weight:400;
-  letter-spacing:-2px;
+  line-height:.9;
+  letter-spacing:-4px;
 }
 
 .editorial-copy p{
-  color:#d7cdc0;
-  font-size:13px;
+  max-width:390px;
+  margin-top:28px;
+  color:#d9dbd4;
+  font-size:12px;
   line-height:1.9;
-  margin-top:25px;
-  max-width:400px;
 }
 
 .editorial-btn{
-  margin-top:30px;
   width:max-content;
-  padding:14px 25px;
-  border:1px solid #cbbfaf;
-  font-size:9px;
-  letter-spacing:2px;
+  margin-top:32px;
+  padding:15px 25px;
+  border:1px solid rgba(255,255,255,.6);
+  font-size:8px;
+  letter-spacing:2.5px;
   text-transform:uppercase;
+  transition:.3s;
+}
+
+.editorial-btn:hover{
+  background:white;
+  color:var(--olive);
 }
 
 
 /* =========================================================
-   PRODUCT SECTIONS
+   CLOTHING
    ========================================================= */
 
 .products-section{
-  background:var(--ivory);
+  background:var(--off);
 }
+
+
+/* =========================================================
+   DENIM
+   ========================================================= */
 
 .jeans-section{
   background:var(--ink);
-  color:#f6f0e8;
+  color:var(--white);
 }
 
 .jeans-section .eyebrow{
-  color:#aaa097;
+  color:#96938c;
 }
 
 .jeans-section .section-description{
-  color:#aaa097;
+  color:#aaa69e;
 }
 
 .jeans-section .product-card{
-  background:#282622;
+  background:#22221f;
 }
 
 .jeans-section .product-category{
-  color:#a9a097;
+  color:#96938c;
 }
 
-.jeans-section .product-name{
-  color:#f6f0e8;
-}
-
+.jeans-section .product-name,
 .jeans-section .sale-price{
-  color:#f6f0e8;
-}
-
-.jeans-section .old-price{
-  color:#77716b;
+  color:white;
 }
 
 .jeans-section .product-image-wrap{
-  background:#242320;
+  background:#292925;
 }
+
+.jeans-section .old-price{
+  color:#706d67;
+}
+
+
+/* =========================================================
+   HIJABS
+   ========================================================= */
 
 .hijab-section{
   background:var(--cream);
@@ -538,8 +565,8 @@ a{
 
 .product-page{
   display:none;
-  background:var(--ivory);
   min-height:100vh;
+  background:var(--off);
 }
 
 .product-page.active{
@@ -547,73 +574,78 @@ a{
 }
 
 .product-detail{
-  padding:55px 6% 100px;
+  padding:42px 6% 120px;
 }
 
 .back-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
   border:0;
   background:none;
-  font-size:9px;
-  letter-spacing:2px;
-  text-transform:uppercase;
   color:var(--muted);
-  margin-bottom:35px;
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-bottom:42px;
+  font-size:8px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+.back-btn:hover{
+  color:var(--ink);
 }
 
 .detail-grid{
   display:grid;
-  grid-template-columns:1.3fr .7fr;
-  gap:65px;
+  grid-template-columns:1.35fr .65fr;
+  gap:70px;
   align-items:start;
 }
 
 .gallery{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:10px;
+  gap:9px;
 }
 
 .gallery img{
   width:100%;
   aspect-ratio:4/5;
   object-fit:cover;
-  background:#eee7dd;
+  background:var(--soft);
 }
 
 .detail-info{
   position:sticky;
-  top:110px;
+  top:120px;
+  padding-top:15px;
 }
 
 .detail-category{
-  font-size:9px;
+  color:var(--muted);
+  font-size:8px;
   letter-spacing:4px;
   text-transform:uppercase;
-  color:var(--muted);
-  margin-bottom:15px;
+  margin-bottom:18px;
 }
 
 .detail-title{
   font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(45px,5vw,72px);
   font-weight:400;
-  font-size:clamp(40px,5vw,65px);
-  line-height:.95;
-  letter-spacing:-2px;
+  line-height:.9;
+  letter-spacing:-4px;
 }
 
 .detail-price{
-  margin-top:22px;
-  font-size:18px;
+  font-size:17px;
+  margin-top:25px;
 }
 
 .detail-description{
-  margin-top:25px;
   color:var(--muted);
-  font-size:13px;
+  font-size:12px;
   line-height:1.9;
+  margin-top:25px;
   padding-bottom:25px;
   border-bottom:1px solid var(--line);
 }
@@ -627,8 +659,8 @@ a{
   display:flex;
   justify-content:space-between;
   gap:20px;
-  font-size:11px;
-  margin-bottom:13px;
+  margin-bottom:14px;
+  font-size:10px;
 }
 
 .meta-row:last-child{
@@ -646,17 +678,18 @@ a{
 .color-buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:8px;
-  margin-top:16px;
+  gap:7px;
+  margin-top:18px;
 }
 
 .color-btn{
-  padding:9px 13px;
-  border:1px solid var(--line);
   background:transparent;
-  font-size:9px;
-  letter-spacing:1px;
+  border:1px solid var(--line);
+  padding:9px 13px;
+  font-size:8px;
+  letter-spacing:1.5px;
   text-transform:uppercase;
+  transition:.25s;
 }
 
 .color-btn.active,
@@ -669,11 +702,11 @@ a{
 .order-btn{
   width:100%;
   margin-top:25px;
-  padding:17px;
-  border:1px solid var(--ink);
+  padding:18px;
   background:var(--ink);
   color:white;
-  font-size:10px;
+  border:1px solid var(--ink);
+  font-size:9px;
   letter-spacing:3px;
   text-transform:uppercase;
   transition:.3s;
@@ -691,8 +724,8 @@ a{
 
 .order-form{
   display:none;
-  margin-top:22px;
-  padding:25px;
+  margin-top:20px;
+  padding:28px;
   background:var(--cream);
   border:1px solid var(--line);
 }
@@ -703,43 +736,43 @@ a{
 
 .order-form h3{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:25px;
+  font-size:26px;
   font-weight:400;
-  margin-bottom:20px;
+  margin-bottom:23px;
 }
 
 .order-form input,
 .order-form select,
 .order-form textarea{
   width:100%;
-  padding:13px 0;
   border:0;
   border-bottom:1px solid var(--line);
   background:transparent;
   outline:none;
+  padding:13px 0;
   margin-bottom:16px;
-  font-size:12px;
+  font-size:11px;
 }
 
 .order-form textarea{
-  min-height:70px;
+  min-height:80px;
   resize:vertical;
 }
 
 .submit-order{
   width:100%;
-  padding:15px;
   border:0;
-  background:var(--brown);
+  padding:16px;
+  background:var(--olive);
   color:white;
-  font-size:9px;
+  font-size:8px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 
 
 /* =========================================================
-   HOME / ROUTING
+   PRODUCT ROUTING
    ========================================================= */
 
 #home,
@@ -754,7 +787,8 @@ body.product-open #clothing,
 body.product-open #jeans,
 body.product-open #hijabs,
 body.product-open .top-bar,
-body.product-open .navbar{
+body.product-open .navbar,
+body.product-open .footer{
   display:none;
 }
 
@@ -764,44 +798,45 @@ body.product-open .navbar{
    ========================================================= */
 
 .footer{
-  background:#181613;
-  color:#eee6dc;
-  padding:75px 6% 30px;
+  background:var(--ink);
+  color:white;
+  padding:90px 6% 30px;
 }
 
 .footer-grid{
   display:grid;
   grid-template-columns:1.5fr 1fr 1fr;
-  gap:50px;
-  padding-bottom:55px;
-  border-bottom:1px solid #3a3631;
+  gap:60px;
+  padding-bottom:60px;
+  border-bottom:1px solid #363531;
 }
 
 .footer-brand{
   font-family:Georgia,"Times New Roman",serif;
-  font-size:35px;
+  font-size:42px;
 }
 
 .footer-text{
-  max-width:330px;
-  color:#aaa198;
-  font-size:12px;
+  max-width:340px;
+  color:#9d9a93;
+  font-size:11px;
   line-height:1.9;
-  margin-top:15px;
+  margin-top:18px;
 }
 
 .footer-title{
-  font-size:9px;
+  font-size:8px;
   letter-spacing:3px;
   text-transform:uppercase;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .footer a{
   display:block;
-  color:#aaa198;
-  font-size:12px;
-  margin-bottom:10px;
+  color:#aaa7a0;
+  font-size:11px;
+  margin-bottom:12px;
+  transition:.2s;
 }
 
 .footer a:hover{
@@ -809,18 +844,39 @@ body.product-open .navbar{
 }
 
 .footer-bottom{
-  padding-top:25px;
+  padding-top:27px;
   display:flex;
   justify-content:space-between;
-  color:#817a73;
-  font-size:9px;
-  letter-spacing:1px;
+  color:#77746e;
+  font-size:8px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
 }
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
+   FADE
+   ========================================================= */
+
+.fade-in{
+  animation:fadeIn .45s ease both;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
 
 @media(max-width:900px){
 
@@ -832,12 +888,12 @@ body.product-open .navbar{
   .nav-links{
     display:none;
     position:absolute;
-    top:70px;
     left:0;
+    top:70px;
     width:100%;
-    background:var(--ivory);
+    padding:28px 5%;
+    background:var(--off);
     border-bottom:1px solid var(--line);
-    padding:25px 5%;
     flex-direction:column;
     align-items:flex-start;
     gap:22px;
@@ -856,15 +912,16 @@ body.product-open .navbar{
   }
 
   .hero-title{
-    letter-spacing:-3px;
+    letter-spacing:-4px;
   }
 
   .section{
-    padding:70px 5%;
+    padding:80px 5%;
   }
 
   .section-head{
     display:block;
+    margin-bottom:40px;
   }
 
   .section-description{
@@ -873,15 +930,16 @@ body.product-open .navbar{
 
   .category-grid{
     grid-template-columns:1fr;
+    gap:8px;
   }
 
   .category-card{
-    min-height:480px;
+    height:520px;
   }
 
   .product-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:12px;
+    gap:15px 10px;
   }
 
   .product-name{
@@ -889,7 +947,7 @@ body.product-open .navbar{
   }
 
   .editorial{
-    padding:0 5% 70px;
+    padding:0 5% 80px;
   }
 
   .editorial-wrap{
@@ -897,130 +955,198 @@ body.product-open .navbar{
   }
 
   .editorial-image{
-    min-height:430px;
+    min-height:500px;
   }
 
   .editorial-copy{
-    min-height:430px;
-    padding:45px 30px;
+    min-height:480px;
+    padding:55px 35px;
   }
 
   .detail-grid{
     grid-template-columns:1fr;
-    gap:35px;
+    gap:38px;
   }
 
   .detail-info{
     position:static;
   }
 
-  .gallery{
-    gap:7px;
+  .product-detail{
+    padding:30px 5% 80px;
   }
 
-  .product-detail{
-    padding:30px 5% 70px;
+  .footer{
+    padding:70px 5% 25px;
   }
 
   .footer-grid{
     grid-template-columns:1fr;
-    gap:35px;
+    gap:40px;
   }
-
-  .footer-bottom{
-    flex-direction:column;
-    gap:10px;
-  }
-}
-
-
-@media(max-width:520px){
-
-  .top-bar{
-    font-size:8px;
-    letter-spacing:2px;
-  }
-
-  .logo{
-    font-size:21px;
-  }
-
-  /* Mobile Hero */
-  .hero{
-    min-height:0;
-    height:auto;
-    aspect-ratio:auto;
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:top center;
-    background-color:#fff;
-    align-items:flex-end;
-  }
-
-  .hero:after{
-    background:linear-gradient(
-      to top,
-      rgba(20,17,14,.55),
-      rgba(20,17,14,0) 65%
-    );
-  }
-
-  .hero-content{
-    width:100%;
-    padding:180px 6% 40px;
-  }
-
-  .hero-title{
-    font-size:52px;
-  }
-
-  .hero-subtitle{
-    font-size:11px;
-  }
-
-  .category-card{
-    min-height:410px;
-  }
-
-  .product-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .product-info{
-    padding:13px 2px 18px;
-  }
-
-  .product-name{
-    font-size:15px;
-  }
-
-  .product-price{
-    gap:6px;
-  }
-
-  .detail-title{
-    font-size:44px;
-  }
-
 }
 
 
 /* =========================================================
-   SMALL FADE
+   SMALL PHONES
    ========================================================= */
 
-.fade-in{
-  animation:fadeIn .45s ease;
-}
+@media(max-width:520px){
 
-@keyframes fadeIn{
-  from{
-    opacity:0;
-    transform:translateY(8px);
+  .top-bar{
+    height:29px;
+    font-size:7px;
+    letter-spacing:2px;
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  .navbar{
+    height:66px;
+  }
+
+  .nav-links{
+    top:66px;
+  }
+
+  .logo{
+    font-size:23px;
+  }
+
+  /* HERO — FULL IMAGE ON MOBILE */
+  .hero{
+    min-height:0;
+    height:auto;
+    aspect-ratio:4 / 5;
+    background-size:cover;
+    background-position:center top;
+  }
+
+  .hero:after{
+    background:
+      linear-gradient(
+        to top,
+        rgba(15,14,12,.70),
+        rgba(15,14,12,0) 62%
+      );
+  }
+
+  .hero-content{
+    padding:30px 6% 34px;
+  }
+
+  .hero-kicker{
+    font-size:7px;
+    letter-spacing:4px;
+    margin-bottom:13px;
+  }
+
+  .hero-title{
+    font-size:48px;
+    letter-spacing:-3px;
+  }
+
+  .hero-subtitle{
+    font-size:10px;
+    line-height:1.7;
+    margin-top:18px;
+    max-width:300px;
+  }
+
+  .hero-btn{
+    margin-top:20px;
+    padding:13px 20px;
+    min-width:155px;
+    font-size:8px;
+  }
+
+  .section{
+    padding:65px 5%;
+  }
+
+  .section-title{
+    font-size:46px;
+    letter-spacing:-3px;
+  }
+
+  .category-card{
+    height:440px;
+  }
+
+  .category-name{
+    font-size:35px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr 1fr;
+    gap:13px 8px;
+  }
+
+  .product-info{
+    padding:12px 1px 20px;
+  }
+
+  .product-category{
+    font-size:6px;
+    letter-spacing:2px;
+  }
+
+  .product-name{
+    font-size:14px;
+  }
+
+  .product-price{
+    margin-top:7px;
+    gap:5px;
+  }
+
+  .old-price,
+  .sale-price{
+    font-size:9px;
+  }
+
+  .product-tag{
+    top:9px;
+    left:9px;
+    padding:5px 7px;
+    font-size:6px;
+  }
+
+  .editorial{
+    padding:0 5% 65px;
+  }
+
+  .editorial-image{
+    min-height:400px;
+  }
+
+  .editorial-copy{
+    min-height:400px;
+    padding:45px 25px;
+  }
+
+  .editorial-copy h2{
+    font-size:46px;
+  }
+
+  .detail-title{
+    font-size:45px;
+    letter-spacing:-3px;
+  }
+
+  .gallery{
+    gap:5px;
+  }
+
+  .detail-price{
+    font-size:16px;
+  }
+
+  .order-form{
+    padding:22px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    gap:12px;
   }
 }
 
@@ -1031,7 +1157,7 @@ body.product-open .navbar{
 <body>
 
 <!-- =======================================================
-     TOP BAR
+     ANNOUNCEMENT
 ======================================================= -->
 
 <div class="top-bar">
@@ -1045,33 +1171,65 @@ body.product-open .navbar{
 
 <nav class="navbar">
 
-  <a href="#home" class="logo" onclick="goHome()">
+  <a href="#home"
+     class="logo"
+     onclick="goHome()">
+
     Nazaka
+
     <span>Designs</span>
+
   </a>
 
+
   <div class="nav-links" id="navLinks">
-    <a href="#home" onclick="goHome()">Home</a>
-    <a href="#clothing" onclick="goClothing()">Clothing</a>
-    <a href="#jeans" onclick="goJeans()">Jeans</a>
-    <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
+
+    <a href="#home"
+       onclick="goHome()">
+      Home
+    </a>
+
+    <a href="#clothing"
+       onclick="goClothing()">
+      Clothing
+    </a>
+
+    <a href="#jeans"
+       onclick="goJeans()">
+      Jeans
+    </a>
+
+    <a href="#hijabs"
+       onclick="goHijabs()">
+      Hijabs
+    </a>
+
   </div>
 
-  <button class="menu-btn" onclick="toggleMobileMenu()">☰</button>
+
+  <button class="menu-btn"
+          onclick="toggleMobileMenu()">
+    ☰
+  </button>
 
 </nav>
 
 
 <!-- =======================================================
-     MAIN HOME
+     MAIN
 ======================================================= -->
 
 <main id="mainContent">
 
 
-<!-- HERO -->
+<!-- =======================================================
+     HOME
+======================================================= -->
 
 <section id="home">
+
+
+  <!-- HERO -->
 
   <div class="hero">
 
@@ -1103,16 +1261,26 @@ body.product-open .navbar{
   </div>
 
 
-  <!-- CATEGORIES -->
+  <!-- =====================================================
+       CATEGORIES
+  ====================================================== -->
 
   <section class="section categories">
 
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">Explore</div>
-        <h2 class="section-title">The Collection</h2>
+
+        <div class="eyebrow">
+          Explore
+        </div>
+
+        <h2 class="section-title">
+          The Collection
+        </h2>
+
       </div>
+
 
       <p class="section-description">
         Everyday pieces, modern denim and carefully selected
@@ -1124,6 +1292,7 @@ body.product-open .navbar{
 
     <div class="category-grid">
 
+
       <div class="category-card"
            onclick="goClothing()">
 
@@ -1133,8 +1302,15 @@ body.product-open .navbar{
           alt="Clothing">
 
         <div class="category-info">
-          <div class="category-number">01</div>
-          <div class="category-name">Clothing</div>
+
+          <div class="category-number">
+            01
+          </div>
+
+          <div class="category-name">
+            Clothing
+          </div>
+
         </div>
 
       </div>
@@ -1149,8 +1325,15 @@ body.product-open .navbar{
           alt="Jeans">
 
         <div class="category-info">
-          <div class="category-number">02</div>
-          <div class="category-name">Denim</div>
+
+          <div class="category-number">
+            02
+          </div>
+
+          <div class="category-name">
+            Denim
+          </div>
+
         </div>
 
       </div>
@@ -1165,26 +1348,43 @@ body.product-open .navbar{
           alt="Hijabs">
 
         <div class="category-info">
-          <div class="category-number">03</div>
-          <div class="category-name">Hijabs</div>
+
+          <div class="category-number">
+            03
+          </div>
+
+          <div class="category-name">
+            Hijabs
+          </div>
+
         </div>
 
       </div>
+
 
     </div>
 
   </section>
 
 
-  <!-- FEATURED -->
+  <!-- =====================================================
+       FEATURED
+  ====================================================== -->
 
   <section class="section featured">
 
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">Selected Pieces</div>
-        <h2 class="section-title">New &amp; Now</h2>
+
+        <div class="eyebrow">
+          Selected Pieces
+        </div>
+
+        <h2 class="section-title">
+          New &amp; Now
+        </h2>
+
       </div>
 
     </div>
@@ -1219,8 +1419,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">1,200 EGP</span>
-            <span class="sale-price">960 EGP</span>
+
+            <span class="old-price">
+              1,200 EGP
+            </span>
+
+            <span class="sale-price">
+              960 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1254,8 +1461,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
+
+            <span class="old-price">
+              550 EGP
+            </span>
+
+            <span class="sale-price">
+              470 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1289,8 +1503,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">750 EGP</span>
-            <span class="sale-price">580 EGP</span>
+
+            <span class="old-price">
+              750 EGP
+            </span>
+
+            <span class="sale-price">
+              580 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1324,7 +1545,11 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">290 EGP</span>
+
+            <span class="sale-price">
+              290 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1337,7 +1562,9 @@ body.product-open .navbar{
   </section>
 
 
-  <!-- EDITORIAL -->
+  <!-- =====================================================
+       EDITORIAL
+  ====================================================== -->
 
   <section class="editorial">
 
@@ -1374,7 +1601,9 @@ body.product-open .navbar{
   </section>
 
 
-  <!-- CLOTHING -->
+  <!-- =====================================================
+       CLOTHING
+  ====================================================== -->
 
   <section id="clothing"
            class="section products-section">
@@ -1382,8 +1611,15 @@ body.product-open .navbar{
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">01 / Clothing</div>
-        <h2 class="section-title">Clothing</h2>
+
+        <div class="eyebrow">
+          01 / Clothing
+        </div>
+
+        <h2 class="section-title">
+          Clothing
+        </h2>
+
       </div>
 
       <p class="section-description">
@@ -1397,106 +1633,149 @@ body.product-open .navbar{
     <div class="product-grid">
 
 
-      <!-- SET -->
-
       <div class="product-card"
            onclick="openProduct('set')">
 
         <div class="product-image-wrap">
-          <img src="IMG_9818.jpeg"
-               alt="T-Shirt & Pants Set">
+
+          <img
+            src="IMG_9818.jpeg"
+            alt="T-Shirt & Pants Set">
+
         </div>
 
         <div class="product-info">
-          <div class="product-category">Set</div>
+
+          <div class="product-category">
+            Set
+          </div>
 
           <div class="product-name">
             T-Shirt &amp; Pants Set
           </div>
 
           <div class="product-price">
-            <span class="old-price">1,200 EGP</span>
-            <span class="sale-price">960 EGP</span>
+
+            <span class="old-price">
+              1,200 EGP
+            </span>
+
+            <span class="sale-price">
+              960 EGP
+            </span>
+
           </div>
+
         </div>
 
       </div>
 
 
-      <!-- OVERSIZED -->
-
       <div class="product-card"
            onclick="openProduct('oversized')">
 
         <div class="product-image-wrap">
-          <img src="IMG_9832.jpeg"
-               alt="Striped Oversized T-Shirt">
+
+          <img
+            src="IMG_9832.jpeg"
+            alt="Striped Oversized T-Shirt">
+
         </div>
 
         <div class="product-info">
-          <div class="product-category">T-Shirt</div>
+
+          <div class="product-category">
+            T-Shirt
+          </div>
 
           <div class="product-name">
             Striped Oversized T-Shirt
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
+
+            <span class="old-price">
+              550 EGP
+            </span>
+
+            <span class="sale-price">
+              470 EGP
+            </span>
+
           </div>
+
         </div>
 
       </div>
 
 
-      <!-- STRIPED -->
-
       <div class="product-card"
            onclick="openProduct('striped-shirt')">
 
         <div class="product-image-wrap">
+
           <img
             src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
             alt="Striped T-Shirt">
+
         </div>
 
         <div class="product-info">
-          <div class="product-category">T-Shirt</div>
+
+          <div class="product-category">
+            T-Shirt
+          </div>
 
           <div class="product-name">
             Striped T-Shirt
           </div>
 
           <div class="product-price">
-            <span class="old-price">570 EGP</span>
-            <span class="sale-price">500 EGP</span>
+
+            <span class="old-price">
+              570 EGP
+            </span>
+
+            <span class="sale-price">
+              500 EGP
+            </span>
+
           </div>
+
         </div>
 
       </div>
 
 
-      <!-- ROSE -->
-
       <div class="product-card"
            onclick="openProduct('rose')">
 
         <div class="product-image-wrap">
+
           <img
             src="C43C4A76-9689-43C2-AD32-1052EA614390.png"
             alt="Rose Blouse">
+
         </div>
 
         <div class="product-info">
-          <div class="product-category">Blouse</div>
+
+          <div class="product-category">
+            Blouse
+          </div>
 
           <div class="product-name">
             Rose Blouse
           </div>
 
           <div class="product-price">
-            <span class="sale-price">520 EGP</span>
+
+            <span class="sale-price">
+              520 EGP
+            </span>
+
           </div>
+
         </div>
 
       </div>
@@ -1507,7 +1786,9 @@ body.product-open .navbar{
   </section>
 
 
-  <!-- JEANS -->
+  <!-- =====================================================
+       JEANS
+  ====================================================== -->
 
   <section id="jeans"
            class="section jeans-section">
@@ -1515,8 +1796,15 @@ body.product-open .navbar{
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">02 / Denim</div>
-        <h2 class="section-title">Jeans</h2>
+
+        <div class="eyebrow">
+          02 / Denim
+        </div>
+
+        <h2 class="section-title">
+          Jeans
+        </h2>
+
       </div>
 
       <p class="section-description">
@@ -1529,15 +1817,15 @@ body.product-open .navbar{
     <div class="product-grid">
 
 
-      <!-- NESR -->
-
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
 
         <div class="product-image-wrap">
+
           <img
             src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
             alt="Nesr Long Jeans">
+
         </div>
 
         <div class="product-info">
@@ -1551,8 +1839,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">750 EGP</span>
-            <span class="sale-price">580 EGP</span>
+
+            <span class="old-price">
+              750 EGP
+            </span>
+
+            <span class="sale-price">
+              580 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1560,15 +1855,15 @@ body.product-open .navbar{
       </div>
 
 
-      <!-- WIDE -->
-
       <div class="product-card"
            onclick="openProduct('wide-leg-jeans')">
 
         <div class="product-image-wrap">
+
           <img
             src="IMG_9905.jpeg"
             alt="Wide Leg Fold Jeans">
+
         </div>
 
         <div class="product-info">
@@ -1582,8 +1877,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">800 EGP</span>
-            <span class="sale-price">600 EGP</span>
+
+            <span class="old-price">
+              800 EGP
+            </span>
+
+            <span class="sale-price">
+              600 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1596,7 +1898,9 @@ body.product-open .navbar{
   </section>
 
 
-  <!-- HIJABS -->
+  <!-- =====================================================
+       HIJABS
+  ====================================================== -->
 
   <section id="hijabs"
            class="section hijab-section">
@@ -1604,8 +1908,15 @@ body.product-open .navbar{
     <div class="section-head">
 
       <div>
-        <div class="eyebrow">03 / Accessories</div>
-        <h2 class="section-title">Hijabs</h2>
+
+        <div class="eyebrow">
+          03 / Accessories
+        </div>
+
+        <h2 class="section-title">
+          Hijabs
+        </h2>
+
       </div>
 
       <p class="section-description">
@@ -1619,8 +1930,6 @@ body.product-open .navbar{
     <div class="product-grid">
 
 
-      <!-- THAI -->
-
       <div class="product-card"
            onclick="openProduct('thai')">
 
@@ -1629,8 +1938,11 @@ body.product-open .navbar{
         </div>
 
         <div class="product-image-wrap">
-          <img src="IMG_7465.jpeg"
-               alt="Original Thai Ruffled">
+
+          <img
+            src="IMG_7465.jpeg"
+            alt="Original Thai Ruffled">
+
         </div>
 
         <div class="product-info">
@@ -1644,7 +1956,11 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">290 EGP</span>
+
+            <span class="sale-price">
+              290 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1652,14 +1968,15 @@ body.product-open .navbar{
       </div>
 
 
-      <!-- LINEN -->
-
       <div class="product-card"
            onclick="openProduct('linen')">
 
         <div class="product-image-wrap">
-          <img src="IMG_7352.jpeg"
-               alt="Modal Linen Cotton Soft">
+
+          <img
+            src="IMG_7352.jpeg"
+            alt="Modal Linen Cotton Soft">
+
         </div>
 
         <div class="product-info">
@@ -1673,7 +1990,11 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">170 EGP</span>
+
+            <span class="sale-price">
+              170 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1681,14 +2002,15 @@ body.product-open .navbar{
       </div>
 
 
-      <!-- COLORED -->
-
       <div class="product-card"
            onclick="openProduct('colored')">
 
         <div class="product-image-wrap">
-          <img src="IMG_7341.jpeg"
-               alt="Modal Cotton Colored">
+
+          <img
+            src="IMG_7341.jpeg"
+            alt="Modal Cotton Colored">
+
         </div>
 
         <div class="product-info">
@@ -1702,7 +2024,11 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">180 EGP</span>
+
+            <span class="sale-price">
+              180 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1710,15 +2036,15 @@ body.product-open .navbar{
       </div>
 
 
-      <!-- BALACLAVA -->
-
       <div class="product-card"
            onclick="openProduct('balaclava')">
 
         <div class="product-image-wrap">
+
           <img
             src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg"
             alt="Balaclava Summer">
+
         </div>
 
         <div class="product-info">
@@ -1732,7 +2058,11 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="sale-price">250 EGP</span>
+
+            <span class="sale-price">
+              250 EGP
+            </span>
+
           </div>
 
         </div>
@@ -1756,6 +2086,7 @@ body.product-open .navbar{
 
   <div class="footer-grid">
 
+
     <div>
 
       <div class="footer-brand">
@@ -1776,10 +2107,25 @@ body.product-open .navbar{
         Navigate
       </div>
 
-      <a href="#home" onclick="goHome()">Home</a>
-      <a href="#clothing" onclick="goClothing()">Clothing</a>
-      <a href="#jeans" onclick="goJeans()">Jeans</a>
-      <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
+      <a href="#home"
+         onclick="goHome()">
+        Home
+      </a>
+
+      <a href="#clothing"
+         onclick="goClothing()">
+        Clothing
+      </a>
+
+      <a href="#jeans"
+         onclick="goJeans()">
+        Jeans
+      </a>
+
+      <a href="#hijabs"
+         onclick="goHijabs()">
+        Hijabs
+      </a>
 
     </div>
 
@@ -1790,19 +2136,18 @@ body.product-open .navbar{
         Connect
       </div>
 
-      <a
-        href="https://instagram.com/"
-        target="_blank">
+      <a href="https://instagram.com/"
+         target="_blank">
         Instagram
       </a>
 
-      <a
-        href="https://wa.me/201029153023"
-        target="_blank">
+      <a href="https://wa.me/201029153023"
+         target="_blank">
         WhatsApp
       </a>
 
     </div>
+
 
   </div>
 
@@ -1821,16 +2166,12 @@ body.product-open .navbar{
 
 </footer>
 
-
 </main>
 
 
 <!-- =======================================================
-     PRODUCT PAGES
+     PRODUCT — SET
 ======================================================= -->
-
-
-<!-- SET -->
 
 <section id="product-set"
          class="product-page">
@@ -1855,6 +2196,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -1868,8 +2210,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">1,200 EGP</span>
-          &nbsp;
-          960 EGP
+          &nbsp; 960 EGP
         </div>
 
         <p class="detail-description">
@@ -1896,10 +2237,12 @@ body.product-open .navbar{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('set-order')">
           Order Now
         </button>
+
 
         <form id="set-order"
               class="order-form"
@@ -1927,7 +2270,6 @@ body.product-open .navbar{
                     required></textarea>
 
           <button class="submit-order"
-                  id="set-order-submit"
                   type="submit">
             Send Order via WhatsApp
           </button>
@@ -1943,7 +2285,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- OVERSIZED -->
+<!-- =======================================================
+     PRODUCT — OVERSIZED
+======================================================= -->
 
 <section id="product-oversized"
          class="product-page">
@@ -1968,6 +2312,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -1981,8 +2326,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">550 EGP</span>
-          &nbsp;
-          470 EGP
+          &nbsp; 470 EGP
         </div>
 
         <p class="detail-description">
@@ -1999,10 +2343,12 @@ body.product-open .navbar{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('oversized-order')">
           Order Now
         </button>
+
 
         <form id="oversized-order"
               class="order-form"
@@ -2045,7 +2391,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- STRIPED SHIRT -->
+<!-- =======================================================
+     PRODUCT — STRIPED
+======================================================= -->
 
 <section id="product-striped-shirt"
          class="product-page">
@@ -2076,6 +2424,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2089,8 +2438,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">570 EGP</span>
-          &nbsp;
-          500 EGP
+          &nbsp; 500 EGP
         </div>
 
         <p class="detail-description">
@@ -2106,19 +2454,15 @@ body.product-open .navbar{
           </div>
 
           <div class="meta-row">
-
-            <span class="meta-label">
-              Color
-            </span>
-
+            <span class="meta-label">Color</span>
             <span class="meta-value"
                   id="selected-shirt-color">
               Navy
             </span>
-
           </div>
 
         </div>
+
 
         <div class="color-buttons">
 
@@ -2139,10 +2483,12 @@ body.product-open .navbar{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('striped-shirt-order')">
           Order Now
         </button>
+
 
         <form id="striped-shirt-order"
               class="order-form"
@@ -2185,7 +2531,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- ROSE -->
+<!-- =======================================================
+     PRODUCT — ROSE
+======================================================= -->
 
 <section id="product-rose"
          class="product-page">
@@ -2207,6 +2555,7 @@ body.product-open .navbar{
         <img src="IMG_7725.jpeg" alt="">
 
       </div>
+
 
       <div class="detail-info">
 
@@ -2236,10 +2585,12 @@ body.product-open .navbar{
 
         </div>
 
+
         <button class="order-btn"
                 onclick="openOrder('rose-order')">
           Order Now
         </button>
+
 
         <form id="rose-order"
               class="order-form"
@@ -2282,7 +2633,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- NESR LONG JEANS -->
+<!-- =======================================================
+     PRODUCT — NESR
+======================================================= -->
 
 <section id="product-nesr-long-jeans"
          class="product-page">
@@ -2305,6 +2658,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2318,8 +2672,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">750 EGP</span>
-          &nbsp;
-          580 EGP
+          &nbsp; 580 EGP
         </div>
 
         <p class="detail-description">
@@ -2341,15 +2694,19 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Color</span>
-            <span class="meta-value">Light / Medium / Dirty</span>
+            <span class="meta-value">
+              Light / Medium / Dirty
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('nesr-jeans-order')">
           Order Now
         </button>
+
 
         <form id="nesr-jeans-order"
               class="order-form"
@@ -2368,17 +2725,27 @@ body.product-open .navbar{
                  required>
 
           <select id="nesr-size" required>
-            <option value="">Select Size</option>
+
+            <option value="">
+              Select Size
+            </option>
+
             <option>36</option>
             <option>38</option>
             <option>40</option>
+
           </select>
 
           <select id="nesr-color" required>
-            <option value="">Select Color</option>
+
+            <option value="">
+              Select Color
+            </option>
+
             <option>Light</option>
             <option>Medium</option>
             <option>Dirty</option>
+
           </select>
 
           <textarea id="nesr-address"
@@ -2401,7 +2768,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- WIDE LEG JEANS -->
+<!-- =======================================================
+     PRODUCT — WIDE LEG
+======================================================= -->
 
 <section id="product-wide-leg-jeans"
          class="product-page">
@@ -2424,6 +2793,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2437,8 +2807,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">800 EGP</span>
-          &nbsp;
-          600 EGP
+          &nbsp; 600 EGP
         </div>
 
         <p class="detail-description">
@@ -2449,25 +2818,33 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Sizes</span>
-            <span class="meta-value">36 / 38 / 40</span>
+            <span class="meta-value">
+              36 / 38 / 40
+            </span>
           </div>
 
           <div class="meta-row">
             <span class="meta-label">Fits</span>
-            <span class="meta-value">50–95 KG</span>
+            <span class="meta-value">
+              50–95 KG
+            </span>
           </div>
 
           <div class="meta-row">
             <span class="meta-label">Color</span>
-            <span class="meta-value">Light / Medium / Dirty</span>
+            <span class="meta-value">
+              Light / Medium / Dirty
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('wide-leg-jeans-order')">
           Order Now
         </button>
+
 
         <form id="wide-leg-jeans-order"
               class="order-form"
@@ -2486,17 +2863,27 @@ body.product-open .navbar{
                  required>
 
           <select id="wide-size" required>
-            <option value="">Select Size</option>
+
+            <option value="">
+              Select Size
+            </option>
+
             <option>36</option>
             <option>38</option>
             <option>40</option>
+
           </select>
 
           <select id="wide-color" required>
-            <option value="">Select Color</option>
+
+            <option value="">
+              Select Color
+            </option>
+
             <option>Light</option>
             <option>Medium</option>
             <option>Dirty</option>
+
           </select>
 
           <textarea id="wide-address"
@@ -2519,7 +2906,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- THAI -->
+<!-- =======================================================
+     PRODUCT — THAI
+======================================================= -->
 
 <section id="product-thai"
          class="product-page">
@@ -2545,6 +2934,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2564,15 +2954,19 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
+            <span class="meta-value">
+              60 × 2 m
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('thai-order')">
           Order Now
         </button>
+
 
         <form id="thai-order"
               class="order-form"
@@ -2615,7 +3009,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- LINEN -->
+<!-- =======================================================
+     PRODUCT — LINEN
+======================================================= -->
 
 <section id="product-linen"
          class="product-page">
@@ -2640,6 +3036,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2659,15 +3056,19 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
+            <span class="meta-value">
+              60 × 2 m
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('linen-order')">
           Order Now
         </button>
+
 
         <form id="linen-order"
               class="order-form"
@@ -2710,7 +3111,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- COLORED -->
+<!-- =======================================================
+     PRODUCT — COLORED
+======================================================= -->
 
 <section id="product-colored"
          class="product-page">
@@ -2738,6 +3141,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2757,15 +3161,19 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
+            <span class="meta-value">
+              60 × 2 m
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('colored-order')">
           Order Now
         </button>
+
 
         <form id="colored-order"
               class="order-form"
@@ -2808,7 +3216,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- BALACLAVA -->
+<!-- =======================================================
+     PRODUCT — BALACLAVA
+======================================================= -->
 
 <section id="product-balaclava"
          class="product-page">
@@ -2832,6 +3242,7 @@ body.product-open .navbar{
 
       </div>
 
+
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2851,15 +3262,19 @@ body.product-open .navbar{
 
           <div class="meta-row">
             <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
+            <span class="meta-value">
+              Free Size
+            </span>
           </div>
 
         </div>
+
 
         <button class="order-btn"
                 onclick="openOrder('balaclava-order')">
           Order Now
         </button>
+
 
         <form id="balaclava-order"
               class="order-form"
@@ -2917,7 +3332,8 @@ const whatsappNumber = "201029153023";
 
 function toggleMobileMenu(){
 
-  const menu = document.getElementById("navLinks");
+  const menu =
+    document.getElementById("navLinks");
 
   menu.classList.toggle("open");
 
@@ -2930,7 +3346,8 @@ function toggleMobileMenu(){
 
 function closeMobileMenu(){
 
-  const menu = document.getElementById("navLinks");
+  const menu =
+    document.getElementById("navLinks");
 
   if(menu){
     menu.classList.remove("open");
@@ -2940,7 +3357,7 @@ function closeMobileMenu(){
 
 
 /* =========================================================
-   HIDE PRODUCT PAGES
+   HIDE PRODUCTS
 ========================================================= */
 
 function hideProducts(){
@@ -3102,7 +3519,10 @@ function openProduct(product){
 
   document.body.classList.add("product-open");
 
-  page.classList.add("active","fade-in");
+  page.classList.add(
+    "active",
+    "fade-in"
+  );
 
   closeMobileMenu();
 
@@ -3143,7 +3563,7 @@ function goBack(){
 
 
 /* =========================================================
-   ORDER FORM
+   OPEN ORDER
 ========================================================= */
 
 function openOrder(formId){
@@ -3159,7 +3579,7 @@ function openOrder(formId){
 
 
 /* =========================================================
-   GENERAL WHATSAPP ORDER
+   GENERAL WHATSAPP
 ========================================================= */
 
 function sendOrder(
@@ -3213,7 +3633,7 @@ Address: ${address}`;
 
 
 /* =========================================================
-   JEANS WHATSAPP ORDER
+   JEANS WHATSAPP
 ========================================================= */
 
 function sendJeansOrder(
@@ -3361,7 +3781,8 @@ function changeShirtColor(
     image2.src =
       "ACF784DC-469F-4D8A-930A-4935ED8265AB.png";
 
-    selected.textContent = "Navy";
+    selected.textContent =
+      "Navy";
 
   }
 
@@ -3374,7 +3795,8 @@ function changeShirtColor(
     image2.src =
       "striped-pink-2.jpeg";
 
-    selected.textContent = "Pink";
+    selected.textContent =
+      "Pink";
 
   }
 
@@ -3387,7 +3809,8 @@ function changeShirtColor(
     image2.src =
       "striped-yellow-2.jpeg";
 
-    selected.textContent = "Yellow";
+    selected.textContent =
+      "Yellow";
 
   }
 
@@ -3395,7 +3818,7 @@ function changeShirtColor(
 
 
 /* =========================================================
-   HASH / ROUTING
+   HASH ROUTING
 ========================================================= */
 
 function handleHash(){
@@ -3472,7 +3895,7 @@ function handleHash(){
 
 
 /* =========================================================
-   BROWSER BACK / FORWARD
+   BROWSER NAVIGATION
 ========================================================= */
 
 window.addEventListener(
@@ -3485,11 +3908,6 @@ window.addEventListener(
   handleHash
 );
 
-
-/* =========================================================
-   INITIAL LOAD
-========================================================= */
-
 window.addEventListener(
   "load",
   handleHash
@@ -3499,4 +3917,3 @@ window.addEventListener(
 
 </body>
 </html>
-
