@@ -521,6 +521,11 @@ a{
 
 /* PRODUCT PAGE */
 
+/*
+  PRODUCT PAGES ARE OUTSIDE THE MAIN CONTENT.
+  When active, each product becomes a full-screen independent page.
+*/
+
 .product-page{
   display:none;
   min-height:100vh;
@@ -529,6 +534,16 @@ a{
 
 .product-page.active{
   display:block;
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100vh;
+  min-height:100vh;
+  overflow-y:auto;
+  overflow-x:hidden;
+  background:var(--off);
+  z-index:9999;
+  -webkit-overflow-scrolling:touch;
 }
 
 .product-detail{
@@ -728,9 +743,8 @@ a{
 /* ROUTING */
 
 /*
-  IMPORTANT FIX:
-  The entire homepage container is hidden when a product is open.
-  This prevents product pages from appearing underneath the homepage.
+  MAIN CONTENT DISAPPEARS COMPLETELY
+  WHEN A PRODUCT PAGE IS OPEN.
 */
 
 #mainContent{
@@ -1317,6 +1331,7 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
+
             <span class="old-price">
               1,200 EGP
             </span>
@@ -1324,6 +1339,7 @@ body.product-open .navbar{
             <span class="sale-price">
               960 EGP
             </span>
+
           </div>
 
         </div>
@@ -1354,6 +1370,7 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
+
             <span class="old-price">
               550 EGP
             </span>
@@ -1361,6 +1378,7 @@ body.product-open .navbar{
             <span class="sale-price">
               470 EGP
             </span>
+
           </div>
 
         </div>
@@ -1391,6 +1409,7 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
+
             <span class="old-price">
               750 EGP
             </span>
@@ -1398,6 +1417,7 @@ body.product-open .navbar{
             <span class="sale-price">
               580 EGP
             </span>
+
           </div>
 
         </div>
@@ -2017,7 +2037,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2075,12 +2094,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('set-order')">
           Order Now
         </button>
-
 
         <form id="set-order"
               class="order-form"
@@ -2150,7 +2167,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2188,12 +2204,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('oversized-order')">
           Order Now
         </button>
-
 
         <form id="oversized-order"
               class="order-form"
@@ -2269,7 +2283,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2318,7 +2331,6 @@ body.product-open .navbar{
 
         </div>
 
-
         <div class="color-buttons">
 
           <button class="color-btn active"
@@ -2338,12 +2350,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('striped-shirt-order')">
           Order Now
         </button>
-
 
         <form id="striped-shirt-order"
               class="order-form"
@@ -2411,7 +2421,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2445,12 +2454,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('rose-order')">
           Order Now
         </button>
-
 
         <form id="rose-order"
               class="order-form"
@@ -2518,7 +2525,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2576,12 +2582,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('nesr-jeans-order')">
           Order Now
         </button>
-
 
         <form id="nesr-jeans-order"
               class="order-form"
@@ -2622,7 +2626,6 @@ body.product-open .navbar{
 
           </select>
 
-
           <select id="nesr-color"
                   required>
 
@@ -2644,11 +2647,9 @@ body.product-open .navbar{
 
           </select>
 
-
           <textarea id="nesr-address"
                     placeholder="Address"
                     required></textarea>
-
 
           <button class="submit-order"
                   type="submit">
@@ -2688,7 +2689,6 @@ body.product-open .navbar{
         <img src="IMG_9898.jpeg" alt="">
 
       </div>
-
 
       <div class="detail-info">
 
@@ -2746,12 +2746,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('wide-leg-jeans-order')">
           Order Now
         </button>
-
 
         <form id="wide-leg-jeans-order"
               class="order-form"
@@ -2792,7 +2790,6 @@ body.product-open .navbar{
 
           </select>
 
-
           <select id="wide-color"
                   required>
 
@@ -2814,11 +2811,9 @@ body.product-open .navbar{
 
           </select>
 
-
           <textarea id="wide-address"
                     placeholder="Address"
                     required></textarea>
-
 
           <button class="submit-order"
                   type="submit">
@@ -2862,7 +2857,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2877,7 +2871,6 @@ body.product-open .navbar{
         <div class="detail-price">
           290 EGP
         </div>
-
 
         <div class="detail-meta">
 
@@ -2895,12 +2888,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('thai-order')">
           Order Now
         </button>
-
 
         <form id="thai-order"
               class="order-form"
@@ -2970,7 +2961,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -2985,7 +2975,6 @@ body.product-open .navbar{
         <div class="detail-price">
           170 EGP
         </div>
-
 
         <div class="detail-meta">
 
@@ -3003,12 +2992,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('linen-order')">
           Order Now
         </button>
-
 
         <form id="linen-order"
               class="order-form"
@@ -3081,7 +3068,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -3096,7 +3082,6 @@ body.product-open .navbar{
         <div class="detail-price">
           180 EGP
         </div>
-
 
         <div class="detail-meta">
 
@@ -3114,12 +3099,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('colored-order')">
           Order Now
         </button>
-
 
         <form id="colored-order"
               class="order-form"
@@ -3188,7 +3171,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="detail-info">
 
         <div class="detail-category">
@@ -3203,7 +3185,6 @@ body.product-open .navbar{
         <div class="detail-price">
           250 EGP
         </div>
-
 
         <div class="detail-meta">
 
@@ -3221,12 +3202,10 @@ body.product-open .navbar{
 
         </div>
 
-
         <button class="order-btn"
                 onclick="openOrder('balaclava-order')">
           Order Now
         </button>
-
 
         <form id="balaclava-order"
               class="order-form"
@@ -3334,6 +3313,9 @@ function showMain(){
   }
 
   closeMobileMenu();
+
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 
 }
 
@@ -3448,15 +3430,14 @@ function showProduct(product){
   }
 
 
-  /*
-    Hide the complete homepage first.
-    This is the main fix for the previous problem.
-  */
+  /* Hide homepage completely */
 
   if(main){
     main.style.display = "none";
   }
 
+
+  /* Open product as independent full-screen page */
 
   document.body.classList.add("product-open");
 
@@ -3468,11 +3449,21 @@ function showProduct(product){
   closeMobileMenu();
 
 
+  /*
+    Force the WINDOW itself to the top.
+    The product page has its own scroll.
+  */
+
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+
   window.scrollTo({
     top:0,
     left:0,
     behavior:"auto"
   });
+
+  page.scrollTop = 0;
 
 }
 
