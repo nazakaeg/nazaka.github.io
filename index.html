@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,22 @@
 <title>Nazeeka Designs</title>
 
 <style>
+
+/* =========================================================
+   NAZEEKA DESIGNS — BEIGE LUXURY / EDITORIAL
+   ========================================================= */
+
 :root{
-  --navy:#14233d;
-  --black:#111111;
+  --ink:#191815;
+  --brown:#40372f;
+  --cream:#f4efe7;
+  --ivory:#fbf9f4;
+  --sand:#e5dbce;
+  --taupe:#b8aa99;
+  --muted:#756e65;
+  --line:#d9d0c4;
   --white:#ffffff;
-  --cream:#f7f5f1;
-  --soft:#efede8;
-  --gray:#777;
-  --border:#dedbd4;
-  --sale:#9d3030;
+  --sale:#8f302d;
 }
 
 *{
@@ -29,15 +37,16 @@ html{
 }
 
 body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:var(--white);
-  color:var(--black);
+  font-family:Arial, Tahoma, sans-serif;
+  background:var(--ivory);
+  color:var(--ink);
   line-height:1.5;
 }
 
 button,
 input,
-select{
+select,
+textarea{
   font:inherit;
 }
 
@@ -46,8 +55,8 @@ button{
 }
 
 img{
-  display:block;
   max-width:100%;
+  display:block;
 }
 
 a{
@@ -55,169 +64,161 @@ a{
   text-decoration:none;
 }
 
-/* =========================
+
+/* =========================================================
    TOP BAR
-========================= */
+   ========================================================= */
 
 .top-bar{
-  background:var(--navy);
-  color:white;
+  background:var(--ink);
+  color:#f4eee5;
   text-align:center;
   padding:9px 15px;
-  font-size:11px;
-  letter-spacing:2px;
+  font-size:10px;
+  letter-spacing:3px;
   text-transform:uppercase;
 }
 
-/* =========================
+
+/* =========================================================
    NAVBAR
-========================= */
+   ========================================================= */
 
 .navbar{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #e8e6e1;
-}
-
-.nav-inner{
-  max-width:1450px;
-  margin:auto;
-  min-height:78px;
+  height:78px;
+  background:rgba(251,249,244,.97);
+  border-bottom:1px solid var(--line);
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 35px;
+  padding:0 5%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  backdrop-filter:blur(12px);
 }
 
 .logo{
+  font-family:Georgia,"Times New Roman",serif;
   font-size:25px;
-  font-weight:700;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  white-space:nowrap;
+  letter-spacing:1px;
+  color:var(--ink);
 }
 
 .logo span{
   display:block;
-  font-size:9px;
-  letter-spacing:5px;
-  font-weight:400;
+  font-family:Arial,Tahoma,sans-serif;
+  font-size:8px;
+  letter-spacing:4px;
+  text-transform:uppercase;
   margin-top:-2px;
-  text-align:center;
+  color:var(--muted);
 }
 
 .nav-links{
   display:flex;
   align-items:center;
-  gap:38px;
+  gap:35px;
 }
 
-.nav-links button{
-  border:0;
-  background:none;
-  color:var(--black);
-  font-size:12px;
-  letter-spacing:1.7px;
+.nav-links a{
+  font-size:11px;
+  letter-spacing:2px;
   text-transform:uppercase;
-  padding:8px 0;
+  color:var(--ink);
   position:relative;
 }
 
-.nav-links button::after{
+.nav-links a:after{
   content:"";
   position:absolute;
   left:0;
-  bottom:0;
+  bottom:-7px;
   width:0;
   height:1px;
-  background:var(--black);
+  background:var(--ink);
   transition:.3s;
 }
 
-.nav-links button:hover::after{
+.nav-links a:hover:after{
   width:100%;
 }
 
-.mobile-menu{
+.menu-btn{
   display:none;
-  border:0;
   background:none;
-  font-size:25px;
+  border:0;
+  font-size:24px;
 }
 
-/* =========================
+
+/* =========================================================
    HERO
-========================= */
+   ========================================================= */
 
 .hero{
+  min-height:calc(100vh - 78px);
   position:relative;
-  min-height:calc(100vh - 112px);
-  background:#eee;
+  background-image:url("IMG_7119.jpeg");
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:flex-end;
   overflow:hidden;
 }
 
-.hero img{
-  width:100%;
-  height:calc(100vh - 112px);
-  min-height:560px;
-  object-fit:cover;
-}
-
-.hero-overlay{
+.hero:after{
+  content:"";
   position:absolute;
   inset:0;
-  display:flex;
-  align-items:flex-end;
-  padding:70px 7%;
   background:linear-gradient(
     to top,
-    rgba(0,0,0,.48),
-    rgba(0,0,0,.04) 60%
+    rgba(20,17,14,.62),
+    rgba(20,17,14,.04) 65%
   );
 }
 
 .hero-content{
+  position:relative;
+  z-index:2;
   color:white;
-  max-width:620px;
+  padding:7vw 7%;
+  max-width:800px;
 }
 
-.hero-small{
-  font-size:11px;
-  letter-spacing:4px;
+.hero-kicker{
+  font-size:10px;
+  letter-spacing:5px;
   text-transform:uppercase;
-  margin-bottom:18px;
+  margin-bottom:20px;
 }
 
 .hero-title{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(48px,7vw,100px);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(55px,9vw,125px);
+  line-height:.88;
   font-weight:400;
-  line-height:.92;
-  margin-bottom:22px;
+  letter-spacing:-5px;
 }
 
-.hero-text{
-  font-size:14px;
+.hero-subtitle{
+  font-size:13px;
+  letter-spacing:2px;
+  margin-top:27px;
   max-width:430px;
-  margin-bottom:28px;
-  opacity:.95;
+  color:#f0ebe4;
 }
 
 .hero-btn{
   display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:180px;
-  padding:15px 25px;
-  background:white;
-  color:var(--black);
-  border:1px solid white;
-  font-size:11px;
+  margin-top:32px;
+  padding:15px 30px;
+  background:#f7f1e8;
+  color:var(--ink);
+  font-size:10px;
   letter-spacing:2px;
   text-transform:uppercase;
+  border:1px solid #f7f1e8;
   transition:.3s;
 }
 
@@ -226,113 +227,118 @@ a{
   color:white;
 }
 
-/* =========================
-   GENERAL SECTIONS
-========================= */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 .section{
-  max-width:1450px;
-  margin:auto;
-  padding:100px 35px;
+  padding:100px 6%;
 }
 
 .section-head{
   display:flex;
   justify-content:space-between;
-  align-items:end;
+  align-items:flex-end;
   gap:30px;
-  margin-bottom:45px;
+  margin-bottom:42px;
 }
 
-.section-kicker{
-  font-size:10px;
-  letter-spacing:3px;
+.eyebrow{
+  font-size:9px;
+  letter-spacing:4px;
   text-transform:uppercase;
-  color:#777;
-  margin-bottom:10px;
+  color:var(--muted);
+  margin-bottom:13px;
 }
 
 .section-title{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(35px,5vw,60px);
+  font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
-  line-height:1;
+  font-size:clamp(38px,5vw,68px);
+  line-height:.95;
+  letter-spacing:-2px;
 }
 
 .section-description{
-  max-width:420px;
-  color:#666;
+  max-width:370px;
+  color:var(--muted);
   font-size:13px;
+  line-height:1.8;
 }
 
-/* =========================
-   CATEGORIES
-========================= */
+
+/* =========================================================
+   CATEGORY GRID
+   ========================================================= */
+
+.categories{
+  background:var(--cream);
+}
 
 .category-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:15px;
+  gap:12px;
 }
 
 .category-card{
   position:relative;
-  height:570px;
+  min-height:540px;
   overflow:hidden;
-  background:var(--soft);
+  background:var(--sand);
   cursor:pointer;
 }
 
-.category-card::after{
+.category-card:after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
     to top,
-    rgba(0,0,0,.48),
+    rgba(20,17,14,.52),
     transparent 55%
   );
 }
 
-.category-card img{
+.category-card .category-image{
   width:100%;
   height:100%;
   object-fit:cover;
   transition:transform .8s cubic-bezier(.2,.7,.2,1);
 }
 
-.category-card:hover img{
+.category-card:hover .category-image{
   transform:scale(1.045);
 }
 
 .category-info{
   position:absolute;
   z-index:2;
-  bottom:30px;
   left:30px;
+  bottom:28px;
   color:white;
 }
 
-.category-info span{
-  display:block;
-  font-size:10px;
+.category-number{
+  font-size:9px;
   letter-spacing:3px;
-  text-transform:uppercase;
-  margin-bottom:8px;
+  opacity:.8;
 }
 
-.category-info h3{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:38px;
-  font-weight:400;
+.category-name{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:34px;
+  margin-top:5px;
 }
 
-/* =========================
-   PRODUCT GRID
-========================= */
 
-.collection{
-  background:var(--cream);
+/* =========================================================
+   FEATURED
+   ========================================================= */
+
+.featured{
+  background:var(--ivory);
 }
 
 .product-grid{
@@ -342,290 +348,353 @@ a{
 }
 
 .product-card{
-  background:white;
+  background:#f1ece4;
   position:relative;
   overflow:hidden;
   cursor:pointer;
 }
 
-.product-image{
-  position:relative;
+.product-image-wrap{
+  aspect-ratio:4/5;
   overflow:hidden;
-  aspect-ratio:3/4;
-  background:#f2f1ee;
+  background:#e9e2d8;
 }
 
-.product-image img{
+.product-card img{
   width:100%;
   height:100%;
   object-fit:cover;
   transition:transform .6s ease;
 }
 
-.product-card:hover .product-image img{
+.product-card:hover img{
   transform:scale(1.035);
 }
 
-.sale-badge{
-  position:absolute;
-  top:14px;
-  left:14px;
-  z-index:3;
-  background:var(--navy);
-  color:white;
-  padding:7px 10px;
-  font-size:9px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-}
-
 .product-info{
-  padding:18px 5px 24px;
+  padding:19px 3px 22px;
 }
 
 .product-category{
-  color:#888;
-  font-size:9px;
-  letter-spacing:2px;
+  font-size:8px;
+  letter-spacing:3px;
   text-transform:uppercase;
-  margin-bottom:7px;
+  color:var(--muted);
+  margin-bottom:8px;
 }
 
 .product-name{
-  font-family:Georgia, "Times New Roman", serif;
+  font-family:Georgia,"Times New Roman",serif;
   font-size:20px;
   font-weight:400;
-  margin-bottom:9px;
 }
 
-.price-row{
+.product-price{
+  margin-top:9px;
   display:flex;
+  gap:10px;
   align-items:center;
-  gap:9px;
 }
 
 .old-price{
-  color:#999;
+  color:#9b958c;
   text-decoration:line-through;
-  font-size:12px;
+  font-size:11px;
 }
 
-.price{
-  font-size:14px;
-  font-weight:600;
+.sale-price{
+  color:var(--ink);
+  font-size:13px;
 }
 
-/* =========================
-   EDITORIAL STRIP
-========================= */
+.product-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index:3;
+  padding:7px 10px;
+  background:rgba(251,249,244,.9);
+  font-size:8px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   EDITORIAL
+   ========================================================= */
 
 .editorial{
+  padding:0 6% 100px;
+}
+
+.editorial-wrap{
+  min-height:580px;
   display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:620px;
+  grid-template-columns:1.15fr .85fr;
+  background:var(--sand);
 }
 
 .editorial-image{
-  min-height:620px;
-  overflow:hidden;
+  min-height:580px;
+  background-image:url("IMG_9862.jpeg");
+  background-size:cover;
+  background-position:center;
 }
 
-.editorial-image img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.editorial-content{
-  background:var(--navy);
-  color:white;
+.editorial-copy{
   display:flex;
-  flex-direction:column;
   justify-content:center;
+  flex-direction:column;
   padding:70px;
+  background:var(--brown);
+  color:#f5eee5;
 }
 
-.editorial-content .section-kicker{
-  color:#c5c9d1;
+.editorial-copy .eyebrow{
+  color:#c8bbab;
 }
 
-.editorial-content h2{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:clamp(42px,5vw,75px);
+.editorial-copy h2{
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:clamp(42px,5vw,70px);
+  line-height:.95;
   font-weight:400;
-  line-height:.98;
-  margin-bottom:25px;
+  letter-spacing:-2px;
 }
 
-.editorial-content p{
-  max-width:450px;
-  color:#d7d9de;
-  font-size:14px;
-  margin-bottom:30px;
+.editorial-copy p{
+  color:#d7cdc0;
+  font-size:13px;
+  line-height:1.9;
+  margin-top:25px;
+  max-width:400px;
 }
 
 .editorial-btn{
+  margin-top:30px;
   width:max-content;
-  padding:14px 24px;
-  border:1px solid rgba(255,255,255,.7);
-  font-size:10px;
+  padding:14px 25px;
+  border:1px solid #cbbfaf;
+  font-size:9px;
   letter-spacing:2px;
   text-transform:uppercase;
-  transition:.3s;
 }
 
-.editorial-btn:hover{
-  background:white;
-  color:var(--navy);
+
+/* =========================================================
+   PRODUCT SECTIONS
+   ========================================================= */
+
+.products-section{
+  background:var(--ivory);
 }
 
-/* =========================
+.jeans-section{
+  background:var(--ink);
+  color:#f6f0e8;
+}
+
+.jeans-section .eyebrow{
+  color:#aaa097;
+}
+
+.jeans-section .section-description{
+  color:#aaa097;
+}
+
+.jeans-section .product-card{
+  background:#282622;
+}
+
+.jeans-section .product-category{
+  color:#a9a097;
+}
+
+.jeans-section .product-name{
+  color:#f6f0e8;
+}
+
+.jeans-section .sale-price{
+  color:#f6f0e8;
+}
+
+.jeans-section .old-price{
+  color:#77716b;
+}
+
+.jeans-section .product-image-wrap{
+  background:#242320;
+}
+
+.hijab-section{
+  background:var(--cream);
+}
+
+
+/* =========================================================
    PRODUCT PAGE
-========================= */
+   ========================================================= */
 
 .product-page{
   display:none;
-  max-width:1450px;
-  margin:auto;
-  padding:45px 35px 100px;
+  background:var(--ivory);
+  min-height:100vh;
 }
 
 .product-page.active{
   display:block;
 }
 
-.back-btn{
-  border:0;
-  background:none;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:35px;
-  color:#666;
+.product-detail{
+  padding:55px 6% 100px;
 }
 
-.product-layout{
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border:0;
+  background:none;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin-bottom:35px;
+}
+
+.detail-grid{
   display:grid;
-  grid-template-columns:minmax(0,1.3fr) minmax(350px,.7fr);
-  gap:70px;
+  grid-template-columns:1.3fr .7fr;
+  gap:65px;
   align-items:start;
 }
 
 .gallery{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr 1fr;
   gap:10px;
 }
 
 .gallery img{
   width:100%;
-  aspect-ratio:3/4;
+  aspect-ratio:4/5;
   object-fit:cover;
-  background:#f2f1ee;
+  background:#eee7dd;
 }
 
-.product-details{
+.detail-info{
   position:sticky;
-  top:115px;
-  padding:20px 0;
+  top:110px;
 }
 
-.product-details .product-category{
+.detail-category{
+  font-size:9px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  color:var(--muted);
   margin-bottom:15px;
 }
 
-.product-details h1{
-  font-family:Georgia, "Times New Roman", serif;
+.detail-title{
+  font-family:Georgia,"Times New Roman",serif;
   font-weight:400;
-  font-size:clamp(38px,5vw,65px);
-  line-height:1;
-  margin-bottom:20px;
+  font-size:clamp(40px,5vw,65px);
+  line-height:.95;
+  letter-spacing:-2px;
 }
 
 .detail-price{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  padding-bottom:25px;
-  border-bottom:1px solid var(--border);
-}
-
-.detail-price .price{
-  font-size:22px;
+  margin-top:22px;
+  font-size:18px;
 }
 
 .detail-description{
-  padding:25px 0;
-  border-bottom:1px solid var(--border);
-  color:#555;
-  font-size:14px;
+  margin-top:25px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.9;
+  padding-bottom:25px;
+  border-bottom:1px solid var(--line);
 }
 
-.detail-row{
-  padding:20px 0;
-  border-bottom:1px solid var(--border);
+.detail-meta{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
 }
 
-.detail-label{
-  display:block;
-  font-size:10px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  margin-bottom:12px;
-  color:#777;
+.meta-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:11px;
+  margin-bottom:13px;
 }
 
-.size-buttons,
+.meta-row:last-child{
+  margin-bottom:0;
+}
+
+.meta-label{
+  color:var(--muted);
+}
+
+.meta-value{
+  text-align:right;
+}
+
 .color-buttons{
   display:flex;
   flex-wrap:wrap;
   gap:8px;
+  margin-top:16px;
 }
 
-.option-btn{
-  min-width:50px;
-  padding:10px 14px;
-  border:1px solid #cfcfcf;
-  background:white;
-  font-size:11px;
-  transition:.25s;
+.color-btn{
+  padding:9px 13px;
+  border:1px solid var(--line);
+  background:transparent;
+  font-size:9px;
+  letter-spacing:1px;
+  text-transform:uppercase;
 }
 
-.option-btn:hover,
-.option-btn.active{
-  background:var(--navy);
+.color-btn.active,
+.color-btn:hover{
+  background:var(--ink);
   color:white;
-  border-color:var(--navy);
+  border-color:var(--ink);
 }
 
-.order-main-btn{
+.order-btn{
   width:100%;
   margin-top:25px;
-  border:0;
-  background:var(--navy);
-  color:white;
   padding:17px;
-  font-size:11px;
-  letter-spacing:2px;
+  border:1px solid var(--ink);
+  background:var(--ink);
+  color:white;
+  font-size:10px;
+  letter-spacing:3px;
   text-transform:uppercase;
   transition:.3s;
 }
 
-.order-main-btn:hover{
-  background:#0d192d;
+.order-btn:hover{
+  background:transparent;
+  color:var(--ink);
 }
 
-/* =========================
+
+/* =========================================================
    ORDER FORM
-========================= */
+   ========================================================= */
 
 .order-form{
   display:none;
-  max-width:560px;
-  margin:45px auto 0;
-  padding:35px;
+  margin-top:22px;
+  padding:25px;
   background:var(--cream);
-  border:1px solid #e2dfd8;
+  border:1px solid var(--line);
 }
 
 .order-form.active{
@@ -633,497 +702,452 @@ a{
 }
 
 .order-form h3{
-  font-family:Georgia, "Times New Roman", serif;
-  font-size:30px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
   font-weight:400;
-  margin-bottom:8px;
+  margin-bottom:20px;
 }
 
-.order-note{
-  color:#777;
-  font-size:12px;
-  margin-bottom:25px;
-}
-
-.form-group{
-  margin-bottom:15px;
-}
-
-.form-group label{
-  display:block;
-  font-size:9px;
-  letter-spacing:1.8px;
-  text-transform:uppercase;
-  margin-bottom:7px;
-}
-
-.form-group input,
-.form-group select{
+.order-form input,
+.order-form select,
+.order-form textarea{
   width:100%;
-  padding:13px;
-  border:1px solid #d6d2ca;
-  background:white;
-  outline:none;
-}
-
-.form-group input:focus,
-.form-group select:focus{
-  border-color:var(--navy);
-}
-
-.form-submit{
-  width:100%;
-  background:var(--navy);
-  color:white;
+  padding:13px 0;
   border:0;
+  border-bottom:1px solid var(--line);
+  background:transparent;
+  outline:none;
+  margin-bottom:16px;
+  font-size:12px;
+}
+
+.order-form textarea{
+  min-height:70px;
+  resize:vertical;
+}
+
+.submit-order{
+  width:100%;
   padding:15px;
-  margin-top:5px;
-  font-size:10px;
+  border:0;
+  background:var(--brown);
+  color:white;
+  font-size:9px;
   letter-spacing:2px;
   text-transform:uppercase;
 }
 
-/* =========================
-   JEANS
-========================= */
 
-.jeans-section{
-  background:#111;
-  color:white;
+/* =========================================================
+   HOME / ROUTING
+   ========================================================= */
+
+#home,
+#clothing,
+#jeans,
+#hijabs{
+  display:block;
 }
 
-.jeans-section .section-kicker{
-  color:#aaa;
+body.product-open #home,
+body.product-open #clothing,
+body.product-open #jeans,
+body.product-open #hijabs,
+body.product-open .top-bar,
+body.product-open .navbar{
+  display:none;
 }
 
-.jeans-section .section-description{
-  color:#aaa;
-}
 
-.jeans-section .product-card{
-  background:#181818;
-}
-
-.jeans-section .product-info{
-  color:white;
-}
-
-.jeans-section .product-category{
-  color:#888;
-}
-
-.jeans-section .old-price{
-  color:#777;
-}
-
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+   ========================================================= */
 
-footer{
-  background:#0e0e0e;
-  color:white;
-  padding:70px 35px 30px;
+.footer{
+  background:#181613;
+  color:#eee6dc;
+  padding:75px 6% 30px;
 }
 
-.footer-inner{
-  max-width:1450px;
-  margin:auto;
-}
-
-.footer-top{
+.footer-grid{
   display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-  gap:40px;
-  padding-bottom:60px;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:55px;
+  border-bottom:1px solid #3a3631;
 }
 
 .footer-brand{
-  font-size:28px;
-  letter-spacing:3px;
-  font-weight:700;
-  margin-bottom:15px;
-}
-
-.footer-brand-sub{
-  font-size:9px;
-  letter-spacing:5px;
-  color:#888;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:35px;
 }
 
 .footer-text{
-  color:#999;
-  max-width:360px;
+  max-width:330px;
+  color:#aaa198;
   font-size:12px;
-  margin-top:22px;
+  line-height:1.9;
+  margin-top:15px;
 }
 
-.footer-col h4{
-  font-size:10px;
-  letter-spacing:2px;
+.footer-title{
+  font-size:9px;
+  letter-spacing:3px;
   text-transform:uppercase;
   margin-bottom:18px;
 }
 
-.footer-col button,
-.footer-col a{
+.footer a{
   display:block;
-  background:none;
-  border:0;
-  color:#999;
-  margin-bottom:9px;
+  color:#aaa198;
   font-size:12px;
-  padding:0;
-  cursor:pointer;
+  margin-bottom:10px;
 }
 
-.footer-col button:hover,
-.footer-col a:hover{
+.footer a:hover{
   color:white;
 }
 
 .footer-bottom{
-  border-top:1px solid #292929;
-  padding-top:22px;
+  padding-top:25px;
   display:flex;
   justify-content:space-between;
-  color:#666;
-  font-size:10px;
+  color:#817a73;
+  font-size:9px;
   letter-spacing:1px;
 }
 
-/* =========================
+
+/* =========================================================
    MOBILE
-========================= */
+   ========================================================= */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
-  .nav-inner{
-    padding:0 20px;
-  }
-
-  .nav-links{
-    gap:20px;
-  }
-
-  .product-grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .category-card{
-    height:480px;
-  }
-
-  .product-layout{
-    grid-template-columns:1fr;
-    gap:35px;
-  }
-
-  .product-details{
-    position:static;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media(max-width:700px){
-
-  .top-bar{
-    font-size:8px;
-    letter-spacing:1.5px;
-  }
-
-  .nav-inner{
-    min-height:65px;
-  }
-
-  .logo{
-    font-size:19px;
-    letter-spacing:2px;
-  }
-
-  .logo span{
-    font-size:7px;
-    letter-spacing:3px;
-  }
-
-  .mobile-menu{
-    display:block;
+  .navbar{
+    height:70px;
+    padding:0 5%;
   }
 
   .nav-links{
     display:none;
     position:absolute;
-    top:65px;
+    top:70px;
     left:0;
-    right:0;
-    background:white;
-    border-bottom:1px solid #ddd;
+    width:100%;
+    background:var(--ivory);
+    border-bottom:1px solid var(--line);
+    padding:25px 5%;
     flex-direction:column;
-    align-items:stretch;
-    gap:0;
-    padding:10px 20px 20px;
+    align-items:flex-start;
+    gap:22px;
   }
 
   .nav-links.open{
     display:flex;
   }
 
-  .nav-links button{
-    text-align:left;
-    padding:15px 0;
-    border-bottom:1px solid #eee;
+  .menu-btn{
+    display:block;
   }
 
   .hero{
-    min-height:75vh;
-  }
-
-  .hero img{
-    height:75vh;
-    min-height:500px;
-  }
-
-  .hero-overlay{
-    padding:35px 22px;
+    min-height:78vh;
   }
 
   .hero-title{
-    font-size:54px;
-  }
-
-  .hero-text{
-    font-size:12px;
+    letter-spacing:-3px;
   }
 
   .section{
-    padding:65px 18px;
+    padding:70px 5%;
   }
 
   .section-head{
     display:block;
-    margin-bottom:28px;
   }
 
-  .section-title{
-    margin-bottom:18px;
+  .section-description{
+    margin-top:20px;
   }
 
   .category-grid{
     grid-template-columns:1fr;
-    gap:10px;
   }
 
   .category-card{
-    height:500px;
+    min-height:480px;
   }
 
   .product-grid{
     grid-template-columns:repeat(2,1fr);
-    gap:9px;
-  }
-
-  .product-info{
-    padding:13px 3px 20px;
+    gap:12px;
   }
 
   .product-name{
     font-size:17px;
   }
 
-  .product-category{
-    font-size:8px;
-  }
-
-  .price{
-    font-size:12px;
-  }
-
-  .old-price{
-    font-size:10px;
-  }
-
-  .sale-badge{
-    top:9px;
-    left:9px;
-    font-size:8px;
-  }
-
   .editorial{
+    padding:0 5% 70px;
+  }
+
+  .editorial-wrap{
     grid-template-columns:1fr;
   }
 
   .editorial-image{
-    min-height:500px;
+    min-height:430px;
   }
 
-  .editorial-content{
-    min-height:500px;
-    padding:45px 25px;
+  .editorial-copy{
+    min-height:430px;
+    padding:45px 30px;
   }
 
-  .product-page{
-    padding:25px 15px 70px;
+  .detail-grid{
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .detail-info{
+    position:static;
   }
 
   .gallery{
-    grid-template-columns:1fr 1fr;
-    gap:5px;
+    gap:7px;
   }
 
-  .product-details h1{
-    font-size:42px;
+  .product-detail{
+    padding:30px 5% 70px;
   }
 
-  .order-form{
-    padding:25px 18px;
-  }
-
-  footer{
-    padding:55px 20px 25px;
-  }
-
-  .footer-top{
-    grid-template-columns:1fr 1fr;
-    gap:35px 20px;
-  }
-
-  .footer-top > div:first-child{
-    grid-column:1/-1;
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:35px;
   }
 
   .footer-bottom{
-    display:block;
-    line-height:2;
+    flex-direction:column;
+    gap:10px;
   }
 }
 
-@media(max-width:400px){
+
+@media(max-width:520px){
+
+  .top-bar{
+    font-size:8px;
+    letter-spacing:2px;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .hero-content{
+    padding:45px 6%;
+  }
+
+  .hero-title{
+    font-size:60px;
+  }
+
+  .hero-subtitle{
+    font-size:11px;
+  }
+
+  .category-card{
+    min-height:410px;
+  }
+
   .product-grid{
-    gap:7px;
+    grid-template-columns:1fr 1fr;
+  }
+
+  .product-info{
+    padding:13px 2px 18px;
   }
 
   .product-name{
     font-size:15px;
   }
 
-  .hero-title{
-    font-size:47px;
+  .product-price{
+    gap:6px;
+  }
+
+  .detail-title{
+    font-size:44px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL FADE
+   ========================================================= */
+
+.fade-in{
+  animation:fadeIn .45s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
   }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- TOP BAR -->
+<!-- =======================================================
+     TOP BAR
+======================================================= -->
+
 <div class="top-bar">
-  Nazeeka Designs — New Collection
+  New Collection · Designed for Your Story
 </div>
 
-<!-- NAVBAR -->
+
+<!-- =======================================================
+     NAVBAR
+======================================================= -->
+
 <nav class="navbar">
-  <div class="nav-inner">
 
-    <button class="mobile-menu" onclick="toggleMobileMenu()">☰</button>
+  <a href="#home" class="logo" onclick="goHome()">
+    Nazeeka
+    <span>Designs</span>
+  </a>
 
-    <div class="logo">
-      Nazeeka
-      <span>Designs</span>
-    </div>
-
-    <div class="nav-links" id="navLinks">
-      <button onclick="goHome()">Home</button>
-      <button onclick="goClothing()">Clothing</button>
-      <button onclick="goJeans()">Jeans</button>
-      <button onclick="goHijabs()">Hijab</button>
-    </div>
-
-    <div style="width:25px;"></div>
-
+  <div class="nav-links" id="navLinks">
+    <a href="#home" onclick="goHome()">Home</a>
+    <a href="#clothing" onclick="goClothing()">Clothing</a>
+    <a href="#jeans" onclick="goJeans()">Jeans</a>
+    <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
   </div>
+
+  <button class="menu-btn" onclick="toggleMobileMenu()">☰</button>
+
 </nav>
 
 
-<!-- =========================
-     HOME
-========================= -->
+<!-- =======================================================
+     MAIN HOME
+======================================================= -->
 
-<main id="home">
+<main id="mainContent">
 
-  <section class="hero">
 
-    <img src="IMG_7119.jpeg" alt="Nazeeka Designs">
+<!-- HERO -->
 
-    <div class="hero-overlay">
-      <div class="hero-content">
+<section id="home">
 
-        <div class="hero-small">
-          Nazeeka Designs
-        </div>
+  <div class="hero">
 
-        <h1 class="hero-title">
-          Wear<br>
-          Your Story.
-        </h1>
+    <div class="hero-content">
 
-        <p class="hero-text">
-          Contemporary pieces designed for everyday confidence,
-          effortless styling and a distinctive Nazeeka identity.
-        </p>
-
-        <button class="hero-btn" onclick="goClothing()">
-          Shop Collection
-        </button>
-
+      <div class="hero-kicker">
+        Nazeeka Designs
       </div>
+
+      <h1 class="hero-title">
+        Wear<br>
+        Your<br>
+        Story.
+      </h1>
+
+      <p class="hero-subtitle">
+        Contemporary essentials designed with an effortless,
+        modern attitude.
+      </p>
+
+      <a href="#clothing"
+         class="hero-btn"
+         onclick="goClothing()">
+        Shop Collection
+      </a>
+
     </div>
 
-  </section>
+  </div>
 
 
   <!-- CATEGORIES -->
 
-  <section class="section">
+  <section class="section categories">
 
     <div class="section-head">
+
       <div>
-        <div class="section-kicker">Explore</div>
-        <h2 class="section-title">The Collections</h2>
+        <div class="eyebrow">Explore</div>
+        <h2 class="section-title">The Collection</h2>
       </div>
 
       <p class="section-description">
-        Discover carefully selected pieces across clothing,
-        denim and hijab collections.
+        Everyday pieces, modern denim and carefully selected
+        hijabs — created to become part of your wardrobe.
       </p>
+
     </div>
+
 
     <div class="category-grid">
 
-      <div class="category-card" onclick="goClothing()">
-        <img src="IMG_9818.jpeg" alt="Clothing">
+      <div class="category-card"
+           onclick="goClothing()">
+
+        <img
+          class="category-image"
+          src="IMG_9832.jpeg"
+          alt="Clothing">
+
         <div class="category-info">
-          <span>Collection 01</span>
-          <h3>Clothing</h3>
+          <div class="category-number">01</div>
+          <div class="category-name">Clothing</div>
         </div>
+
       </div>
 
-      <div class="category-card" onclick="goJeans()">
-        <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="Jeans">
+
+      <div class="category-card"
+           onclick="goJeans()">
+
+        <img
+          class="category-image"
+          src="IMG_9905.jpeg"
+          alt="Jeans">
+
         <div class="category-info">
-          <span>Collection 02</span>
-          <h3>Jeans</h3>
+          <div class="category-number">02</div>
+          <div class="category-name">Denim</div>
         </div>
+
       </div>
 
-      <div class="category-card" onclick="goHijabs()">
-        <img src="IMG_7465.jpeg" alt="Hijab">
+
+      <div class="category-card"
+           onclick="goHijabs()">
+
+        <img
+          class="category-image"
+          src="IMG_7465.jpeg"
+          alt="Hijabs">
+
         <div class="category-info">
-          <span>Collection 03</span>
-          <h3>Hijab</h3>
+          <div class="category-number">03</div>
+          <div class="category-name">Hijabs</div>
         </div>
+
       </div>
 
     </div>
@@ -1133,82 +1157,159 @@ footer{
 
   <!-- FEATURED -->
 
-  <section class="section collection">
+  <section class="section featured">
 
     <div class="section-head">
+
       <div>
-        <div class="section-kicker">Nazeeka Edit</div>
-        <h2 class="section-title">Featured Pieces</h2>
+        <div class="eyebrow">Selected Pieces</div>
+        <h2 class="section-title">New &amp; Now</h2>
       </div>
 
-      <p class="section-description">
-        Signature pieces from our current collections.
-      </p>
     </div>
+
 
     <div class="product-grid">
 
-      <div class="product-card" onclick="openProduct('set')">
-        <div class="product-image">
-          <div class="sale-badge">Sale</div>
-          <img src="IMG_9818.jpeg" alt="T-Shirt & Pants Set">
+
+      <div class="product-card"
+           onclick="openProduct('set')">
+
+        <div class="product-tag">
+          Set
         </div>
+
+        <div class="product-image-wrap">
+
+          <img
+            src="IMG_9818.jpeg"
+            alt="T-Shirt & Pants Set">
+
+        </div>
+
         <div class="product-info">
-          <div class="product-category">Clothing</div>
-          <div class="product-name">T-Shirt & Pants Set</div>
-          <div class="price-row">
+
+          <div class="product-category">
+            Clothing
+          </div>
+
+          <div class="product-name">
+            T-Shirt &amp; Pants Set
+          </div>
+
+          <div class="product-price">
             <span class="old-price">1,200 EGP</span>
-            <span class="price">960 EGP</span>
+            <span class="sale-price">960 EGP</span>
           </div>
+
         </div>
+
       </div>
 
 
-      <div class="product-card" onclick="openProduct('oversized')">
-        <div class="product-image">
-          <div class="sale-badge">Sale</div>
-          <img src="IMG_9832.jpeg" alt="Striped Oversized T-Shirt">
+      <div class="product-card"
+           onclick="openProduct('oversized')">
+
+        <div class="product-tag">
+          New
         </div>
+
+        <div class="product-image-wrap">
+
+          <img
+            src="IMG_9832.jpeg"
+            alt="Striped Oversized T-Shirt">
+
+        </div>
+
         <div class="product-info">
-          <div class="product-category">Clothing</div>
-          <div class="product-name">Striped Oversized T-Shirt</div>
-          <div class="price-row">
+
+          <div class="product-category">
+            Clothing
+          </div>
+
+          <div class="product-name">
+            Striped Oversized T-Shirt
+          </div>
+
+          <div class="product-price">
             <span class="old-price">550 EGP</span>
-            <span class="price">470 EGP</span>
+            <span class="sale-price">470 EGP</span>
           </div>
+
         </div>
+
       </div>
 
 
-      <div class="product-card" onclick="openProduct('nesr-long-jeans')">
-        <div class="product-image">
-          <div class="sale-badge">Sale</div>
-          <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="Nesr Long Jeans">
+      <div class="product-card"
+           onclick="openProduct('nesr-long-jeans')">
+
+        <div class="product-tag">
+          Denim
         </div>
+
+        <div class="product-image-wrap">
+
+          <img
+            src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
+            alt="Nesr Long Jeans">
+
+        </div>
+
         <div class="product-info">
-          <div class="product-category">Denim</div>
-          <div class="product-name">Nesr Long Jeans</div>
-          <div class="price-row">
+
+          <div class="product-category">
+            Jeans
+          </div>
+
+          <div class="product-name">
+            Nesr Long Jeans
+          </div>
+
+          <div class="product-price">
             <span class="old-price">750 EGP</span>
-            <span class="price">580 EGP</span>
+            <span class="sale-price">580 EGP</span>
           </div>
+
         </div>
+
       </div>
 
 
-      <div class="product-card" onclick="openProduct('thai')">
-        <div class="product-image">
-          <div class="sale-badge">Best Seller</div>
-          <img src="IMG_7465.jpeg" alt="Original Thai Ruffled">
+      <div class="product-card"
+           onclick="openProduct('thai')">
+
+        <div class="product-tag">
+          Best Seller
         </div>
+
+        <div class="product-image-wrap">
+
+          <img
+            src="IMG_7465.jpeg"
+            alt="Original Thai Ruffled">
+
+        </div>
+
         <div class="product-info">
-          <div class="product-category">Hijab</div>
-          <div class="product-name">Original Thai Ruffled</div>
-          <div class="price-row">
-            <span class="price">290 EGP</span>
+
+          <div class="product-category">
+            Hijab
           </div>
+
+          <div class="product-name">
+            Original Thai Ruffled
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">290 EGP</span>
+          </div>
+
         </div>
+
       </div>
+
 
     </div>
 
@@ -1219,1576 +1320,1701 @@ footer{
 
   <section class="editorial">
 
-    <div class="editorial-image">
-      <img src="IMG_9905.jpeg" alt="Nazeeka Denim">
-    </div>
+    <div class="editorial-wrap">
 
-    <div class="editorial-content">
+      <div class="editorial-image"></div>
 
-      <div class="section-kicker">The Denim Edit</div>
+      <div class="editorial-copy">
 
-      <h2>
-        Denim.<br>
-        Reimagined.
-      </h2>
+        <div class="eyebrow">
+          Nazeeka Denim
+        </div>
 
-      <p>
-        Strong silhouettes, everyday comfort and a modern attitude.
-        Explore the Nazeeka denim collection.
-      </p>
+        <h2>
+          Made to<br>
+          move with you.
+        </h2>
 
-      <button class="editorial-btn" onclick="goJeans()">
-        Explore Jeans
-      </button>
+        <p>
+          Relaxed silhouettes, timeless washes and everyday
+          denim designed for the way you actually live.
+        </p>
+
+        <a href="#jeans"
+           onclick="goJeans()"
+           class="editorial-btn">
+          Explore Denim
+        </a>
+
+      </div>
 
     </div>
 
   </section>
 
-</main>
 
+  <!-- CLOTHING -->
 
-<!-- =========================
-     CLOTHING
-========================= -->
+  <section id="clothing"
+           class="section products-section">
 
-<section id="clothing" class="section collection" style="display:none;">
+    <div class="section-head">
 
-  <div class="section-head">
-    <div>
-      <div class="section-kicker">Nazeeka Designs</div>
-      <h2 class="section-title">Clothing</h2>
-    </div>
-
-    <p class="section-description">
-      Everyday silhouettes designed with a modern Nazeeka attitude.
-    </p>
-  </div>
-
-  <div class="product-grid">
-
-    <!-- SET -->
-    <div class="product-card" onclick="openProduct('set')">
-      <div class="product-image">
-        <div class="sale-badge">Sale</div>
-        <img src="IMG_9818.jpeg" alt="T-Shirt & Pants Set">
+      <div>
+        <div class="eyebrow">01 / Clothing</div>
+        <h2 class="section-title">Clothing</h2>
       </div>
 
-      <div class="product-info">
-        <div class="product-category">Clothing</div>
-        <div class="product-name">T-Shirt & Pants Set</div>
+      <p class="section-description">
+        Easy silhouettes and everyday essentials with a
+        Nazeeka point of view.
+      </p>
 
-        <div class="price-row">
-          <span class="old-price">1,200 EGP</span>
-          <span class="price">960 EGP</span>
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- SET -->
+
+      <div class="product-card"
+           onclick="openProduct('set')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_9818.jpeg"
+               alt="T-Shirt & Pants Set">
         </div>
-      </div>
-    </div>
 
+        <div class="product-info">
+          <div class="product-category">Set</div>
 
-    <!-- OVERSIZED -->
-    <div class="product-card" onclick="openProduct('oversized')">
-      <div class="product-image">
-        <div class="sale-badge">Sale</div>
-        <img src="IMG_9832.jpeg" alt="Striped Oversized T-Shirt">
-      </div>
+          <div class="product-name">
+            T-Shirt &amp; Pants Set
+          </div>
 
-      <div class="product-info">
-        <div class="product-category">Clothing</div>
-        <div class="product-name">Striped Oversized T-Shirt</div>
-
-        <div class="price-row">
-          <span class="old-price">550 EGP</span>
-          <span class="price">470 EGP</span>
+          <div class="product-price">
+            <span class="old-price">1,200 EGP</span>
+            <span class="sale-price">960 EGP</span>
+          </div>
         </div>
-      </div>
-    </div>
 
-
-    <!-- STRIPED -->
-    <div class="product-card" onclick="openProduct('striped-shirt')">
-      <div class="product-image">
-        <div class="sale-badge">Sale</div>
-        <img src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg" alt="Striped T-Shirt">
       </div>
 
-      <div class="product-info">
-        <div class="product-category">Clothing</div>
-        <div class="product-name">Striped T-Shirt</div>
 
-        <div class="price-row">
-          <span class="old-price">570 EGP</span>
-          <span class="price">500 EGP</span>
+      <!-- OVERSIZED -->
+
+      <div class="product-card"
+           onclick="openProduct('oversized')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_9832.jpeg"
+               alt="Striped Oversized T-Shirt">
         </div>
-      </div>
-    </div>
 
+        <div class="product-info">
+          <div class="product-category">T-Shirt</div>
 
-    <!-- ROSE -->
-    <div class="product-card" onclick="openProduct('rose')">
-      <div class="product-image">
-        <img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="Rose Blouse">
-      </div>
+          <div class="product-name">
+            Striped Oversized T-Shirt
+          </div>
 
-      <div class="product-info">
-        <div class="product-category">Clothing</div>
-        <div class="product-name">Rose Blouse</div>
-
-        <div class="price-row">
-          <span class="price">520 EGP</span>
+          <div class="product-price">
+            <span class="old-price">550 EGP</span>
+            <span class="sale-price">470 EGP</span>
+          </div>
         </div>
+
       </div>
+
+
+      <!-- STRIPED -->
+
+      <div class="product-card"
+           onclick="openProduct('striped-shirt')">
+
+        <div class="product-image-wrap">
+          <img
+            src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+            alt="Striped T-Shirt">
+        </div>
+
+        <div class="product-info">
+          <div class="product-category">T-Shirt</div>
+
+          <div class="product-name">
+            Striped T-Shirt
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">570 EGP</span>
+            <span class="sale-price">500 EGP</span>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ROSE -->
+
+      <div class="product-card"
+           onclick="openProduct('rose')">
+
+        <div class="product-image-wrap">
+          <img
+            src="C43C4A76-9689-43C2-AD32-1052EA614390.png"
+            alt="Rose Blouse">
+        </div>
+
+        <div class="product-info">
+          <div class="product-category">Blouse</div>
+
+          <div class="product-name">
+            Rose Blouse
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">520 EGP</span>
+          </div>
+        </div>
+
+      </div>
+
+
     </div>
 
-  </div>
+  </section>
+
+
+  <!-- JEANS -->
+
+  <section id="jeans"
+           class="section jeans-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="eyebrow">02 / Denim</div>
+        <h2 class="section-title">Jeans</h2>
+      </div>
+
+      <p class="section-description">
+        Modern denim cuts made for effortless everyday styling.
+      </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- NESR -->
+
+      <div class="product-card"
+           onclick="openProduct('nesr-long-jeans')">
+
+        <div class="product-image-wrap">
+          <img
+            src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
+            alt="Nesr Long Jeans">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Straight Cut
+          </div>
+
+          <div class="product-name">
+            Nesr Long Jeans
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">750 EGP</span>
+            <span class="sale-price">580 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- WIDE -->
+
+      <div class="product-card"
+           onclick="openProduct('wide-leg-jeans')">
+
+        <div class="product-image-wrap">
+          <img
+            src="IMG_9905.jpeg"
+            alt="Wide Leg Fold Jeans">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Denim
+          </div>
+
+          <div class="product-name">
+            Wide Leg Fold Jeans
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">800 EGP</span>
+            <span class="sale-price">600 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- HIJABS -->
+
+  <section id="hijabs"
+           class="section hijab-section">
+
+    <div class="section-head">
+
+      <div>
+        <div class="eyebrow">03 / Accessories</div>
+        <h2 class="section-title">Hijabs</h2>
+      </div>
+
+      <p class="section-description">
+        Soft textures and versatile colors designed for
+        effortless styling.
+      </p>
+
+    </div>
+
+
+    <div class="product-grid">
+
+
+      <!-- THAI -->
+
+      <div class="product-card"
+           onclick="openProduct('thai')">
+
+        <div class="product-tag">
+          Best Seller
+        </div>
+
+        <div class="product-image-wrap">
+          <img src="IMG_7465.jpeg"
+               alt="Original Thai Ruffled">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Original Thai Ruffled
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">290 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- LINEN -->
+
+      <div class="product-card"
+           onclick="openProduct('linen')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_7352.jpeg"
+               alt="Modal Linen Cotton Soft">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Modal Linen Cotton Soft
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">170 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- COLORED -->
+
+      <div class="product-card"
+           onclick="openProduct('colored')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_7341.jpeg"
+               alt="Modal Cotton Colored">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Modal Cotton Colored
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">180 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- BALACLAVA -->
+
+      <div class="product-card"
+           onclick="openProduct('balaclava')">
+
+        <div class="product-image-wrap">
+          <img
+            src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg"
+            alt="Balaclava Summer">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Balaclava Summer
+          </div>
+
+          <div class="product-price">
+            <span class="sale-price">250 EGP</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
 
 </section>
 
 
-<!-- =========================
-     JEANS
-========================= -->
-
-<section id="jeans" class="section jeans-section" style="display:none;">
-
-  <div class="section-head">
-    <div>
-      <div class="section-kicker">Nazeeka Denim</div>
-      <h2 class="section-title">Jeans</h2>
-    </div>
-
-    <p class="section-description">
-      Straight and wide silhouettes made for everyday styling.
-    </p>
-  </div>
-
-  <div class="product-grid">
-
-    <!-- NESR -->
-    <div class="product-card" onclick="openProduct('nesr-long-jeans')">
-
-      <div class="product-image">
-        <div class="sale-badge">Sale</div>
-
-        <img
-          src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
-          alt="Nesr Long Jeans"
-        >
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-category">
-          Denim / Straight Cut
-        </div>
-
-        <div class="product-name">
-          Nesr Long Jeans
-        </div>
-
-        <div class="price-row">
-          <span class="old-price">750 EGP</span>
-          <span class="price">580 EGP</span>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- WIDE LEG -->
-    <div class="product-card" onclick="openProduct('wide-leg-fold-jeans')">
-
-      <div class="product-image">
-        <div class="sale-badge">Sale</div>
-
-        <img
-          src="IMG_9905.jpeg"
-          alt="Wide Leg Fold Jeans"
-        >
-      </div>
-
-      <div class="product-info">
-
-        <div class="product-category">
-          Denim
-        </div>
-
-        <div class="product-name">
-          Wide Leg Fold Jeans
-        </div>
-
-        <div class="price-row">
-          <span class="old-price">800 EGP</span>
-          <span class="price">600 EGP</span>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     HIJAB
-========================= -->
-
-<section id="hijabs" class="section collection" style="display:none;">
-
-  <div class="section-head">
-    <div>
-      <div class="section-kicker">Nazeeka Scarves</div>
-      <h2 class="section-title">Hijab</h2>
-    </div>
-
-    <p class="section-description">
-      Soft textures, effortless draping and everyday comfort.
-    </p>
-  </div>
-
-  <div class="product-grid">
-
-    <!-- THAI -->
-    <div class="product-card" onclick="openProduct('thai')">
-
-      <div class="product-image">
-        <div class="sale-badge">Best Seller</div>
-        <img src="IMG_7465.jpeg" alt="Original Thai Ruffled">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Hijab</div>
-        <div class="product-name">Original Thai Ruffled</div>
-
-        <div class="price-row">
-          <span class="price">290 EGP</span>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- LINEN -->
-    <div class="product-card" onclick="openProduct('linen')">
-
-      <div class="product-image">
-        <img src="IMG_7352.jpeg" alt="Modal Linen Cotton Soft">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Hijab</div>
-        <div class="product-name">Modal Linen Cotton Soft</div>
-
-        <div class="price-row">
-          <span class="price">170 EGP</span>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- COLORED -->
-    <div class="product-card" onclick="openProduct('colored')">
-
-      <div class="product-image">
-        <img src="IMG_7341.jpeg" alt="Modal Cotton Colored">
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Hijab</div>
-        <div class="product-name">Modal Cotton Colored</div>
-
-        <div class="price-row">
-          <span class="price">180 EGP</span>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- BALACLAVA -->
-    <div class="product-card" onclick="openProduct('balaclava')">
-
-      <div class="product-image">
-        <img
-          src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg"
-          alt="Balaclava Summer"
-        >
-      </div>
-
-      <div class="product-info">
-        <div class="product-category">Hijab</div>
-        <div class="product-name">Balaclava Summer</div>
-
-        <div class="price-row">
-          <span class="price">250 EGP</span>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     PRODUCT PAGES
-========================================================= -->
-
-
-<!-- ================= SET ================= -->
-
-<section id="product-set" class="product-page">
-
-  <button class="back-btn" onclick="goClothing()">← Back to Clothing</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_9818.jpeg" alt="">
-      <img src="IMG_9821.jpeg" alt="">
-      <img src="IMG_9819.jpeg" alt="">
-      <img src="IMG_9801.jpeg" alt="">
-      <img src="IMG_9820.jpeg" alt="">
-      <img src="IMG_9803.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Clothing</div>
-
-      <h1>T-Shirt & Pants Set</h1>
-
-      <div class="detail-price">
-        <span class="old-price">1,200 EGP</span>
-        <span class="price">960 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Complete everyday set with a relaxed, effortless fit.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">Free Size</button>
-        </div>
-
-      </div>
-
-      <button class="order-main-btn" onclick="openOrder('set-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="set-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="set-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="set-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="set-size">
-            <option>Free Size</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="set-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendSetOrder()">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= OVERSIZED ================= -->
-
-<section id="product-oversized" class="product-page">
-
-  <button class="back-btn" onclick="goClothing()">← Back to Clothing</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_9832.jpeg" alt="">
-      <img src="IMG_9833.jpeg" alt="">
-      <img src="IMG_9834.jpeg" alt="">
-      <img src="IMG_9844.jpeg" alt="">
-      <img src="IMG_9845.jpeg" alt="">
-      <img src="IMG_9848.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Clothing</div>
-
-      <h1>Striped Oversized T-Shirt</h1>
-
-      <div class="detail-price">
-        <span class="old-price">550 EGP</span>
-        <span class="price">470 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Oversized fit with an effortless contemporary silhouette.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Fit</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">Oversized Fit</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('oversized-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="oversized-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="oversized-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="oversized-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="oversized-size">
-            <option>Oversized Fit</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="oversized-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Striped Oversized T-Shirt',
-            '470',
-            'oversized-name',
-            'oversized-phone',
-            'oversized-size',
-            'oversized-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= STRIPED SHIRT ================= -->
-
-<section id="product-striped-shirt" class="product-page">
-
-  <button class="back-btn" onclick="goClothing()">← Back to Clothing</button>
-
-  <div class="product-layout">
-
-    <div class="gallery" id="striped-gallery">
-
-      <img id="striped-main-1"
-           src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
-           alt="">
-
-      <img id="striped-main-2"
-           src="ACF784DC-469F-4D8A-930A-4935ED8265AB.png"
-           alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Clothing</div>
-
-      <h1>Striped T-Shirt</h1>
-
-      <div class="detail-price">
-        <span class="old-price">570 EGP</span>
-        <span class="price">500 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Relaxed everyday T-shirt available in three color options.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">Free Size</button>
-        </div>
-
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Color</span>
-
-        <div class="color-buttons">
-
-          <button
-            class="option-btn active"
-            onclick="changeShirtColor('navy',this)">
-            Navy
-          </button>
-
-          <button
-            class="option-btn"
-            onclick="changeShirtColor('pink',this)">
-            Pink
-          </button>
-
-          <button
-            class="option-btn"
-            onclick="changeShirtColor('yellow',this)">
-            Yellow
-          </button>
-
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('striped-shirt-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="striped-shirt-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="striped-shirt-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="striped-shirt-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="striped-shirt-size">
-            <option>Free Size</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="striped-shirt-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Striped T-Shirt',
-            '500',
-            'striped-shirt-name',
-            'striped-shirt-phone',
-            'striped-shirt-size',
-            'striped-shirt-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ROSE ================= -->
-
-<section id="product-rose" class="product-page">
-
-  <button class="back-btn" onclick="goClothing()">← Back to Clothing</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="">
-      <img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="">
-      <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
-      <img src="IMG_7725.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Clothing</div>
-
-      <h1>Rose Blouse</h1>
-
-      <div class="detail-price">
-        <span class="price">520 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        بلوز بحزام لف كتان
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">Free Size</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('rose-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="rose-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="rose-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="rose-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="rose-size">
-            <option>Free Size</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="rose-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Rose Blouse',
-            '520',
-            'rose-name',
-            'rose-phone',
-            'rose-size',
-            'rose-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= NESR JEANS ================= -->
-
-<section id="product-nesr-long-jeans" class="product-page">
-
-  <button class="back-btn" onclick="goJeans()">← Back to Jeans</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="">
-      <img src="F9A4A653-C7EC-409E-B19D-59AB996D98E6.png" alt="">
-      <img src="5C0B9648-B3B0-403D-A1F6-4C94262D4CFA.png" alt="">
-      <img src="IMG_9862.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Denim / Straight Cut</div>
-
-      <h1>Nesr Long Jeans</h1>
-
-      <div class="detail-price">
-        <span class="old-price">750 EGP</span>
-        <span class="price">580 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Straight cut jeans.
-        Available in Light, Medium and Dirty.
-        Sizes 36, 38 and 40. Fits approximately 50–95 KG.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-
-          <button class="option-btn active">36</button>
-          <button class="option-btn">38</button>
-          <button class="option-btn">40</button>
-
-        </div>
-
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Color</span>
-
-        <div class="color-buttons">
-
-          <button class="option-btn active">Light</button>
-          <button class="option-btn">Medium</button>
-          <button class="option-btn">Dirty</button>
-
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('nesr-jeans-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="nesr-jeans-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="nesr-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="nesr-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-
-          <select id="nesr-size">
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
-          </select>
-
-        </div>
-
-        <div class="form-group">
-          <label>Color</label>
-
-          <select id="nesr-color">
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
-          </select>
-
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="nesr-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendJeansOrder(
-            'Nesr Long Jeans',
-            '580',
-            'nesr-name',
-            'nesr-phone',
-            'nesr-size',
-            'nesr-color',
-            'nesr-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= WIDE LEG ================= -->
-
-<section id="product-wide-leg-fold-jeans" class="product-page">
-
-  <button class="back-btn" onclick="goJeans()">← Back to Jeans</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_9905.jpeg" alt="">
-      <img src="IMG_9901.jpeg" alt="">
-      <img src="IMG_9904.jpeg" alt="">
-      <img src="IMG_9898.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Denim</div>
-
-      <h1>Wide Leg Fold Jeans</h1>
-
-      <div class="detail-price">
-        <span class="old-price">800 EGP</span>
-        <span class="price">600 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Modern denim silhouette with a relaxed fit.
-        Available in Light, Medium and Dirty.
-        Sizes 36, 38 and 40. Fits approximately 50–95 KG.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-
-          <button class="option-btn active">36</button>
-          <button class="option-btn">38</button>
-          <button class="option-btn">40</button>
-
-        </div>
-
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Color</span>
-
-        <div class="color-buttons">
-
-          <button class="option-btn active">Light</button>
-          <button class="option-btn">Medium</button>
-          <button class="option-btn">Dirty</button>
-
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('wide-leg-jeans-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="wide-leg-jeans-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="wide-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="wide-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-
-          <select id="wide-size">
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
-          </select>
-
-        </div>
-
-        <div class="form-group">
-          <label>Color</label>
-
-          <select id="wide-color">
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
-          </select>
-
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="wide-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendJeansOrder(
-            'Wide Leg Fold Jeans',
-            '600',
-            'wide-name',
-            'wide-phone',
-            'wide-size',
-            'wide-color',
-            'wide-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= THAI HIJAB ================= -->
-
-<section id="product-thai" class="product-page">
-
-  <button class="back-btn" onclick="goHijabs()">← Back to Hijab</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_7465.jpeg" alt="">
-      <img src="IMG_7330.jpeg" alt="">
-      <img src="IMG_7329.jpeg" alt="">
-      <img src="IMG_7324.jpeg" alt="">
-      <img src="IMG_7333.jpeg" alt="">
-      <img src="IMG_7327.jpeg" alt="">
-      <img src="IMG_7320.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Hijab / Best Seller</div>
-
-      <h1>Original Thai Ruffled</h1>
-
-      <div class="detail-price">
-        <span class="price">290 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Original Thai Ruffled Hijab.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">60 × 2 m</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('thai-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="thai-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="thai-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="thai-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="thai-size">
-            <option>60 × 2 m</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="thai-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Original Thai Ruffled',
-            '290',
-            'thai-name',
-            'thai-phone',
-            'thai-size',
-            'thai-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= LINEN HIJAB ================= -->
-
-<section id="product-linen" class="product-page">
-
-  <button class="back-btn" onclick="goHijabs()">← Back to Hijab</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_7352.jpeg" alt="">
-      <img src="IMG_7353.jpeg" alt="">
-      <img src="IMG_7350.jpeg" alt="">
-      <img src="IMG_7354.jpeg" alt="">
-      <img src="IMG_7351.jpeg" alt="">
-      <img src="IMG_7348.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Hijab</div>
-
-      <h1>Modal Linen Cotton Soft</h1>
-
-      <div class="detail-price">
-        <span class="price">170 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Soft modal linen cotton hijab.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">60 × 2 m</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('linen-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="linen-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="linen-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="linen-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="linen-size">
-            <option>60 × 2 m</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="linen-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Modal Linen Cotton Soft',
-            '170',
-            'linen-name',
-            'linen-phone',
-            'linen-size',
-            'linen-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= COLORED HIJAB ================= -->
-
-<section id="product-colored" class="product-page">
-
-  <button class="back-btn" onclick="goHijabs()">← Back to Hijab</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="IMG_7341.jpeg" alt="">
-      <img src="IMG_7356.jpeg" alt="">
-      <img src="IMG_7336.jpeg" alt="">
-      <img src="IMG_7337.jpeg" alt="">
-      <img src="IMG_7338.jpeg" alt="">
-      <img src="IMG_7339.jpeg" alt="">
-      <img src="IMG_7340.jpeg" alt="">
-      <img src="IMG_7342.jpeg" alt="">
-      <img src="IMG_7343.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Hijab</div>
-
-      <h1>Modal Cotton Colored</h1>
-
-      <div class="detail-price">
-        <span class="price">180 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Soft colored modal cotton hijab.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">60 × 2 m</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('colored-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="colored-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="colored-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="colored-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="colored-size">
-            <option>60 × 2 m</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="colored-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Modal Cotton Colored',
-            '180',
-            'colored-name',
-            'colored-phone',
-            'colored-size',
-            'colored-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= BALACLAVA ================= -->
-
-<section id="product-balaclava" class="product-page">
-
-  <button class="back-btn" onclick="goHijabs()">← Back to Hijab</button>
-
-  <div class="product-layout">
-
-    <div class="gallery">
-
-      <img src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg" alt="">
-      <img src="eeaadcb5-4efe-4bb5-97a7-864d31321c79.jpeg" alt="">
-      <img src="IMG_7440.jpeg" alt="">
-      <img src="IMG_7439.jpeg" alt="">
-      <img src="IMG_7438.jpeg" alt="">
-
-    </div>
-
-    <div class="product-details">
-
-      <div class="product-category">Hijab</div>
-
-      <h1>Balaclava Summer</h1>
-
-      <div class="detail-price">
-        <span class="price">250 EGP</span>
-      </div>
-
-      <div class="detail-description">
-        Summer balaclava with an easy everyday fit.
-      </div>
-
-      <div class="detail-row">
-
-        <span class="detail-label">Size</span>
-
-        <div class="size-buttons">
-          <button class="option-btn active">Free Size</button>
-        </div>
-
-      </div>
-
-      <button
-        class="order-main-btn"
-        onclick="openOrder('balaclava-order')">
-        Order Now
-      </button>
-
-      <div class="order-form" id="balaclava-order">
-
-        <h3>Place Your Order</h3>
-
-        <p class="order-note">
-          Fill in your details and continue directly to WhatsApp.
-        </p>
-
-        <div class="form-group">
-          <label>Name</label>
-          <input id="balaclava-name" type="text">
-        </div>
-
-        <div class="form-group">
-          <label>Phone</label>
-          <input id="balaclava-phone" type="tel">
-        </div>
-
-        <div class="form-group">
-          <label>Size</label>
-          <select id="balaclava-size">
-            <option>Free Size</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label>Address</label>
-          <input id="balaclava-address" type="text">
-        </div>
-
-        <button
-          class="form-submit"
-          onclick="sendOrder(
-            'Balaclava Summer',
-            '250',
-            'balaclava-name',
-            'balaclava-phone',
-            'balaclava-size',
-            'balaclava-address'
-          )">
-          Continue to WhatsApp
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
+<!-- =======================================================
      FOOTER
-========================= -->
+======================================================= -->
 
-<footer>
+<footer class="footer">
 
-  <div class="footer-inner">
+  <div class="footer-grid">
 
-    <div class="footer-top">
+    <div>
 
-      <div>
-
-        <div class="footer-brand">
-          NAZEEKA
-        </div>
-
-        <div class="footer-brand-sub">
-          DESIGNS
-        </div>
-
-        <p class="footer-text">
-          Contemporary fashion designed with confidence,
-          individuality and the Nazeeka identity.
-        </p>
-
+      <div class="footer-brand">
+        Nazeeka
       </div>
 
-
-      <div class="footer-col">
-
-        <h4>Shop</h4>
-
-        <button onclick="goClothing()">Clothing</button>
-        <button onclick="goJeans()">Jeans</button>
-        <button onclick="goHijabs()">Hijab</button>
-
-      </div>
-
-
-      <div class="footer-col">
-
-        <h4>Explore</h4>
-
-        <button onclick="goHome()">Home</button>
-        <button onclick="goClothing()">New Collection</button>
-
-      </div>
-
-
-      <div class="footer-col">
-
-        <h4>Contact</h4>
-
-        <a
-          href="https://wa.me/201029153023"
-          target="_blank">
-          WhatsApp
-        </a>
-
-        <a
-          href="https://instagram.com/"
-          target="_blank">
-          Instagram
-        </a>
-
-      </div>
+      <p class="footer-text">
+        Modern everyday wear designed to feel effortless,
+        personal and timeless.
+      </p>
 
     </div>
 
 
-    <div class="footer-bottom">
+    <div>
 
-      <div>
-        © 2026 Nazeeka Designs. All Rights Reserved.
+      <div class="footer-title">
+        Navigate
       </div>
 
-      <div>
-        Designed for Nazeeka.
-      </div>
+      <a href="#home" onclick="goHome()">Home</a>
+      <a href="#clothing" onclick="goClothing()">Clothing</a>
+      <a href="#jeans" onclick="goJeans()">Jeans</a>
+      <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
 
     </div>
+
+
+    <div>
+
+      <div class="footer-title">
+        Connect
+      </div>
+
+      <a
+        href="https://instagram.com/"
+        target="_blank">
+        Instagram
+      </a>
+
+      <a
+        href="https://wa.me/201029153023"
+        target="_blank">
+        WhatsApp
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+
+    <span>
+      © 2026 Nazeeka Designs
+    </span>
+
+    <span>
+      Designed with intention.
+    </span>
 
   </div>
 
 </footer>
 
 
-<script>
+</main>
 
-/* =========================
-   WHATSAPP
-========================= */
+
+<!-- =======================================================
+     PRODUCT PAGES
+======================================================= -->
+
+
+<!-- =======================================================
+     SET
+======================================================= -->
+
+<section id="product-set"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_9818.jpeg" alt="">
+        <img src="IMG_9821.jpeg" alt="">
+        <img src="IMG_9819.jpeg" alt="">
+        <img src="IMG_9801.jpeg" alt="">
+        <img src="IMG_9820.jpeg" alt="">
+        <img src="IMG_9803.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Clothing / Set
+        </div>
+
+        <h1 class="detail-title">
+          T-Shirt &amp;<br>
+          Pants Set
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">1,200 EGP</span>
+          &nbsp;
+          960 EGP
+        </div>
+
+        <p class="detail-description">
+          A complete everyday set designed for effortless,
+          comfortable styling.
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">T-Shirt</span>
+            <span class="meta-value">390 EGP</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Pants</span>
+            <span class="meta-value">590 EGP</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('set-order')">
+          Order Now
+        </button>
+
+
+        <form id="set-order"
+              class="order-form"
+              onsubmit="sendSetOrder(); return false;">
+
+          <h3>Order Details</h3>
+
+          <input
+            id="set-name"
+            type="text"
+            placeholder="Full Name"
+            required>
+
+          <input
+            id="set-phone"
+            type="tel"
+            placeholder="Phone Number"
+            required>
+
+          <input
+            id="set-size"
+            type="text"
+            value="Free Size"
+            readonly>
+
+          <textarea
+            id="set-address"
+            placeholder="Address"
+            required></textarea>
+
+          <button class="submit-order"
+                  id="set-order-submit"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     OVERSIZED
+======================================================= -->
+
+<section id="product-oversized"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_9832.jpeg" alt="">
+        <img src="IMG_9833.jpeg" alt="">
+        <img src="IMG_9834.jpeg" alt="">
+        <img src="IMG_9844.jpeg" alt="">
+        <img src="IMG_9845.jpeg" alt="">
+        <img src="IMG_9848.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Clothing / T-Shirt
+        </div>
+
+        <h1 class="detail-title">
+          Striped<br>
+          Oversized
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">550 EGP</span>
+          &nbsp;
+          470 EGP
+        </div>
+
+        <p class="detail-description">
+          An oversized striped silhouette designed for an
+          effortless everyday look.
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Fit</span>
+            <span class="meta-value">Oversized Fit</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('oversized-order')">
+          Order Now
+        </button>
+
+
+        <form id="oversized-order"
+              class="order-form"
+              onsubmit="sendOrder('Striped Oversized T-Shirt','470','oversized-name','oversized-phone','oversized-size','oversized-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="oversized-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="oversized-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="oversized-size"
+                 type="text"
+                 value="Oversized Fit"
+                 readonly>
+
+          <textarea id="oversized-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     STRIPED SHIRT
+======================================================= -->
+
+<section id="product-striped-shirt"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img id="shirt-main-1"
+             src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+             alt="">
+
+        <img id="shirt-main-2"
+             src="ACF784DC-469F-4D8A-930A-4935ED8265AB.png"
+             alt="">
+
+        <img src="striped-pink-1.jpeg" alt="">
+        <img src="striped-pink-2.jpeg" alt="">
+        <img src="striped-yellow-1.jpeg" alt="">
+        <img src="striped-yellow-2.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Clothing / T-Shirt
+        </div>
+
+        <h1 class="detail-title">
+          Striped<br>
+          T-Shirt
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">570 EGP</span>
+          &nbsp;
+          500 EGP
+        </div>
+
+        <p class="detail-description">
+          A relaxed everyday striped T-shirt available in
+          three easy-to-style colors.
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
+          </div>
+
+          <div class="meta-row">
+
+            <span class="meta-label">
+              Color
+            </span>
+
+            <span class="meta-value"
+                  id="selected-shirt-color">
+              Navy
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="color-buttons">
+
+          <button class="color-btn active"
+                  onclick="changeShirtColor('navy',this)">
+            Navy
+          </button>
+
+          <button class="color-btn"
+                  onclick="changeShirtColor('pink',this)">
+            Pink
+          </button>
+
+          <button class="color-btn"
+                  onclick="changeShirtColor('yellow',this)">
+            Yellow
+          </button>
+
+        </div>
+
+
+        <button class="order-btn"
+                onclick="openOrder('striped-shirt-order')">
+          Order Now
+        </button>
+
+
+        <form id="striped-shirt-order"
+              class="order-form"
+              onsubmit="sendOrder('Striped T-Shirt','500','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="striped-shirt-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="striped-shirt-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="striped-shirt-size"
+                 type="text"
+                 value="Free Size"
+                 readonly>
+
+          <textarea id="striped-shirt-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     ROSE
+======================================================= -->
+
+<section id="product-rose"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="">
+        <img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="">
+        <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
+        <img src="IMG_7725.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Clothing / Blouse
+        </div>
+
+        <h1 class="detail-title">
+          Rose<br>
+          Blouse
+        </h1>
+
+        <div class="detail-price">
+          520 EGP
+        </div>
+
+        <p class="detail-description">
+          بلوز بحزام لف كتان
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('rose-order')">
+          Order Now
+        </button>
+
+
+        <form id="rose-order"
+              class="order-form"
+              onsubmit="sendOrder('Rose Blouse','520','rose-name','rose-phone','rose-size','rose-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="rose-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="rose-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="rose-size"
+                 type="text"
+                 value="Free Size"
+                 readonly>
+
+          <textarea id="rose-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     NESR LONG JEANS
+======================================================= -->
+
+<section id="product-nesr-long-jeans"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="">
+        <img src="F9A4A653-C7EC-409E-B19D-59AB996D98E6.png" alt="">
+        <img src="5C0B9648-B3B0-403D-A1F6-4C94262D4CFA.png" alt="">
+        <img src="IMG_9862.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Denim / Straight Cut
+        </div>
+
+        <h1 class="detail-title">
+          Nesr Long<br>
+          Jeans
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">750 EGP</span>
+          &nbsp;
+          580 EGP
+        </div>
+
+        <p class="detail-description">
+          Straight cut denim with a clean, elongated
+          silhouette.
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Sizes</span>
+            <span class="meta-value">36 / 38 / 40</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Fits</span>
+            <span class="meta-value">50–95 KG</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Color</span>
+            <span class="meta-value">Light / Medium / Dirty</span>
+          </div>
+
+        </div>
+
+
+        <button class="order-btn"
+                onclick="openOrder('nesr-jeans-order')">
+          Order Now
+        </button>
+
+
+        <form id="nesr-jeans-order"
+              class="order-form"
+              onsubmit="sendJeansOrder('Nesr Long Jeans','580','nesr-name','nesr-phone','nesr-size','nesr-color','nesr-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="nesr-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="nesr-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <select id="nesr-size" required>
+            <option value="">Select Size</option>
+            <option>36</option>
+            <option>38</option>
+            <option>40</option>
+          </select>
+
+          <select id="nesr-color" required>
+            <option value="">Select Color</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dirty</option>
+          </select>
+
+          <textarea id="nesr-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     WIDE LEG JEANS
+======================================================= -->
+
+<section id="product-wide-leg-jeans"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_9905.jpeg" alt="">
+        <img src="IMG_9901.jpeg" alt="">
+        <img src="IMG_9904.jpeg" alt="">
+        <img src="IMG_9898.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Denim
+        </div>
+
+        <h1 class="detail-title">
+          Wide Leg<br>
+          Fold Jeans
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">800 EGP</span>
+          &nbsp;
+          600 EGP
+        </div>
+
+        <p class="detail-description">
+          Modern denim silhouette with a relaxed fit.
+        </p>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Sizes</span>
+            <span class="meta-value">36 / 38 / 40</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Fits</span>
+            <span class="meta-value">50–95 KG</span>
+          </div>
+
+          <div class="meta-row">
+            <span class="meta-label">Color</span>
+            <span class="meta-value">Light / Medium / Dirty</span>
+          </div>
+
+        </div>
+
+
+        <button class="order-btn"
+                onclick="openOrder('wide-leg-jeans-order')">
+          Order Now
+        </button>
+
+
+        <form id="wide-leg-jeans-order"
+              class="order-form"
+              onsubmit="sendJeansOrder('Wide Leg Fold Jeans','600','wide-name','wide-phone','wide-size','wide-color','wide-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="wide-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="wide-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <select id="wide-size" required>
+            <option value="">Select Size</option>
+            <option>36</option>
+            <option>38</option>
+            <option>40</option>
+          </select>
+
+          <select id="wide-color" required>
+            <option value="">Select Color</option>
+            <option>Light</option>
+            <option>Medium</option>
+            <option>Dirty</option>
+          </select>
+
+          <textarea id="wide-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     THAI
+======================================================= -->
+
+<section id="product-thai"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_7465.jpeg" alt="">
+        <img src="IMG_7330.jpeg" alt="">
+        <img src="IMG_7329.jpeg" alt="">
+        <img src="IMG_7324.jpeg" alt="">
+        <img src="IMG_7333.jpeg" alt="">
+        <img src="IMG_7327.jpeg" alt="">
+        <img src="IMG_7320.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab / Best Seller
+        </div>
+
+        <h1 class="detail-title">
+          Original Thai<br>
+          Ruffled
+        </h1>
+
+        <div class="detail-price">
+          290 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('thai-order')">
+          Order Now
+        </button>
+
+
+        <form id="thai-order"
+              class="order-form"
+              onsubmit="sendOrder('Original Thai Ruffled','290','thai-name','thai-phone','thai-size','thai-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="thai-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="thai-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="thai-size"
+                 type="text"
+                 value="60 × 2 m"
+                 readonly>
+
+          <textarea id="thai-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     LINEN
+======================================================= -->
+
+<section id="product-linen"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_7352.jpeg" alt="">
+        <img src="IMG_7353.jpeg" alt="">
+        <img src="IMG_7350.jpeg" alt="">
+        <img src="IMG_7354.jpeg" alt="">
+        <img src="IMG_7351.jpeg" alt="">
+        <img src="IMG_7348.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab
+        </div>
+
+        <h1 class="detail-title">
+          Modal Linen<br>
+          Cotton Soft
+        </h1>
+
+        <div class="detail-price">
+          170 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('linen-order')">
+          Order Now
+        </button>
+
+
+        <form id="linen-order"
+              class="order-form"
+              onsubmit="sendOrder('Modal Linen Cotton Soft','170','linen-name','linen-phone','linen-size','linen-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="linen-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="linen-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="linen-size"
+                 type="text"
+                 value="60 × 2 m"
+                 readonly>
+
+          <textarea id="linen-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     COLORED
+======================================================= -->
+
+<section id="product-colored"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_7341.jpeg" alt="">
+        <img src="IMG_7356.jpeg" alt="">
+        <img src="IMG_7336.jpeg" alt="">
+        <img src="IMG_7337.jpeg" alt="">
+        <img src="IMG_7338.jpeg" alt="">
+        <img src="IMG_7339.jpeg" alt="">
+        <img src="IMG_7340.jpeg" alt="">
+        <img src="IMG_7342.jpeg" alt="">
+        <img src="IMG_7343.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab
+        </div>
+
+        <h1 class="detail-title">
+          Modal Cotton<br>
+          Colored
+        </h1>
+
+        <div class="detail-price">
+          180 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">60 × 2 m</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('colored-order')">
+          Order Now
+        </button>
+
+
+        <form id="colored-order"
+              class="order-form"
+              onsubmit="sendOrder('Modal Cotton Colored','180','colored-name','colored-phone','colored-size','colored-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="colored-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="colored-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="colored-size"
+                 type="text"
+                 value="60 × 2 m"
+                 readonly>
+
+          <textarea id="colored-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     BALACLAVA
+======================================================= -->
+
+<section id="product-balaclava"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg" alt="">
+        <img src="eeaadcb5-4efe-4bb5-97a7-864d31321c79.jpeg" alt="">
+        <img src="IMG_7440.jpeg" alt="">
+        <img src="IMG_7439.jpeg" alt="">
+        <img src="IMG_7438.jpeg" alt="">
+
+      </div>
+
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab
+        </div>
+
+        <h1 class="detail-title">
+          Balaclava<br>
+          Summer
+        </h1>
+
+        <div class="detail-price">
+          250 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">Free Size</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('balaclava-order')">
+          Order Now
+        </button>
+
+
+        <form id="balaclava-order"
+              class="order-form"
+              onsubmit="sendOrder('Balaclava Summer','250','balaclava-name','balaclava-phone','balaclava-size','balaclava-address'); return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="balaclava-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="balaclava-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="balaclava-size"
+                 type="text"
+                 value="Free Size"
+                 readonly>
+
+          <textarea id="balaclava-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =======================================================
+     JAVASCRIPT
+======================================================= -->
+
+<script>
 
 const whatsappNumber = "201029153023";
 
 
-/* =========================
+/* =========================================================
    MOBILE MENU
-========================= */
+========================================================= */
 
 function toggleMobileMenu(){
 
-  const nav = document.getElementById("navLinks");
+  const menu = document.getElementById("navLinks");
 
-  nav.classList.toggle("open");
-
-}
-
-
-/* =========================
-   HIDE EVERYTHING
-========================= */
-
-function hideAll(){
-
-  document.getElementById("home").style.display = "none";
-
-  document.getElementById("clothing").style.display = "none";
-
-  document.getElementById("jeans").style.display = "none";
-
-  document.getElementById("hijabs").style.display = "none";
-
-  document.querySelectorAll(".product-page").forEach(page => {
-    page.classList.remove("active");
-  });
-
-  document.querySelectorAll(".order-form").forEach(form => {
-    form.classList.remove("active");
-  });
-
-  document.getElementById("navLinks").classList.remove("open");
+  menu.classList.toggle("open");
 
 }
 
 
-/* =========================
+/* =========================================================
+   CLOSE MOBILE MENU
+========================================================= */
+
+function closeMobileMenu(){
+
+  const menu = document.getElementById("navLinks");
+
+  if(menu){
+    menu.classList.remove("open");
+  }
+
+}
+
+
+/* =========================================================
+   HIDE PRODUCT PAGES
+========================================================= */
+
+function hideProducts(){
+
+  document
+    .querySelectorAll(".product-page")
+    .forEach(page => {
+      page.classList.remove("active");
+    });
+
+  document.body.classList.remove("product-open");
+
+}
+
+
+/* =========================================================
+   SHOW MAIN
+========================================================= */
+
+function showMain(){
+
+  hideProducts();
+
+  document
+    .querySelectorAll("#home,#clothing,#jeans,#hijabs")
+    .forEach(section => {
+      section.style.display = "block";
+    });
+
+  closeMobileMenu();
+
+}
+
+
+/* =========================================================
    HOME
-========================= */
+========================================================= */
 
 function goHome(){
 
-  hideAll();
+  showMain();
 
-  document.getElementById("home").style.display = "block";
-
-  history.pushState(null,"","#home");
+  history.pushState(
+    null,
+    "",
+    "#home"
+  );
 
   window.scrollTo({
     top:0,
@@ -2798,228 +3024,170 @@ function goHome(){
 }
 
 
-/* =========================
+/* =========================================================
    CLOTHING
-========================= */
+========================================================= */
 
 function goClothing(){
 
-  hideAll();
+  showMain();
 
-  document.getElementById("clothing").style.display = "block";
+  history.pushState(
+    null,
+    "",
+    "#clothing"
+  );
 
-  history.pushState(null,"","#clothing");
+  setTimeout(() => {
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+    document
+      .getElementById("clothing")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
+
+  },30);
 
 }
 
 
-/* =========================
+/* =========================================================
    JEANS
-========================= */
+========================================================= */
 
 function goJeans(){
 
-  hideAll();
+  showMain();
 
-  document.getElementById("jeans").style.display = "block";
+  history.pushState(
+    null,
+    "",
+    "#jeans"
+  );
 
-  history.pushState(null,"","#jeans");
+  setTimeout(() => {
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+    document
+      .getElementById("jeans")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
+
+  },30);
 
 }
 
 
-/* =========================
+/* =========================================================
    HIJABS
-========================= */
+========================================================= */
 
 function goHijabs(){
 
-  hideAll();
+  showMain();
 
-  document.getElementById("hijabs").style.display = "block";
+  history.pushState(
+    null,
+    "",
+    "#hijabs"
+  );
 
-  history.pushState(null,"","#hijabs");
+  setTimeout(() => {
 
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+    document
+      .getElementById("hijabs")
+      .scrollIntoView({
+        behavior:"smooth"
+      });
 
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-function openProduct(product, updateUrl=true){
-
-  hideAll();
-
-  const page = document.getElementById("product-" + product);
-
-  if(!page){
-    goHome();
-    return;
-  }
-
-  page.classList.add("active");
-
-  if(updateUrl){
-    history.pushState(null,"","#" + product);
-  }
-
-  window.scrollTo({
-    top:0,
-    behavior:"smooth"
-  });
+  },30);
 
 }
 
 
-/* =========================
-   URL ROUTING
-========================= */
+/* =========================================================
+   OPEN PRODUCT
+========================================================= */
 
-function openProductFromLink(){
-
-  const hash = window.location.hash.replace("#","");
-
-  if(!hash){
-    document.getElementById("home").style.display = "block";
-    return;
-  }
-
-  if(hash === "home"){
-    document.getElementById("home").style.display = "block";
-    return;
-  }
-
-  if(hash === "clothing"){
-    document.getElementById("clothing").style.display = "block";
-    return;
-  }
-
-  if(hash === "jeans"){
-    document.getElementById("jeans").style.display = "block";
-    return;
-  }
-
-  if(hash === "hijabs"){
-    document.getElementById("hijabs").style.display = "block";
-    return;
-  }
-
-  const productPage =
-    document.getElementById("product-" + hash);
-
-  if(productPage){
-    productPage.classList.add("active");
-  }else{
-    document.getElementById("home").style.display = "block";
-  }
-
-}
-
-
-/* =========================
-   SHIRT COLORS
-========================= */
-
-function changeShirtColor(color,button){
+function openProduct(product){
 
   document
-    .querySelectorAll(".color-buttons .option-btn")
-    .forEach(btn => btn.classList.remove("active"));
-
-  button.classList.add("active");
-
-  const image1 =
-    document.getElementById("striped-main-1");
-
-  const image2 =
-    document.getElementById("striped-main-2");
+    .querySelectorAll(".product-page")
+    .forEach(page => {
+      page.classList.remove("active");
+    });
 
 
-  if(color === "navy"){
-
-    image1.src =
-      "28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg";
-
-    image2.src =
-      "ACF784DC-469F-4D8A-930A-4935ED8265AB.png";
-
-  }
+  const page =
+    document.getElementById(
+      "product-" + product
+    );
 
 
-  if(color === "pink"){
-
-    image1.src =
-      "striped-pink-1.jpeg";
-
-    image2.src =
-      "striped-pink-2.jpeg";
-
-  }
+  if(!page) return;
 
 
-  if(color === "yellow"){
+  document.body.classList.add("product-open");
 
-    image1.src =
-      "striped-yellow-1.jpeg";
+  page.classList.add("active","fade-in");
 
-    image2.src =
-      "striped-yellow-2.jpeg";
+  closeMobileMenu();
 
-  }
+  history.pushState(
+    null,
+    "",
+    "#" + product
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
 
 }
 
 
-/* =========================
-   OPEN ORDER
-========================= */
+/* =========================================================
+   BACK
+========================================================= */
 
-function openOrder(id){
+function goBack(){
+
+  showMain();
+
+  history.pushState(
+    null,
+    "",
+    "#home"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =========================================================
+   ORDER FORM
+========================================================= */
+
+function openOrder(formId){
 
   const form =
-    document.getElementById(id);
+    document.getElementById(formId);
 
-  if(!form){
-    return;
-  }
+  if(!form) return;
 
   form.classList.toggle("active");
 
-  if(form.classList.contains("active")){
-
-    setTimeout(() => {
-
-      form.scrollIntoView({
-        behavior:"smooth",
-        block:"center"
-      });
-
-    },100);
-
-  }
-
 }
 
 
-/* =========================
-   NORMAL ORDER
-========================= */
+/* =========================================================
+   GENERAL WHATSAPP ORDER
+========================================================= */
 
 function sendOrder(
   product,
@@ -3031,38 +3199,28 @@ function sendOrder(
 ){
 
   const name =
-    document.getElementById(nameId).value.trim();
+    document.getElementById(nameId).value;
 
   const phone =
-    document.getElementById(phoneId).value.trim();
+    document.getElementById(phoneId).value;
 
   const size =
     document.getElementById(sizeId).value;
 
   const address =
-    document.getElementById(addressId).value.trim();
-
-
-  if(!name || !phone || !address){
-
-    alert("Please fill in all required fields.");
-
-    return;
-
-  }
+    document.getElementById(addressId).value;
 
 
   const message =
 `Hello Nazeeka Designs,
 
-I would like to place an order.
+I would like to order:
 
 Product: ${product}
 Price: ${price} EGP
-Size: ${size}
-
 Name: ${name}
 Phone: ${phone}
+Size: ${size}
 Address: ${address}`;
 
 
@@ -3073,14 +3231,17 @@ Address: ${address}`;
     encodeURIComponent(message);
 
 
-  window.open(url,"_blank");
+  window.open(
+    url,
+    "_blank"
+  );
 
 }
 
 
-/* =========================
-   JEANS ORDER
-========================= */
+/* =========================================================
+   JEANS WHATSAPP ORDER
+========================================================= */
 
 function sendJeansOrder(
   product,
@@ -3093,10 +3254,10 @@ function sendJeansOrder(
 ){
 
   const name =
-    document.getElementById(nameId).value.trim();
+    document.getElementById(nameId).value;
 
   const phone =
-    document.getElementById(phoneId).value.trim();
+    document.getElementById(phoneId).value;
 
   const size =
     document.getElementById(sizeId).value;
@@ -3105,30 +3266,20 @@ function sendJeansOrder(
     document.getElementById(colorId).value;
 
   const address =
-    document.getElementById(addressId).value.trim();
-
-
-  if(!name || !phone || !address){
-
-    alert("Please fill in all required fields.");
-
-    return;
-
-  }
+    document.getElementById(addressId).value;
 
 
   const message =
 `Hello Nazeeka Designs,
 
-I would like to place an order.
+I would like to order:
 
 Product: ${product}
 Price: ${price} EGP
-Size: ${size}
-Color: ${color}
-
 Name: ${name}
 Phone: ${phone}
+Size: ${size}
+Color: ${color}
 Address: ${address}`;
 
 
@@ -3139,54 +3290,43 @@ Address: ${address}`;
     encodeURIComponent(message);
 
 
-  window.open(url,"_blank");
+  window.open(
+    url,
+    "_blank"
+  );
 
 }
 
 
-/* =========================
+/* =========================================================
    SET ORDER
-========================= */
+========================================================= */
 
 function sendSetOrder(){
 
   const name =
-    document.getElementById("set-name").value.trim();
+    document.getElementById("set-name").value;
 
   const phone =
-    document.getElementById("set-phone").value.trim();
+    document.getElementById("set-phone").value;
 
   const size =
     document.getElementById("set-size").value;
 
   const address =
-    document.getElementById("set-address").value.trim();
-
-
-  if(!name || !phone || !address){
-
-    alert("Please fill in all required fields.");
-
-    return;
-
-  }
+    document.getElementById("set-address").value;
 
 
   const message =
 `Hello Nazeeka Designs,
 
-I would like to place an order.
+I would like to order:
 
 Product: T-Shirt & Pants Set
-Set Price: 960 EGP
-
-T-Shirt: 390 EGP
-Pants: 590 EGP
-
-Size: ${size}
-
+Price: 960 EGP
 Name: ${name}
 Phone: ${phone}
+Size: ${size}
 Address: ${address}`;
 
 
@@ -3197,44 +3337,190 @@ Address: ${address}`;
     encodeURIComponent(message);
 
 
-  window.open(url,"_blank");
+  window.open(
+    url,
+    "_blank"
+  );
 
 }
 
 
-/* =========================
-   BROWSER BACK/FORWARD
-========================= */
+/* =========================================================
+   STRIPED SHIRT COLORS
+========================================================= */
 
-window.addEventListener("popstate",function(){
+function changeShirtColor(
+  color,
+  button
+){
 
-  hideAll();
+  const image1 =
+    document.getElementById(
+      "shirt-main-1"
+    );
 
-  openProductFromLink();
+  const image2 =
+    document.getElementById(
+      "shirt-main-2"
+    );
 
-});
-
-
-window.addEventListener("hashchange",function(){
-
-  hideAll();
-
-  openProductFromLink();
-
-});
+  const selected =
+    document.getElementById(
+      "selected-shirt-color"
+    );
 
 
-/* =========================
+  document
+    .querySelectorAll(".color-btn")
+    .forEach(btn => {
+      btn.classList.remove("active");
+    });
+
+
+  button.classList.add("active");
+
+
+  if(color === "navy"){
+
+    image1.src =
+      "28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg";
+
+    image2.src =
+      "ACF784DC-469F-4D8A-930A-4935ED8265AB.png";
+
+    selected.textContent = "Navy";
+
+  }
+
+
+  if(color === "pink"){
+
+    image1.src =
+      "striped-pink-1.jpeg";
+
+    image2.src =
+      "striped-pink-2.jpeg";
+
+    selected.textContent = "Pink";
+
+  }
+
+
+  if(color === "yellow"){
+
+    image1.src =
+      "striped-yellow-1.jpeg";
+
+    image2.src =
+      "striped-yellow-2.jpeg";
+
+    selected.textContent = "Yellow";
+
+  }
+
+}
+
+
+/* =========================================================
+   HASH / ROUTING
+========================================================= */
+
+function handleHash(){
+
+  const hash =
+    window.location.hash
+      .replace("#","");
+
+
+  if(!hash || hash === "home"){
+
+    showMain();
+
+    return;
+
+  }
+
+
+  const productNames = [
+
+    "set",
+    "oversized",
+    "striped-shirt",
+    "rose",
+    "nesr-long-jeans",
+    "wide-leg-jeans",
+    "thai",
+    "linen",
+    "colored",
+    "balaclava"
+
+  ];
+
+
+  if(productNames.includes(hash)){
+
+    openProduct(hash);
+
+    return;
+
+  }
+
+
+  if(hash === "clothing"){
+
+    goClothing();
+
+    return;
+
+  }
+
+
+  if(hash === "jeans"){
+
+    goJeans();
+
+    return;
+
+  }
+
+
+  if(hash === "hijabs"){
+
+    goHijabs();
+
+    return;
+
+  }
+
+
+  showMain();
+
+}
+
+
+/* =========================================================
+   BROWSER BACK / FORWARD
+========================================================= */
+
+window.addEventListener(
+  "popstate",
+  handleHash
+);
+
+window.addEventListener(
+  "hashchange",
+  handleHash
+);
+
+
+/* =========================================================
    INITIAL LOAD
-========================= */
+========================================================= */
 
-window.addEventListener("load",function(){
-
-  hideAll();
-
-  openProductFromLink();
-
-});
+window.addEventListener(
+  "load",
+  handleHash
+);
 
 </script>
 
