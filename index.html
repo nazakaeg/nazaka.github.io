@@ -92,7 +92,7 @@ button{
   max-width:850px;
   margin:35px auto 0;
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:repeat(3,1fr);
   gap:18px;
   padding:0 10px;
 }
@@ -483,6 +483,7 @@ footer{
   }
 
   .categories{
+    grid-template-columns:repeat(2,1fr);
     gap:10px;
     padding:0 6px;
     margin-top:30px;
@@ -637,6 +638,32 @@ footer{
 
         <p>
           حجاب
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- ================= JEANS CATEGORY ================= -->
+
+    <div
+      class="category-card"
+      onclick="goJeans()"
+    >
+
+      <img
+        src="IMG_9853.jpeg"
+        alt="Jeans"
+      >
+
+      <div class="category-info">
+
+        <h2>
+          JEANS
+        </h2>
+
+        <p>
+          جينز
         </p>
 
       </div>
@@ -967,6 +994,111 @@ footer{
 
 </section>
 
+<!-- ================= JEANS ================= -->
+
+<section
+  id="jeans"
+  class="category-page"
+>
+
+  <div class="category-heading">
+
+    <h1>
+      Jeans
+    </h1>
+
+    <p>
+      Nazeeka Designs
+    </p>
+
+  </div>
+
+  <div class="products">
+
+    <!-- NESR LONG JEANS -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('nesr-long-jeans')"
+    >
+
+      <img
+        src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
+        alt="Nesr Long Jeans"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          Nesr Long Jeans
+        </h2>
+
+        <p>
+          Straight Cut
+        </p>
+
+        <div class="product-price">
+
+          <span class="old-price">
+            750 EGP
+          </span>
+
+          580 EGP
+
+        </div>
+
+        <div class="sale">
+          SALE
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- WIDE LEG FOLD JEANS -->
+
+    <div
+      class="product-card"
+      onclick="openProduct('wide-leg-fold-jeans')"
+    >
+
+      <img
+        src="IMG_9905.jpeg"
+        alt="Wide Leg Fold Jeans"
+      >
+
+      <div class="product-info">
+
+        <h2>
+          Wide Leg Fold Jeans
+        </h2>
+
+        <p>
+          Straight Cut
+        </p>
+
+        <div class="product-price">
+
+          <span class="old-price">
+            800 EGP
+          </span>
+
+          600 EGP
+
+        </div>
+
+        <div class="sale">
+          SALE
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
 <!-- ================= ITEM 1 ================= -->
 
 <section
@@ -995,35 +1127,12 @@ footer{
 
   <div class="gallery">
 
-    <img
-      src="IMG_9818.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
-
-    <img
-      src="IMG_9821.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
-
-    <img
-      src="IMG_9819.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
-
-    <img
-      src="IMG_9801.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
-
-    <img
-      src="IMG_9820.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
-
-    <img
-      src="IMG_9803.jpeg"
-      alt="T-Shirt & Pants Set"
-    >
+    <img src="IMG_9818.jpeg" alt="T-Shirt & Pants Set">
+    <img src="IMG_9821.jpeg" alt="T-Shirt & Pants Set">
+    <img src="IMG_9819.jpeg" alt="T-Shirt & Pants Set">
+    <img src="IMG_9801.jpeg" alt="T-Shirt & Pants Set">
+    <img src="IMG_9820.jpeg" alt="T-Shirt & Pants Set">
+    <img src="IMG_9803.jpeg" alt="T-Shirt & Pants Set">
 
   </div>
 
@@ -1050,52 +1159,34 @@ footer{
     <div class="set-options">
 
       <label>
-
         <input
           type="radio"
           name="set-choice"
           value="T-Shirt — 390 EGP"
           checked
         >
-
         T-Shirt — 390 EGP
-
-        <span class="old-price">
-          500 EGP
-        </span>
-
+        <span class="old-price">500 EGP</span>
       </label>
 
       <label>
-
         <input
           type="radio"
           name="set-choice"
           value="Pants — 590 EGP"
         >
-
         Pants — 590 EGP
-
-        <span class="old-price">
-          700 EGP
-        </span>
-
+        <span class="old-price">700 EGP</span>
       </label>
 
       <label>
-
         <input
           type="radio"
           name="set-choice"
           value="Set Offer — 960 EGP"
         >
-
         Set Offer — 960 EGP
-
-        <span class="old-price">
-          1,200 EGP
-        </span>
-
+        <span class="old-price">1,200 EGP</span>
       </label>
 
     </div>
@@ -1109,18 +1200,13 @@ footer{
 
   </div>
 
-  <div
-    id="set-order"
-    class="order-form"
-  >
+  <div id="set-order" class="order-form">
 
     <h2>
       Order Details
     </h2>
 
-    <label>
-      Name
-    </label>
+    <label>Name</label>
 
     <input
       id="set-name"
@@ -1128,9 +1214,7 @@ footer{
       placeholder="Enter your name"
     >
 
-    <label>
-      Phone
-    </label>
+    <label>Phone</label>
 
     <input
       id="set-phone"
@@ -1138,21 +1222,15 @@ footer{
       placeholder="Enter your phone number"
     >
 
-    <label>
-      Size
-    </label>
+    <label>Size</label>
 
     <select id="set-size">
-
       <option value="Free Size">
         Free Size
       </option>
-
     </select>
 
-    <label>
-      Address
-    </label>
+    <label>Address</label>
 
     <input
       id="set-address"
@@ -1199,35 +1277,12 @@ footer{
 
   <div class="gallery">
 
-    <img
-      src="IMG_9832.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
-
-    <img
-      src="IMG_9833.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
-
-    <img
-      src="IMG_9834.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
-
-    <img
-      src="IMG_9844.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
-
-    <img
-      src="IMG_9845.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
-
-    <img
-      src="IMG_9848.jpeg"
-      alt="Striped Oversized T-Shirt"
-    >
+    <img src="IMG_9832.jpeg" alt="Striped Oversized T-Shirt">
+    <img src="IMG_9833.jpeg" alt="Striped Oversized T-Shirt">
+    <img src="IMG_9834.jpeg" alt="Striped Oversized T-Shirt">
+    <img src="IMG_9844.jpeg" alt="Striped Oversized T-Shirt">
+    <img src="IMG_9845.jpeg" alt="Striped Oversized T-Shirt">
+    <img src="IMG_9848.jpeg" alt="Striped Oversized T-Shirt">
 
   </div>
 
@@ -1260,18 +1315,13 @@ footer{
 
   </div>
 
-  <div
-    id="oversized-order"
-    class="order-form"
-  >
+  <div id="oversized-order" class="order-form">
 
     <h2>
       Order Details
     </h2>
 
-    <label>
-      Name
-    </label>
+    <label>Name</label>
 
     <input
       id="oversized-name"
@@ -1279,9 +1329,7 @@ footer{
       placeholder="Enter your name"
     >
 
-    <label>
-      Phone
-    </label>
+    <label>Phone</label>
 
     <input
       id="oversized-phone"
@@ -1289,21 +1337,15 @@ footer{
       placeholder="Enter your phone number"
     >
 
-    <label>
-      Size
-    </label>
+    <label>Size</label>
 
     <select id="oversized-size">
-
       <option value="Oversized Fit">
         Oversized Fit
       </option>
-
     </select>
 
-    <label>
-      Address
-    </label>
+    <label>Address</label>
 
     <input
       id="oversized-address"
@@ -1440,9 +1482,7 @@ footer{
       Order Details
     </h2>
 
-    <label>
-      Name
-    </label>
+    <label>Name</label>
 
     <input
       id="striped-shirt-name"
@@ -1450,9 +1490,7 @@ footer{
       placeholder="Enter your name"
     >
 
-    <label>
-      Phone
-    </label>
+    <label>Phone</label>
 
     <input
       id="striped-shirt-phone"
@@ -1460,21 +1498,15 @@ footer{
       placeholder="Enter your phone number"
     >
 
-    <label>
-      Size
-    </label>
+    <label>Size</label>
 
     <select id="striped-shirt-size">
-
       <option value="Free Size">
         Free Size
       </option>
-
     </select>
 
-    <label>
-      Address
-    </label>
+    <label>Address</label>
 
     <input
       id="striped-shirt-address"
@@ -1528,25 +1560,10 @@ footer{
 
   <div class="gallery">
 
-    <img
-      src="C43C4A76-9689-43C2-AD32-1052EA614390.png"
-      alt="Rose Blouse"
-    >
-
-    <img
-      src="39FE8399-2574-437A-9E10-93870AA15106.png"
-      alt="Rose Blouse"
-    >
-
-    <img
-      src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg"
-      alt="Rose Blouse"
-    >
-
-    <img
-      src="IMG_7725.jpeg"
-      alt="Rose Blouse"
-    >
+    <img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="Rose Blouse">
+    <img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="Rose Blouse">
+    <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="Rose Blouse">
+    <img src="IMG_7725.jpeg" alt="Rose Blouse">
 
   </div>
 
@@ -1569,18 +1586,13 @@ footer{
 
   </div>
 
-  <div
-    id="rose-order"
-    class="order-form"
-  >
+  <div id="rose-order" class="order-form">
 
     <h2>
       Order Details
     </h2>
 
-    <label>
-      Name
-    </label>
+    <label>Name</label>
 
     <input
       id="rose-name"
@@ -1588,9 +1600,7 @@ footer{
       placeholder="Enter your name"
     >
 
-    <label>
-      Phone
-    </label>
+    <label>Phone</label>
 
     <input
       id="rose-phone"
@@ -1598,9 +1608,7 @@ footer{
       placeholder="Enter your phone number"
     >
 
-    <label>
-      Size
-    </label>
+    <label>Size</label>
 
     <select id="rose-size">
 
@@ -1614,9 +1622,7 @@ footer{
 
     </select>
 
-    <label>
-      Address
-    </label>
+    <label>Address</label>
 
     <input
       id="rose-address"
@@ -1633,6 +1639,384 @@ footer{
         'rose-phone',
         'rose-size',
         'rose-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ================= NESR LONG JEANS ================= -->
+
+<section
+  id="nesr-long-jeans"
+  class="product-page"
+>
+
+  <button
+    class="back"
+    onclick="goJeans()"
+  >
+    Back to Jeans
+  </button>
+
+  <div class="product-heading">
+
+    <h1>
+      Nesr Long Jeans
+    </h1>
+
+    <p>
+      Straight Cut
+    </p>
+
+  </div>
+
+  <div class="gallery">
+
+    <img
+      src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
+      alt="Nesr Long Jeans"
+    >
+
+    <img
+      src="F9A4A653-C7EC-409E-B19D-59AB996D98E6.png"
+      alt="Nesr Long Jeans"
+    >
+
+    <img
+      src="5C0B9648-B3B0-403D-A1F6-4C94262D4CFA.png"
+      alt="Nesr Long Jeans"
+    >
+
+    <img
+      src="IMG_9862.jpeg"
+      alt="Nesr Long Jeans"
+    >
+
+  </div>
+
+  <div class="details">
+
+    <div class="details-price">
+
+      <span class="details-old-price">
+        750 EGP
+      </span>
+
+      580 EGP
+
+    </div>
+
+    <div class="details-sale">
+      SALE
+    </div>
+
+    <div class="sizes">
+      Sizes: 36 · 38 · 40
+      <br>
+      Fits: 50–95 kg
+      <br>
+      Colors: Light · Medium · Dirty
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('nesr-jeans-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+  <div
+    id="nesr-jeans-order"
+    class="order-form"
+  >
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>
+      Name
+    </label>
+
+    <input
+      id="nesr-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>
+      Phone
+    </label>
+
+    <input
+      id="nesr-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>
+      Size
+    </label>
+
+    <select id="nesr-size">
+
+      <option value="">
+        Choose size
+      </option>
+
+      <option value="36">
+        36
+      </option>
+
+      <option value="38">
+        38
+      </option>
+
+      <option value="40">
+        40
+      </option>
+
+    </select>
+
+    <label>
+      Color
+    </label>
+
+    <select id="nesr-color">
+
+      <option value="">
+        Choose color
+      </option>
+
+      <option value="Light">
+        Light
+      </option>
+
+      <option value="Medium">
+        Medium
+      </option>
+
+      <option value="Dirty">
+        Dirty
+      </option>
+
+    </select>
+
+    <label>
+      Address
+    </label>
+
+    <input
+      id="nesr-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendJeansOrder(
+        'Nesr Long Jeans',
+        '580',
+        'nesr-name',
+        'nesr-phone',
+        'nesr-size',
+        'nesr-color',
+        'nesr-address'
+      )"
+    >
+      Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</section>
+
+<!-- ================= WIDE LEG FOLD JEANS ================= -->
+
+<section
+  id="wide-leg-fold-jeans"
+  class="product-page"
+>
+
+  <button
+    class="back"
+    onclick="goJeans()"
+  >
+    Back to Jeans
+  </button>
+
+  <div class="product-heading">
+
+    <h1>
+      Wide Leg Fold Jeans
+    </h1>
+
+    <p>
+      Straight Cut
+    </p>
+
+  </div>
+
+  <div class="gallery">
+
+    <img
+      src="IMG_9905.jpeg"
+      alt="Wide Leg Fold Jeans"
+    >
+
+    <img
+      src="IMG_9901.jpeg"
+      alt="Wide Leg Fold Jeans"
+    >
+
+    <img
+      src="IMG_9904.jpeg"
+      alt="Wide Leg Fold Jeans"
+    >
+
+    <img
+      src="IMG_9898.jpeg"
+      alt="Wide Leg Fold Jeans"
+    >
+
+  </div>
+
+  <div class="details">
+
+    <div class="details-price">
+
+      <span class="details-old-price">
+        800 EGP
+      </span>
+
+      600 EGP
+
+    </div>
+
+    <div class="details-sale">
+      SALE
+    </div>
+
+    <div class="sizes">
+      Sizes: 36 · 38 · 40
+      <br>
+      Fits: 50–95 kg
+      <br>
+      Colors: Light · Medium · Dirty
+    </div>
+
+    <button
+      class="order-btn"
+      onclick="openOrder('wide-leg-jeans-order')"
+    >
+      Order Now
+    </button>
+
+  </div>
+
+  <div
+    id="wide-leg-jeans-order"
+    class="order-form"
+  >
+
+    <h2>
+      Order Details
+    </h2>
+
+    <label>
+      Name
+    </label>
+
+    <input
+      id="wide-name"
+      type="text"
+      placeholder="Enter your name"
+    >
+
+    <label>
+      Phone
+    </label>
+
+    <input
+      id="wide-phone"
+      type="tel"
+      placeholder="Enter your phone number"
+    >
+
+    <label>
+      Size
+    </label>
+
+    <select id="wide-size">
+
+      <option value="">
+        Choose size
+      </option>
+
+      <option value="36">
+        36
+      </option>
+
+      <option value="38">
+        38
+      </option>
+
+      <option value="40">
+        40
+      </option>
+
+    </select>
+
+    <label>
+      Color
+    </label>
+
+    <select id="wide-color">
+
+      <option value="">
+        Choose color
+      </option>
+
+      <option value="Light">
+        Light
+      </option>
+
+      <option value="Medium">
+        Medium
+      </option>
+
+      <option value="Dirty">
+        Dirty
+      </option>
+
+    </select>
+
+    <label>
+      Address
+    </label>
+
+    <input
+      id="wide-address"
+      type="text"
+      placeholder="Enter your address"
+    >
+
+    <button
+      class="send-order"
+      onclick="sendJeansOrder(
+        'Wide Leg Fold Jeans',
+        '600',
+        'wide-name',
+        'wide-phone',
+        'wide-size',
+        'wide-color',
+        'wide-address'
       )"
     >
       Send Order on WhatsApp
@@ -1699,10 +2083,7 @@ footer{
 
   </div>
 
-  <div
-    id="thai-order"
-    class="order-form"
-  >
+  <div id="thai-order" class="order-form">
 
     <h2>
       Order Details
@@ -1816,10 +2197,7 @@ footer{
 
   </div>
 
-  <div
-    id="linen-order"
-    class="order-form"
-  >
+  <div id="linen-order" class="order-form">
 
     <h2>
       Order Details
@@ -1936,10 +2314,7 @@ footer{
 
   </div>
 
-  <div
-    id="colored-order"
-    class="order-form"
-  >
+  <div id="colored-order" class="order-form">
 
     <h2>
       Order Details
@@ -2071,10 +2446,7 @@ footer{
 
   </div>
 
-  <div
-    id="balaclava-order"
-    class="order-form"
-  >
+  <div id="balaclava-order" class="order-form">
 
     <h2>
       Order Details
@@ -2224,6 +2596,29 @@ function goHijabs(){
     {},
     "",
     "#hijabs"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+/* ================= JEANS ================= */
+
+function goJeans(){
+
+  hideAll();
+
+  document
+    .getElementById("jeans")
+    .classList.add("active");
+
+  history.pushState(
+    {},
+    "",
+    "#jeans"
   );
 
   window.scrollTo({
@@ -2495,6 +2890,92 @@ function sendOrder(
 
 }
 
+/* ================= JEANS ORDER ================= */
+
+function sendJeansOrder(
+  product,
+  price,
+  nameId,
+  phoneId,
+  sizeId,
+  colorId,
+  addressId
+){
+
+  const name =
+    document.getElementById(nameId).value.trim();
+
+  const phone =
+    document.getElementById(phoneId).value.trim();
+
+  const size =
+    document.getElementById(sizeId).value;
+
+  const color =
+    document.getElementById(colorId).value;
+
+  const address =
+    document.getElementById(addressId).value.trim();
+
+  if(
+    !name ||
+    !phone ||
+    !size ||
+    !color ||
+    !address
+  ){
+
+    alert(
+      "Please fill in all required information."
+    );
+
+    return;
+  }
+
+  const message =
+
+    "Hello Nazeeka Designs%0A%0A" +
+
+    "Product: " +
+    encodeURIComponent(product) +
+    "%0A" +
+
+    "Price: " +
+    encodeURIComponent(price + " EGP") +
+    "%0A" +
+
+    "Size: " +
+    encodeURIComponent(size) +
+    "%0A" +
+
+    "Color: " +
+    encodeURIComponent(color) +
+    "%0A" +
+
+    "Name: " +
+    encodeURIComponent(name) +
+    "%0A" +
+
+    "Phone: " +
+    encodeURIComponent(phone) +
+    "%0A" +
+
+    "Address: " +
+    encodeURIComponent(address);
+
+  window.open(
+
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    message,
+
+    "_blank"
+
+  );
+
+}
+
 /* ================= SET ORDER ================= */
 
 function sendSetOrder(){
@@ -2595,3 +3076,4 @@ window.addEventListener(
 
 </body>
 </html>
+
