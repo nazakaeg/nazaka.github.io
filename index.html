@@ -16,8 +16,11 @@
 :root{
   --ink:#0d0d0c;
   --brown:#40372f;
-  --cream:#f4efe7;
-  --ivory:#fbf9f4;
+
+  /* WHITE — replaces cream */
+  --cream:#ffffff;
+  --ivory:#ffffff;
+
   --sand:#e5dbce;
   --taupe:#b8aa99;
   --muted:#756e65;
@@ -72,7 +75,7 @@ a{
 
 .top-bar{
   background:var(--ink);
-  color:#f4eee5;
+  color:#ffffff;
   text-align:center;
   padding:9px 15px;
   font-size:10px;
@@ -87,7 +90,7 @@ a{
 
 .navbar{
   height:78px;
-  background:rgba(251,249,244,.97);
+  background:rgba(255,255,255,.97);
   border-bottom:1px solid var(--line);
   display:flex;
   align-items:center;
@@ -161,7 +164,7 @@ a{
   min-height:calc(100vh - 78px);
   display:grid;
   grid-template-columns:1.15fr .85fr;
-  background:var(--white);
+  background:#ffffff;
   overflow:hidden;
 }
 
@@ -202,7 +205,7 @@ a{
   flex-direction:column;
   justify-content:center;
   padding:8%;
-  background:var(--white);
+  background:#ffffff;
   color:var(--ink);
 }
 
@@ -319,7 +322,7 @@ a{
    ========================================================= */
 
 .categories{
-  background:var(--cream);
+  background:#ffffff;
 }
 
 .category-grid{
@@ -384,7 +387,7 @@ a{
    ========================================================= */
 
 .featured{
-  background:var(--ivory);
+  background:#ffffff;
 }
 
 .product-grid{
@@ -459,7 +462,7 @@ a{
   left:15px;
   z-index:3;
   padding:7px 10px;
-  background:rgba(251,249,244,.9);
+  background:rgba(255,255,255,.9);
   font-size:8px;
   letter-spacing:2px;
   text-transform:uppercase;
@@ -533,7 +536,7 @@ a{
    ========================================================= */
 
 .products-section{
-  background:var(--ivory);
+  background:#ffffff;
 }
 
 .jeans-section{
@@ -574,7 +577,7 @@ a{
 }
 
 .hijab-section{
-  background:var(--cream);
+  background:#ffffff;
 }
 
 
@@ -584,7 +587,7 @@ a{
 
 .product-page{
   display:none;
-  background:var(--ivory);
+  background:#ffffff;
   min-height:100vh;
 }
 
@@ -739,7 +742,7 @@ a{
   display:none;
   margin-top:22px;
   padding:25px;
-  background:var(--cream);
+  background:#ffffff;
   border:1px solid var(--line);
 }
 
@@ -881,7 +884,7 @@ body.product-open .navbar{
     top:70px;
     left:0;
     width:100%;
-    background:var(--ivory);
+    background:#ffffff;
     border-bottom:1px solid var(--line);
     padding:25px 5%;
     flex-direction:column;
@@ -1146,8 +1149,6 @@ body.product-open .navbar{
 
   <div class="hero">
 
-    <!-- HERO IMAGE -->
-
     <div class="hero-image">
 
       <img
@@ -1156,8 +1157,6 @@ body.product-open .navbar{
 
     </div>
 
-
-    <!-- HERO CONTENT -->
 
     <div class="hero-content">
 
