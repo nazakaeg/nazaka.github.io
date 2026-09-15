@@ -673,30 +673,6 @@ a{
   text-align:right;
 }
 
-.color-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:18px;
-}
-
-.color-btn{
-  background:transparent;
-  border:1px solid var(--line);
-  padding:9px 13px;
-  font-size:8px;
-  letter-spacing:1.5px;
-  text-transform:uppercase;
-  transition:.25s;
-}
-
-.color-btn.active,
-.color-btn:hover{
-  background:var(--ink);
-  color:white;
-  border-color:var(--ink);
-}
-
 .order-btn{
   width:100%;
   margin-top:25px;
@@ -1336,18 +1312,18 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- STRIPED T-SHIRT -->
+      <!-- OVERSIZED T-SHIRT -->
 
       <div class="product-card"
-           onclick="openProduct('striped-shirt')">
+           onclick="openProduct('oversized')">
 
         <div class="product-tag">
           Sale
         </div>
 
         <div class="product-image-wrap">
-          <img src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
-               alt="Striped T-Shirt">
+          <img src="IMG_9832.jpeg"
+               alt="Striped Oversized T-Shirt">
         </div>
 
         <div class="product-info">
@@ -1357,15 +1333,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-name">
-            Striped T-Shirt
+            Striped Oversized T-Shirt
           </div>
 
           <div class="product-price">
-            <span class="old-price">570 EGP</span>
+            <span class="old-price">550 EGP</span>
             <span class="sale-price">450 EGP</span>
           </div>
 
-          <a href="#striped"
+          <a href="#oversized"
              class="item-link"
              onclick="event.stopPropagation();">
             View Item
@@ -1555,14 +1531,14 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- STRIPED T-SHIRT -->
+      <!-- OVERSIZED T-SHIRT -->
 
       <div class="product-card"
-           onclick="openProduct('striped-shirt')">
+           onclick="openProduct('oversized')">
 
         <div class="product-image-wrap">
-          <img src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
-               alt="Striped T-Shirt">
+          <img src="IMG_9832.jpeg"
+               alt="Striped Oversized T-Shirt">
         </div>
 
         <div class="product-info">
@@ -1572,15 +1548,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-name">
-            Striped T-Shirt
+            Striped Oversized T-Shirt
           </div>
 
           <div class="product-price">
-            <span class="old-price">570 EGP</span>
+            <span class="old-price">550 EGP</span>
             <span class="sale-price">450 EGP</span>
           </div>
 
-          <a href="#striped"
+          <a href="#oversized"
              class="item-link"
              onclick="event.stopPropagation();">
             View Item
@@ -2042,7 +2018,6 @@ body.product-open .navbar{
 
 </main>
 
-
 <!-- ===================================================== -->
 <!-- PRODUCT SET -->
 <!-- ===================================================== -->
@@ -2155,12 +2130,11 @@ body.product-open .navbar{
 
 </section>
 
-
 <!-- ===================================================== -->
-<!-- PRODUCT STRIPED T-SHIRT -->
+<!-- PRODUCT OVERSIZED T-SHIRT -->
 <!-- ===================================================== -->
 
-<section id="product-striped-shirt"
+<section id="product-oversized"
          class="product-page">
 
   <div class="product-detail">
@@ -2174,18 +2148,12 @@ body.product-open .navbar{
 
       <div class="gallery">
 
-        <img id="shirt-main-1"
-             src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
-             alt="">
-
-        <img id="shirt-main-2"
-             src="ACF784DC-469F-4D8A-930A-4935ED8265AB.png"
-             alt="">
-
-        <img src="striped-pink-1.jpeg" alt="">
-        <img src="striped-pink-2.jpeg" alt="">
-        <img src="striped-yellow-1.jpeg" alt="">
-        <img src="striped-yellow-2.jpeg" alt="">
+        <img src="IMG_9832.jpeg" alt="">
+        <img src="IMG_9833.jpeg" alt="">
+        <img src="IMG_9834.jpeg" alt="">
+        <img src="IMG_9844.jpeg" alt="">
+        <img src="IMG_9845.jpeg" alt="">
+        <img src="IMG_9848.jpeg" alt="">
 
       </div>
 
@@ -2197,82 +2165,55 @@ body.product-open .navbar{
 
         <h1 class="detail-title">
           Striped<br>
-          T-Shirt
+          Oversized
         </h1>
 
         <div class="detail-price">
-          <span class="old-price">570 EGP</span>
+          <span class="old-price">550 EGP</span>
           &nbsp; 450 EGP
         </div>
 
         <p class="detail-description">
-          A relaxed everyday striped T-shirt available in
-          three easy-to-style colors.
+          An oversized striped silhouette designed for an
+          effortless everyday look.
         </p>
 
         <div class="detail-meta">
 
           <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
+            <span class="meta-label">Fit</span>
+            <span class="meta-value">Oversized Fit</span>
           </div>
-
-          <div class="meta-row">
-            <span class="meta-label">Color</span>
-            <span class="meta-value"
-                  id="selected-shirt-color">
-              Navy
-            </span>
-          </div>
-
-        </div>
-
-        <div class="color-buttons">
-
-          <button class="color-btn active"
-                  onclick="changeShirtColor('navy',this)">
-            Navy
-          </button>
-
-          <button class="color-btn"
-                  onclick="changeShirtColor('pink',this)">
-            Pink
-          </button>
-
-          <button class="color-btn"
-                  onclick="changeShirtColor('yellow',this)">
-            Yellow
-          </button>
 
         </div>
 
         <button class="order-btn"
-                onclick="openOrder('striped-shirt-order')">
+                onclick="openOrder('oversized-order')">
           Order Now
         </button>
 
-        <form id="striped-shirt-order"
+        <form id="oversized-order"
               class="order-form"
-              onsubmit="sendOrder('Striped T-Shirt','450','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address');return false;">
+              onsubmit="sendOrder('Striped Oversized T-Shirt','450','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
 
           <h3>Order Details</h3>
 
-          <input id="striped-shirt-name"
+          <input id="oversized-name"
                  type="text"
                  placeholder="Full Name"
                  required>
 
-          <input id="striped-shirt-phone"
+          <input id="oversized-phone"
                  type="tel"
                  placeholder="Phone Number"
                  required>
 
-          <input id="striped-shirt-size"
+          <input id="oversized-size"
                  type="text"
-                 value="Free Size"
+                 value="Oversized Fit"
                  readonly>
 
-          <textarea id="striped-shirt-address"
+          <textarea id="oversized-address"
                     placeholder="Address"
                     required></textarea>
 
@@ -2290,7 +2231,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <!-- ===================================================== -->
 <!-- PRODUCT ROSE BLOUSE -->
@@ -2314,7 +2254,6 @@ body.product-open .navbar{
         <img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="">
         <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
         <img src="IMG_7725.jpeg" alt="">
-
         <img src="IMG_0935.jpeg" alt="">
         <img src="IMG_0936.jpeg" alt="">
         <img src="IMG_0934.jpeg" alt="">
@@ -2396,7 +2335,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <!-- ===================================================== -->
 <!-- PRODUCT NESR -->
@@ -2529,7 +2467,6 @@ body.product-open .navbar{
 
 </section>
 
-
 <!-- ===================================================== -->
 <!-- PRODUCT WIDE LEG -->
 <!-- ===================================================== -->
@@ -2660,7 +2597,6 @@ body.product-open .navbar{
 
 </section>
 
-
 <!-- ===================================================== -->
 <!-- PRODUCT THAI -->
 <!-- ===================================================== -->
@@ -2758,7 +2694,6 @@ body.product-open .navbar{
 
 </section>
 
-
 <!-- ===================================================== -->
 <!-- PRODUCT PLAIN MODAL -->
 <!-- ===================================================== -->
@@ -2855,7 +2790,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <!-- ===================================================== -->
 <!-- PRODUCT MODAL COLORED -->
@@ -2956,7 +2890,6 @@ body.product-open .navbar{
 
 </section>
 
-
 <!-- ===================================================== -->
 <!-- PRODUCT BALACLAVA -->
 <!-- ===================================================== -->
@@ -3051,7 +2984,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <!-- ===================================================== -->
 <!-- PRODUCT LINEN CROCHET -->
@@ -3150,7 +3082,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <!-- ===================================================== -->
 <!-- PRODUCT LINEN KUWAITI -->
@@ -3256,7 +3187,6 @@ body.product-open .navbar{
   </div>
 
 </section>
-
 
 <script>
 
@@ -3581,70 +3511,6 @@ Address: ${address}`;
 
 }
 
-/* SHIRT COLORS */
-
-function changeShirtColor(color,button){
-
-  const image1 =
-    document.getElementById("shirt-main-1");
-
-  const image2 =
-    document.getElementById("shirt-main-2");
-
-  const selected =
-    document.getElementById("selected-shirt-color");
-
-  document
-    .querySelectorAll(".color-btn")
-    .forEach(btn => {
-      btn.classList.remove("active");
-    });
-
-  if(button){
-    button.classList.add("active");
-  }
-
-  if(color === "navy"){
-
-    image1.src =
-      "28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg";
-
-    image2.src =
-      "ACF784DC-469F-4D8A-930A-4935ED8265AB.png";
-
-    selected.textContent =
-      "Navy";
-
-  }
-
-  if(color === "pink"){
-
-    image1.src =
-      "striped-pink-1.jpeg";
-
-    image2.src =
-      "striped-pink-2.jpeg";
-
-    selected.textContent =
-      "Pink";
-
-  }
-
-  if(color === "yellow"){
-
-    image1.src =
-      "striped-yellow-1.jpeg";
-
-    image2.src =
-      "striped-yellow-2.jpeg";
-
-    selected.textContent =
-      "Yellow";
-
-  }
-
-}
-
 /* HASH ROUTING */
 
 function handleHash(){
@@ -3657,7 +3523,7 @@ function handleHash(){
   const productAliases = {
 
     set:"set",
-    striped:"striped-shirt",
+    oversized:"oversized",
     rose:"rose",
     nesr:"nesr-long-jeans",
     wide:"wide-leg-jeans",
@@ -3673,7 +3539,7 @@ function handleHash(){
   const productNames = [
 
     "set",
-    "striped-shirt",
+    "oversized",
     "rose",
     "nesr-long-jeans",
     "wide-leg-jeans",
