@@ -1153,25 +1153,10 @@ body.product-open .navbar{
 
   <div class="nav-links" id="navLinks">
 
-    <a href="#home"
-       onclick="goHome()">
-      Home
-    </a>
-
-    <a href="#clothing"
-       onclick="goClothing()">
-      Clothing
-    </a>
-
-    <a href="#jeans"
-       onclick="goJeans()">
-      Jeans
-    </a>
-
-    <a href="#hijabs"
-       onclick="goHijabs()">
-      Hijabs
-    </a>
+    <a href="#home" onclick="goHome()">Home</a>
+    <a href="#clothing" onclick="goClothing()">Clothing</a>
+    <a href="#jeans" onclick="goJeans()">Jeans</a>
+    <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
 
   </div>
 
@@ -1182,10 +1167,9 @@ body.product-open .navbar{
 
 </nav>
 
-
-<!-- MAIN HOME CONTENT -->
-
 <main id="mainContent">
+
+<!-- HOME -->
 
 <section id="home">
 
@@ -1218,6 +1202,7 @@ body.product-open .navbar{
 
   </div>
 
+  <!-- CATEGORIES -->
 
   <section class="section categories">
 
@@ -1258,7 +1243,6 @@ body.product-open .navbar{
 
       </div>
 
-
       <div class="category-card"
            onclick="goJeans()">
 
@@ -1272,7 +1256,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
 
       <div class="category-card"
            onclick="goHijabs()">
@@ -1292,6 +1275,7 @@ body.product-open .navbar{
 
   </section>
 
+  <!-- FEATURED -->
 
   <section class="section featured">
 
@@ -1311,13 +1295,16 @@ body.product-open .navbar{
 
     </div>
 
-
     <div class="product-grid">
+
+      <!-- SET -->
 
       <div class="product-card"
            onclick="openProduct('set')">
 
-        <div class="product-tag">Set</div>
+        <div class="product-tag">
+          Set
+        </div>
 
         <div class="product-image-wrap">
           <img src="IMG_9818.jpeg"
@@ -1349,15 +1336,18 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- STRIPED T-SHIRT -->
 
       <div class="product-card"
-           onclick="openProduct('oversized')">
+           onclick="openProduct('striped-shirt')">
 
-        <div class="product-tag">New</div>
+        <div class="product-tag">
+          Sale
+        </div>
 
         <div class="product-image-wrap">
-          <img src="IMG_9832.jpeg"
-               alt="Striped Oversized T-Shirt">
+          <img src="28D8CBEE-6937-45F0-A764-980FB6315B5E.jpeg"
+               alt="Striped T-Shirt">
         </div>
 
         <div class="product-info">
@@ -1367,15 +1357,15 @@ body.product-open .navbar{
           </div>
 
           <div class="product-name">
-            Striped Oversized T-Shirt
+            Striped T-Shirt
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
+            <span class="old-price">570 EGP</span>
+            <span class="sale-price">450 EGP</span>
           </div>
 
-          <a href="#oversized"
+          <a href="#striped"
              class="item-link"
              onclick="event.stopPropagation();">
             View Item
@@ -1385,11 +1375,14 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- NESR -->
 
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
 
-        <div class="product-tag">Denim</div>
+        <div class="product-tag">
+          Denim
+        </div>
 
         <div class="product-image-wrap">
           <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png"
@@ -1421,11 +1414,14 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- THAI -->
 
       <div class="product-card"
            onclick="openProduct('thai')">
 
-        <div class="product-tag">Best Seller</div>
+        <div class="product-tag">
+          Best Seller
+        </div>
 
         <div class="product-image-wrap">
           <img src="IMG_7465.jpeg"
@@ -1460,6 +1456,7 @@ body.product-open .navbar{
 
   </section>
 
+  <!-- EDITORIAL -->
 
   <section class="editorial">
 
@@ -1495,6 +1492,7 @@ body.product-open .navbar{
 
   </section>
 
+  <!-- CLOTHING -->
 
   <section id="clothing"
            class="section products-section">
@@ -1520,8 +1518,9 @@ body.product-open .navbar{
 
     </div>
 
-
     <div class="product-grid">
+
+      <!-- SET -->
 
       <div class="product-card"
            onclick="openProduct('set')">
@@ -1533,7 +1532,9 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">Set</div>
+          <div class="product-category">
+            Set
+          </div>
 
           <div class="product-name">
             T-Shirt &amp; Pants Set
@@ -1554,38 +1555,7 @@ body.product-open .navbar{
 
       </div>
 
-
-      <div class="product-card"
-           onclick="openProduct('oversized')">
-
-        <div class="product-image-wrap">
-          <img src="IMG_9832.jpeg"
-               alt="Striped Oversized T-Shirt">
-        </div>
-
-        <div class="product-info">
-
-          <div class="product-category">T-Shirt</div>
-
-          <div class="product-name">
-            Striped Oversized T-Shirt
-          </div>
-
-          <div class="product-price">
-            <span class="old-price">550 EGP</span>
-            <span class="sale-price">470 EGP</span>
-          </div>
-
-          <a href="#oversized"
-             class="item-link"
-             onclick="event.stopPropagation();">
-            View Item
-          </a>
-
-        </div>
-
-      </div>
-
+      <!-- STRIPED T-SHIRT -->
 
       <div class="product-card"
            onclick="openProduct('striped-shirt')">
@@ -1597,7 +1567,9 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">T-Shirt</div>
+          <div class="product-category">
+            T-Shirt
+          </div>
 
           <div class="product-name">
             Striped T-Shirt
@@ -1605,7 +1577,7 @@ body.product-open .navbar{
 
           <div class="product-price">
             <span class="old-price">570 EGP</span>
-            <span class="sale-price">500 EGP</span>
+            <span class="sale-price">450 EGP</span>
           </div>
 
           <a href="#striped"
@@ -1618,6 +1590,7 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- ROSE BLOUSE -->
 
       <div class="product-card"
            onclick="openProduct('rose')">
@@ -1629,14 +1602,16 @@ body.product-open .navbar{
 
         <div class="product-info">
 
-          <div class="product-category">Blouse</div>
+          <div class="product-category">
+            Blouse
+          </div>
 
           <div class="product-name">
-            Rose Blouse
+            Rose Blouse 🌹
           </div>
 
           <div class="product-price">
-            <span class="sale-price">520 EGP</span>
+            <span class="sale-price">550 EGP</span>
           </div>
 
           <a href="#rose"
@@ -1653,6 +1628,7 @@ body.product-open .navbar{
 
   </section>
 
+  <!-- JEANS -->
 
   <section id="jeans"
            class="section jeans-section">
@@ -1677,8 +1653,9 @@ body.product-open .navbar{
 
     </div>
 
-
     <div class="product-grid">
+
+      <!-- NESR -->
 
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
@@ -1713,6 +1690,7 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- WIDE LEG -->
 
       <div class="product-card"
            onclick="openProduct('wide-leg-jeans')">
@@ -1751,6 +1729,7 @@ body.product-open .navbar{
 
   </section>
 
+  <!-- HIJABS -->
 
   <section id="hijabs"
            class="section hijab-section">
@@ -1776,8 +1755,9 @@ body.product-open .navbar{
 
     </div>
 
-
     <div class="product-grid">
+
+      <!-- THAI -->
 
       <div class="product-card"
            onclick="openProduct('thai')">
@@ -1815,13 +1795,14 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- PLAIN MODAL -->
 
       <div class="product-card"
            onclick="openProduct('linen')">
 
         <div class="product-image-wrap">
           <img src="IMG_7352.jpeg"
-               alt="Modal Linen Cotton Soft">
+               alt="Plain Modal">
         </div>
 
         <div class="product-info">
@@ -1831,11 +1812,12 @@ body.product-open .navbar{
           </div>
 
           <div class="product-name">
-            Modal Linen Cotton Soft
+            Plain Modal
           </div>
 
           <div class="product-price">
-            <span class="sale-price">170 EGP</span>
+            <span class="old-price">170 EGP</span>
+            <span class="sale-price">150 EGP</span>
           </div>
 
           <a href="#linen"
@@ -1848,6 +1830,7 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- MODAL COTTON COLORED -->
 
       <div class="product-card"
            onclick="openProduct('colored')">
@@ -1881,6 +1864,7 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- BALACLAVA -->
 
       <div class="product-card"
            onclick="openProduct('balaclava')">
@@ -1914,12 +1898,83 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- LINEN CROCHET -->
+
+      <div class="product-card"
+           onclick="openProduct('linen-crochet')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_0952.jpeg"
+               alt="Linen Crochet Imported">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Linen Crochet Imported
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">290 EGP</span>
+            <span class="sale-price">250 EGP</span>
+          </div>
+
+          <a href="#linen-crochet"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- LINEN KUWAITI -->
+
+      <div class="product-card"
+           onclick="openProduct('linen-kuwaiti')">
+
+        <div class="product-image-wrap">
+          <img src="IMG_0871.jpeg"
+               alt="Linen Kuwaiti Imported">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Linen Kuwaiti Imported
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">290 EGP</span>
+            <span class="sale-price">245 EGP</span>
+          </div>
+
+          <a href="#linen-kuwaiti"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
   </section>
 
 </section>
 
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -1938,7 +1993,6 @@ body.product-open .navbar{
 
     </div>
 
-
     <div>
 
       <div class="footer-title">
@@ -1951,7 +2005,6 @@ body.product-open .navbar{
       <a href="#hijabs" onclick="goHijabs()">Hijabs</a>
 
     </div>
-
 
     <div>
 
@@ -1973,7 +2026,6 @@ body.product-open .navbar{
 
   </div>
 
-
   <div class="footer-bottom">
 
     <span>
@@ -1991,7 +2043,9 @@ body.product-open .navbar{
 </main>
 
 
+<!-- ===================================================== -->
 <!-- PRODUCT SET -->
+<!-- ===================================================== -->
 
 <section id="product-set"
          class="product-page">
@@ -2102,108 +2156,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- PRODUCT OVERSIZED -->
-
-<section id="product-oversized"
-         class="product-page">
-
-  <div class="product-detail">
-
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
-
-    <div class="detail-grid">
-
-      <div class="gallery">
-
-        <img src="IMG_9832.jpeg" alt="">
-        <img src="IMG_9833.jpeg" alt="">
-        <img src="IMG_9834.jpeg" alt="">
-        <img src="IMG_9844.jpeg" alt="">
-        <img src="IMG_9845.jpeg" alt="">
-        <img src="IMG_9848.jpeg" alt="">
-
-      </div>
-
-      <div class="detail-info">
-
-        <div class="detail-category">
-          Clothing / T-Shirt
-        </div>
-
-        <h1 class="detail-title">
-          Striped<br>
-          Oversized
-        </h1>
-
-        <div class="detail-price">
-          <span class="old-price">550 EGP</span>
-          &nbsp; 470 EGP
-        </div>
-
-        <p class="detail-description">
-          An oversized striped silhouette designed for an
-          effortless everyday look.
-        </p>
-
-        <div class="detail-meta">
-
-          <div class="meta-row">
-            <span class="meta-label">Fit</span>
-            <span class="meta-value">Oversized Fit</span>
-          </div>
-
-        </div>
-
-        <button class="order-btn"
-                onclick="openOrder('oversized-order')">
-          Order Now
-        </button>
-
-        <form id="oversized-order"
-              class="order-form"
-              onsubmit="sendOrder('Striped Oversized T-Shirt','470','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
-
-          <h3>Order Details</h3>
-
-          <input id="oversized-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
-
-          <input id="oversized-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
-
-          <input id="oversized-size"
-                 type="text"
-                 value="Oversized Fit"
-                 readonly>
-
-          <textarea id="oversized-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- PRODUCT STRIPED -->
+<!-- ===================================================== -->
+<!-- PRODUCT STRIPED T-SHIRT -->
+<!-- ===================================================== -->
 
 <section id="product-striped-shirt"
          class="product-page">
@@ -2247,7 +2202,7 @@ body.product-open .navbar{
 
         <div class="detail-price">
           <span class="old-price">570 EGP</span>
-          &nbsp; 500 EGP
+          &nbsp; 450 EGP
         </div>
 
         <p class="detail-description">
@@ -2298,7 +2253,7 @@ body.product-open .navbar{
 
         <form id="striped-shirt-order"
               class="order-form"
-              onsubmit="sendOrder('Striped T-Shirt','500','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address');return false;">
+              onsubmit="sendOrder('Striped T-Shirt','450','striped-shirt-name','striped-shirt-phone','striped-shirt-size','striped-shirt-address');return false;">
 
           <h3>Order Details</h3>
 
@@ -2337,7 +2292,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- PRODUCT ROSE -->
+<!-- ===================================================== -->
+<!-- PRODUCT ROSE BLOUSE -->
+<!-- ===================================================== -->
 
 <section id="product-rose"
          class="product-page">
@@ -2358,6 +2315,13 @@ body.product-open .navbar{
         <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
         <img src="IMG_7725.jpeg" alt="">
 
+        <img src="IMG_0935.jpeg" alt="">
+        <img src="IMG_0936.jpeg" alt="">
+        <img src="IMG_0934.jpeg" alt="">
+        <img src="IMG_0978.jpeg" alt="">
+        <img src="IMG_0933.jpeg" alt="">
+        <img src="IMG_0979.jpeg" alt="">
+
       </div>
 
       <div class="detail-info">
@@ -2368,11 +2332,11 @@ body.product-open .navbar{
 
         <h1 class="detail-title">
           Rose<br>
-          Blouse
+          Blouse 🌹
         </h1>
 
         <div class="detail-price">
-          520 EGP
+          550 EGP
         </div>
 
         <p class="detail-description">
@@ -2395,7 +2359,7 @@ body.product-open .navbar{
 
         <form id="rose-order"
               class="order-form"
-              onsubmit="sendOrder('Rose Blouse','520','rose-name','rose-phone','rose-size','rose-address');return false;">
+              onsubmit="sendOrder('Rose Blouse','550','rose-name','rose-phone','rose-size','rose-address');return false;">
 
           <h3>Order Details</h3>
 
@@ -2434,7 +2398,9 @@ body.product-open .navbar{
 </section>
 
 
+<!-- ===================================================== -->
 <!-- PRODUCT NESR -->
+<!-- ===================================================== -->
 
 <section id="product-nesr-long-jeans"
          class="product-page">
@@ -2564,7 +2530,9 @@ body.product-open .navbar{
 </section>
 
 
+<!-- ===================================================== -->
 <!-- PRODUCT WIDE LEG -->
+<!-- ===================================================== -->
 
 <section id="product-wide-leg-jeans"
          class="product-page">
@@ -2693,7 +2661,9 @@ body.product-open .navbar{
 </section>
 
 
+<!-- ===================================================== -->
 <!-- PRODUCT THAI -->
+<!-- ===================================================== -->
 
 <section id="product-thai"
          class="product-page">
@@ -2789,7 +2759,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- PRODUCT LINEN -->
+<!-- ===================================================== -->
+<!-- PRODUCT PLAIN MODAL -->
+<!-- ===================================================== -->
 
 <section id="product-linen"
          class="product-page">
@@ -2821,12 +2793,13 @@ body.product-open .navbar{
         </div>
 
         <h1 class="detail-title">
-          Modal Linen<br>
-          Cotton Soft
+          Plain<br>
+          Modal
         </h1>
 
         <div class="detail-price">
-          170 EGP
+          <span class="old-price">170 EGP</span>
+          &nbsp; 150 EGP
         </div>
 
         <div class="detail-meta">
@@ -2845,7 +2818,7 @@ body.product-open .navbar{
 
         <form id="linen-order"
               class="order-form"
-              onsubmit="sendOrder('Modal Linen Cotton Soft','170','linen-name','linen-phone','linen-size','linen-address');return false;">
+              onsubmit="sendOrder('Plain Modal','150','linen-name','linen-phone','linen-size','linen-address');return false;">
 
           <h3>Order Details</h3>
 
@@ -2884,7 +2857,9 @@ body.product-open .navbar{
 </section>
 
 
-<!-- PRODUCT COLORED -->
+<!-- ===================================================== -->
+<!-- PRODUCT MODAL COLORED -->
+<!-- ===================================================== -->
 
 <section id="product-colored"
          class="product-page">
@@ -2982,7 +2957,9 @@ body.product-open .navbar{
 </section>
 
 
+<!-- ===================================================== -->
 <!-- PRODUCT BALACLAVA -->
+<!-- ===================================================== -->
 
 <section id="product-balaclava"
          class="product-page">
@@ -3076,10 +3053,214 @@ body.product-open .navbar{
 </section>
 
 
+<!-- ===================================================== -->
+<!-- PRODUCT LINEN CROCHET -->
+<!-- ===================================================== -->
+
+<section id="product-linen-crochet"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_0952.jpeg" alt="">
+        <img src="IMG_0950.jpeg" alt="">
+        <img src="IMG_0951.jpeg" alt="">
+        <img src="F0BA61FD-63BC-4475-AB8C-AF5B56DF71C7.jpeg" alt="">
+        <img src="IMG_0954.jpeg" alt="">
+        <img src="IMG_0955.jpeg" alt="">
+        <img src="IMG_0957.jpeg" alt="">
+
+      </div>
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab
+        </div>
+
+        <h1 class="detail-title">
+          Linen Crochet<br>
+          Imported
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">290 EGP</span>
+          &nbsp; 250 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">70 × 200 cm</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('linen-crochet-order')">
+          Order Now
+        </button>
+
+        <form id="linen-crochet-order"
+              class="order-form"
+              onsubmit="sendOrder('Linen Crochet Imported','250','linen-crochet-name','linen-crochet-phone','linen-crochet-size','linen-crochet-address');return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="linen-crochet-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="linen-crochet-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="linen-crochet-size"
+                 type="text"
+                 value="70 × 200 cm"
+                 readonly>
+
+          <textarea id="linen-crochet-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ===================================================== -->
+<!-- PRODUCT LINEN KUWAITI -->
+<!-- ===================================================== -->
+
+<section id="product-linen-kuwaiti"
+         class="product-page">
+
+  <div class="product-detail">
+
+    <button class="back-btn"
+            onclick="goBack()">
+      ← Back to collection
+    </button>
+
+    <div class="detail-grid">
+
+      <div class="gallery">
+
+        <img src="IMG_0871.jpeg" alt="">
+        <img src="IMG_0870.jpeg" alt="">
+        <img src="IMG_0872.jpeg" alt="">
+        <img src="IMG_0873.jpeg" alt="">
+        <img src="IMG_0875.jpeg" alt="">
+        <img src="IMG_0878.jpeg" alt="">
+        <img src="IMG_0880.jpeg" alt="">
+        <img src="IMG_0881.jpeg" alt="">
+        <img src="IMG_0971.jpeg" alt="">
+        <img src="IMG_0970.jpeg" alt="">
+        <img src="IMG_0973.jpeg" alt="">
+        <img src="IMG_0975.jpeg" alt="">
+        <img src="IMG_0972.jpeg" alt="">
+        <img src="IMG_0974.jpeg" alt="">
+
+      </div>
+
+      <div class="detail-info">
+
+        <div class="detail-category">
+          Hijab
+        </div>
+
+        <h1 class="detail-title">
+          Linen Kuwaiti<br>
+          Imported
+        </h1>
+
+        <div class="detail-price">
+          <span class="old-price">290 EGP</span>
+          &nbsp; 245 EGP
+        </div>
+
+        <div class="detail-meta">
+
+          <div class="meta-row">
+            <span class="meta-label">Size</span>
+            <span class="meta-value">70 × 200 cm</span>
+          </div>
+
+        </div>
+
+        <button class="order-btn"
+                onclick="openOrder('linen-kuwaiti-order')">
+          Order Now
+        </button>
+
+        <form id="linen-kuwaiti-order"
+              class="order-form"
+              onsubmit="sendOrder('Linen Kuwaiti Imported','245','linen-kuwaiti-name','linen-kuwaiti-phone','linen-kuwaiti-size','linen-kuwaiti-address');return false;">
+
+          <h3>Order Details</h3>
+
+          <input id="linen-kuwaiti-name"
+                 type="text"
+                 placeholder="Full Name"
+                 required>
+
+          <input id="linen-kuwaiti-phone"
+                 type="tel"
+                 placeholder="Phone Number"
+                 required>
+
+          <input id="linen-kuwaiti-size"
+                 type="text"
+                 value="70 × 200 cm"
+                 readonly>
+
+          <textarea id="linen-kuwaiti-address"
+                    placeholder="Address"
+                    required></textarea>
+
+          <button class="submit-order"
+                  type="submit">
+            Send Order via WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
 <script>
 
 const whatsappNumber = "201029153023";
-
 
 /* MOBILE MENU */
 
@@ -3094,7 +3275,6 @@ function toggleMobileMenu(){
 
 }
 
-
 function closeMobileMenu(){
 
   const menu =
@@ -3105,7 +3285,6 @@ function closeMobileMenu(){
   }
 
 }
-
 
 /* HIDE PRODUCTS */
 
@@ -3123,7 +3302,6 @@ function hideProducts(){
   document.body.classList.remove("product-open");
 
 }
-
 
 /* SHOW MAIN */
 
@@ -3145,7 +3323,6 @@ function showMain(){
 
 }
 
-
 /* NAVIGATION */
 
 function navigate(hash){
@@ -3165,36 +3342,29 @@ function navigate(hash){
 
 }
 
-
 function goHome(){
   navigate("home");
 }
-
 
 function goClothing(){
   navigate("clothing");
 }
 
-
 function goJeans(){
   navigate("jeans");
 }
-
 
 function goHijabs(){
   navigate("hijabs");
 }
 
-
 function openProduct(product){
   navigate(product);
 }
 
-
 function goBack(){
   navigate("home");
 }
-
 
 /* SHOW CATEGORY */
 
@@ -3220,7 +3390,6 @@ function showCategory(id){
 
 }
 
-
 /* SHOW PRODUCT */
 
 function showProduct(product){
@@ -3235,7 +3404,6 @@ function showProduct(product){
       "product-" + product
     );
 
-
   if(!page){
 
     showMain();
@@ -3243,11 +3411,9 @@ function showProduct(product){
 
   }
 
-
   if(main){
     main.style.display = "none";
   }
-
 
   document.body.classList.add("product-open");
 
@@ -3269,7 +3435,6 @@ function showProduct(product){
 
 }
 
-
 /* ORDER */
 
 function openOrder(formId){
@@ -3282,7 +3447,6 @@ function openOrder(formId){
   form.classList.toggle("active");
 
 }
-
 
 /* WHATSAPP */
 
@@ -3307,7 +3471,6 @@ function sendOrder(
   const address =
     document.getElementById(addressId).value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3320,18 +3483,15 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
 
-
   window.open(url,"_blank");
 
 }
-
 
 /* JEANS WHATSAPP */
 
@@ -3360,7 +3520,6 @@ function sendJeansOrder(
   const address =
     document.getElementById(addressId).value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3374,18 +3533,15 @@ Size: ${size}
 Color: ${color}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
 
-
   window.open(url,"_blank");
 
 }
-
 
 /* SET */
 
@@ -3403,7 +3559,6 @@ function sendSetOrder(){
   const address =
     document.getElementById("set-address").value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3416,18 +3571,15 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
     encodeURIComponent(message);
 
-
   window.open(url,"_blank");
 
 }
-
 
 /* SHIRT COLORS */
 
@@ -3442,18 +3594,15 @@ function changeShirtColor(color,button){
   const selected =
     document.getElementById("selected-shirt-color");
 
-
   document
     .querySelectorAll(".color-btn")
     .forEach(btn => {
       btn.classList.remove("active");
     });
 
-
   if(button){
     button.classList.add("active");
   }
-
 
   if(color === "navy"){
 
@@ -3468,7 +3617,6 @@ function changeShirtColor(color,button){
 
   }
 
-
   if(color === "pink"){
 
     image1.src =
@@ -3481,7 +3629,6 @@ function changeShirtColor(color,button){
       "Pink";
 
   }
-
 
   if(color === "yellow"){
 
@@ -3498,7 +3645,6 @@ function changeShirtColor(color,button){
 
 }
 
-
 /* HASH ROUTING */
 
 function handleHash(){
@@ -3508,38 +3654,37 @@ function handleHash(){
       .replace("#","")
       .trim();
 
-
   const productAliases = {
 
     set:"set",
-    oversized:"oversized",
     striped:"striped-shirt",
     rose:"rose",
     nesr:"nesr-long-jeans",
     wide:"wide-leg-jeans",
     thai:"thai",
     linen:"linen",
+    "linen-crochet":"linen-crochet",
+    "linen-kuwaiti":"linen-kuwaiti",
     colored:"colored",
     balaclava:"balaclava"
 
   };
 
-
   const productNames = [
 
     "set",
-    "oversized",
     "striped-shirt",
     "rose",
     "nesr-long-jeans",
     "wide-leg-jeans",
     "thai",
     "linen",
+    "linen-crochet",
+    "linen-kuwaiti",
     "colored",
     "balaclava"
 
   ];
-
 
   /* HOME */
 
@@ -3557,7 +3702,6 @@ function handleHash(){
 
   }
 
-
   /* SHORT PRODUCT LINKS */
 
   if(productAliases[hash]){
@@ -3567,7 +3711,6 @@ function handleHash(){
     return;
 
   }
-
 
   /* FULL PRODUCT LINKS */
 
@@ -3579,7 +3722,6 @@ function handleHash(){
 
   }
 
-
   /* CATEGORIES */
 
   if(hash === "clothing"){
@@ -3590,7 +3732,6 @@ function handleHash(){
 
   }
 
-
   if(hash === "jeans"){
 
     showCategory("jeans");
@@ -3598,7 +3739,6 @@ function handleHash(){
     return;
 
   }
-
 
   if(hash === "hijabs"){
 
@@ -3608,13 +3748,11 @@ function handleHash(){
 
   }
 
-
   /* UNKNOWN HASH */
 
   window.location.hash = "home";
 
 }
-
 
 /* HASH EVENTS */
 
