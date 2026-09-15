@@ -2903,8 +2903,14 @@ Send Order via WhatsApp
 
 const whatsappNumber = "201029153023";
 
+
+/* =====================================================
+   NAZAKA GOOGLE APPS SCRIPT API
+   ===================================================== */
+
 const NAZAKA_API =
-"https://script.google.com/macros/s/AKfycbwfDfj9s7V3A1izSMJ65PqcBWlMZTcXXOFIgQ60EWKAL3Nn8Ay84I3VQIWBD2AJUoN5/exec";
+"https://script.google.com/macros/s/AKfycbziL8qjksc95IlmQunwW2t41HT0RZ5YWF_WDrH7p4OhBrHoISsOHAatg58cjLYLrYkq/exec";
+
 
 let dynamicProducts = [];
 let dynamicMap = {};
@@ -2960,7 +2966,7 @@ function normalizeImages(images){
   }
 
   return String(images)
-    .split(",")
+    .split(/[\n,]+/)
     .map(x => x.trim())
     .filter(Boolean);
 
@@ -3282,7 +3288,9 @@ Address: ${address}`;
 }
 
 
-/* DYNAMIC PRODUCT CARD */
+/* =====================================================
+   DYNAMIC PRODUCT CARD
+   ===================================================== */
 
 function dynamicCardHtml(product){
 
@@ -3295,9 +3303,14 @@ function dynamicCardHtml(product){
   const image =
     images[0] || "";
 
+  /* IMPORTANT:
+     Google Apps Script returns oldprice
+     NOT oldPrice
+  */
+
   const oldPrice =
-    product.oldPrice
-      ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>`
+    product.oldprice
+      ? `<span class="old-price">${formatPrice(product.oldprice)}</span>`
       : "";
 
   const tag =
@@ -3356,7 +3369,9 @@ function dynamicCardHtml(product){
 }
 
 
-/* CREATE DYNAMIC PRODUCT PAGE */
+/* =====================================================
+   CREATE DYNAMIC PRODUCT PAGE
+   ===================================================== */
 
 function createDynamicProductPage(product){
 
@@ -3389,9 +3404,14 @@ function createDynamicProductPage(product){
           </div>
         `;
 
+  /* IMPORTANT:
+     Google Apps Script returns oldprice
+     NOT oldPrice
+  */
+
   const oldPrice =
-    product.oldPrice
-      ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>&nbsp;`
+    product.oldprice
+      ? `<span class="old-price">${formatPrice(product.oldprice)}</span>&nbsp;`
       : "";
 
   const size =
@@ -3646,7 +3666,9 @@ function showDynamicProduct(slug){
 }
 
 
-/* LOAD PRODUCTS */
+/* =====================================================
+   LOAD PRODUCTS FROM GOOGLE SHEETS
+   ===================================================== */
 
 async function loadDynamicProducts(){
 
@@ -3727,6 +3749,7 @@ async function loadDynamicProducts(){
         dynamicProducts
           .filter(product =>
             String(product.category)
+              .trim()
               .toLowerCase()
               === "clothing"
           )
@@ -3749,6 +3772,7 @@ async function loadDynamicProducts(){
         dynamicProducts
           .filter(product =>
             String(product.category)
+              .trim()
               .toLowerCase()
               === "jeans"
           )
@@ -3771,6 +3795,7 @@ async function loadDynamicProducts(){
         dynamicProducts
           .filter(product =>
             String(product.category)
+              .trim()
               .toLowerCase()
               === "hijabs"
           )
@@ -3793,7 +3818,9 @@ async function loadDynamicProducts(){
 }
 
 
-/* HASH ROUTING */
+/* =====================================================
+   HASH ROUTING
+   ===================================================== */
 
 function handleHash(){
 
