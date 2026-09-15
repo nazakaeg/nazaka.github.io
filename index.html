@@ -413,8 +413,6 @@ a{
   text-transform:uppercase;
 }
 
-/* SMALL PRODUCT LINK */
-
 .item-link{
   display:inline-flex;
   align-items:center;
@@ -441,6 +439,16 @@ a{
 .jeans-section .item-link:hover{
   color:white;
   border-color:white;
+}
+
+/* DYNAMIC PRODUCTS */
+
+.dynamic-products{
+  margin-top:35px;
+}
+
+.dynamic-products:empty{
+  display:none;
 }
 
 /* EDITORIAL */
@@ -1145,8 +1153,6 @@ body.product-open .navbar{
 
 <main id="mainContent">
 
-<!-- HOME -->
-
 <section id="home">
 
   <div class="hero">
@@ -1177,8 +1183,6 @@ body.product-open .navbar{
     </div>
 
   </div>
-
-  <!-- CATEGORIES -->
 
   <section class="section categories">
 
@@ -1251,8 +1255,6 @@ body.product-open .navbar{
 
   </section>
 
-  <!-- FEATURED -->
-
   <section class="section featured">
 
     <div class="section-head">
@@ -1272,8 +1274,6 @@ body.product-open .navbar{
     </div>
 
     <div class="product-grid">
-
-      <!-- SET -->
 
       <div class="product-card"
            onclick="openProduct('set')">
@@ -1312,8 +1312,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- OVERSIZED T-SHIRT -->
-
       <div class="product-card"
            onclick="openProduct('oversized')">
 
@@ -1337,7 +1335,7 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
+            <span class="old-price">570 EGP</span>
             <span class="sale-price">450 EGP</span>
           </div>
 
@@ -1350,8 +1348,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
-      <!-- NESR -->
 
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
@@ -1390,8 +1386,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- THAI -->
-
       <div class="product-card"
            onclick="openProduct('thai')">
 
@@ -1430,9 +1424,11 @@ body.product-open .navbar{
 
     </div>
 
-  </section>
+    <div id="dynamic-featured"
+         class="product-grid dynamic-products">
+    </div>
 
-  <!-- EDITORIAL -->
+  </section>
 
   <section class="editorial">
 
@@ -1468,8 +1464,6 @@ body.product-open .navbar{
 
   </section>
 
-  <!-- CLOTHING -->
-
   <section id="clothing"
            class="section products-section">
 
@@ -1495,8 +1489,6 @@ body.product-open .navbar{
     </div>
 
     <div class="product-grid">
-
-      <!-- SET -->
 
       <div class="product-card"
            onclick="openProduct('set')">
@@ -1531,8 +1523,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- OVERSIZED T-SHIRT -->
-
       <div class="product-card"
            onclick="openProduct('oversized')">
 
@@ -1552,7 +1542,7 @@ body.product-open .navbar{
           </div>
 
           <div class="product-price">
-            <span class="old-price">550 EGP</span>
+            <span class="old-price">570 EGP</span>
             <span class="sale-price">450 EGP</span>
           </div>
 
@@ -1565,8 +1555,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
-      <!-- ROSE BLOUSE -->
 
       <div class="product-card"
            onclick="openProduct('rose')">
@@ -1602,9 +1590,11 @@ body.product-open .navbar{
 
     </div>
 
-  </section>
+    <div id="dynamic-clothing"
+         class="product-grid dynamic-products">
+    </div>
 
-  <!-- JEANS -->
+  </section>
 
   <section id="jeans"
            class="section jeans-section">
@@ -1630,8 +1620,6 @@ body.product-open .navbar{
     </div>
 
     <div class="product-grid">
-
-      <!-- NESR -->
 
       <div class="product-card"
            onclick="openProduct('nesr-long-jeans')">
@@ -1665,8 +1653,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
-      <!-- WIDE LEG -->
 
       <div class="product-card"
            onclick="openProduct('wide-leg-jeans')">
@@ -1703,9 +1689,11 @@ body.product-open .navbar{
 
     </div>
 
-  </section>
+    <div id="dynamic-jeans"
+         class="product-grid dynamic-products">
+    </div>
 
-  <!-- HIJABS -->
+  </section>
 
   <section id="hijabs"
            class="section hijab-section">
@@ -1732,8 +1720,6 @@ body.product-open .navbar{
     </div>
 
     <div class="product-grid">
-
-      <!-- THAI -->
 
       <div class="product-card"
            onclick="openProduct('thai')">
@@ -1771,8 +1757,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- PLAIN MODAL -->
-
       <div class="product-card"
            onclick="openProduct('linen')">
 
@@ -1806,8 +1790,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- MODAL COTTON COLORED -->
-
       <div class="product-card"
            onclick="openProduct('colored')">
 
@@ -1840,8 +1822,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- BALACLAVA -->
-
       <div class="product-card"
            onclick="openProduct('balaclava')">
 
@@ -1873,8 +1853,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
-      <!-- LINEN CROCHET -->
 
       <div class="product-card"
            onclick="openProduct('linen-crochet')">
@@ -1909,8 +1887,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- LINEN KUWAITI -->
-
       <div class="product-card"
            onclick="openProduct('linen-kuwaiti')">
 
@@ -1931,7 +1907,7 @@ body.product-open .navbar{
 
           <div class="product-price">
             <span class="old-price">290 EGP</span>
-            <span class="sale-price">245 EGP</span>
+            <span class="sale-price">250 EGP</span>
           </div>
 
           <a href="#linen-kuwaiti"
@@ -1946,11 +1922,13 @@ body.product-open .navbar{
 
     </div>
 
+    <div id="dynamic-hijabs"
+         class="product-grid dynamic-products">
+    </div>
+
   </section>
 
 </section>
-
-<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -2018,1186 +1996,925 @@ body.product-open .navbar{
 
 </main>
 
+
 <!-- ===================================================== -->
-<!-- PRODUCT SET -->
+<!-- STATIC PRODUCT PAGES -->
 <!-- ===================================================== -->
 
-<section id="product-set"
-         class="product-page">
+<section id="product-set" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_9818.jpeg" alt="">
+<img src="IMG_9821.jpeg" alt="">
+<img src="IMG_9819.jpeg" alt="">
+<img src="IMG_9801.jpeg" alt="">
+<img src="IMG_9820.jpeg" alt="">
+<img src="IMG_9803.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_9818.jpeg" alt="">
-        <img src="IMG_9821.jpeg" alt="">
-        <img src="IMG_9819.jpeg" alt="">
-        <img src="IMG_9801.jpeg" alt="">
-        <img src="IMG_9820.jpeg" alt="">
-        <img src="IMG_9803.jpeg" alt="">
+<div class="detail-category">Clothing / Set</div>
 
-      </div>
+<h1 class="detail-title">
+T-Shirt &amp;<br>
+Pants Set
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">1,200 EGP</span>
+&nbsp; 960 EGP
+</div>
 
-        <div class="detail-category">
-          Clothing / Set
-        </div>
+<p class="detail-description">
+A complete everyday set designed for effortless,
+comfortable styling.
+</p>
 
-        <h1 class="detail-title">
-          T-Shirt &amp;<br>
-          Pants Set
-        </h1>
+<div class="detail-meta">
 
-        <div class="detail-price">
-          <span class="old-price">1,200 EGP</span>
-          &nbsp; 960 EGP
-        </div>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">Free Size</span>
+</div>
 
-        <p class="detail-description">
-          A complete everyday set designed for effortless,
-          comfortable styling.
-        </p>
+<div class="meta-row">
+<span class="meta-label">T-Shirt</span>
+<span class="meta-value">390 EGP</span>
+</div>
 
-        <div class="detail-meta">
+<div class="meta-row">
+<span class="meta-label">Pants</span>
+<span class="meta-value">590 EGP</span>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
-          </div>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">T-Shirt</span>
-            <span class="meta-value">390 EGP</span>
-          </div>
+<button class="order-btn"
+onclick="openOrder('set-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Pants</span>
-            <span class="meta-value">590 EGP</span>
-          </div>
+<form id="set-order"
+class="order-form"
+onsubmit="sendSetOrder();return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('set-order')">
-          Order Now
-        </button>
+<input id="set-name"
+type="text"
+placeholder="Full Name"
+required>
 
-        <form id="set-order"
-              class="order-form"
-              onsubmit="sendSetOrder();return false;">
+<input id="set-phone"
+type="tel"
+placeholder="Phone Number"
+required>
 
-          <h3>Order Details</h3>
+<input id="set-size"
+type="text"
+value="Free Size"
+readonly>
 
-          <input id="set-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="set-address"
+placeholder="Address"
+required></textarea>
 
-          <input id="set-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="set-size"
-                 type="text"
-                 value="Free Size"
-                 readonly>
+</form>
 
-          <textarea id="set-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT OVERSIZED T-SHIRT -->
-<!-- ===================================================== -->
 
-<section id="product-oversized"
-         class="product-page">
+<section id="product-oversized" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_9832.jpeg" alt="">
+<img src="IMG_9833.jpeg" alt="">
+<img src="IMG_9834.jpeg" alt="">
+<img src="IMG_9844.jpeg" alt="">
+<img src="IMG_9845.jpeg" alt="">
+<img src="IMG_9848.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_9832.jpeg" alt="">
-        <img src="IMG_9833.jpeg" alt="">
-        <img src="IMG_9834.jpeg" alt="">
-        <img src="IMG_9844.jpeg" alt="">
-        <img src="IMG_9845.jpeg" alt="">
-        <img src="IMG_9848.jpeg" alt="">
+<div class="detail-category">
+Clothing / T-Shirt
+</div>
 
-      </div>
+<h1 class="detail-title">
+Striped<br>
+Oversized
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">570 EGP</span>
+&nbsp; 450 EGP
+</div>
 
-        <div class="detail-category">
-          Clothing / T-Shirt
-        </div>
+<p class="detail-description">
+An oversized striped silhouette designed for an
+effortless everyday look.
+</p>
 
-        <h1 class="detail-title">
-          Striped<br>
-          Oversized
-        </h1>
+<div class="detail-meta">
 
-        <div class="detail-price">
-          <span class="old-price">550 EGP</span>
-          &nbsp; 450 EGP
-        </div>
+<div class="meta-row">
+<span class="meta-label">Fit</span>
+<span class="meta-value">Oversized Fit</span>
+</div>
 
-        <p class="detail-description">
-          An oversized striped silhouette designed for an
-          effortless everyday look.
-        </p>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('oversized-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Fit</span>
-            <span class="meta-value">Oversized Fit</span>
-          </div>
+<form id="oversized-order"
+class="order-form"
+onsubmit="sendOrder('Striped Oversized T-Shirt','450','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('oversized-order')">
-          Order Now
-        </button>
+<input id="oversized-name"
+type="text"
+placeholder="Full Name"
+required>
 
-        <form id="oversized-order"
-              class="order-form"
-              onsubmit="sendOrder('Striped Oversized T-Shirt','450','oversized-name','oversized-phone','oversized-size','oversized-address');return false;">
+<input id="oversized-phone"
+type="tel"
+placeholder="Phone Number"
+required>
 
-          <h3>Order Details</h3>
+<input id="oversized-size"
+type="text"
+value="Oversized Fit"
+readonly>
 
-          <input id="oversized-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="oversized-address"
+placeholder="Address"
+required></textarea>
 
-          <input id="oversized-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="oversized-size"
-                 type="text"
-                 value="Oversized Fit"
-                 readonly>
+</form>
 
-          <textarea id="oversized-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT ROSE BLOUSE -->
-<!-- ===================================================== -->
 
-<section id="product-rose"
-         class="product-page">
+<section id="product-rose" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="">
+<img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="">
+<img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
+<img src="IMG_7725.jpeg" alt="">
+<img src="IMG_0935.jpeg" alt="">
+<img src="IMG_0936.jpeg" alt="">
+<img src="IMG_0934.jpeg" alt="">
+<img src="IMG_0978.jpeg" alt="">
+<img src="IMG_0933.jpeg" alt="">
+<img src="IMG_0979.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="C43C4A76-9689-43C2-AD32-1052EA614390.png" alt="">
-        <img src="39FE8399-2574-437A-9E10-93870AA15106.png" alt="">
-        <img src="6092F6B7-0A94-4E45-9B44-9B5B5AB624C2.jpeg" alt="">
-        <img src="IMG_7725.jpeg" alt="">
-        <img src="IMG_0935.jpeg" alt="">
-        <img src="IMG_0936.jpeg" alt="">
-        <img src="IMG_0934.jpeg" alt="">
-        <img src="IMG_0978.jpeg" alt="">
-        <img src="IMG_0933.jpeg" alt="">
-        <img src="IMG_0979.jpeg" alt="">
+<div class="detail-category">
+Clothing / Blouse
+</div>
 
-      </div>
+<h1 class="detail-title">
+Rose<br>
+Blouse 🌹
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+550 EGP
+</div>
 
-        <div class="detail-category">
-          Clothing / Blouse
-        </div>
+<p class="detail-description">
+بلوز بحزام لف كتان
+</p>
 
-        <h1 class="detail-title">
-          Rose<br>
-          Blouse 🌹
-        </h1>
+<div class="detail-meta">
 
-        <div class="detail-price">
-          550 EGP
-        </div>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">Free Size</span>
+</div>
 
-        <p class="detail-description">
-          بلوز بحزام لف كتان
-        </p>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('rose-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
-          </div>
+<form id="rose-order"
+class="order-form"
+onsubmit="sendOrder('Rose Blouse','550','rose-name','rose-phone','rose-size','rose-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('rose-order')">
-          Order Now
-        </button>
+<input id="rose-name"
+type="text"
+placeholder="Full Name"
+required>
 
-        <form id="rose-order"
-              class="order-form"
-              onsubmit="sendOrder('Rose Blouse','550','rose-name','rose-phone','rose-size','rose-address');return false;">
+<input id="rose-phone"
+type="tel"
+placeholder="Phone Number"
+required>
 
-          <h3>Order Details</h3>
+<input id="rose-size"
+type="text"
+value="Free Size"
+readonly>
 
-          <input id="rose-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="rose-address"
+placeholder="Address"
+required></textarea>
 
-          <input id="rose-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="rose-size"
-                 type="text"
-                 value="Free Size"
-                 readonly>
+</form>
 
-          <textarea id="rose-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT NESR -->
-<!-- ===================================================== -->
 
-<section id="product-nesr-long-jeans"
-         class="product-page">
+<section id="product-nesr-long-jeans" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="">
+<img src="F9A4A653-C7EC-409E-B19D-59AB996D98E6.png" alt="">
+<img src="5C0B9648-B3B0-403D-A1F6-4C94262D4CFA.png" alt="">
+<img src="IMG_9862.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="8F9F9A87-C4F2-4A92-8B7D-38545BE0ECBE.png" alt="">
-        <img src="F9A4A653-C7EC-409E-B19D-59AB996D98E6.png" alt="">
-        <img src="5C0B9648-B3B0-403D-A1F6-4C94262D4CFA.png" alt="">
-        <img src="IMG_9862.jpeg" alt="">
+<div class="detail-category">
+Denim / Straight Cut
+</div>
 
-      </div>
+<h1 class="detail-title">
+Nesr Long<br>
+Jeans
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">750 EGP</span>
+&nbsp; 580 EGP
+</div>
 
-        <div class="detail-category">
-          Denim / Straight Cut
-        </div>
+<p class="detail-description">
+Straight cut denim with a clean, elongated
+silhouette.
+</p>
 
-        <h1 class="detail-title">
-          Nesr Long<br>
-          Jeans
-        </h1>
+<div class="detail-meta">
 
-        <div class="detail-price">
-          <span class="old-price">750 EGP</span>
-          &nbsp; 580 EGP
-        </div>
+<div class="meta-row">
+<span class="meta-label">Sizes</span>
+<span class="meta-value">36 / 38 / 40</span>
+</div>
 
-        <p class="detail-description">
-          Straight cut denim with a clean, elongated
-          silhouette.
-        </p>
+<div class="meta-row">
+<span class="meta-label">Fits</span>
+<span class="meta-value">50–95 KG</span>
+</div>
 
-        <div class="detail-meta">
+<div class="meta-row">
+<span class="meta-label">Color</span>
+<span class="meta-value">Light / Medium / Dirty</span>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">Sizes</span>
-            <span class="meta-value">36 / 38 / 40</span>
-          </div>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">Fits</span>
-            <span class="meta-value">50–95 KG</span>
-          </div>
+<button class="order-btn"
+onclick="openOrder('nesr-jeans-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Color</span>
-            <span class="meta-value">
-              Light / Medium / Dirty
-            </span>
-          </div>
+<form id="nesr-jeans-order"
+class="order-form"
+onsubmit="sendJeansOrder('Nesr Long Jeans','580','nesr-name','nesr-phone','nesr-size','nesr-color','nesr-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('nesr-jeans-order')">
-          Order Now
-        </button>
+<input id="nesr-name" type="text" placeholder="Full Name" required>
 
-        <form id="nesr-jeans-order"
-              class="order-form"
-              onsubmit="sendJeansOrder('Nesr Long Jeans','580','nesr-name','nesr-phone','nesr-size','nesr-color','nesr-address');return false;">
+<input id="nesr-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<select id="nesr-size" required>
+<option value="">Select Size</option>
+<option>36</option>
+<option>38</option>
+<option>40</option>
+</select>
 
-          <input id="nesr-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<select id="nesr-color" required>
+<option value="">Select Color</option>
+<option>Light</option>
+<option>Medium</option>
+<option>Dirty</option>
+</select>
 
-          <input id="nesr-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<textarea id="nesr-address" placeholder="Address" required></textarea>
 
-          <select id="nesr-size" required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-            <option value="">
-              Select Size
-            </option>
+</form>
 
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
-
-          </select>
-
-          <select id="nesr-color" required>
-
-            <option value="">
-              Select Color
-            </option>
-
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
-
-          </select>
-
-          <textarea id="nesr-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT WIDE LEG -->
-<!-- ===================================================== -->
 
-<section id="product-wide-leg-jeans"
-         class="product-page">
+<section id="product-wide-leg-jeans" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_9905.jpeg" alt="">
+<img src="IMG_9901.jpeg" alt="">
+<img src="IMG_9904.jpeg" alt="">
+<img src="IMG_9898.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_9905.jpeg" alt="">
-        <img src="IMG_9901.jpeg" alt="">
-        <img src="IMG_9904.jpeg" alt="">
-        <img src="IMG_9898.jpeg" alt="">
+<div class="detail-category">
+Denim
+</div>
 
-      </div>
+<h1 class="detail-title">
+Wide Leg<br>
+Fold Jeans
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">800 EGP</span>
+&nbsp; 600 EGP
+</div>
 
-        <div class="detail-category">
-          Denim
-        </div>
+<p class="detail-description">
+Modern denim silhouette with a relaxed fit.
+</p>
 
-        <h1 class="detail-title">
-          Wide Leg<br>
-          Fold Jeans
-        </h1>
+<div class="detail-meta">
 
-        <div class="detail-price">
-          <span class="old-price">800 EGP</span>
-          &nbsp; 600 EGP
-        </div>
+<div class="meta-row">
+<span class="meta-label">Sizes</span>
+<span class="meta-value">36 / 38 / 40</span>
+</div>
 
-        <p class="detail-description">
-          Modern denim silhouette with a relaxed fit.
-        </p>
+<div class="meta-row">
+<span class="meta-label">Fits</span>
+<span class="meta-value">50–95 KG</span>
+</div>
 
-        <div class="detail-meta">
+<div class="meta-row">
+<span class="meta-label">Color</span>
+<span class="meta-value">Light / Medium / Dirty</span>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">Sizes</span>
-            <span class="meta-value">36 / 38 / 40</span>
-          </div>
+</div>
 
-          <div class="meta-row">
-            <span class="meta-label">Fits</span>
-            <span class="meta-value">50–95 KG</span>
-          </div>
+<button class="order-btn"
+onclick="openOrder('wide-leg-jeans-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Color</span>
-            <span class="meta-value">
-              Light / Medium / Dirty
-            </span>
-          </div>
+<form id="wide-leg-jeans-order"
+class="order-form"
+onsubmit="sendJeansOrder('Wide Leg Fold Jeans','600','wide-name','wide-phone','wide-size','wide-color','wide-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('wide-leg-jeans-order')">
-          Order Now
-        </button>
+<input id="wide-name" type="text" placeholder="Full Name" required>
 
-        <form id="wide-leg-jeans-order"
-              class="order-form"
-              onsubmit="sendJeansOrder('Wide Leg Fold Jeans','600','wide-name','wide-phone','wide-size','wide-color','wide-address');return false;">
+<input id="wide-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<select id="wide-size" required>
+<option value="">Select Size</option>
+<option>36</option>
+<option>38</option>
+<option>40</option>
+</select>
 
-          <input id="wide-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<select id="wide-color" required>
+<option value="">Select Color</option>
+<option>Light</option>
+<option>Medium</option>
+<option>Dirty</option>
+</select>
 
-          <input id="wide-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<textarea id="wide-address" placeholder="Address" required></textarea>
 
-          <select id="wide-size" required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-            <option value="">
-              Select Size
-            </option>
+</form>
 
-            <option>36</option>
-            <option>38</option>
-            <option>40</option>
-
-          </select>
-
-          <select id="wide-color" required>
-
-            <option value="">
-              Select Color
-            </option>
-
-            <option>Light</option>
-            <option>Medium</option>
-            <option>Dirty</option>
-
-          </select>
-
-          <textarea id="wide-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT THAI -->
-<!-- ===================================================== -->
 
-<section id="product-thai"
-         class="product-page">
+<section id="product-thai" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_7465.jpeg" alt="">
+<img src="IMG_7330.jpeg" alt="">
+<img src="IMG_7329.jpeg" alt="">
+<img src="IMG_7324.jpeg" alt="">
+<img src="IMG_7333.jpeg" alt="">
+<img src="IMG_7327.jpeg" alt="">
+<img src="IMG_7320.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_7465.jpeg" alt="">
-        <img src="IMG_7330.jpeg" alt="">
-        <img src="IMG_7329.jpeg" alt="">
-        <img src="IMG_7324.jpeg" alt="">
-        <img src="IMG_7333.jpeg" alt="">
-        <img src="IMG_7327.jpeg" alt="">
-        <img src="IMG_7320.jpeg" alt="">
+<div class="detail-category">
+Hijab / Best Seller
+</div>
 
-      </div>
+<h1 class="detail-title">
+Original Thai<br>
+Ruffled
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+290 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab / Best Seller
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Original Thai<br>
-          Ruffled
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">60 × 2 m</span>
+</div>
 
-        <div class="detail-price">
-          290 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('thai-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
-          </div>
+<form id="thai-order"
+class="order-form"
+onsubmit="sendOrder('Original Thai Ruffled','290','thai-name','thai-phone','thai-size','thai-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('thai-order')">
-          Order Now
-        </button>
+<input id="thai-name" type="text" placeholder="Full Name" required>
 
-        <form id="thai-order"
-              class="order-form"
-              onsubmit="sendOrder('Original Thai Ruffled','290','thai-name','thai-phone','thai-size','thai-address');return false;">
+<input id="thai-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="thai-size" type="text" value="60 × 2 m" readonly>
 
-          <input id="thai-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="thai-address" placeholder="Address" required></textarea>
 
-          <input id="thai-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="thai-size"
-                 type="text"
-                 value="60 × 2 m"
-                 readonly>
+</form>
 
-          <textarea id="thai-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT PLAIN MODAL -->
-<!-- ===================================================== -->
 
-<section id="product-linen"
-         class="product-page">
+<section id="product-linen" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_7352.jpeg" alt="">
+<img src="IMG_7353.jpeg" alt="">
+<img src="IMG_7350.jpeg" alt="">
+<img src="IMG_7354.jpeg" alt="">
+<img src="IMG_7351.jpeg" alt="">
+<img src="IMG_7348.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_7352.jpeg" alt="">
-        <img src="IMG_7353.jpeg" alt="">
-        <img src="IMG_7350.jpeg" alt="">
-        <img src="IMG_7354.jpeg" alt="">
-        <img src="IMG_7351.jpeg" alt="">
-        <img src="IMG_7348.jpeg" alt="">
+<div class="detail-category">Hijab</div>
 
-      </div>
+<h1 class="detail-title">
+Plain<br>
+Modal
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">170 EGP</span>
+&nbsp; 150 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Plain<br>
-          Modal
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">60 × 2 m</span>
+</div>
 
-        <div class="detail-price">
-          <span class="old-price">170 EGP</span>
-          &nbsp; 150 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('linen-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
-          </div>
+<form id="linen-order"
+class="order-form"
+onsubmit="sendOrder('Plain Modal','150','linen-name','linen-phone','linen-size','linen-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('linen-order')">
-          Order Now
-        </button>
+<input id="linen-name" type="text" placeholder="Full Name" required>
 
-        <form id="linen-order"
-              class="order-form"
-              onsubmit="sendOrder('Plain Modal','150','linen-name','linen-phone','linen-size','linen-address');return false;">
+<input id="linen-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="linen-size" type="text" value="60 × 2 m" readonly>
 
-          <input id="linen-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="linen-address" placeholder="Address" required></textarea>
 
-          <input id="linen-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="linen-size"
-                 type="text"
-                 value="60 × 2 m"
-                 readonly>
+</form>
 
-          <textarea id="linen-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT MODAL COLORED -->
-<!-- ===================================================== -->
 
-<section id="product-colored"
-         class="product-page">
+<section id="product-colored" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_7341.jpeg" alt="">
+<img src="IMG_7356.jpeg" alt="">
+<img src="IMG_7336.jpeg" alt="">
+<img src="IMG_7337.jpeg" alt="">
+<img src="IMG_7338.jpeg" alt="">
+<img src="IMG_7339.jpeg" alt="">
+<img src="IMG_7340.jpeg" alt="">
+<img src="IMG_7342.jpeg" alt="">
+<img src="IMG_7343.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_7341.jpeg" alt="">
-        <img src="IMG_7356.jpeg" alt="">
-        <img src="IMG_7336.jpeg" alt="">
-        <img src="IMG_7337.jpeg" alt="">
-        <img src="IMG_7338.jpeg" alt="">
-        <img src="IMG_7339.jpeg" alt="">
-        <img src="IMG_7340.jpeg" alt="">
-        <img src="IMG_7342.jpeg" alt="">
-        <img src="IMG_7343.jpeg" alt="">
+<div class="detail-category">Hijab</div>
 
-      </div>
+<h1 class="detail-title">
+Modal Cotton<br>
+Colored
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+180 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Modal Cotton<br>
-          Colored
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">60 × 2 m</span>
+</div>
 
-        <div class="detail-price">
-          180 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('colored-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">60 × 2 m</span>
-          </div>
+<form id="colored-order"
+class="order-form"
+onsubmit="sendOrder('Modal Cotton Colored','180','colored-name','colored-phone','colored-size','colored-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('colored-order')">
-          Order Now
-        </button>
+<input id="colored-name" type="text" placeholder="Full Name" required>
 
-        <form id="colored-order"
-              class="order-form"
-              onsubmit="sendOrder('Modal Cotton Colored','180','colored-name','colored-phone','colored-size','colored-address');return false;">
+<input id="colored-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="colored-size" type="text" value="60 × 2 m" readonly>
 
-          <input id="colored-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="colored-address" placeholder="Address" required></textarea>
 
-          <input id="colored-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="colored-size"
-                 type="text"
-                 value="60 × 2 m"
-                 readonly>
+</form>
 
-          <textarea id="colored-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT BALACLAVA -->
-<!-- ===================================================== -->
 
-<section id="product-balaclava"
-         class="product-page">
+<section id="product-balaclava" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg" alt="">
+<img src="eeaadcb5-4efe-4bb5-97a7-864d31321c79.jpeg" alt="">
+<img src="IMG_7440.jpeg" alt="">
+<img src="IMG_7439.jpeg" alt="">
+<img src="IMG_7438.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="2fad7e0f-8269-480b-94b5-7f61a0908979.jpeg" alt="">
-        <img src="eeaadcb5-4efe-4bb5-97a7-864d31321c79.jpeg" alt="">
-        <img src="IMG_7440.jpeg" alt="">
-        <img src="IMG_7439.jpeg" alt="">
-        <img src="IMG_7438.jpeg" alt="">
+<div class="detail-category">Hijab</div>
 
-      </div>
+<h1 class="detail-title">
+Balaclava<br>
+Summer
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+250 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Balaclava<br>
-          Summer
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">Free Size</span>
+</div>
 
-        <div class="detail-price">
-          250 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('balaclava-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">Free Size</span>
-          </div>
+<form id="balaclava-order"
+class="order-form"
+onsubmit="sendOrder('Balaclava Summer','250','balaclava-name','balaclava-phone','balaclava-size','balaclava-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('balaclava-order')">
-          Order Now
-        </button>
+<input id="balaclava-name" type="text" placeholder="Full Name" required>
 
-        <form id="balaclava-order"
-              class="order-form"
-              onsubmit="sendOrder('Balaclava Summer','250','balaclava-name','balaclava-phone','balaclava-size','balaclava-address');return false;">
+<input id="balaclava-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="balaclava-size" type="text" value="Free Size" readonly>
 
-          <input id="balaclava-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="balaclava-address" placeholder="Address" required></textarea>
 
-          <input id="balaclava-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="balaclava-size"
-                 type="text"
-                 value="Free Size"
-                 readonly>
+</form>
 
-          <textarea id="balaclava-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT LINEN CROCHET -->
-<!-- ===================================================== -->
 
-<section id="product-linen-crochet"
-         class="product-page">
+<section id="product-linen-crochet" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_0952.jpeg" alt="">
+<img src="IMG_0950.jpeg" alt="">
+<img src="IMG_0951.jpeg" alt="">
+<img src="F0BA61FD-63BC-4475-AB8C-AF5B56DF71C7.jpeg" alt="">
+<img src="IMG_0954.jpeg" alt="">
+<img src="IMG_0955.jpeg" alt="">
+<img src="IMG_0957.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_0952.jpeg" alt="">
-        <img src="IMG_0950.jpeg" alt="">
-        <img src="IMG_0951.jpeg" alt="">
-        <img src="F0BA61FD-63BC-4475-AB8C-AF5B56DF71C7.jpeg" alt="">
-        <img src="IMG_0954.jpeg" alt="">
-        <img src="IMG_0955.jpeg" alt="">
-        <img src="IMG_0957.jpeg" alt="">
+<div class="detail-category">Hijab</div>
 
-      </div>
+<h1 class="detail-title">
+Linen Crochet<br>
+Imported
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">290 EGP</span>
+&nbsp; 250 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Linen Crochet<br>
-          Imported
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">70 × 200 cm</span>
+</div>
 
-        <div class="detail-price">
-          <span class="old-price">290 EGP</span>
-          &nbsp; 250 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('linen-crochet-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">70 × 200 cm</span>
-          </div>
+<form id="linen-crochet-order"
+class="order-form"
+onsubmit="sendOrder('Linen Crochet Imported','250','linen-crochet-name','linen-crochet-phone','linen-crochet-size','linen-crochet-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('linen-crochet-order')">
-          Order Now
-        </button>
+<input id="linen-crochet-name" type="text" placeholder="Full Name" required>
 
-        <form id="linen-crochet-order"
-              class="order-form"
-              onsubmit="sendOrder('Linen Crochet Imported','250','linen-crochet-name','linen-crochet-phone','linen-crochet-size','linen-crochet-address');return false;">
+<input id="linen-crochet-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="linen-crochet-size" type="text" value="70 × 200 cm" readonly>
 
-          <input id="linen-crochet-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="linen-crochet-address" placeholder="Address" required></textarea>
 
-          <input id="linen-crochet-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="linen-crochet-size"
-                 type="text"
-                 value="70 × 200 cm"
-                 readonly>
+</form>
 
-          <textarea id="linen-crochet-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
 
-<!-- ===================================================== -->
-<!-- PRODUCT LINEN KUWAITI -->
-<!-- ===================================================== -->
 
-<section id="product-linen-kuwaiti"
-         class="product-page">
+<section id="product-linen-kuwaiti" class="product-page">
+<div class="product-detail">
 
-  <div class="product-detail">
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
 
-    <button class="back-btn"
-            onclick="goBack()">
-      ← Back to collection
-    </button>
+<div class="detail-grid">
 
-    <div class="detail-grid">
+<div class="gallery">
+<img src="IMG_0871.jpeg" alt="">
+<img src="IMG_0870.jpeg" alt="">
+<img src="IMG_0872.jpeg" alt="">
+<img src="IMG_0873.jpeg" alt="">
+<img src="IMG_0875.jpeg" alt="">
+<img src="IMG_0878.jpeg" alt="">
+<img src="IMG_0880.jpeg" alt="">
+<img src="IMG_0881.jpeg" alt="">
+<img src="IMG_0971.jpeg" alt="">
+<img src="IMG_0970.jpeg" alt="">
+<img src="IMG_0973.jpeg" alt="">
+<img src="IMG_0975.jpeg" alt="">
+<img src="IMG_0972.jpeg" alt="">
+<img src="IMG_0974.jpeg" alt="">
+</div>
 
-      <div class="gallery">
+<div class="detail-info">
 
-        <img src="IMG_0871.jpeg" alt="">
-        <img src="IMG_0870.jpeg" alt="">
-        <img src="IMG_0872.jpeg" alt="">
-        <img src="IMG_0873.jpeg" alt="">
-        <img src="IMG_0875.jpeg" alt="">
-        <img src="IMG_0878.jpeg" alt="">
-        <img src="IMG_0880.jpeg" alt="">
-        <img src="IMG_0881.jpeg" alt="">
-        <img src="IMG_0971.jpeg" alt="">
-        <img src="IMG_0970.jpeg" alt="">
-        <img src="IMG_0973.jpeg" alt="">
-        <img src="IMG_0975.jpeg" alt="">
-        <img src="IMG_0972.jpeg" alt="">
-        <img src="IMG_0974.jpeg" alt="">
+<div class="detail-category">Hijab</div>
 
-      </div>
+<h1 class="detail-title">
+Linen Kuwaiti<br>
+Imported
+</h1>
 
-      <div class="detail-info">
+<div class="detail-price">
+<span class="old-price">290 EGP</span>
+&nbsp; 250 EGP
+</div>
 
-        <div class="detail-category">
-          Hijab
-        </div>
+<div class="detail-meta">
 
-        <h1 class="detail-title">
-          Linen Kuwaiti<br>
-          Imported
-        </h1>
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">70 × 200 cm</span>
+</div>
 
-        <div class="detail-price">
-          <span class="old-price">290 EGP</span>
-          &nbsp; 245 EGP
-        </div>
+</div>
 
-        <div class="detail-meta">
+<button class="order-btn"
+onclick="openOrder('linen-kuwaiti-order')">
+Order Now
+</button>
 
-          <div class="meta-row">
-            <span class="meta-label">Size</span>
-            <span class="meta-value">70 × 200 cm</span>
-          </div>
+<form id="linen-kuwaiti-order"
+class="order-form"
+onsubmit="sendOrder('Linen Kuwaiti Imported','250','linen-kuwaiti-name','linen-kuwaiti-phone','linen-kuwaiti-size','linen-kuwaiti-address');return false;">
 
-        </div>
+<h3>Order Details</h3>
 
-        <button class="order-btn"
-                onclick="openOrder('linen-kuwaiti-order')">
-          Order Now
-        </button>
+<input id="linen-kuwaiti-name" type="text" placeholder="Full Name" required>
 
-        <form id="linen-kuwaiti-order"
-              class="order-form"
-              onsubmit="sendOrder('Linen Kuwaiti Imported','245','linen-kuwaiti-name','linen-kuwaiti-phone','linen-kuwaiti-size','linen-kuwaiti-address');return false;">
+<input id="linen-kuwaiti-phone" type="tel" placeholder="Phone Number" required>
 
-          <h3>Order Details</h3>
+<input id="linen-kuwaiti-size" type="text" value="70 × 200 cm" readonly>
 
-          <input id="linen-kuwaiti-name"
-                 type="text"
-                 placeholder="Full Name"
-                 required>
+<textarea id="linen-kuwaiti-address" placeholder="Address" required></textarea>
 
-          <input id="linen-kuwaiti-phone"
-                 type="tel"
-                 placeholder="Phone Number"
-                 required>
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
 
-          <input id="linen-kuwaiti-size"
-                 type="text"
-                 value="70 × 200 cm"
-                 readonly>
+</form>
 
-          <textarea id="linen-kuwaiti-address"
-                    placeholder="Address"
-                    required></textarea>
-
-          <button class="submit-order"
-                  type="submit">
-            Send Order via WhatsApp
-          </button>
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
+</div>
+</div>
+</div>
 </section>
+
 
 <script>
 
 const whatsappNumber = "201029153023";
 
+const NAZAKA_API =
+"https://script.google.com/macros/s/AKfycbwfDfj9s7V3A1izSMJ65PqcBWlMZTcXXOFIgQ60EWKAL3Nn8Ay84I3VQIWBD2AJUoN5/exec";
+
+let dynamicProducts = [];
+let dynamicMap = {};
+
+
 /* MOBILE MENU */
 
 function toggleMobileMenu(){
 
-  const menu =
-    document.getElementById("navLinks");
+  const menu = document.getElementById("navLinks");
 
   if(menu){
     menu.classList.toggle("open");
@@ -3207,14 +2924,61 @@ function toggleMobileMenu(){
 
 function closeMobileMenu(){
 
-  const menu =
-    document.getElementById("navLinks");
+  const menu = document.getElementById("navLinks");
 
   if(menu){
     menu.classList.remove("open");
   }
 
 }
+
+
+/* HELPERS */
+
+function escapeHtml(value){
+
+  return String(value ?? "")
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+
+}
+
+
+function normalizeImages(images){
+
+  if(Array.isArray(images)){
+    return images
+      .map(x => String(x).trim())
+      .filter(Boolean);
+  }
+
+  if(!images){
+    return [];
+  }
+
+  return String(images)
+    .split(",")
+    .map(x => x.trim())
+    .filter(Boolean);
+
+}
+
+
+function formatPrice(value){
+
+  const number = Number(value);
+
+  if(!Number.isFinite(number)){
+    return String(value || "");
+  }
+
+  return number.toLocaleString("en-US") + " EGP";
+
+}
+
 
 /* HIDE PRODUCTS */
 
@@ -3233,6 +2997,7 @@ function hideProducts(){
 
 }
 
+
 /* SHOW MAIN */
 
 function showMain(){
@@ -3248,17 +3013,14 @@ function showMain(){
 
   closeMobileMenu();
 
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-
 }
+
 
 /* NAVIGATION */
 
 function navigate(hash){
 
-  const newHash =
-    "#" + hash;
+  const newHash = "#" + hash;
 
   if(window.location.hash === newHash){
 
@@ -3296,6 +3058,7 @@ function goBack(){
   navigate("home");
 }
 
+
 /* SHOW CATEGORY */
 
 function showCategory(id){
@@ -3320,9 +3083,17 @@ function showCategory(id){
 
 }
 
-/* SHOW PRODUCT */
+
+/* STATIC PRODUCT */
 
 function showProduct(product){
+
+  if(dynamicMap[product]){
+
+    showDynamicProduct(product);
+    return;
+
+  }
 
   hideProducts();
 
@@ -3352,18 +3123,14 @@ function showProduct(product){
 
   closeMobileMenu();
 
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0;
-
   window.scrollTo({
     top:0,
     left:0,
     behavior:"auto"
   });
 
-  page.scrollTop = 0;
-
 }
+
 
 /* ORDER */
 
@@ -3377,6 +3144,7 @@ function openOrder(formId){
   form.classList.toggle("active");
 
 }
+
 
 /* WHATSAPP */
 
@@ -3422,6 +3190,7 @@ Address: ${address}`;
   window.open(url,"_blank");
 
 }
+
 
 /* JEANS WHATSAPP */
 
@@ -3473,6 +3242,7 @@ Address: ${address}`;
 
 }
 
+
 /* SET */
 
 function sendSetOrder(){
@@ -3511,6 +3281,518 @@ Address: ${address}`;
 
 }
 
+
+/* DYNAMIC PRODUCT CARD */
+
+function dynamicCardHtml(product){
+
+  const slug =
+    "dynamic-" + product.id;
+
+  const images =
+    normalizeImages(product.images);
+
+  const image =
+    images[0] || "";
+
+  const oldPrice =
+    product.oldPrice
+      ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>`
+      : "";
+
+  const tag =
+    product.tag
+      ? `<div class="product-tag">${escapeHtml(product.tag)}</div>`
+      : "";
+
+  return `
+
+    <div class="product-card"
+         onclick="openProduct('${slug}')">
+
+      ${tag}
+
+      <div class="product-image-wrap">
+
+        <img
+          src="${escapeHtml(image)}"
+          alt="${escapeHtml(product.name)}"
+          onerror="this.style.display='none';">
+
+      </div>
+
+      <div class="product-info">
+
+        <div class="product-category">
+          ${escapeHtml(product.category || "")}
+        </div>
+
+        <div class="product-name">
+          ${escapeHtml(product.name)}
+        </div>
+
+        <div class="product-price">
+
+          ${oldPrice}
+
+          <span class="sale-price">
+            ${formatPrice(product.price)}
+          </span>
+
+        </div>
+
+        <a href="#${slug}"
+           class="item-link"
+           onclick="event.stopPropagation();">
+          View Item
+        </a>
+
+      </div>
+
+    </div>
+
+  `;
+
+}
+
+
+/* CREATE DYNAMIC PRODUCT PAGE */
+
+function createDynamicProductPage(product){
+
+  const slug =
+    "dynamic-" + product.id;
+
+  if(document.getElementById("product-" + slug)){
+    return;
+  }
+
+  const images =
+    normalizeImages(product.images);
+
+  const gallery =
+    images.length
+
+      ? images.map(image => `
+          <img
+            src="${escapeHtml(image)}"
+            alt="${escapeHtml(product.name)}"
+            onerror="this.style.display='none';">
+        `).join("")
+
+      : `
+          <div style="
+            padding:30px;
+            color:#77736C;
+          ">
+            No image added.
+          </div>
+        `;
+
+  const oldPrice =
+    product.oldPrice
+      ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>&nbsp;`
+      : "";
+
+  const size =
+    product.size || "Not specified";
+
+  const description =
+    product.description || "";
+
+  const tag =
+    product.tag || "";
+
+  const page =
+    document.createElement("section");
+
+  page.id =
+    "product-" + slug;
+
+  page.className =
+    "product-page";
+
+  page.innerHTML = `
+
+    <div class="product-detail">
+
+      <button class="back-btn"
+              onclick="goBack()">
+        ← Back to collection
+      </button>
+
+      <div class="detail-grid">
+
+        <div class="gallery">
+          ${gallery}
+        </div>
+
+        <div class="detail-info">
+
+          <div class="detail-category">
+
+            ${escapeHtml(product.category || "")}
+
+            ${tag
+              ? " / " + escapeHtml(tag)
+              : ""}
+
+          </div>
+
+          <h1 class="detail-title">
+
+            ${escapeHtml(product.name)}
+
+          </h1>
+
+          <div class="detail-price">
+
+            ${oldPrice}
+
+            ${formatPrice(product.price)}
+
+          </div>
+
+          ${
+            description
+              ? `
+                <p class="detail-description">
+                  ${escapeHtml(description)}
+                </p>
+              `
+              : ""
+          }
+
+          <div class="detail-meta">
+
+            <div class="meta-row">
+
+              <span class="meta-label">
+                Size
+              </span>
+
+              <span class="meta-value">
+                ${escapeHtml(size)}
+              </span>
+
+            </div>
+
+          </div>
+
+          <button
+            class="order-btn"
+            onclick="openOrder('order-${slug}')">
+
+            Order Now
+
+          </button>
+
+          <form
+            id="order-${slug}"
+            class="order-form"
+            onsubmit="sendDynamicOrder('${slug}');return false;">
+
+            <h3>
+              Order Details
+            </h3>
+
+            <input
+              id="${slug}-name"
+              type="text"
+              placeholder="Full Name"
+              required>
+
+            <input
+              id="${slug}-phone"
+              type="tel"
+              placeholder="Phone Number"
+              required>
+
+            <input
+              id="${slug}-size"
+              type="text"
+              value="${escapeHtml(size)}"
+              readonly>
+
+            <textarea
+              id="${slug}-address"
+              placeholder="Address"
+              required></textarea>
+
+            <button
+              class="submit-order"
+              type="submit">
+
+              Send Order via WhatsApp
+
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+
+  document.body.appendChild(page);
+
+}
+
+
+/* DYNAMIC ORDER */
+
+function sendDynamicOrder(slug){
+
+  const product =
+    dynamicMap[slug];
+
+  if(!product){
+    return;
+  }
+
+  const name =
+    document.getElementById(
+      slug + "-name"
+    ).value;
+
+  const phone =
+    document.getElementById(
+      slug + "-phone"
+    ).value;
+
+  const size =
+    document.getElementById(
+      slug + "-size"
+    ).value;
+
+  const address =
+    document.getElementById(
+      slug + "-address"
+    ).value;
+
+  const message =
+`Hello Nazaka,
+
+I would like to order:
+
+Product: ${product.name}
+Price: ${product.price} EGP
+Name: ${name}
+Phone: ${phone}
+Size: ${size}
+Address: ${address}`;
+
+  const url =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+  window.open(url,"_blank");
+
+}
+
+
+/* SHOW DYNAMIC PRODUCT */
+
+function showDynamicProduct(slug){
+
+  const product =
+    dynamicMap[slug];
+
+  if(!product){
+    return;
+  }
+
+  createDynamicProductPage(product);
+
+  hideProducts();
+
+  const main =
+    document.getElementById("mainContent");
+
+  if(main){
+    main.style.display = "none";
+  }
+
+  const page =
+    document.getElementById(
+      "product-" + slug
+    );
+
+  if(!page){
+
+    showMain();
+    return;
+
+  }
+
+  document.body.classList.add("product-open");
+
+  page.classList.add("active");
+  page.classList.add("fade-in");
+
+  closeMobileMenu();
+
+  window.scrollTo({
+    top:0,
+    left:0,
+    behavior:"auto"
+  });
+
+}
+
+
+/* LOAD PRODUCTS */
+
+async function loadDynamicProducts(){
+
+  try{
+
+    const response =
+      await fetch(
+        NAZAKA_API +
+        "?mode=products&ts=" +
+        Date.now()
+      );
+
+    if(!response.ok){
+
+      throw new Error(
+        "Products API error"
+      );
+
+    }
+
+    const products =
+      await response.json();
+
+    dynamicProducts =
+      Array.isArray(products)
+        ? products
+        : [];
+
+    dynamicMap = {};
+
+    dynamicProducts.forEach(product => {
+
+      const slug =
+        "dynamic-" + product.id;
+
+      product.images =
+        normalizeImages(
+          product.images
+        );
+
+      dynamicMap[slug] =
+        product;
+
+      createDynamicProductPage(
+        product
+      );
+
+    });
+
+
+    /* FEATURED */
+
+    const featured =
+      document.getElementById(
+        "dynamic-featured"
+      );
+
+    if(featured){
+
+      featured.innerHTML =
+        dynamicProducts
+          .map(dynamicCardHtml)
+          .join("");
+
+    }
+
+
+    /* CLOTHING */
+
+    const clothing =
+      document.getElementById(
+        "dynamic-clothing"
+      );
+
+    if(clothing){
+
+      clothing.innerHTML =
+        dynamicProducts
+          .filter(product =>
+            String(product.category)
+              .toLowerCase()
+              === "clothing"
+          )
+          .map(dynamicCardHtml)
+          .join("");
+
+    }
+
+
+    /* JEANS */
+
+    const jeans =
+      document.getElementById(
+        "dynamic-jeans"
+      );
+
+    if(jeans){
+
+      jeans.innerHTML =
+        dynamicProducts
+          .filter(product =>
+            String(product.category)
+              .toLowerCase()
+              === "jeans"
+          )
+          .map(dynamicCardHtml)
+          .join("");
+
+    }
+
+
+    /* HIJABS */
+
+    const hijabs =
+      document.getElementById(
+        "dynamic-hijabs"
+      );
+
+    if(hijabs){
+
+      hijabs.innerHTML =
+        dynamicProducts
+          .filter(product =>
+            String(product.category)
+              .toLowerCase()
+              === "hijabs"
+          )
+          .map(dynamicCardHtml)
+          .join("");
+
+    }
+
+  }
+
+  catch(error){
+
+    console.warn(
+      "Nazaka dynamic products could not be loaded:",
+      error
+    );
+
+  }
+
+}
+
+
 /* HASH ROUTING */
 
 function handleHash(){
@@ -3520,37 +3802,70 @@ function handleHash(){
       .replace("#","")
       .trim();
 
+
+  /* DYNAMIC PRODUCT */
+
+  if(dynamicMap[hash]){
+
+    showDynamicProduct(hash);
+    return;
+
+  }
+
+
   const productAliases = {
 
     set:"set",
+
     oversized:"oversized",
+
     rose:"rose",
+
     nesr:"nesr-long-jeans",
+
     wide:"wide-leg-jeans",
+
     thai:"thai",
+
     linen:"linen",
+
     "linen-crochet":"linen-crochet",
+
     "linen-kuwaiti":"linen-kuwaiti",
+
     colored:"colored",
+
     balaclava:"balaclava"
 
   };
 
+
   const productNames = [
 
     "set",
+
     "oversized",
+
     "rose",
+
     "nesr-long-jeans",
+
     "wide-leg-jeans",
+
     "thai",
+
     "linen",
+
     "linen-crochet",
+
     "linen-kuwaiti",
+
     "colored",
+
     "balaclava"
 
   ];
+
 
   /* HOME */
 
@@ -3568,15 +3883,19 @@ function handleHash(){
 
   }
 
-  /* SHORT PRODUCT LINKS */
+
+  /* SHORT LINKS */
 
   if(productAliases[hash]){
 
-    showProduct(productAliases[hash]);
+    showProduct(
+      productAliases[hash]
+    );
 
     return;
 
   }
+
 
   /* FULL PRODUCT LINKS */
 
@@ -3588,12 +3907,12 @@ function handleHash(){
 
   }
 
+
   /* CATEGORIES */
 
   if(hash === "clothing"){
 
     showCategory("clothing");
-
     return;
 
   }
@@ -3601,7 +3920,6 @@ function handleHash(){
   if(hash === "jeans"){
 
     showCategory("jeans");
-
     return;
 
   }
@@ -3609,27 +3927,34 @@ function handleHash(){
   if(hash === "hijabs"){
 
     showCategory("hijabs");
-
     return;
 
   }
 
-  /* UNKNOWN HASH */
 
-  window.location.hash = "home";
+  window.location.hash =
+    "home";
 
 }
 
-/* HASH EVENTS */
+
+/* EVENTS */
 
 window.addEventListener(
   "hashchange",
   handleHash
 );
 
+
 window.addEventListener(
   "load",
-  handleHash
+  async function(){
+
+    await loadDynamicProducts();
+
+    handleHash();
+
+  }
 );
 
 </script>
