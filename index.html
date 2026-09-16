@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -1424,6 +1425,45 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- ZAHRA -->
+
+      <div class="product-card"
+           onclick="openProduct('zahra')">
+
+        <div class="product-tag">
+          Sale
+        </div>
+
+        <div class="product-image-wrap">
+          <img src="IMG_0359.jpeg"
+               alt="زهره">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Clothing
+          </div>
+
+          <div class="product-name">
+            زهره
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">550 EGP</span>
+            <span class="sale-price">500 EGP</span>
+          </div>
+
+          <a href="#zahra"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
     <div id="dynamic-featured"
@@ -1581,6 +1621,45 @@ body.product-open .navbar{
           </div>
 
           <a href="#rose"
+             class="item-link"
+             onclick="event.stopPropagation();">
+            View Item
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- ZAHRA -->
+
+      <div class="product-card"
+           onclick="openProduct('zahra')">
+
+        <div class="product-tag">
+          Sale
+        </div>
+
+        <div class="product-image-wrap">
+          <img src="IMG_0359.jpeg"
+               alt="زهره">
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Clothing
+          </div>
+
+          <div class="product-name">
+            زهره
+          </div>
+
+          <div class="product-price">
+            <span class="old-price">550 EGP</span>
+            <span class="sale-price">500 EGP</span>
+          </div>
+
+          <a href="#zahra"
              class="item-link"
              onclick="event.stopPropagation();">
             View Item
@@ -2259,6 +2338,96 @@ value="Free Size"
 readonly>
 
 <textarea id="rose-address"
+placeholder="Address"
+required></textarea>
+
+<button class="submit-order" type="submit">
+Send Order via WhatsApp
+</button>
+
+</form>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- =====================================================
+ZAHRA PRODUCT PAGE
+===================================================== -->
+
+<section id="product-zahra" class="product-page">
+<div class="product-detail">
+
+<button class="back-btn" onclick="goBack()">← Back to collection</button>
+
+<div class="detail-grid">
+
+<div class="gallery">
+
+<img src="IMG_0359.jpeg" alt="زهره">
+<img src="IMG_0360.jpeg" alt="زهره">
+<img src="IMG_0362.jpeg" alt="زهره">
+<img src="IMG_0357.jpeg" alt="زهره">
+
+</div>
+
+<div class="detail-info">
+
+<div class="detail-category">
+Clothing / Sale
+</div>
+
+<h1 class="detail-title">
+زهره
+</h1>
+
+<div class="detail-price">
+<span class="old-price">550 EGP</span>
+&nbsp; 500 EGP
+</div>
+
+<p class="detail-description">
+قطعة مميزة من Nazaka بتصميم سهل وعملي
+ومناسبة للاستخدام اليومي.
+</p>
+
+<div class="detail-meta">
+
+<div class="meta-row">
+<span class="meta-label">Fit</span>
+<span class="meta-value">Fits up to 85 KG</span>
+</div>
+
+</div>
+
+<button class="order-btn"
+onclick="openOrder('zahra-order')">
+Order Now
+</button>
+
+<form id="zahra-order"
+class="order-form"
+onsubmit="sendOrder('زهره','500','zahra-name','zahra-phone','zahra-size','zahra-address');return false;">
+
+<h3>Order Details</h3>
+
+<input id="zahra-name"
+type="text"
+placeholder="Full Name"
+required>
+
+<input id="zahra-phone"
+type="tel"
+placeholder="Phone Number"
+required>
+
+<input id="zahra-size"
+type="text"
+value="Fits up to 85 KG"
+readonly>
+
+<textarea id="zahra-address"
 placeholder="Address"
 required></textarea>
 
@@ -3041,24 +3210,7 @@ function escapeHtml(value){
 
 /* =====================================================
    IMAGE HANDLING
-   IMPORTANT FIX
    ===================================================== */
-
-/*
-   This function recognizes Google Drive links.
-
-   Supported examples:
-
-   https://drive.google.com/file/d/FILE_ID/view
-
-   https://drive.google.com/open?id=FILE_ID
-
-   https://drive.google.com/uc?id=FILE_ID
-
-   https://drive.google.com/thumbnail?id=FILE_ID
-
-   It converts them into a direct image URL.
-*/
 
 function convertGoogleDriveUrl(value){
 
@@ -3075,11 +3227,6 @@ function convertGoogleDriveUrl(value){
     return "";
   }
 
-
-  /* -----------------------------------------------
-     Google Drive /file/d/FILE_ID/view
-     ----------------------------------------------- */
-
   let match =
     url.match(
       /drive\.google\.com\/file\/d\/([^\/?#]+)/i
@@ -3087,8 +3234,7 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId =
-      match[1];
+    const fileId = match[1];
 
     return (
       "https://drive.google.com/thumbnail" +
@@ -3098,11 +3244,6 @@ function convertGoogleDriveUrl(value){
     );
 
   }
-
-
-  /* -----------------------------------------------
-     Google Drive thumbnail URL
-     ----------------------------------------------- */
 
   match =
     url.match(
@@ -3120,11 +3261,6 @@ function convertGoogleDriveUrl(value){
 
   }
 
-
-  /* -----------------------------------------------
-     Google Drive open?id=FILE_ID
-     ----------------------------------------------- */
-
   match =
     url.match(
       /drive\.google\.com\/open\?[^#]*id=([^&#]+)/i
@@ -3132,8 +3268,7 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId =
-      match[1];
+    const fileId = match[1];
 
     return (
       "https://drive.google.com/thumbnail" +
@@ -3143,11 +3278,6 @@ function convertGoogleDriveUrl(value){
     );
 
   }
-
-
-  /* -----------------------------------------------
-     Google Drive uc?id=FILE_ID
-     ----------------------------------------------- */
 
   match =
     url.match(
@@ -3156,8 +3286,7 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId =
-      match[1];
+    const fileId = match[1];
 
     return (
       "https://drive.google.com/thumbnail" +
@@ -3167,17 +3296,6 @@ function convertGoogleDriveUrl(value){
     );
 
   }
-
-
-  /*
-     Sometimes the Sheet may contain just:
-
-     FILE_ID
-
-     We intentionally do NOT assume every random
-     string is a Drive ID because it may be a
-     normal GitHub image filename.
-  */
 
   return url;
 
@@ -3205,26 +3323,17 @@ function normalizeImages(images){
 
   }
 
-
   if(!images){
     return [];
   }
-
 
   const value =
     String(images)
       .trim();
 
-
   if(!value){
     return [];
   }
-
-
-  /*
-     Sometimes Apps Script sends the images
-     as a JSON array stored inside a string.
-  */
 
   try{
 
@@ -3247,19 +3356,6 @@ function normalizeImages(images){
     }
 
   }catch(error){}
-
-
-  /*
-     Support:
-
-     newline
-     comma
-     pipe
-     semicolon
-
-     This is useful if multiple image URLs
-     are stored in one Google Sheet cell.
-  */
 
   return value
     .split(/[\n,|;]+/)
@@ -3285,22 +3381,14 @@ function resolveImageUrl(image){
     return "";
   }
 
-
   let value =
     String(image)
       .trim()
       .replace(/^["']|["']$/g,"");
 
-
   if(!value){
     return "";
   }
-
-
-  /*
-     FIRST:
-     Google Drive
-  */
 
   if(
     value.includes("drive.google.com") ||
@@ -3313,11 +3401,6 @@ function resolveImageUrl(image){
 
   }
 
-
-  /*
-     Googleusercontent image
-  */
-
   if(
     value.includes("googleusercontent.com")
   ){
@@ -3326,25 +3409,10 @@ function resolveImageUrl(image){
 
   }
 
-
-  /*
-     Full URL
-  */
-
   if(
     value.startsWith("http://") ||
     value.startsWith("https://")
   ){
-
-    /*
-       GitHub blob URL:
-
-       github.com/user/repo/blob/main/image.jpg
-
-       becomes:
-
-       raw.githubusercontent.com/user/repo/main/image.jpg
-    */
 
     if(
       value.includes("github.com/") &&
@@ -3363,19 +3431,9 @@ function resolveImageUrl(image){
 
     }
 
-
     return value;
 
   }
-
-
-  /*
-     GitHub Pages / same-folder image.
-
-     Example:
-
-     IMG_1234.jpeg
-  */
 
   try{
 
@@ -3391,11 +3449,6 @@ function resolveImageUrl(image){
   }
 
 }
-
-
-/* =====================================================
-   GET PRODUCT IMAGE URL
-   ===================================================== */
 
 function getProductImageUrl(image){
 
@@ -3837,20 +3890,12 @@ function dynamicCardHtml(product){
       product.images
     );
 
-
-  /*
-     IMPORTANT:
-     Convert the first image into a real
-     browser image URL.
-  */
-
   const image =
     images.length
       ? getProductImageUrl(
           images[0]
         )
       : "";
-
 
   const oldPrice =
     product.oldPrice !== undefined &&
@@ -3865,7 +3910,6 @@ function dynamicCardHtml(product){
       `
       : "";
 
-
   const tag =
     product.tag
       ? `
@@ -3876,7 +3920,6 @@ function dynamicCardHtml(product){
         </div>
       `
       : "";
-
 
   return `
 
@@ -3924,19 +3967,15 @@ function dynamicCardHtml(product){
       <div class="product-info">
 
         <div class="product-category">
-
           ${escapeHtml(
             product.category || ""
           )}
-
         </div>
 
         <div class="product-name">
-
           ${escapeHtml(
             product.name || ""
           )}
-
         </div>
 
         <div class="product-price">
@@ -3944,11 +3983,9 @@ function dynamicCardHtml(product){
           ${oldPrice}
 
           <span class="sale-price">
-
             ${formatPrice(
               product.price
             )}
-
           </span>
 
         </div>
@@ -3992,12 +4029,10 @@ function createDynamicProductPage(product){
     return;
   }
 
-
   const images =
     normalizeImages(
       product.images
     );
-
 
   const gallery =
     images.length
@@ -4043,7 +4078,6 @@ function createDynamicProductPage(product){
           </div>
         `;
 
-
   const oldPrice =
     product.oldPrice !== undefined &&
     product.oldPrice !== null &&
@@ -4058,42 +4092,34 @@ function createDynamicProductPage(product){
       `
       : "";
 
-
   const size =
     product.size ||
     "Not specified";
-
 
   const description =
     product.description ||
     "";
 
-
   const tag =
     product.tag ||
     "";
-
 
   const page =
     document.createElement(
       "section"
     );
 
-
   page.id =
     "product-" +
     slug;
 
-
   page.className =
     "product-page";
-
 
   page.setAttribute(
     "data-dynamic",
     "true"
   );
-
 
   page.innerHTML = `
 
@@ -4110,9 +4136,7 @@ function createDynamicProductPage(product){
       <div class="detail-grid">
 
         <div class="gallery">
-
           ${gallery}
-
         </div>
 
         <div class="detail-info">
@@ -4133,11 +4157,9 @@ function createDynamicProductPage(product){
           </div>
 
           <h1 class="detail-title">
-
             ${escapeHtml(
               product.name || ""
             )}
-
           </h1>
 
           <div class="detail-price">
@@ -4154,11 +4176,9 @@ function createDynamicProductPage(product){
             description
               ? `
                 <p class="detail-description">
-
                   ${escapeHtml(
                     description
                   )}
-
                 </p>
               `
               : ""
@@ -4246,7 +4266,6 @@ function createDynamicProductPage(product){
     </div>
 
   `;
-
 
   document.body.appendChild(
     page
@@ -4430,7 +4449,6 @@ function productSignature(product){
 
 }
 
-
 let dynamicSignature = "";
 
 
@@ -4460,7 +4478,6 @@ function renderDynamicProducts(){
       "dynamic-hijabs"
     );
 
-
   if(featured){
 
     featured.innerHTML =
@@ -4475,7 +4492,6 @@ function renderDynamicProducts(){
         .join("");
 
   }
-
 
   if(clothing){
 
@@ -4504,7 +4520,6 @@ function renderDynamicProducts(){
 
   }
 
-
   if(jeans){
 
     jeans.innerHTML =
@@ -4530,7 +4545,6 @@ function renderDynamicProducts(){
         .join("");
 
   }
-
 
   if(hijabs){
 
@@ -4582,7 +4596,6 @@ async function loadDynamicProducts(){
         }
       );
 
-
     if(!response.ok){
 
       throw new Error(
@@ -4592,10 +4605,8 @@ async function loadDynamicProducts(){
 
     }
 
-
     const data =
       await response.json();
-
 
     if(
       data &&
@@ -4610,7 +4621,6 @@ async function loadDynamicProducts(){
 
     }
 
-
     if(!Array.isArray(data)){
 
       throw new Error(
@@ -4618,7 +4628,6 @@ async function loadDynamicProducts(){
       );
 
     }
-
 
     const cleanedProducts =
       data
@@ -4663,10 +4672,6 @@ async function loadDynamicProducts(){
             tag:
               product.tag || "",
 
-            /*
-              Normalize images immediately.
-            */
-
             images:
               normalizeImages(
                 product.images
@@ -4676,14 +4681,12 @@ async function loadDynamicProducts(){
 
         });
 
-
     const newSignature =
       JSON.stringify(
         cleanedProducts.map(
           productSignature
         )
       );
-
 
     if(
       newSignature ===
@@ -4694,17 +4697,13 @@ async function loadDynamicProducts(){
 
     }
 
-
     dynamicSignature =
       newSignature;
-
 
     dynamicProducts =
       cleanedProducts;
 
-
     dynamicMap = {};
-
 
     dynamicProducts.forEach(
       function(product){
@@ -4719,9 +4718,7 @@ async function loadDynamicProducts(){
       }
     );
 
-
     removeDynamicProductPages();
-
 
     dynamicProducts.forEach(
       function(product){
@@ -4733,21 +4730,12 @@ async function loadDynamicProducts(){
       }
     );
 
-
     renderDynamicProducts();
-
 
     console.log(
       "Nazaka products loaded:",
       dynamicProducts.length
     );
-
-
-    /*
-      Debug image URLs.
-
-      Open browser console if needed.
-    */
 
     dynamicProducts.forEach(
       function(product){
@@ -4756,7 +4744,6 @@ async function loadDynamicProducts(){
           normalizeImages(
             product.images
           );
-
 
         console.log(
           "Nazaka image:",
@@ -4794,7 +4781,6 @@ function handleHash(){
       .replace("#","")
       .trim();
 
-
   if(dynamicMap[hash]){
 
     showDynamicProduct(
@@ -4805,7 +4791,6 @@ function handleHash(){
 
   }
 
-
   const productAliases = {
 
     set:"set",
@@ -4813,6 +4798,8 @@ function handleHash(){
     oversized:"oversized",
 
     rose:"rose",
+
+    zahra:"zahra",
 
     nesr:"nesr-long-jeans",
 
@@ -4834,7 +4821,6 @@ function handleHash(){
 
   };
 
-
   const productNames = [
 
     "set",
@@ -4842,6 +4828,8 @@ function handleHash(){
     "oversized",
 
     "rose",
+
+    "zahra",
 
     "nesr-long-jeans",
 
@@ -4861,7 +4849,6 @@ function handleHash(){
 
   ];
 
-
   if(
     !hash ||
     hash === "home"
@@ -4879,7 +4866,6 @@ function handleHash(){
 
   }
 
-
   if(
     productAliases[hash]
   ){
@@ -4891,7 +4877,6 @@ function handleHash(){
     return;
 
   }
-
 
   if(
     productNames.includes(hash)
@@ -4905,7 +4890,6 @@ function handleHash(){
 
   }
 
-
   if(
     hash === "clothing"
   ){
@@ -4917,7 +4901,6 @@ function handleHash(){
     return;
 
   }
-
 
   if(
     hash === "jeans"
@@ -4931,7 +4914,6 @@ function handleHash(){
 
   }
 
-
   if(
     hash === "hijabs"
   ){
@@ -4943,7 +4925,6 @@ function handleHash(){
     return;
 
   }
-
 
   window.location.hash =
     "home";
@@ -4988,7 +4969,6 @@ setInterval(
     const active =
       document.activeElement;
 
-
     if(
       active &&
       (
@@ -5002,15 +4982,12 @@ setInterval(
 
     }
 
-
     await loadDynamicProducts();
-
 
     const currentHash =
       window.location.hash
         .replace("#","")
         .trim();
-
 
     if(
       currentHash &&
@@ -5023,27 +5000,22 @@ setInterval(
           currentHash
         );
 
-
       if(page){
 
         hideProducts();
-
 
         const main =
           document.getElementById(
             "mainContent"
           );
 
-
         if(main){
           main.style.display = "none";
         }
 
-
         document.body.classList.add(
           "product-open"
         );
-
 
         page.classList.add(
           "active"
@@ -5069,3 +5041,4 @@ setInterval(
 
 </body>
 </html>
+```
