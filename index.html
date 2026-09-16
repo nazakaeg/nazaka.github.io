@@ -1998,10 +1998,9 @@ body.product-open .navbar{
 
 </main>
 
-
-<!-- ===================================================== -->
-<!-- STATIC PRODUCT PAGES -->
-<!-- ===================================================== -->
+<!-- =====================================================
+STATIC PRODUCT PAGES
+===================================================== -->
 
 <section id="product-set" class="product-page">
 <div class="product-detail">
@@ -2098,7 +2097,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <section id="product-oversized" class="product-page">
 <div class="product-detail">
 
@@ -2185,7 +2183,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
 
 <section id="product-rose" class="product-page">
 <div class="product-detail">
@@ -2275,7 +2272,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
 
 <section id="product-nesr-long-jeans" class="product-page">
 <div class="product-detail">
@@ -2381,7 +2377,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <section id="product-wide-leg-jeans" class="product-page">
 <div class="product-detail">
 
@@ -2485,7 +2480,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <section id="product-thai" class="product-page">
 <div class="product-detail">
 
@@ -2568,7 +2562,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <section id="product-linen" class="product-page">
 <div class="product-detail">
 
@@ -2650,7 +2643,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
 
 <section id="product-colored" class="product-page">
 <div class="product-detail">
@@ -2736,7 +2728,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <section id="product-balaclava" class="product-page">
 <div class="product-detail">
 
@@ -2816,7 +2807,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
 
 <section id="product-linen-crochet" class="product-page">
 <div class="product-detail">
@@ -2900,7 +2890,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
 
 <section id="product-linen-kuwaiti" class="product-page">
 <div class="product-detail">
@@ -2992,7 +2981,6 @@ Send Order via WhatsApp
 </div>
 </section>
 
-
 <script>
 
 /* =====================================================
@@ -3051,34 +3039,161 @@ function escapeHtml(value){
 }
 
 
+/* =====================================================
+   IMAGE HANDLING
+   IMPORTANT FIX
+   ===================================================== */
+
 /*
-=========================================================
-IMAGE HANDLING
-=========================================================
+   This function recognizes Google Drive links.
 
-This is the important fix.
+   Supported examples:
 
-The Admin sheet can contain:
+   https://drive.google.com/file/d/FILE_ID/view
 
-IMG_1234.jpeg
+   https://drive.google.com/open?id=FILE_ID
 
-or:
+   https://drive.google.com/uc?id=FILE_ID
 
-images/IMG_1234.jpeg
+   https://drive.google.com/thumbnail?id=FILE_ID
 
-or a normal https:// URL
-
-or a GitHub /blob/ URL.
-
-The GitHub page converts all of them into a usable
-browser URL.
+   It converts them into a direct image URL.
 */
+
+function convertGoogleDriveUrl(value){
+
+  if(!value){
+    return "";
+  }
+
+  let url =
+    String(value)
+      .trim()
+      .replace(/^["']|["']$/g,"");
+
+  if(!url){
+    return "";
+  }
+
+
+  /* -----------------------------------------------
+     Google Drive /file/d/FILE_ID/view
+     ----------------------------------------------- */
+
+  let match =
+    url.match(
+      /drive\.google\.com\/file\/d\/([^\/?#]+)/i
+    );
+
+  if(match && match[1]){
+
+    const fileId =
+      match[1];
+
+    return (
+      "https://drive.google.com/thumbnail" +
+      "?id=" +
+      encodeURIComponent(fileId) +
+      "&sz=w1600"
+    );
+
+  }
+
+
+  /* -----------------------------------------------
+     Google Drive thumbnail URL
+     ----------------------------------------------- */
+
+  match =
+    url.match(
+      /drive\.google\.com\/thumbnail\?[^#]*id=([^&#]+)/i
+    );
+
+  if(match && match[1]){
+
+    return (
+      "https://drive.google.com/thumbnail" +
+      "?id=" +
+      encodeURIComponent(match[1]) +
+      "&sz=w1600"
+    );
+
+  }
+
+
+  /* -----------------------------------------------
+     Google Drive open?id=FILE_ID
+     ----------------------------------------------- */
+
+  match =
+    url.match(
+      /drive\.google\.com\/open\?[^#]*id=([^&#]+)/i
+    );
+
+  if(match && match[1]){
+
+    const fileId =
+      match[1];
+
+    return (
+      "https://drive.google.com/thumbnail" +
+      "?id=" +
+      encodeURIComponent(fileId) +
+      "&sz=w1600"
+    );
+
+  }
+
+
+  /* -----------------------------------------------
+     Google Drive uc?id=FILE_ID
+     ----------------------------------------------- */
+
+  match =
+    url.match(
+      /drive\.google\.com\/uc\?[^#]*id=([^&#]+)/i
+    );
+
+  if(match && match[1]){
+
+    const fileId =
+      match[1];
+
+    return (
+      "https://drive.google.com/thumbnail" +
+      "?id=" +
+      encodeURIComponent(fileId) +
+      "&sz=w1600"
+    );
+
+  }
+
+
+  /*
+     Sometimes the Sheet may contain just:
+
+     FILE_ID
+
+     We intentionally do NOT assume every random
+     string is a Drive ID because it may be a
+     normal GitHub image filename.
+  */
+
+  return url;
+
+}
+
+
+/* =====================================================
+   NORMALIZE IMAGES
+   ===================================================== */
 
 function normalizeImages(images){
 
   if(Array.isArray(images)){
 
     return images
+      .flat(Infinity)
       .map(function(image){
 
         return String(image)
@@ -3090,21 +3205,25 @@ function normalizeImages(images){
 
   }
 
+
   if(!images){
     return [];
   }
+
 
   const value =
     String(images)
       .trim();
 
+
   if(!value){
     return [];
   }
 
+
   /*
-    Sometimes an API may return a JSON array
-    as a string.
+     Sometimes Apps Script sends the images
+     as a JSON array stored inside a string.
   */
 
   try{
@@ -3115,6 +3234,7 @@ function normalizeImages(images){
     if(Array.isArray(parsed)){
 
       return parsed
+        .flat(Infinity)
         .map(function(image){
 
           return String(image)
@@ -3128,8 +3248,21 @@ function normalizeImages(images){
 
   }catch(error){}
 
+
+  /*
+     Support:
+
+     newline
+     comma
+     pipe
+     semicolon
+
+     This is useful if multiple image URLs
+     are stored in one Google Sheet cell.
+  */
+
   return value
-    .split(/[\n,]+/)
+    .split(/[\n,|;]+/)
     .map(function(image){
 
       return String(image)
@@ -3142,9 +3275,9 @@ function normalizeImages(images){
 }
 
 
-/*
-  Convert the image value into a real URL.
-*/
+/* =====================================================
+   RESOLVE IMAGE URL
+   ===================================================== */
 
 function resolveImageUrl(image){
 
@@ -3152,9 +3285,12 @@ function resolveImageUrl(image){
     return "";
   }
 
+
   let value =
     String(image)
-      .trim();
+      .trim()
+      .replace(/^["']|["']$/g,"");
+
 
   if(!value){
     return "";
@@ -3162,18 +3298,37 @@ function resolveImageUrl(image){
 
 
   /*
-    Remove accidental quotes.
+     FIRST:
+     Google Drive
   */
 
-  value =
-    value.replace(
-      /^["']|["']$/g,
-      ""
+  if(
+    value.includes("drive.google.com") ||
+    value.includes("drive.usercontent.google.com")
+  ){
+
+    return convertGoogleDriveUrl(
+      value
     );
+
+  }
 
 
   /*
-    If it is already a full URL.
+     Googleusercontent image
+  */
+
+  if(
+    value.includes("googleusercontent.com")
+  ){
+
+    return value;
+
+  }
+
+
+  /*
+     Full URL
   */
 
   if(
@@ -3182,13 +3337,13 @@ function resolveImageUrl(image){
   ){
 
     /*
-      GitHub blob URL:
+       GitHub blob URL:
 
-      https://github.com/user/repo/blob/main/image.jpg
+       github.com/user/repo/blob/main/image.jpg
 
-      becomes:
+       becomes:
 
-      https://raw.githubusercontent.com/user/repo/main/image.jpg
+       raw.githubusercontent.com/user/repo/main/image.jpg
     */
 
     if(
@@ -3208,21 +3363,18 @@ function resolveImageUrl(image){
 
     }
 
+
     return value;
 
   }
 
 
   /*
-    GitHub Pages / same-folder image.
+     GitHub Pages / same-folder image.
 
-    Example:
+     Example:
 
-    IMG_1234.jpeg
-
-    becomes:
-
-    https://your-github-pages-site/.../IMG_1234.jpeg
+     IMG_1234.jpeg
   */
 
   try{
@@ -3241,11 +3393,15 @@ function resolveImageUrl(image){
 }
 
 
-/*
-  Create an image URL from an image value.
-*/
+/* =====================================================
+   GET PRODUCT IMAGE URL
+   ===================================================== */
 
 function getProductImageUrl(image){
+
+  if(!image){
+    return "";
+  }
 
   const url =
     resolveImageUrl(image);
@@ -3254,6 +3410,10 @@ function getProductImageUrl(image){
 
 }
 
+
+/* =====================================================
+   FORMAT PRICE
+   ===================================================== */
 
 function formatPrice(value){
 
@@ -3284,8 +3444,7 @@ function normalizeCategory(category){
 
 }
 
-
-function categoryMatches(product, categories){
+function categoryMatches(product,categories){
 
   const category =
     normalizeCategory(
@@ -3320,7 +3479,6 @@ function hideProducts(){
 
 }
 
-
 function showMain(){
 
   hideProducts();
@@ -3337,7 +3495,6 @@ function showMain(){
   closeMobileMenu();
 
 }
-
 
 function navigate(hash){
 
@@ -3359,7 +3516,6 @@ function navigate(hash){
   }
 
 }
-
 
 function goHome(){
   navigate("home");
@@ -3681,9 +3837,11 @@ function dynamicCardHtml(product){
       product.images
     );
 
+
   /*
-    IMPORTANT:
-    Use resolved URL here.
+     IMPORTANT:
+     Convert the first image into a real
+     browser image URL.
   */
 
   const image =
@@ -3692,6 +3850,7 @@ function dynamicCardHtml(product){
           images[0]
         )
       : "";
+
 
   const oldPrice =
     product.oldPrice !== undefined &&
@@ -3706,6 +3865,7 @@ function dynamicCardHtml(product){
       `
       : "";
 
+
   const tag =
     product.tag
       ? `
@@ -3716,6 +3876,7 @@ function dynamicCardHtml(product){
         </div>
       `
       : "";
+
 
   return `
 
@@ -3731,16 +3892,31 @@ function dynamicCardHtml(product){
             ? `
               <img
                 src="${escapeHtml(image)}"
-                alt="${escapeHtml(
-                  product.name
-                )}"
+                alt="${escapeHtml(product.name)}"
                 loading="lazy"
                 onerror="
+                  console.error(
+                    'Nazaka image failed:',
+                    this.src
+                  );
                   this.onerror=null;
                   this.style.display='none';
                 ">
             `
-            : ""
+            : `
+              <div style="
+                width:100%;
+                height:100%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#77736C;
+                font-size:10px;
+                letter-spacing:1px;
+              ">
+                No Image
+              </div>
+            `
         }
 
       </div>
@@ -3816,6 +3992,7 @@ function createDynamicProductPage(product){
     return;
   }
 
+
   const images =
     normalizeImages(
       product.images
@@ -3833,6 +4010,10 @@ function createDynamicProductPage(product){
                 image
               );
 
+            if(!imageUrl){
+              return "";
+            }
+
             return `
               <img
                 src="${escapeHtml(imageUrl)}"
@@ -3841,6 +4022,10 @@ function createDynamicProductPage(product){
                 )}"
                 loading="lazy"
                 onerror="
+                  console.error(
+                    'Nazaka gallery image failed:',
+                    this.src
+                  );
                   this.onerror=null;
                   this.style.display='none';
                 ">
@@ -3878,9 +4063,11 @@ function createDynamicProductPage(product){
     product.size ||
     "Not specified";
 
+
   const description =
     product.description ||
     "";
+
 
   const tag =
     product.tag ||
@@ -3892,12 +4079,15 @@ function createDynamicProductPage(product){
       "section"
     );
 
+
   page.id =
     "product-" +
     slug;
 
+
   page.className =
     "product-page";
+
 
   page.setAttribute(
     "data-dynamic",
@@ -4057,6 +4247,7 @@ function createDynamicProductPage(product){
 
   `;
 
+
   document.body.appendChild(
     page
   );
@@ -4214,17 +4405,27 @@ function showDynamicProduct(slug){
 function productSignature(product){
 
   return JSON.stringify({
+
     id:product.id,
+
     name:product.name,
+
     category:product.category,
+
     price:product.price,
+
     oldPrice:product.oldPrice,
+
     size:product.size,
+
     description:product.description,
+
     tag:product.tag,
+
     images:normalizeImages(
       product.images
     )
+
   });
 
 }
@@ -4421,35 +4622,55 @@ async function loadDynamicProducts(){
 
     const cleanedProducts =
       data
+
         .filter(function(product){
 
           return (
             product &&
             product.id !== undefined &&
             product.id !== null &&
-            String(product.name || "").trim()
+            String(
+              product.name || ""
+            ).trim()
           );
 
         })
+
         .map(function(product){
 
           return {
+
             id:product.id,
-            name:product.name || "",
-            category:product.category || "",
-            price:product.price,
-            oldPrice:product.oldPrice,
-            size:product.size || "",
-            description:product.description || "",
-            tag:product.tag || "",
+
+            name:
+              product.name || "",
+
+            category:
+              product.category || "",
+
+            price:
+              product.price,
+
+            oldPrice:
+              product.oldPrice,
+
+            size:
+              product.size || "",
+
+            description:
+              product.description || "",
+
+            tag:
+              product.tag || "",
 
             /*
-              Normalize the image list immediately.
+              Normalize images immediately.
             */
 
-            images:normalizeImages(
-              product.images
-            )
+            images:
+              normalizeImages(
+                product.images
+              )
 
           };
 
@@ -4523,10 +4744,9 @@ async function loadDynamicProducts(){
 
 
     /*
-      Helpful debugging information.
-      If an image still does not show,
-      the browser console will show the
-      exact URL being used.
+      Debug image URLs.
+
+      Open browser console if needed.
     */
 
     dynamicProducts.forEach(
@@ -4536,6 +4756,7 @@ async function loadDynamicProducts(){
           normalizeImages(
             product.images
           );
+
 
         console.log(
           "Nazaka image:",
@@ -4548,8 +4769,8 @@ async function loadDynamicProducts(){
       }
     );
 
-
   }
+
   catch(error){
 
     console.error(
@@ -4617,15 +4838,25 @@ function handleHash(){
   const productNames = [
 
     "set",
+
     "oversized",
+
     "rose",
+
     "nesr-long-jeans",
+
     "wide-leg-jeans",
+
     "thai",
+
     "linen",
+
     "linen-crochet",
+
     "linen-kuwaiti",
+
     "colored",
+
     "balaclava"
 
   ];
@@ -4757,6 +4988,7 @@ setInterval(
     const active =
       document.activeElement;
 
+
     if(
       active &&
       (
@@ -4791,28 +5023,35 @@ setInterval(
           currentHash
         );
 
+
       if(page){
 
         hideProducts();
+
 
         const main =
           document.getElementById(
             "mainContent"
           );
 
+
         if(main){
           main.style.display = "none";
         }
+
 
         document.body.classList.add(
           "product-open"
         );
 
+
         page.classList.add(
           "active"
         );
 
-      }else{
+      }
+
+      else{
 
         showDynamicProduct(
           currentHash
