@@ -1425,8 +1425,6 @@ body.product-open .navbar{
 
       </div>
 
-      <!-- ZAHRA -->
-
       <div class="product-card"
            onclick="openProduct('zahra')">
 
@@ -1629,8 +1627,6 @@ body.product-open .navbar{
         </div>
 
       </div>
-
-      <!-- ZAHRA -->
 
       <div class="product-card"
            onclick="openProduct('zahra')">
@@ -2351,10 +2347,6 @@ Send Order via WhatsApp
 </div>
 </div>
 </section>
-
-<!-- =====================================================
-ZAHRA PRODUCT PAGE
-===================================================== -->
 
 <section id="product-zahra" class="product-page">
 <div class="product-detail">
@@ -3163,6 +3155,7 @@ const NAZAKA_API =
 
 let dynamicProducts = [];
 let dynamicMap = {};
+let dynamicSignature = "";
 
 
 /* =====================================================
@@ -3234,12 +3227,10 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId = match[1];
-
     return (
       "https://drive.google.com/thumbnail" +
       "?id=" +
-      encodeURIComponent(fileId) +
+      encodeURIComponent(match[1]) +
       "&sz=w1600"
     );
 
@@ -3268,12 +3259,10 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId = match[1];
-
     return (
       "https://drive.google.com/thumbnail" +
       "?id=" +
-      encodeURIComponent(fileId) +
+      encodeURIComponent(match[1]) +
       "&sz=w1600"
     );
 
@@ -3286,12 +3275,26 @@ function convertGoogleDriveUrl(value){
 
   if(match && match[1]){
 
-    const fileId = match[1];
+    return (
+      "https://drive.google.com/thumbnail" +
+      "?id=" +
+      encodeURIComponent(match[1]) +
+      "&sz=w1600"
+    );
+
+  }
+
+  match =
+    url.match(
+      /drive\.usercontent\.google\.com\/download\?id=([^&#]+)/i
+    );
+
+  if(match && match[1]){
 
     return (
       "https://drive.google.com/thumbnail" +
       "?id=" +
-      encodeURIComponent(fileId) +
+      encodeURIComponent(match[1]) +
       "&sz=w1600"
     );
 
@@ -3390,6 +3393,11 @@ function resolveImageUrl(image){
     return "";
   }
 
+
+  /*
+     GOOGLE DRIVE
+  */
+
   if(
     value.includes("drive.google.com") ||
     value.includes("drive.usercontent.google.com")
@@ -3401,6 +3409,11 @@ function resolveImageUrl(image){
 
   }
 
+
+  /*
+     GOOGLE USERCONTENT
+  */
+
   if(
     value.includes("googleusercontent.com")
   ){
@@ -3409,10 +3422,19 @@ function resolveImageUrl(image){
 
   }
 
+
+  /*
+     FULL URL
+  */
+
   if(
     value.startsWith("http://") ||
     value.startsWith("https://")
   ){
+
+    /*
+       GitHub blob -> raw
+    */
 
     if(
       value.includes("github.com/") &&
@@ -3435,6 +3457,11 @@ function resolveImageUrl(image){
 
   }
 
+
+  /*
+     LOCAL / GITHUB IMAGE
+  */
+
   try{
 
     return new URL(
@@ -3449,6 +3476,7 @@ function resolveImageUrl(image){
   }
 
 }
+
 
 function getProductImageUrl(image){
 
@@ -3532,6 +3560,7 @@ function hideProducts(){
 
 }
 
+
 function showMain(){
 
   hideProducts();
@@ -3548,6 +3577,7 @@ function showMain(){
   closeMobileMenu();
 
 }
+
 
 function navigate(hash){
 
@@ -3569,6 +3599,7 @@ function navigate(hash){
   }
 
 }
+
 
 function goHome(){
   navigate("home");
@@ -3711,25 +3742,49 @@ function sendOrder(
   addressId
 ){
 
-  const name =
+  const nameElement =
     document.getElementById(
       nameId
-    ).value;
+    );
 
-  const phone =
+  const phoneElement =
     document.getElementById(
       phoneId
-    ).value;
+    );
 
-  const size =
+  const sizeElement =
     document.getElementById(
       sizeId
-    ).value;
+    );
 
-  const address =
+  const addressElement =
     document.getElementById(
       addressId
-    ).value;
+    );
+
+
+  if(
+    !nameElement ||
+    !phoneElement ||
+    !sizeElement ||
+    !addressElement
+  ){
+    return;
+  }
+
+
+  const name =
+    nameElement.value;
+
+  const phone =
+    phoneElement.value;
+
+  const size =
+    sizeElement.value;
+
+  const address =
+    addressElement.value;
+
 
   const message =
 `Hello Nazaka,
@@ -3743,11 +3798,15 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
-    encodeURIComponent(message);
+    encodeURIComponent(
+      message
+    );
+
 
   window.open(
     url,
@@ -3771,30 +3830,58 @@ function sendJeansOrder(
   addressId
 ){
 
-  const name =
+  const nameElement =
     document.getElementById(
       nameId
-    ).value;
+    );
 
-  const phone =
+  const phoneElement =
     document.getElementById(
       phoneId
-    ).value;
+    );
 
-  const size =
+  const sizeElement =
     document.getElementById(
       sizeId
-    ).value;
+    );
 
-  const color =
+  const colorElement =
     document.getElementById(
       colorId
-    ).value;
+    );
 
-  const address =
+  const addressElement =
     document.getElementById(
       addressId
-    ).value;
+    );
+
+
+  if(
+    !nameElement ||
+    !phoneElement ||
+    !sizeElement ||
+    !colorElement ||
+    !addressElement
+  ){
+    return;
+  }
+
+
+  const name =
+    nameElement.value;
+
+  const phone =
+    phoneElement.value;
+
+  const size =
+    sizeElement.value;
+
+  const color =
+    colorElement.value;
+
+  const address =
+    addressElement.value;
+
 
   const message =
 `Hello Nazaka,
@@ -3809,11 +3896,15 @@ Size: ${size}
 Color: ${color}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
-    encodeURIComponent(message);
+    encodeURIComponent(
+      message
+    );
+
 
   window.open(
     url,
@@ -3829,25 +3920,49 @@ Address: ${address}`;
 
 function sendSetOrder(){
 
-  const name =
+  const nameElement =
     document.getElementById(
       "set-name"
-    ).value;
+    );
 
-  const phone =
+  const phoneElement =
     document.getElementById(
       "set-phone"
-    ).value;
+    );
 
-  const size =
+  const sizeElement =
     document.getElementById(
       "set-size"
-    ).value;
+    );
 
-  const address =
+  const addressElement =
     document.getElementById(
       "set-address"
-    ).value;
+    );
+
+
+  if(
+    !nameElement ||
+    !phoneElement ||
+    !sizeElement ||
+    !addressElement
+  ){
+    return;
+  }
+
+
+  const name =
+    nameElement.value;
+
+  const phone =
+    phoneElement.value;
+
+  const size =
+    sizeElement.value;
+
+  const address =
+    addressElement.value;
+
 
   const message =
 `Hello Nazaka,
@@ -3861,11 +3976,15 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
     "?text=" +
-    encodeURIComponent(message);
+    encodeURIComponent(
+      message
+    );
+
 
   window.open(
     url,
@@ -3885,10 +4004,12 @@ function dynamicCardHtml(product){
     "dynamic-" +
     product.id;
 
+
   const images =
     normalizeImages(
       product.images
     );
+
 
   const image =
     images.length
@@ -3896,6 +4017,7 @@ function dynamicCardHtml(product){
           images[0]
         )
       : "";
+
 
   const oldPrice =
     product.oldPrice !== undefined &&
@@ -3910,6 +4032,7 @@ function dynamicCardHtml(product){
       `
       : "";
 
+
   const tag =
     product.tag
       ? `
@@ -3920,6 +4043,7 @@ function dynamicCardHtml(product){
         </div>
       `
       : "";
+
 
   return `
 
@@ -3932,6 +4056,7 @@ function dynamicCardHtml(product){
 
         ${
           image
+
             ? `
               <img
                 src="${escapeHtml(image)}"
@@ -3946,6 +4071,7 @@ function dynamicCardHtml(product){
                   this.style.display='none';
                 ">
             `
+
             : `
               <div style="
                 width:100%;
@@ -4020,19 +4146,23 @@ function createDynamicProductPage(product){
     "dynamic-" +
     product.id;
 
+
   const existing =
     document.getElementById(
       "product-" + slug
     );
 
+
   if(existing){
     return;
   }
+
 
   const images =
     normalizeImages(
       product.images
     );
+
 
   const gallery =
     images.length
@@ -4045,9 +4175,11 @@ function createDynamicProductPage(product){
                 image
               );
 
+
             if(!imageUrl){
               return "";
             }
+
 
             return `
               <img
@@ -4078,6 +4210,7 @@ function createDynamicProductPage(product){
           </div>
         `;
 
+
   const oldPrice =
     product.oldPrice !== undefined &&
     product.oldPrice !== null &&
@@ -4092,34 +4225,42 @@ function createDynamicProductPage(product){
       `
       : "";
 
+
   const size =
     product.size ||
     "Not specified";
+
 
   const description =
     product.description ||
     "";
 
+
   const tag =
     product.tag ||
     "";
+
 
   const page =
     document.createElement(
       "section"
     );
 
+
   page.id =
     "product-" +
     slug;
 
+
   page.className =
     "product-page";
+
 
   page.setAttribute(
     "data-dynamic",
     "true"
   );
+
 
   page.innerHTML = `
 
@@ -4267,6 +4408,7 @@ function createDynamicProductPage(product){
 
   `;
 
+
   document.body.appendChild(
     page
   );
@@ -4302,29 +4444,55 @@ function sendDynamicOrder(slug){
   const product =
     dynamicMap[slug];
 
+
   if(!product){
     return;
   }
 
-  const name =
+
+  const nameElement =
     document.getElementById(
       slug + "-name"
-    ).value;
+    );
 
-  const phone =
+  const phoneElement =
     document.getElementById(
       slug + "-phone"
-    ).value;
+    );
 
-  const size =
+  const sizeElement =
     document.getElementById(
       slug + "-size"
-    ).value;
+    );
 
-  const address =
+  const addressElement =
     document.getElementById(
       slug + "-address"
-    ).value;
+    );
+
+
+  if(
+    !nameElement ||
+    !phoneElement ||
+    !sizeElement ||
+    !addressElement
+  ){
+    return;
+  }
+
+
+  const name =
+    nameElement.value;
+
+  const phone =
+    phoneElement.value;
+
+  const size =
+    sizeElement.value;
+
+  const address =
+    addressElement.value;
+
 
   const message =
 `Hello Nazaka,
@@ -4338,6 +4506,7 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
+
   const url =
     "https://wa.me/" +
     whatsappNumber +
@@ -4345,6 +4514,7 @@ Address: ${address}`;
     encodeURIComponent(
       message
     );
+
 
   window.open(
     url,
@@ -4363,29 +4533,36 @@ function showDynamicProduct(slug){
   const product =
     dynamicMap[slug];
 
+
   if(!product){
     return;
   }
+
 
   createDynamicProductPage(
     product
   );
 
+
   hideProducts();
+
 
   const main =
     document.getElementById(
       "mainContent"
     );
 
+
   if(main){
     main.style.display = "none";
   }
+
 
   const page =
     document.getElementById(
       "product-" + slug
     );
+
 
   if(!page){
 
@@ -4394,19 +4571,24 @@ function showDynamicProduct(slug){
 
   }
 
+
   document.body.classList.add(
     "product-open"
   );
+
 
   page.classList.add(
     "active"
   );
 
+
   page.classList.add(
     "fade-in"
   );
 
+
   closeMobileMenu();
+
 
   window.scrollTo({
     top:0,
@@ -4425,31 +4607,38 @@ function productSignature(product){
 
   return JSON.stringify({
 
-    id:product.id,
+    id:
+      product.id,
 
-    name:product.name,
+    name:
+      product.name,
 
-    category:product.category,
+    category:
+      product.category,
 
-    price:product.price,
+    price:
+      product.price,
 
-    oldPrice:product.oldPrice,
+    oldPrice:
+      product.oldPrice,
 
-    size:product.size,
+    size:
+      product.size,
 
-    description:product.description,
+    description:
+      product.description,
 
-    tag:product.tag,
+    tag:
+      product.tag,
 
-    images:normalizeImages(
-      product.images
-    )
+    images:
+      normalizeImages(
+        product.images
+      )
 
   });
 
 }
-
-let dynamicSignature = "";
 
 
 /* =====================================================
@@ -4463,20 +4652,24 @@ function renderDynamicProducts(){
       "dynamic-featured"
     );
 
+
   const clothing =
     document.getElementById(
       "dynamic-clothing"
     );
+
 
   const jeans =
     document.getElementById(
       "dynamic-jeans"
     );
 
+
   const hijabs =
     document.getElementById(
       "dynamic-hijabs"
     );
+
 
   if(featured){
 
@@ -4492,6 +4685,7 @@ function renderDynamicProducts(){
         .join("");
 
   }
+
 
   if(clothing){
 
@@ -4520,6 +4714,7 @@ function renderDynamicProducts(){
 
   }
 
+
   if(jeans){
 
     jeans.innerHTML =
@@ -4545,6 +4740,7 @@ function renderDynamicProducts(){
         .join("");
 
   }
+
 
   if(hijabs){
 
@@ -4579,193 +4775,484 @@ function renderDynamicProducts(){
 
 /* =====================================================
    LOAD PRODUCTS FROM GOOGLE APPS SCRIPT
-   ===================================================== */
+   JSONP
+===================================================== */
 
-async function loadDynamicProducts(){
+function loadDynamicProducts(){
 
-  try{
+  return new Promise(
+    function(resolve,reject){
 
-    const response =
-      await fetch(
+      const callbackName =
+        "nazakaProductsCallback_" +
+        Date.now() +
+        "_" +
+        Math.floor(
+          Math.random() * 100000
+        );
+
+
+      const script =
+        document.createElement(
+          "script"
+        );
+
+
+      const url =
         NAZAKA_API +
-        "?mode=products&ts=" +
-        Date.now(),
-        {
-          method:"GET",
-          cache:"no-store"
+        "?mode=products" +
+        "&callback=" +
+        encodeURIComponent(
+          callbackName
+        ) +
+        "&ts=" +
+        Date.now();
+
+
+      let finished =
+        false;
+
+
+      let timeoutId =
+        null;
+
+
+      /* ===============================================
+         CLEANUP
+      =============================================== */
+
+      function cleanup(){
+
+        if(finished){
+          return;
         }
-      );
 
-    if(!response.ok){
+        finished =
+          true;
 
-      throw new Error(
-        "Products API error: " +
-        response.status
-      );
 
-    }
+        if(timeoutId){
 
-    const data =
-      await response.json();
-
-    if(
-      data &&
-      !Array.isArray(data) &&
-      data.success === false
-    ){
-
-      throw new Error(
-        data.error ||
-        "Unknown API error"
-      );
-
-    }
-
-    if(!Array.isArray(data)){
-
-      throw new Error(
-        "API did not return an array."
-      );
-
-    }
-
-    const cleanedProducts =
-      data
-
-        .filter(function(product){
-
-          return (
-            product &&
-            product.id !== undefined &&
-            product.id !== null &&
-            String(
-              product.name || ""
-            ).trim()
+          clearTimeout(
+            timeoutId
           );
 
-        })
+        }
 
-        .map(function(product){
 
-          return {
+        try{
 
-            id:product.id,
+          delete window[
+            callbackName
+          ];
 
-            name:
-              product.name || "",
+        }catch(error){}
 
-            category:
-              product.category || "",
 
-            price:
-              product.price,
+        if(script.parentNode){
 
-            oldPrice:
-              product.oldPrice,
-
-            size:
-              product.size || "",
-
-            description:
-              product.description || "",
-
-            tag:
-              product.tag || "",
-
-            images:
-              normalizeImages(
-                product.images
-              )
-
-          };
-
-        });
-
-    const newSignature =
-      JSON.stringify(
-        cleanedProducts.map(
-          productSignature
-        )
-      );
-
-    if(
-      newSignature ===
-      dynamicSignature
-    ){
-
-      return;
-
-    }
-
-    dynamicSignature =
-      newSignature;
-
-    dynamicProducts =
-      cleanedProducts;
-
-    dynamicMap = {};
-
-    dynamicProducts.forEach(
-      function(product){
-
-        const slug =
-          "dynamic-" +
-          product.id;
-
-        dynamicMap[slug] =
-          product;
-
-      }
-    );
-
-    removeDynamicProductPages();
-
-    dynamicProducts.forEach(
-      function(product){
-
-        createDynamicProductPage(
-          product
-        );
-
-      }
-    );
-
-    renderDynamicProducts();
-
-    console.log(
-      "Nazaka products loaded:",
-      dynamicProducts.length
-    );
-
-    dynamicProducts.forEach(
-      function(product){
-
-        const images =
-          normalizeImages(
-            product.images
+          script.parentNode.removeChild(
+            script
           );
 
-        console.log(
-          "Nazaka image:",
-          product.name,
-          images.map(
-            getProductImageUrl
-          )
-        );
+        }
 
       }
-    );
 
-  }
 
-  catch(error){
+      /* ===============================================
+         GOOGLE CALLBACK
+      =============================================== */
 
-    console.error(
-      "Nazaka dynamic products could not be loaded:",
-      error
-    );
+      window[callbackName] =
+        function(data){
 
-  }
+          try{
+
+            console.log(
+              "NAZAKA API RESPONSE:",
+              data
+            );
+
+
+            /* ==========================================
+               CHECK API ERROR
+            ========================================== */
+
+            if(
+              data &&
+              !Array.isArray(data) &&
+              data.success === false
+            ){
+
+              throw new Error(
+                data.error ||
+                "Google Apps Script returned an error."
+              );
+
+            }
+
+
+            /* ==========================================
+               CHECK ARRAY
+            ========================================== */
+
+            if(!Array.isArray(data)){
+
+              throw new Error(
+                "Products API did not return an array."
+              );
+
+            }
+
+
+            /* ==========================================
+               CLEAN PRODUCTS
+            ========================================== */
+
+            const cleanedProducts =
+              data
+                .filter(
+                  function(product){
+
+                    return (
+                      product &&
+                      product.id !==
+                        undefined &&
+                      product.id !==
+                        null &&
+                      String(
+                        product.name || ""
+                      ).trim() !== ""
+                    );
+
+                  }
+                )
+                .map(
+                  function(product){
+
+                    return {
+
+                      id:
+                        String(
+                          product.id
+                        ),
+
+                      name:
+                        product.name ||
+                        "",
+
+                      category:
+                        product.category ||
+                        "",
+
+                      price:
+                        product.price ??
+                        "",
+
+                      oldPrice:
+                        product.oldPrice ??
+                        product.oldprice ??
+                        "",
+
+                      size:
+                        product.size ||
+                        "",
+
+                      description:
+                        product.description ||
+                        product.descripttion ||
+                        "",
+
+                      tag:
+                        product.tag ||
+                        "",
+
+                      images:
+                        normalizeImages(
+                          product.images
+                        )
+
+                    };
+
+                  }
+                );
+
+
+            console.log(
+              "NAZAKA CLEAN PRODUCTS:",
+              cleanedProducts
+            );
+
+
+            /* ==========================================
+               SIGNATURE
+            ========================================== */
+
+            const newSignature =
+              JSON.stringify(
+                cleanedProducts.map(
+                  productSignature
+                )
+              );
+
+
+            /* ==========================================
+               NO CHANGES
+            ========================================== */
+
+            if(
+              newSignature ===
+              dynamicSignature
+            ){
+
+              cleanup();
+
+
+              resolve(
+                cleanedProducts
+              );
+
+
+              return;
+
+            }
+
+
+            dynamicSignature =
+              newSignature;
+
+
+            /* ==========================================
+               SAVE PRODUCTS
+            ========================================== */
+
+            dynamicProducts =
+              cleanedProducts;
+
+
+            dynamicMap =
+              {};
+
+
+            /* ==========================================
+               PRODUCT MAP
+            ========================================== */
+
+            dynamicProducts.forEach(
+              function(product){
+
+                const slug =
+                  "dynamic-" +
+                  product.id;
+
+
+                dynamicMap[
+                  slug
+                ] =
+                  product;
+
+              }
+            );
+
+
+            /* ==========================================
+               REMOVE OLD PAGES
+            ========================================== */
+
+            removeDynamicProductPages();
+
+
+            /* ==========================================
+               CREATE NEW PAGES
+            ========================================== */
+
+            dynamicProducts.forEach(
+              function(product){
+
+                createDynamicProductPage(
+                  product
+                );
+
+              }
+            );
+
+
+            /* ==========================================
+               RENDER
+            ========================================== */
+
+            renderDynamicProducts();
+
+
+            /* ==========================================
+               DEBUG
+            ========================================== */
+
+            console.log(
+              "=============================="
+            );
+
+
+            console.log(
+              "NAZAKA PRODUCTS LOADED:",
+              dynamicProducts.length
+            );
+
+
+            dynamicProducts.forEach(
+              function(product){
+
+                const images =
+                  normalizeImages(
+                    product.images
+                  );
+
+
+                console.log(
+                  "PRODUCT:",
+                  product.name
+                );
+
+
+                console.log(
+                  "IMAGES FROM SHEET:",
+                  images
+                );
+
+
+                console.log(
+                  "FINAL IMAGE URLS:",
+                  images.map(
+                    getProductImageUrl
+                  )
+                );
+
+              }
+            );
+
+
+            console.log(
+              "=============================="
+            );
+
+
+            cleanup();
+
+
+            resolve(
+              dynamicProducts
+            );
+
+          }
+          catch(error){
+
+            cleanup();
+
+
+            console.error(
+              "NAZAKA PRODUCTS ERROR:",
+              error
+            );
+
+
+            reject(
+              error
+            );
+
+          }
+
+        };
+
+
+      /* ===============================================
+         SCRIPT ERROR
+      =============================================== */
+
+      script.onerror =
+        function(){
+
+          cleanup();
+
+
+          const error =
+            new Error(
+              "Could not connect to Nazaka Products API."
+            );
+
+
+          console.error(
+            "NAZAKA API CONNECTION ERROR:",
+            error
+          );
+
+
+          reject(
+            error
+          );
+
+        };
+
+
+      /* ===============================================
+         TIMEOUT
+      =============================================== */
+
+      timeoutId =
+        setTimeout(
+          function(){
+
+            if(!finished){
+
+              cleanup();
+
+
+              const error =
+                new Error(
+                  "Nazaka Products API timed out."
+                );
+
+
+              console.error(
+                "NAZAKA API TIMEOUT:",
+                error
+              );
+
+
+              reject(
+                error
+              );
+
+            }
+
+          },
+          20000
+        );
+
+
+      /* ===============================================
+         LOAD SCRIPT
+      =============================================== */
+
+      script.src =
+        url;
+
+
+      script.async =
+        true;
+
+
+      script.id =
+        "nazaka-api-script-" +
+        Date.now();
+
+
+      document.head.appendChild(
+        script
+      );
+
+    }
+  );
 
 }
 
@@ -4781,6 +5268,7 @@ function handleHash(){
       .replace("#","")
       .trim();
 
+
   if(dynamicMap[hash]){
 
     showDynamicProduct(
@@ -4790,6 +5278,7 @@ function handleHash(){
     return;
 
   }
+
 
   const productAliases = {
 
@@ -4821,6 +5310,7 @@ function handleHash(){
 
   };
 
+
   const productNames = [
 
     "set",
@@ -4849,6 +5339,7 @@ function handleHash(){
 
   ];
 
+
   if(
     !hash ||
     hash === "home"
@@ -4856,15 +5347,18 @@ function handleHash(){
 
     showMain();
 
+
     window.scrollTo({
       top:0,
       left:0,
       behavior:"auto"
     });
 
+
     return;
 
   }
+
 
   if(
     productAliases[hash]
@@ -4874,9 +5368,11 @@ function handleHash(){
       productAliases[hash]
     );
 
+
     return;
 
   }
+
 
   if(
     productNames.includes(hash)
@@ -4886,9 +5382,11 @@ function handleHash(){
       hash
     );
 
+
     return;
 
   }
+
 
   if(
     hash === "clothing"
@@ -4898,9 +5396,11 @@ function handleHash(){
       "clothing"
     );
 
+
     return;
 
   }
+
 
   if(
     hash === "jeans"
@@ -4910,9 +5410,11 @@ function handleHash(){
       "jeans"
     );
 
+
     return;
 
   }
+
 
   if(
     hash === "hijabs"
@@ -4922,9 +5424,11 @@ function handleHash(){
       "hijabs"
     );
 
+
     return;
 
   }
+
 
   window.location.hash =
     "home";
@@ -4950,7 +5454,20 @@ window.addEventListener(
   "load",
   async function(){
 
-    await loadDynamicProducts();
+    try{
+
+      await loadDynamicProducts();
+
+    }
+    catch(error){
+
+      console.error(
+        "Initial Nazaka load error:",
+        error
+      );
+
+    }
+
 
     handleHash();
 
@@ -4960,7 +5477,7 @@ window.addEventListener(
 
 /* =====================================================
    AUTO REFRESH
-   Every 10 seconds
+   EVERY 10 SECONDS
    ===================================================== */
 
 setInterval(
@@ -4969,12 +5486,16 @@ setInterval(
     const active =
       document.activeElement;
 
+
     if(
       active &&
       (
-        active.tagName === "INPUT" ||
-        active.tagName === "TEXTAREA" ||
-        active.tagName === "SELECT"
+        active.tagName ===
+          "INPUT" ||
+        active.tagName ===
+          "TEXTAREA" ||
+        active.tagName ===
+          "SELECT"
       )
     ){
 
@@ -4982,12 +5503,29 @@ setInterval(
 
     }
 
-    await loadDynamicProducts();
+
+    try{
+
+      await loadDynamicProducts();
+
+    }
+    catch(error){
+
+      console.error(
+        "Nazaka auto refresh error:",
+        error
+      );
+
+      return;
+
+    }
+
 
     const currentHash =
       window.location.hash
         .replace("#","")
         .trim();
+
 
     if(
       currentHash &&
@@ -5000,29 +5538,34 @@ setInterval(
           currentHash
         );
 
+
       if(page){
 
         hideProducts();
+
 
         const main =
           document.getElementById(
             "mainContent"
           );
 
+
         if(main){
-          main.style.display = "none";
+          main.style.display =
+            "none";
         }
+
 
         document.body.classList.add(
           "product-open"
         );
+
 
         page.classList.add(
           "active"
         );
 
       }
-
       else{
 
         showDynamicProduct(
