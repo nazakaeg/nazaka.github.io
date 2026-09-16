@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -3052,13 +3051,40 @@ function escapeHtml(value){
 }
 
 
+/*
+=========================================================
+IMAGE HANDLING
+=========================================================
+
+This is the important fix.
+
+The Admin sheet can contain:
+
+IMG_1234.jpeg
+
+or:
+
+images/IMG_1234.jpeg
+
+or a normal https:// URL
+
+or a GitHub /blob/ URL.
+
+The GitHub page converts all of them into a usable
+browser URL.
+*/
+
 function normalizeImages(images){
 
   if(Array.isArray(images)){
 
     return images
       .map(function(image){
-        return String(image).trim();
+
+        return String(image)
+          .trim()
+          .replace(/^["']|["']$/g,"");
+
       })
       .filter(Boolean);
 
@@ -3068,12 +3094,163 @@ function normalizeImages(images){
     return [];
   }
 
-  return String(images)
+  const value =
+    String(images)
+      .trim();
+
+  if(!value){
+    return [];
+  }
+
+  /*
+    Sometimes an API may return a JSON array
+    as a string.
+  */
+
+  try{
+
+    const parsed =
+      JSON.parse(value);
+
+    if(Array.isArray(parsed)){
+
+      return parsed
+        .map(function(image){
+
+          return String(image)
+            .trim()
+            .replace(/^["']|["']$/g,"");
+
+        })
+        .filter(Boolean);
+
+    }
+
+  }catch(error){}
+
+  return value
     .split(/[\n,]+/)
     .map(function(image){
-      return image.trim();
+
+      return String(image)
+        .trim()
+        .replace(/^["']|["']$/g,"");
+
     })
     .filter(Boolean);
+
+}
+
+
+/*
+  Convert the image value into a real URL.
+*/
+
+function resolveImageUrl(image){
+
+  if(!image){
+    return "";
+  }
+
+  let value =
+    String(image)
+      .trim();
+
+  if(!value){
+    return "";
+  }
+
+
+  /*
+    Remove accidental quotes.
+  */
+
+  value =
+    value.replace(
+      /^["']|["']$/g,
+      ""
+    );
+
+
+  /*
+    If it is already a full URL.
+  */
+
+  if(
+    value.startsWith("http://") ||
+    value.startsWith("https://")
+  ){
+
+    /*
+      GitHub blob URL:
+
+      https://github.com/user/repo/blob/main/image.jpg
+
+      becomes:
+
+      https://raw.githubusercontent.com/user/repo/main/image.jpg
+    */
+
+    if(
+      value.includes("github.com/") &&
+      value.includes("/blob/")
+    ){
+
+      return value
+        .replace(
+          "https://github.com/",
+          "https://raw.githubusercontent.com/"
+        )
+        .replace(
+          "/blob/",
+          "/"
+        );
+
+    }
+
+    return value;
+
+  }
+
+
+  /*
+    GitHub Pages / same-folder image.
+
+    Example:
+
+    IMG_1234.jpeg
+
+    becomes:
+
+    https://your-github-pages-site/.../IMG_1234.jpeg
+  */
+
+  try{
+
+    return new URL(
+      value,
+      window.location.href
+    ).href;
+
+  }catch(error){
+
+    return value;
+
+  }
+
+}
+
+
+/*
+  Create an image URL from an image value.
+*/
+
+function getProductImageUrl(image){
+
+  const url =
+    resolveImageUrl(image);
+
+  return url || "";
 
 }
 
@@ -3504,8 +3681,17 @@ function dynamicCardHtml(product){
       product.images
     );
 
+  /*
+    IMPORTANT:
+    Use resolved URL here.
+  */
+
   const image =
-    images[0] || "";
+    images.length
+      ? getProductImageUrl(
+          images[0]
+        )
+      : "";
 
   const oldPrice =
     product.oldPrice !== undefined &&
@@ -3550,6 +3736,7 @@ function dynamicCardHtml(product){
                 )}"
                 loading="lazy"
                 onerror="
+                  this.onerror=null;
                   this.style.display='none';
                 ">
             `
@@ -3634,20 +3821,27 @@ function createDynamicProductPage(product){
       product.images
     );
 
+
   const gallery =
     images.length
 
       ? images
           .map(function(image){
 
+            const imageUrl =
+              getProductImageUrl(
+                image
+              );
+
             return `
               <img
-                src="${escapeHtml(image)}"
+                src="${escapeHtml(imageUrl)}"
                 alt="${escapeHtml(
                   product.name || ""
                 )}"
                 loading="lazy"
                 onerror="
+                  this.onerror=null;
                   this.style.display='none';
                 ">
             `;
@@ -4015,7 +4209,6 @@ function showDynamicProduct(slug){
 
 /* =====================================================
    PRODUCT SIGNATURE
-   Prevent unnecessary page rebuilds
    ===================================================== */
 
 function productSignature(product){
@@ -4203,10 +4396,6 @@ async function loadDynamicProducts(){
       await response.json();
 
 
-    /*
-      Handle Apps Script errors
-    */
-
     if(
       data &&
       !Array.isArray(data) &&
@@ -4253,9 +4442,15 @@ async function loadDynamicProducts(){
             size:product.size || "",
             description:product.description || "",
             tag:product.tag || "",
+
+            /*
+              Normalize the image list immediately.
+            */
+
             images:normalizeImages(
               product.images
             )
+
           };
 
         });
@@ -4268,11 +4463,6 @@ async function loadDynamicProducts(){
         )
       );
 
-
-    /*
-      Nothing changed.
-      Don't rebuild the page.
-    */
 
     if(
       newSignature ===
@@ -4309,11 +4499,6 @@ async function loadDynamicProducts(){
     );
 
 
-    /*
-      Remove old generated pages
-      and rebuild them.
-    */
-
     removeDynamicProductPages();
 
 
@@ -4328,16 +4513,39 @@ async function loadDynamicProducts(){
     );
 
 
-    /*
-      Render cards
-    */
-
     renderDynamicProducts();
 
 
     console.log(
       "Nazaka products loaded:",
       dynamicProducts.length
+    );
+
+
+    /*
+      Helpful debugging information.
+      If an image still does not show,
+      the browser console will show the
+      exact URL being used.
+    */
+
+    dynamicProducts.forEach(
+      function(product){
+
+        const images =
+          normalizeImages(
+            product.images
+          );
+
+        console.log(
+          "Nazaka image:",
+          product.name,
+          images.map(
+            getProductImageUrl
+          )
+        );
+
+      }
     );
 
 
@@ -4365,10 +4573,6 @@ function handleHash(){
       .replace("#","")
       .trim();
 
-
-  /*
-    DYNAMIC PRODUCT
-  */
 
   if(dynamicMap[hash]){
 
@@ -4427,10 +4631,6 @@ function handleHash(){
   ];
 
 
-  /*
-    HOME
-  */
-
   if(
     !hash ||
     hash === "home"
@@ -4449,10 +4649,6 @@ function handleHash(){
   }
 
 
-  /*
-    SHORT PRODUCT LINKS
-  */
-
   if(
     productAliases[hash]
   ){
@@ -4466,10 +4662,6 @@ function handleHash(){
   }
 
 
-  /*
-    FULL PRODUCT LINKS
-  */
-
   if(
     productNames.includes(hash)
   ){
@@ -4482,10 +4674,6 @@ function handleHash(){
 
   }
 
-
-  /*
-    CATEGORIES
-  */
 
   if(
     hash === "clothing"
@@ -4566,11 +4754,6 @@ window.addEventListener(
 setInterval(
   async function(){
 
-    /*
-      Don't reload while customer
-      is typing in an order form.
-    */
-
     const active =
       document.activeElement;
 
@@ -4590,11 +4773,6 @@ setInterval(
 
     await loadDynamicProducts();
 
-
-    /*
-      If currently viewing a dynamic
-      product, keep that page open.
-    */
 
     const currentHash =
       window.location.hash
@@ -4652,4 +4830,3 @@ setInterval(
 
 </body>
 </html>
-```
