@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -1997,6 +1996,56 @@ body.product-open .navbar{
 
       </div>
 
+      <!-- =================================================
+           NEW STATIC PRODUCT : FLORAL MODAL
+           ================================================= -->
+
+      <div class="product-card"
+           onclick="openProduct('floral-modal')">
+
+        <div class="product-tag">
+          Nazaka Review
+        </div>
+
+        <div class="product-image-wrap">
+
+          <img
+            src="ffbfc045-db3d-4971-90d3-c2f993ffba8c.jpeg"
+            alt="Floral Modal">
+
+        </div>
+
+        <div class="product-info">
+
+          <div class="product-category">
+            Hijab
+          </div>
+
+          <div class="product-name">
+            Floral Modal
+          </div>
+
+          <div class="product-price">
+
+            <span class="sale-price">
+              170 EGP
+            </span>
+
+          </div>
+
+          <a
+            href="#floral-modal"
+            class="item-link"
+            onclick="event.stopPropagation();">
+
+            View Item
+
+          </a>
+
+        </div>
+
+      </div>
+
     </div>
 
     <div id="dynamic-hijabs"
@@ -3142,6 +3191,136 @@ Send Order via WhatsApp
 </div>
 </section>
 
+<!-- =====================================================
+     FLORAL MODAL PRODUCT PAGE
+     ===================================================== -->
+
+<section id="product-floral-modal" class="product-page">
+
+<div class="product-detail">
+
+<button class="back-btn" onclick="goBack()">
+← Back to collection
+</button>
+
+<div class="detail-grid">
+
+<div class="gallery">
+
+<img
+src="ffbfc045-db3d-4971-90d3-c2f993ffba8c.jpeg"
+alt="Floral Modal">
+
+<img
+src="f98a1f30-4271-43aa-82db-3064f891111c.jpeg"
+alt="Floral Modal">
+
+<img
+src="6169976b-ad6d-453b-a3a2-6ff540c67e40.jpeg"
+alt="Floral Modal">
+
+<img
+src="ca8ab871-85b6-49eb-a20b-44ffa308aa40.jpeg"
+alt="Floral Modal">
+
+<img
+src="de5225ae-18e9-46bf-9399-c640b55ee4af.jpeg"
+alt="Floral Modal">
+
+</div>
+
+<div class="detail-info">
+
+<div class="detail-category">
+Hijab / Nazaka Review
+</div>
+
+<h1 class="detail-title">
+Floral<br>
+Modal
+</h1>
+
+<div class="detail-price">
+170 EGP
+</div>
+
+<p class="detail-description">
+Floral Modal hijab with a soft and elegant
+look, perfect for effortless everyday styling.
+</p>
+
+<div class="detail-meta">
+
+<div class="meta-row">
+<span class="meta-label">Size</span>
+<span class="meta-value">Free Size</span>
+</div>
+
+<div class="meta-row">
+<span class="meta-label">Collection</span>
+<span class="meta-value">Nazaka Review</span>
+</div>
+
+</div>
+
+<button
+class="order-btn"
+onclick="openOrder('floral-modal-order')">
+
+Order Now
+
+</button>
+
+<form
+id="floral-modal-order"
+class="order-form"
+onsubmit="sendOrder('Floral Modal','170','floral-modal-name','floral-modal-phone','floral-modal-size','floral-modal-address');return false;">
+
+<h3>
+Order Details
+</h3>
+
+<input
+id="floral-modal-name"
+type="text"
+placeholder="Full Name"
+required>
+
+<input
+id="floral-modal-phone"
+type="tel"
+placeholder="Phone Number"
+required>
+
+<input
+id="floral-modal-size"
+type="text"
+value="Free Size"
+readonly>
+
+<textarea
+id="floral-modal-address"
+placeholder="Address"
+required></textarea>
+
+<button
+class="submit-order"
+type="submit">
+
+Send Order via WhatsApp
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <script>
 
 /* =====================================================
@@ -3156,7 +3335,6 @@ const NAZAKA_API =
 let dynamicProducts = [];
 let dynamicMap = {};
 let dynamicSignature = "";
-
 
 /* =====================================================
    MOBILE MENU
@@ -3184,7 +3362,6 @@ function closeMobileMenu(){
 
 }
 
-
 /* =====================================================
    HELPERS
    ===================================================== */
@@ -3199,7 +3376,6 @@ function escapeHtml(value){
     .replace(/'/g,"&#039;");
 
 }
-
 
 /* =====================================================
    IMAGE HANDLING
@@ -3304,7 +3480,6 @@ function convertGoogleDriveUrl(value){
 
 }
 
-
 /* =====================================================
    NORMALIZE IMAGES
    ===================================================== */
@@ -3373,7 +3548,6 @@ function normalizeImages(images){
 
 }
 
-
 /* =====================================================
    RESOLVE IMAGE URL
    ===================================================== */
@@ -3393,11 +3567,6 @@ function resolveImageUrl(image){
     return "";
   }
 
-
-  /*
-     GOOGLE DRIVE
-  */
-
   if(
     value.includes("drive.google.com") ||
     value.includes("drive.usercontent.google.com")
@@ -3409,11 +3578,6 @@ function resolveImageUrl(image){
 
   }
 
-
-  /*
-     GOOGLE USERCONTENT
-  */
-
   if(
     value.includes("googleusercontent.com")
   ){
@@ -3422,19 +3586,10 @@ function resolveImageUrl(image){
 
   }
 
-
-  /*
-     FULL URL
-  */
-
   if(
     value.startsWith("http://") ||
     value.startsWith("https://")
   ){
-
-    /*
-       GitHub blob -> raw
-    */
 
     if(
       value.includes("github.com/") &&
@@ -3457,11 +3612,6 @@ function resolveImageUrl(image){
 
   }
 
-
-  /*
-     LOCAL / GITHUB IMAGE
-  */
-
   try{
 
     return new URL(
@@ -3477,7 +3627,6 @@ function resolveImageUrl(image){
 
 }
 
-
 function getProductImageUrl(image){
 
   if(!image){
@@ -3490,7 +3639,6 @@ function getProductImageUrl(image){
   return url || "";
 
 }
-
 
 /* =====================================================
    FORMAT PRICE
@@ -3511,7 +3659,6 @@ function formatPrice(value){
   );
 
 }
-
 
 /* =====================================================
    CATEGORY MATCHING
@@ -3538,7 +3685,6 @@ function categoryMatches(product,categories){
 
 }
 
-
 /* =====================================================
    ROUTING
    ===================================================== */
@@ -3560,7 +3706,6 @@ function hideProducts(){
 
 }
 
-
 function showMain(){
 
   hideProducts();
@@ -3577,7 +3722,6 @@ function showMain(){
   closeMobileMenu();
 
 }
-
 
 function navigate(hash){
 
@@ -3599,7 +3743,6 @@ function navigate(hash){
   }
 
 }
-
 
 function goHome(){
   navigate("home");
@@ -3624,7 +3767,6 @@ function openProduct(product){
 function goBack(){
   navigate("home");
 }
-
 
 /* =====================================================
    CATEGORY SCROLL
@@ -3651,7 +3793,6 @@ function showCategory(id){
   },50);
 
 }
-
 
 /* =====================================================
    STATIC PRODUCT
@@ -3706,7 +3847,6 @@ function showProduct(product){
 
 }
 
-
 /* =====================================================
    ORDER
    ===================================================== */
@@ -3727,7 +3867,6 @@ function openOrder(formId){
   );
 
 }
-
 
 /* =====================================================
    WHATSAPP ORDER
@@ -3762,7 +3901,6 @@ function sendOrder(
       addressId
     );
 
-
   if(
     !nameElement ||
     !phoneElement ||
@@ -3771,7 +3909,6 @@ function sendOrder(
   ){
     return;
   }
-
 
   const name =
     nameElement.value;
@@ -3785,7 +3922,6 @@ function sendOrder(
   const address =
     addressElement.value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3798,7 +3934,6 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
@@ -3807,14 +3942,12 @@ Address: ${address}`;
       message
     );
 
-
   window.open(
     url,
     "_blank"
   );
 
 }
-
 
 /* =====================================================
    JEANS ORDER
@@ -3855,7 +3988,6 @@ function sendJeansOrder(
       addressId
     );
 
-
   if(
     !nameElement ||
     !phoneElement ||
@@ -3865,7 +3997,6 @@ function sendJeansOrder(
   ){
     return;
   }
-
 
   const name =
     nameElement.value;
@@ -3882,7 +4013,6 @@ function sendJeansOrder(
   const address =
     addressElement.value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3896,7 +4026,6 @@ Size: ${size}
 Color: ${color}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
@@ -3905,14 +4034,12 @@ Address: ${address}`;
       message
     );
 
-
   window.open(
     url,
     "_blank"
   );
 
 }
-
 
 /* =====================================================
    SET ORDER
@@ -3940,7 +4067,6 @@ function sendSetOrder(){
       "set-address"
     );
 
-
   if(
     !nameElement ||
     !phoneElement ||
@@ -3949,7 +4075,6 @@ function sendSetOrder(){
   ){
     return;
   }
-
 
   const name =
     nameElement.value;
@@ -3963,7 +4088,6 @@ function sendSetOrder(){
   const address =
     addressElement.value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -3976,7 +4100,6 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
@@ -3985,14 +4108,12 @@ Address: ${address}`;
       message
     );
 
-
   window.open(
     url,
     "_blank"
   );
 
 }
-
 
 /* =====================================================
    DYNAMIC PRODUCT CARD
@@ -4004,12 +4125,10 @@ function dynamicCardHtml(product){
     "dynamic-" +
     product.id;
 
-
   const images =
     normalizeImages(
       product.images
     );
-
 
   const image =
     images.length
@@ -4017,7 +4136,6 @@ function dynamicCardHtml(product){
           images[0]
         )
       : "";
-
 
   const oldPrice =
     product.oldPrice !== undefined &&
@@ -4032,7 +4150,6 @@ function dynamicCardHtml(product){
       `
       : "";
 
-
   const tag =
     product.tag
       ? `
@@ -4043,7 +4160,6 @@ function dynamicCardHtml(product){
         </div>
       `
       : "";
-
 
   return `
 
@@ -4135,7 +4251,6 @@ function dynamicCardHtml(product){
 
 }
 
-
 /* =====================================================
    CREATE DYNAMIC PRODUCT PAGE
    ===================================================== */
@@ -4146,23 +4261,19 @@ function createDynamicProductPage(product){
     "dynamic-" +
     product.id;
 
-
   const existing =
     document.getElementById(
       "product-" + slug
     );
 
-
   if(existing){
     return;
   }
-
 
   const images =
     normalizeImages(
       product.images
     );
-
 
   const gallery =
     images.length
@@ -4175,11 +4286,9 @@ function createDynamicProductPage(product){
                 image
               );
 
-
             if(!imageUrl){
               return "";
             }
-
 
             return `
               <img
@@ -4210,7 +4319,6 @@ function createDynamicProductPage(product){
           </div>
         `;
 
-
   const oldPrice =
     product.oldPrice !== undefined &&
     product.oldPrice !== null &&
@@ -4225,42 +4333,34 @@ function createDynamicProductPage(product){
       `
       : "";
 
-
   const size =
     product.size ||
     "Not specified";
-
 
   const description =
     product.description ||
     "";
 
-
   const tag =
     product.tag ||
     "";
-
 
   const page =
     document.createElement(
       "section"
     );
 
-
   page.id =
     "product-" +
     slug;
 
-
   page.className =
     "product-page";
-
 
   page.setAttribute(
     "data-dynamic",
     "true"
   );
-
 
   page.innerHTML = `
 
@@ -4408,13 +4508,11 @@ function createDynamicProductPage(product){
 
   `;
 
-
   document.body.appendChild(
     page
   );
 
 }
-
 
 /* =====================================================
    REMOVE OLD DYNAMIC PAGES
@@ -4434,7 +4532,6 @@ function removeDynamicProductPages(){
 
 }
 
-
 /* =====================================================
    DYNAMIC ORDER
    ===================================================== */
@@ -4444,11 +4541,9 @@ function sendDynamicOrder(slug){
   const product =
     dynamicMap[slug];
 
-
   if(!product){
     return;
   }
-
 
   const nameElement =
     document.getElementById(
@@ -4470,7 +4565,6 @@ function sendDynamicOrder(slug){
       slug + "-address"
     );
 
-
   if(
     !nameElement ||
     !phoneElement ||
@@ -4479,7 +4573,6 @@ function sendDynamicOrder(slug){
   ){
     return;
   }
-
 
   const name =
     nameElement.value;
@@ -4493,7 +4586,6 @@ function sendDynamicOrder(slug){
   const address =
     addressElement.value;
 
-
   const message =
 `Hello Nazaka,
 
@@ -4506,7 +4598,6 @@ Phone: ${phone}
 Size: ${size}
 Address: ${address}`;
 
-
   const url =
     "https://wa.me/" +
     whatsappNumber +
@@ -4515,14 +4606,12 @@ Address: ${address}`;
       message
     );
 
-
   window.open(
     url,
     "_blank"
   );
 
 }
-
 
 /* =====================================================
    SHOW DYNAMIC PRODUCT
@@ -4533,36 +4622,29 @@ function showDynamicProduct(slug){
   const product =
     dynamicMap[slug];
 
-
   if(!product){
     return;
   }
-
 
   createDynamicProductPage(
     product
   );
 
-
   hideProducts();
-
 
   const main =
     document.getElementById(
       "mainContent"
     );
 
-
   if(main){
     main.style.display = "none";
   }
-
 
   const page =
     document.getElementById(
       "product-" + slug
     );
-
 
   if(!page){
 
@@ -4571,24 +4653,19 @@ function showDynamicProduct(slug){
 
   }
 
-
   document.body.classList.add(
     "product-open"
   );
-
 
   page.classList.add(
     "active"
   );
 
-
   page.classList.add(
     "fade-in"
   );
 
-
   closeMobileMenu();
-
 
   window.scrollTo({
     top:0,
@@ -4597,7 +4674,6 @@ function showDynamicProduct(slug){
   });
 
 }
-
 
 /* =====================================================
    PRODUCT SIGNATURE
@@ -4640,7 +4716,6 @@ function productSignature(product){
 
 }
 
-
 /* =====================================================
    RENDER DYNAMIC PRODUCTS
    ===================================================== */
@@ -4652,24 +4727,20 @@ function renderDynamicProducts(){
       "dynamic-featured"
     );
 
-
   const clothing =
     document.getElementById(
       "dynamic-clothing"
     );
-
 
   const jeans =
     document.getElementById(
       "dynamic-jeans"
     );
 
-
   const hijabs =
     document.getElementById(
       "dynamic-hijabs"
     );
-
 
   if(featured){
 
@@ -4685,7 +4756,6 @@ function renderDynamicProducts(){
         .join("");
 
   }
-
 
   if(clothing){
 
@@ -4714,7 +4784,6 @@ function renderDynamicProducts(){
 
   }
 
-
   if(jeans){
 
     jeans.innerHTML =
@@ -4740,7 +4809,6 @@ function renderDynamicProducts(){
         .join("");
 
   }
-
 
   if(hijabs){
 
@@ -4772,7 +4840,6 @@ function renderDynamicProducts(){
 
 }
 
-
 /* =====================================================
    LOAD PRODUCTS FROM GOOGLE APPS SCRIPT
    JSONP
@@ -4791,12 +4858,10 @@ function loadDynamicProducts(){
           Math.random() * 100000
         );
 
-
       const script =
         document.createElement(
           "script"
         );
-
 
       const url =
         NAZAKA_API +
@@ -4808,18 +4873,11 @@ function loadDynamicProducts(){
         "&ts=" +
         Date.now();
 
-
       let finished =
         false;
 
-
       let timeoutId =
         null;
-
-
-      /* ===============================================
-         CLEANUP
-      =============================================== */
 
       function cleanup(){
 
@@ -4830,7 +4888,6 @@ function loadDynamicProducts(){
         finished =
           true;
 
-
         if(timeoutId){
 
           clearTimeout(
@@ -4839,7 +4896,6 @@ function loadDynamicProducts(){
 
         }
 
-
         try{
 
           delete window[
@@ -4847,7 +4903,6 @@ function loadDynamicProducts(){
           ];
 
         }catch(error){}
-
 
         if(script.parentNode){
 
@@ -4859,11 +4914,6 @@ function loadDynamicProducts(){
 
       }
 
-
-      /* ===============================================
-         GOOGLE CALLBACK
-      =============================================== */
-
       window[callbackName] =
         function(data){
 
@@ -4873,11 +4923,6 @@ function loadDynamicProducts(){
               "NAZAKA API RESPONSE:",
               data
             );
-
-
-            /* ==========================================
-               CHECK API ERROR
-            ========================================== */
 
             if(
               data &&
@@ -4892,11 +4937,6 @@ function loadDynamicProducts(){
 
             }
 
-
-            /* ==========================================
-               CHECK ARRAY
-            ========================================== */
-
             if(!Array.isArray(data)){
 
               throw new Error(
@@ -4904,11 +4944,6 @@ function loadDynamicProducts(){
               );
 
             }
-
-
-            /* ==========================================
-               CLEAN PRODUCTS
-            ========================================== */
 
             const cleanedProducts =
               data
@@ -4978,16 +5013,10 @@ function loadDynamicProducts(){
                   }
                 );
 
-
             console.log(
               "NAZAKA CLEAN PRODUCTS:",
               cleanedProducts
             );
-
-
-            /* ==========================================
-               SIGNATURE
-            ========================================== */
 
             const newSignature =
               JSON.stringify(
@@ -4996,11 +5025,6 @@ function loadDynamicProducts(){
                 )
               );
 
-
-            /* ==========================================
-               NO CHANGES
-            ========================================== */
-
             if(
               newSignature ===
               dynamicSignature
@@ -5008,36 +5032,22 @@ function loadDynamicProducts(){
 
               cleanup();
 
-
               resolve(
                 cleanedProducts
               );
-
 
               return;
 
             }
 
-
             dynamicSignature =
               newSignature;
-
-
-            /* ==========================================
-               SAVE PRODUCTS
-            ========================================== */
 
             dynamicProducts =
               cleanedProducts;
 
-
             dynamicMap =
               {};
-
-
-            /* ==========================================
-               PRODUCT MAP
-            ========================================== */
 
             dynamicProducts.forEach(
               function(product){
@@ -5045,7 +5055,6 @@ function loadDynamicProducts(){
                 const slug =
                   "dynamic-" +
                   product.id;
-
 
                 dynamicMap[
                   slug
@@ -5055,17 +5064,7 @@ function loadDynamicProducts(){
               }
             );
 
-
-            /* ==========================================
-               REMOVE OLD PAGES
-            ========================================== */
-
             removeDynamicProductPages();
-
-
-            /* ==========================================
-               CREATE NEW PAGES
-            ========================================== */
 
             dynamicProducts.forEach(
               function(product){
@@ -5077,28 +5076,16 @@ function loadDynamicProducts(){
               }
             );
 
-
-            /* ==========================================
-               RENDER
-            ========================================== */
-
             renderDynamicProducts();
-
-
-            /* ==========================================
-               DEBUG
-            ========================================== */
 
             console.log(
               "=============================="
             );
 
-
             console.log(
               "NAZAKA PRODUCTS LOADED:",
               dynamicProducts.length
             );
-
 
             dynamicProducts.forEach(
               function(product){
@@ -5108,18 +5095,15 @@ function loadDynamicProducts(){
                     product.images
                   );
 
-
                 console.log(
                   "PRODUCT:",
                   product.name
                 );
 
-
                 console.log(
                   "IMAGES FROM SHEET:",
                   images
                 );
-
 
                 console.log(
                   "FINAL IMAGE URLS:",
@@ -5131,14 +5115,11 @@ function loadDynamicProducts(){
               }
             );
 
-
             console.log(
               "=============================="
             );
 
-
             cleanup();
-
 
             resolve(
               dynamicProducts
@@ -5149,12 +5130,10 @@ function loadDynamicProducts(){
 
             cleanup();
 
-
             console.error(
               "NAZAKA PRODUCTS ERROR:",
               error
             );
-
 
             reject(
               error
@@ -5164,39 +5143,26 @@ function loadDynamicProducts(){
 
         };
 
-
-      /* ===============================================
-         SCRIPT ERROR
-      =============================================== */
-
       script.onerror =
         function(){
 
           cleanup();
-
 
           const error =
             new Error(
               "Could not connect to Nazaka Products API."
             );
 
-
           console.error(
             "NAZAKA API CONNECTION ERROR:",
             error
           );
-
 
           reject(
             error
           );
 
         };
-
-
-      /* ===============================================
-         TIMEOUT
-      =============================================== */
 
       timeoutId =
         setTimeout(
@@ -5206,18 +5172,15 @@ function loadDynamicProducts(){
 
               cleanup();
 
-
               const error =
                 new Error(
                   "Nazaka Products API timed out."
                 );
 
-
               console.error(
                 "NAZAKA API TIMEOUT:",
                 error
               );
-
 
               reject(
                 error
@@ -5229,23 +5192,15 @@ function loadDynamicProducts(){
           20000
         );
 
-
-      /* ===============================================
-         LOAD SCRIPT
-      =============================================== */
-
       script.src =
         url;
-
 
       script.async =
         true;
 
-
       script.id =
         "nazaka-api-script-" +
         Date.now();
-
 
       document.head.appendChild(
         script
@@ -5255,7 +5210,6 @@ function loadDynamicProducts(){
   );
 
 }
-
 
 /* =====================================================
    HASH ROUTING
@@ -5268,7 +5222,6 @@ function handleHash(){
       .replace("#","")
       .trim();
 
-
   if(dynamicMap[hash]){
 
     showDynamicProduct(
@@ -5278,7 +5231,6 @@ function handleHash(){
     return;
 
   }
-
 
   const productAliases = {
 
@@ -5306,10 +5258,12 @@ function handleHash(){
 
     colored:"colored",
 
-    balaclava:"balaclava"
+    balaclava:"balaclava",
+
+    "floral-modal":
+      "floral-modal"
 
   };
-
 
   const productNames = [
 
@@ -5335,10 +5289,11 @@ function handleHash(){
 
     "colored",
 
-    "balaclava"
+    "balaclava",
+
+    "floral-modal"
 
   ];
-
 
   if(
     !hash ||
@@ -5347,18 +5302,15 @@ function handleHash(){
 
     showMain();
 
-
     window.scrollTo({
       top:0,
       left:0,
       behavior:"auto"
     });
 
-
     return;
 
   }
-
 
   if(
     productAliases[hash]
@@ -5368,11 +5320,9 @@ function handleHash(){
       productAliases[hash]
     );
 
-
     return;
 
   }
-
 
   if(
     productNames.includes(hash)
@@ -5382,11 +5332,9 @@ function handleHash(){
       hash
     );
 
-
     return;
 
   }
-
 
   if(
     hash === "clothing"
@@ -5396,11 +5344,9 @@ function handleHash(){
       "clothing"
     );
 
-
     return;
 
   }
-
 
   if(
     hash === "jeans"
@@ -5410,11 +5356,9 @@ function handleHash(){
       "jeans"
     );
 
-
     return;
 
   }
-
 
   if(
     hash === "hijabs"
@@ -5424,17 +5368,14 @@ function handleHash(){
       "hijabs"
     );
 
-
     return;
 
   }
-
 
   window.location.hash =
     "home";
 
 }
-
 
 /* =====================================================
    HASH EVENT
@@ -5444,7 +5385,6 @@ window.addEventListener(
   "hashchange",
   handleHash
 );
-
 
 /* =====================================================
    INITIAL LOAD
@@ -5468,12 +5408,10 @@ window.addEventListener(
 
     }
 
-
     handleHash();
 
   }
 );
-
 
 /* =====================================================
    AUTO REFRESH
@@ -5485,7 +5423,6 @@ setInterval(
 
     const active =
       document.activeElement;
-
 
     if(
       active &&
@@ -5503,7 +5440,6 @@ setInterval(
 
     }
 
-
     try{
 
       await loadDynamicProducts();
@@ -5520,12 +5456,10 @@ setInterval(
 
     }
 
-
     const currentHash =
       window.location.hash
         .replace("#","")
         .trim();
-
 
     if(
       currentHash &&
@@ -5538,28 +5472,23 @@ setInterval(
           currentHash
         );
 
-
       if(page){
 
         hideProducts();
-
 
         const main =
           document.getElementById(
             "mainContent"
           );
 
-
         if(main){
           main.style.display =
             "none";
         }
 
-
         document.body.classList.add(
           "product-open"
         );
-
 
         page.classList.add(
           "active"
@@ -5584,4 +5513,3 @@ setInterval(
 
 </body>
 </html>
-```
